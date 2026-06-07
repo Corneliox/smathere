@@ -1,0 +1,38 @@
+# WordPress Core
+wp-config.php
+
+# Environment & Config
+.env
+.env.*
+.litespeed_flag
+
+# Logs
+error_log
+*.log
+wp-content/*.log
+wp-content/plugins/error_log
+
+# Content & Uploads
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-*/
+wp-content/cache/
+wp-content/advanced-cache.php
+wp-content/object-cache.php
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Common IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak
+~*
