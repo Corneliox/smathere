@@ -1,0 +1,90 @@
+.slider-box h1, .slider-box p, .slider-box .block-editor-block-list__block, .about-sec .block-editor-block-list__block, .about-sec h2, .about-sec p{
+  margin-top: 7px !important;
+  margin-bottom: 7px !important;
+}
+.slider-box h1, .about-sec h2{
+  font-family: 'Fredoka One', cursive !important;
+}
+.slider-box p, .about-sec p{
+  font-family: 'Rubik', sans-serif !important;
+}
+/*Banner section*/
+.slider-box .wp-block-button__link, .about-sec .wp-block-button__link{
+  border-radius: 30px;
+  padding: 12px 15px;
+  font-weight: 500;
+}
+.slider-box p, .about-sec p{
+  line-height: 2;
+}
+.slider-box h1, .about-sec h2{
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+.slider-box .block-editor-rich-text__editable.wp-block-button__link:hover,
+.about-sec .block-editor-rich-text__editable.wp-block-button__link:hover{
+  background-color: #404376 !important;
+}
+/*About section*/
+.about-sec .wp-block-button__link {
+  box-shadow: 0 4px 0px #fa2767;
+  padding: 12px 15px;
+}
+.about-sec h2{
+  position: relative !important;
+}
+.about-sec h2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0 ;
+  top: auto !important;
+  width: 10% ;
+  height: 3px ;
+  background: #fe598b ;
+  border-radius: 30px;
+}
+.about-text{
+  background-image: url("../images/about.png");
+  background-repeat: no-repeat;
+  width: 175px;
+  height: 40px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: 600;
+}
+.abt-img{
+  position: relative;
+}
+.trusted-box .wp-block-group__inner-container.block-editor-block-list__layout{
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  display: inherit;
+  font-size: 25px;
+  text-align: center;
+}
+.about-sec .trusted-by{
+  font-family: 'Fredoka One', cursive !important;
+}
+.about-sec .trusted-box{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px dashed #fff;
+  position: relative;
+}
+.about-sec .trusted-col {
+  background: #fe598b;
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: -73px;
+  bottom: -50px;
+}
+.about-sec p{
+  margin-left: 0 !important;
+}

@@ -1,0 +1,198 @@
+@charset "UTF-8";
+/*
+Theme Name: Elearning Online Courses
+Author: TheMagnifico52
+Theme URI: https://www.themagnifico.net/themes/free-elearning-wordpress-theme/
+Author URI: https://www.themagnifico.net/
+Description: The eLearning Online Courses WordPress Theme is a versatile and comprehensive theme designed specifically for online teaching centres, educational institutions, and individuals offering eLearning courses. With its wide range of features and functionalities, this theme provides an ideal platform for creating and managing online courses in a user-friendly and engaging manner. One of the primary advantages of the eLearning Online Courses WordPress Theme is its ability to deliver a seamless and immersive eLearning experience. The theme offers a responsive design, ensuring that your courses are accessible and optimized across various devices, including desktops, laptops, tablets, and mobile phones. The eLearning Online Courses theme provides extensive customization options, allowing you to tailor your online course platform to match your brand and style. You can easily modify colors, fonts, layouts, and other visual elements to create a unique and appealing design that reflects your institution's identity. The theme also offers pre-designed templates and page layouts, making it convenient to structure and present your course content in an organized and visually appealing manner. The eLearning Online Courses WordPress Theme incorporates advanced learning management system (LMS) features that simplify the creation and management of online courses. It provides a user-friendly interface for instructors to upload course materials, create assignments, set up quizzes and exams, and monitor student progress. For learners, the eLearning Online Courses WordPress Theme offers an intuitive and interactive platform to engage with course materials. It provides features such as video lessons, downloadable resources, discussion forums, and interactive quizzes to enhance the learning experience. The theme also supports integration with popular eLearning plugins further expanding its functionality and allowing for seamless integration with existing eLearning workflows.
+Version: 1.0
+Tested up to: 6.2
+Requires PHP: 7.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: online-tutor
+Text Domain: elearning-online-courses
+Tags: custom-logo, one-column, two-columns, wide-blocks, block-styles, editor-style, sticky-post, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, threaded-comments, theme-options, left-sidebar, right-sidebar, grid-layout, blog, e-commerce, education
+
+Elearning Online Courses WordPress Theme has been created by TheMagnifico52(themagnifico.net), 2023.
+Elearning Online Courses WordPress Theme is released under the terms of GNU GPL
+*/
+
+body{
+    font-family: "Open Sans";
+}
+.article-box a,h1, h2, h3, h4, h5, h6,.navbar-brand a,.navbar-brand p,.widget a:hover, .widget a:focus{
+	color: #ff4f57;
+}
+.main-navigation .menu > li > a{
+    font-size: 14px;
+    line-height: 33px;
+    color: #212529;
+    font-weight: 700;
+}
+.top_header, .searchbox h3, .slider-box-btn a:hover, .btn-primary:hover, #button:hover, .searchbox form.search-from, .searchbox, .woocommerce a.button:hover, .woocommerce-account .woocommerce-MyAccount-navigation ul li:hover, .woocommerce button.button:hover, .woocommerce button.button.alt:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce a.button.alt:hover, .woocommerce a.added_to_cart:hover, .sidenav .closebtn,.loading,.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus,.button-box a.box1:hover {
+	background: #ff4f57;
+}
+a, .main-navigation .menu > li > a:hover, .top_header span, a.btn-text, .widget a:hover, .sidebar ul li a:hover, .main-navigation .sub-menu > li > .menu-item-link-return:hover, p.price, .woocommerce ul.products li.product .price, .woocommerce div.product p.price, .woocommerce div.product span.price, .woocommerce ul.products li.product .star-rating, .woocommerce .star-rating, .woocommerce-message::before, .woocommerce-info::before{
+	color: #ff4f57;
+}
+.top_header p a, .button-box a.box1, .button-box a.box2:hover, .slider-box-btn a, #button, .btn-primary, .project-box h5, .project-box:hover:before, #colophon, .sidebar input[type="submit"], .sidebar button[type="submit"], .meta-info-box, .comment-respond input#submit, .post-navigation .nav-previous a:hover, .main-navigation .sub-menu > li > a, .main-navigation .sub-menu > li > .menu-item-link-return, .sidebar h5, .woocommerce .widget_shopping_cart .buttons a, .woocommerce.widget_shopping_cart .buttons a, .pro-button a, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-account .woocommerce-MyAccount-navigation ul li, .woocommerce .woocommerce-ordering select, .toggle-nav i, .woocommerce a.added_to_cart, .sidebar .tagcloud a:hover,.post-navigation .nav-previous a:hover, .post-navigation .nav-next a:hover, .posts-navigation .nav-previous a:hover, .posts-navigation .nav-next a:hover{
+	background: #ff4f57;
+}
+.social-link i:hover{
+	background: transparent;
+}
+.post-navigation .nav-previous a:hover, .post-navigation .nav-next a:hover, .posts-navigation .nav-previous a:hover, .posts-navigation .nav-next a:hover{
+	border-color: #ff4f57;;
+}
+a.info-text:hover,.social-link i:hover{
+    color: #000;
+}
+a.added_to_cart.wc-forward {
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 15px;
+}
+.project-box{
+    position: relative;
+}
+
+.button-box a {
+    padding: 14px 10px;
+    border-radius: 11px;
+    font-size: 13px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.top_header p {
+    font-size: 12px;
+    line-height: 21px;
+    color: #fdf6f5;
+    font-weight: 600;
+}
+
+.top_header i {
+    color: #ffffff;
+    padding: 0;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    background: transparent;
+}
+a.info-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #fdf6f5;
+}
+.main-navigation .sub-menu > li{
+	border-color: #fff;
+}
+.page-template-home-template .navigation_header {
+    background: #fff;
+    position: relative;
+}
+.navigation_header {
+    background: #fff;
+}
+
+.slider-inner-box {
+    left: 33%;
+    right: 33%;
+    text-align: center;
+}
+.slider-inner-box h1 a {
+    font-size: 48px;
+    line-height: 52px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    font-family: "Poppins";
+}
+input.search-submit.btn.btn-primary {
+    background: #fff;
+    color: #000;
+}
+
+.slider-box-btn a{
+	border-radius: 5px;
+}
+.button-box a.box1:hover{
+	color: #fff;
+}
+
+.price-box {
+    margin-top: 0;
+    position: absolute;
+    top: 33%;
+    right: 0;
+}
+.content{
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+    padding: 15px 32px;
+}
+.content p.course-text {
+    display: inline-block;
+    padding: 0px 20px;
+    color: #fff;
+    border-radius: 5px;
+    background: #ff4f57;
+}
+.project-box h5 {
+	padding: 4px 12px;
+    border-radius: 0 0 0 15px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #ffffff;
+    font-weight: 700;
+}
+.project-box h3 {
+    font-size: 17px;
+    line-height: 24px;
+    color: #212121;
+    font-weight: 700;
+}
+.project-box p.post {
+    font-size: 14px;
+    color: #212529;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1000px){
+	.main-navigation .menu > li > a, .main-navigation .sub-menu > li > a, .main-navigation .sub-menu > li > .menu-item-link-return {
+	    color: #ffffff;
+	}
+	.sidenav{
+		background: #ff4f57;
+	}
+}
+@media screen and (min-width: 320px) and (max-width: 720px){
+	.slider-inner-box p{
+		display: none;
+	}
+	.slider-inner-box {
+	   left: 0%;
+       right: 0%;
+	}
+    .slider-box-btn a {
+        padding: 8px 16px;
+    }
+    .slider-inner-box h1 a{
+        font-size: 20px;
+        line-height: 5px;
+    }
+
+}
+@media screen and (min-width: 768px) and (max-width: 999px){
+	.slider-inner-box {
+    	left: 15%;
+        right: 15%;
+        top: 40%;
+	}
+}

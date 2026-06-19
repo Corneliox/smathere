@@ -1,0 +1,2031 @@
+# Translation of Themes - Xolo in English (UK)
+# This file is distributed under the same license as the Themes - Xolo package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-01-06 13:12:32+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: en_GB\n"
+"Project-Id-Version: Themes - Xolo\n"
+
+#. Description of the theme
+msgid "Xolo is a fast, fully customizable, and multi header new generation WordPress theme. Xolo is the perfect choice for Elementor's developer & designer. With Xolo you can make the perfect website for every business such as a blog, portfolio, agency, landing page, application page, freelancer's, magazine, and more. Xolo provides you fast speed to your website because the theme package is less than 1 MB. #5 header layouts are ready to change in the theme. Some popular features like SEO friendly, Responsive, Translation Ready, Gutenberg compatible, and many other WordPress plugins compatible are also included in the theme. Limitless customizations in a theme, we know what you want in the theme. It works well with almost all page builders as Elementor, SiteOrigin, Beaver Builder, Visual Composer, Divi, etc. Just install the recommended plugin and Navigate to Xolo Website from WordPress admin menu, Import any one demo within minutes. If you like Xolo, share your feedback on the theme. Try Xolo theme now https://wpxolo.com/"
+msgstr "Xolo is a fast, fully customizable, and multi header new generation WordPress theme. Xolo is the perfect choice for Elementor's developer & designer. With Xolo you can make the perfect website for every business such as a blog, portfolio, agency, landing page, application page, freelancer's, magazine, and more. Xolo provides you fast speed to your website because the theme package is less than 1 MB. #5 header layouts are ready to change in the theme. Some popular features like SEO friendly, Responsive, Translation Ready, Gutenberg compatible, and many other WordPress plugins compatible are also included in the theme. Limitless customizations in a theme, we know what you want in the theme. It works well with almost all page builders as Elementor, SiteOrigin, Beaver Builder, Visual Composer, Divi, etc. Just install the recommended plugin and Navigate to Xolo Website from WordPress admin menu, Import any one demo within minutes. If you like Xolo, share your feedback on the theme. Try Xolo theme now https://wpxolo.com/"
+
+#. Theme Name of the theme
+#: inc/admin/helpers.php:82 inc/admin/class-xolo-dashboard.php:171
+msgid "Xolo"
+msgstr "Xolo"
+
+#: inc/customizer/customizer-pro/class-customize.php:76
+msgid "More Features Available in Xolo Pro!"
+msgstr "More Features Available in Xolo Pro!"
+
+#: inc/admin/class-xolo-dashboard.php:515
+msgid "See Demos Library »"
+msgstr "See Demos Library »"
+
+#: inc/admin/class-xolo-dashboard.php:494
+msgid "White Label removes any links to Xolo  and change the identity in the dashboard."
+msgstr "White Label removes any links to Xolo and changes the identity in the dashboard."
+
+#: inc/admin/class-xolo-dashboard.php:465
+msgid "Learn More &#187;"
+msgstr "Learn More &#187;"
+
+#: inc/admin/class-xolo-dashboard.php:458
+msgid "White Label"
+msgstr "White Label"
+
+#: inc/admin/class-xolo-dashboard.php:431
+msgid "Customize Xolo with the help of our documentation that covers all kinds of customizations."
+msgstr "Customise Xolo with the help of our documentation that covers all kinds of customisations."
+
+#: inc/admin/class-xolo-dashboard.php:404
+msgid "Change the layout of the default theme. There are 3 layouts ready to use for the website container."
+msgstr "Change the layout of the default theme. There are 3 layouts ready to use for the website container."
+
+#: inc/admin/class-xolo-dashboard.php:395
+msgid "Customize the default theme fonts. You can change your website's fonts as you prefer."
+msgstr "Customise the default theme fonts. You can change your website's fonts as you prefer."
+
+#: inc/admin/class-xolo-dashboard.php:386
+msgid "Don't like the default theme header? No worries, you can easily change it by choosing one of the five ready-to-use header variations."
+msgstr "Don't like the default theme header? No worries, you can easily change it by choosing one of the five ready-to-use header variations."
+
+#: inc/admin/class-xolo-dashboard.php:368
+msgid "Upload your logo to empower your brand and make a great impression."
+msgstr "Upload your logo to empower your brand and make a great impression."
+
+#: inc/admin/class-xolo-dashboard.php:314
+msgid "To take full advantage of all theme's features, install the recommended plugins by Xolo."
+msgstr "To take full advantage of all theme's features, install the recommended plugins by Xolo."
+
+#: inc/customizer/customizer-options/xolo-header.php:374
+msgid "Default Style"
+msgstr "Default Style"
+
+#: comments.php:91
+msgid "Write a comment"
+msgstr "Write a comment"
+
+#: 404.php:23
+msgid "We can't find the page you are looking for"
+msgstr "We can't find the page you are looking for"
+
+#: 404.php:22
+msgid "Oops! That page is not available!"
+msgstr "Oops! That page is not available!"
+
+#: inc/customizer/custom-controls/controls/xolo-customize-base-control.php:29
+msgid "Color value"
+msgstr "Color value"
+
+#: inc/customizer/custom-controls/controls/xolo-customize-base-control.php:28
+msgid "Select Color"
+msgstr "Select Color"
+
+#: inc/customizer/custom-controls/controls/xolo-customize-base-control.php:27
+msgid "Select default color"
+msgstr "Select default color"
+
+#: inc/customizer/custom-controls/controls/xolo-customize-base-control.php:25
+msgid "Clear color"
+msgstr "Clear color"
+
+#: inc/customizer/custom-controls/controls/xolo-customize-base-control.php:24
+msgid "Clear"
+msgstr "Clear"
+
+#: inc/customizer/customizer-options/xolo-blog.php:348
+msgid "Excerpt More"
+msgstr "Excerpt More"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:172
+msgid "Xolo Settings"
+msgstr "Xolo Settings"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:156
+msgid "Disable"
+msgstr "Disable"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:155
+msgid "Enable"
+msgstr "Enable"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:129
+msgid "Right Sidebar"
+msgstr "Right Sidebar"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:128
+msgid "Left Sidebar"
+msgstr "Left Sidebar"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:127
+msgid "No Sidebar"
+msgstr "No Sidebar"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:126
+#: inc/admin/metabox/xolo-meta-boxes.php:140
+#: inc/admin/metabox/xolo-meta-boxes.php:154
+msgid "Default (from Customizer)"
+msgstr "Default (from Customizer)"
+
+#: inc/breadcrumb/breadcrumb.php:42
+msgid "No results found"
+msgstr "No results found"
+
+#. Translators: $s number of found results.
+#: inc/breadcrumb/breadcrumb.php:40
+msgid "%s result found"
+msgid_plural "%s results found"
+msgstr[0] "%s result found"
+msgstr[1] "%s results found"
+
+#: inc/customizer/customizer-options/xolo-header.php:1042
+msgid "Sticky Primary Header"
+msgstr "Sticky Primary Header"
+
+#: inc/admin/class-xolo-dashboard.php:359
+msgid "Help search engines return more informative results for users."
+msgstr " Help search engines return more informative results for users."
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:1075
+msgid "Enable Schema Markup?"
+msgstr "Enable Schema Markup?"
+
+#: inc/admin/class-xolo-dashboard.php:356
+#: inc/admin/class-xolo-dashboard.php:357
+#: inc/customizer/customizer-options/xolo-global-settings.php:1056
+msgid "Schema Markup"
+msgstr "Schema Markup"
+
+#: inc/admin/class-xolo-dashboard.php:449
+msgid "Enjoying the Xolo theme? Give us as quick review: we'll be extremely grateful!"
+msgstr "Enjoying the Xolo theme? Give us as quick review: we'll be extremely grateful!"
+
+#: inc/admin/class-xolo-dashboard.php:440
+msgid "Xolo is a fast, fully customizable, and multi header \"new generation\" WordPress theme."
+msgstr "Xolo is a fast, fully customizable, and multi header \"new generation\" WordPress theme."
+
+#: inc/admin/class-xolo-dashboard.php:437
+msgid "More About Xolo"
+msgstr "More About Xolo"
+
+#: inc/admin/class-xolo-dashboard.php:429
+msgid "Documentation"
+msgstr "Documentation"
+
+#: inc/admin/class-xolo-dashboard.php:428
+msgid "Need Help?"
+msgstr "Need Help?"
+
+#: inc/admin/class-xolo-dashboard.php:420
+msgid "Create Support"
+msgstr "Create Support"
+
+#: inc/admin/class-xolo-dashboard.php:419
+msgid "Create Support?"
+msgstr "Create Support?"
+
+#: inc/customizer/customizer-options/xolo-header.php:814
+msgid "Border Width"
+msgstr "Border Width"
+
+#: inc/customizer/customizer-options/xolo-header.php:770
+msgid "Border Color"
+msgstr "Border Colour"
+
+#: inc/compatibility/edd/class-xolo-edd.php:175
+msgid "Related Posts"
+msgstr "Related Posts"
+
+#: inc/compatibility/edd/class-xolo-edd.php:91
+msgid "EDD Sidebar"
+msgstr "EDD Sidebar"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:643
+msgid "Product Background Color"
+msgstr "Product Background Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:622
+msgid "Tabs Background Color"
+msgstr "Tabs Background Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:601
+msgid "Tabs Text Color"
+msgstr "Tabs Text Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:580
+msgid "Button Background Color"
+msgstr "Button Background Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:559
+msgid "Button Text Color"
+msgstr "Button Text Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:538
+msgid "Meta Color"
+msgstr "Meta Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:517
+msgid "Meta Icon Color"
+msgstr "Meta Icon Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:496
+msgid "Title Hover Color"
+msgstr "Title Hover Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:475
+msgid "Title Color"
+msgstr "Title Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:454
+msgid "Content Color"
+msgstr "Content Color"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:435
+msgid "Product Styler"
+msgstr "Product Styler"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:412
+msgid "Number of Item"
+msgstr "Number of Item"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:394
+msgid "EDD Tags"
+msgstr "EDD Tags"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:393
+msgid "EDD Categories"
+msgstr "EDD Categories"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:372
+#: inc/compatibility/edd/customizer/edd-settings.php:388
+msgid "Related Item"
+msgstr "Related Item"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:353
+msgid "Content"
+msgstr "Content"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:298
+msgid "Product Single"
+msgstr "Product Single"
+
+#: inc/admin/class-xolo-dashboard.php:438
+#: inc/compatibility/edd/customizer/edd-settings.php:273
+#: inc/compatibility/edd/customizer/edd-settings.php:284
+msgid "View Details"
+msgstr "View Details"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:219
+msgid "Media Image Width (%)"
+msgstr "Media Image Width (%)"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:200
+msgid "Enable Grid List"
+msgstr "Enable Grid List"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:180
+msgid "Enable Sorting Bar"
+msgstr "Enable Sorting Bar"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:157
+#: inc/compatibility/edd/customizer/edd-settings.php:251
+#: inc/compatibility/edd/customizer/edd-settings.php:262
+msgid "Add to Cart"
+msgstr "Add to Cart"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:156
+msgid "Price"
+msgstr "Price"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:101
+msgid "4 Columns"
+msgstr "4 Columns"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:100
+msgid "3 Columns"
+msgstr "3 Columns"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:99
+msgid "2 Columns"
+msgstr "2 Columns"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:98
+msgid "1 Column "
+msgstr "1 Column "
+
+#: inc/compatibility/edd/customizer/edd-settings.php:92
+msgid "Grid Layout"
+msgstr "Grid Layout"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:83
+msgid "6"
+msgstr "6"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:74
+msgid "List"
+msgstr "List"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:73
+msgid "Grid"
+msgstr "Grid"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:67
+msgid "Product Type"
+msgstr "Product Type"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:58
+msgid "grid"
+msgstr "grid"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:19
+msgid "Product Archive"
+msgstr "Product Archive"
+
+#: inc/compatibility/edd/customizer/edd-settings.php:8
+msgid "Easy Digital Download"
+msgstr "Easy Digital Download"
+
+#: inc/compatibility/edd/helper.php:316
+msgid "Released:"
+msgstr "Released:"
+
+#: inc/compatibility/edd/helper.php:312
+msgid "Last Update:"
+msgstr "Last Update:"
+
+#: inc/compatibility/edd/helper.php:308
+msgid "Item Information"
+msgstr "Item Information"
+
+#: inc/compatibility/edd/helper.php:259
+msgid "Item Rating"
+msgstr "Item Rating"
+
+#: inc/compatibility/edd/helper.php:222
+msgid "out of 5"
+msgstr "out of 5"
+
+#: inc/compatibility/edd/helper.php:19
+msgid "Sort By:"
+msgstr "Sort By:"
+
+#: inc/compatibility/edd/helper.php:13
+msgid "Sort by price: high to low"
+msgstr "Sort by price: high to low"
+
+#: inc/compatibility/edd/helper.php:12
+msgid "Sort by price: low to high"
+msgstr "Sort by price: low to high"
+
+#: inc/compatibility/edd/helper.php:11
+msgid "Alphabet Desc"
+msgstr "Alphabet Desc"
+
+#: inc/compatibility/edd/helper.php:10
+msgid "Alphabet"
+msgstr "Alphabet"
+
+#: inc/compatibility/edd/helper.php:9
+msgid "Oldest"
+msgstr "Oldest"
+
+#: inc/compatibility/edd/helper.php:8
+msgid "Latest"
+msgstr "Latest"
+
+#: inc/admin/helpers.php:94 inc/admin/helpers.php:99
+msgid "Get Started With Xolo"
+msgstr "Get Started With Xolo"
+
+#: inc/admin/helpers.php:86
+msgid "Clicking the button below will install and activate the Xolo Websites plugin."
+msgstr "Clicking the button below will install and activate the Xolo Websites plugin."
+
+#. translators: 1: welcome page link starting html tag, 2: welcome page link
+#. ending html tag.
+#: inc/admin/class-xolo-admin.php:277
+msgid "Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer, please make sure you visit our %2$swelcome page%3$s."
+msgstr "Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer, please make sure you visit our %2$swelcome page%3$s."
+
+#: template-parts/edd/content-single.php:39
+msgid "Item Details"
+msgstr "Item Details"
+
+#: inc/customizer/customizer-options/xolo-header.php:836
+msgid "Header Mobile"
+msgstr "Header Mobile"
+
+#: inc/customizer/customizer-options/xolo-header.php:518
+msgid "Header Background Color"
+msgstr "Header Background Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:498
+msgid "Dropdown Border Color"
+msgstr "Dropdown Border Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:478
+msgid "Dropdown Background Color"
+msgstr "Dropdown Background Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:458
+msgid "Dropdown Link Hover Color"
+msgstr "Dropdown Link Hover Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:438
+msgid "Dropdown Link Color"
+msgstr "Dropdown Link Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:380
+msgid "Style 6"
+msgstr "Style 6"
+
+#: inc/customizer/customizer-options/xolo-header.php:379
+msgid "Style 5"
+msgstr "Style 5"
+
+#: inc/customizer/customizer-options/xolo-header.php:378
+msgid "Style 4"
+msgstr "Style 4"
+
+#: inc/customizer/customizer-options/xolo-header.php:377
+msgid "Style 3"
+msgstr "Style 3"
+
+#: inc/customizer/customizer-options/xolo-header.php:376
+msgid "Style 2"
+msgstr "Style 2"
+
+#: inc/customizer/customizer-options/xolo-header.php:375
+msgid "Style 1"
+msgstr "Style 1"
+
+#: inc/customizer/customizer-options/xolo-header.php:368
+msgid "Menu Active Style"
+msgstr "Menu Active Style"
+
+#: inc/customizer/customizer-options/xolo-header.php:358
+msgid "active-default"
+msgstr "active-default"
+
+#: inc/customizer/customizer-options/xolo-header.php:348
+msgid "Desktop Menu"
+msgstr "Desktop Menu"
+
+#: inc/customizer/customizer-options/xolo-blog.php:113
+msgid "Enable Author Box"
+msgstr "Enable Author Box"
+
+#: inc/customizer/custom-controls/controls/xolo-header-control.php:8
+msgid "Select Header"
+msgstr "Select Header"
+
+#: inc/customizer/customizer-options/xolo-footer.php:399
+msgid "Widget Title Bottom Line Color"
+msgstr "Widget Title Bottom Line Color"
+
+#: inc/admin/class-xolo-dashboard.php:814
+msgid "Failed to deactivate plugin. Missing plugin data."
+msgstr "Failed to deactivate plugin. Missing plugin data."
+
+#: inc/admin/class-xolo-dashboard.php:784
+msgid "Failed to activate plugin. Missing plugin data."
+msgstr "Failed to activate plugin. Missing plugin data."
+
+#: inc/admin/class-xolo-dashboard.php:770
+#: inc/admin/class-xolo-dashboard.php:801
+msgid "Missing plugin data"
+msgstr "Missing plugin data"
+
+#: inc/admin/class-xolo-dashboard.php:641
+msgid "Xolo Theme Changelog"
+msgstr "Xolo Theme Changelog"
+
+#: inc/admin/class-xolo-dashboard.php:621
+msgid "Changelog file not readable."
+msgstr "Changelog file not readable."
+
+#: inc/admin/class-xolo-dashboard.php:619
+msgid "Changelog file not found."
+msgstr "Changelog file not found."
+
+#: inc/admin/class-xolo-dashboard.php:569
+msgid "Install & Activate"
+msgstr "Install & Activate"
+
+#: inc/admin/class-xolo-dashboard.php:564
+msgid "Activate"
+msgstr "Activate"
+
+#: inc/admin/class-xolo-dashboard.php:561
+msgid "Plugin activated"
+msgstr "Plugin activated"
+
+#: inc/admin/class-xolo-dashboard.php:559
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: inc/admin/class-xolo-dashboard.php:545
+#: inc/admin/class-xolo-dashboard.php:741
+msgid "Recommended Plugins"
+msgstr "Recommended Plugins"
+
+#: inc/admin/class-xolo-dashboard.php:422
+msgid "If you have a technical question, the fastest way to get support from our developers is by submitting a ticket."
+msgstr "If you have a technical question, the fastest way to get support from our developers is by submitting a ticket."
+
+#: inc/admin/class-xolo-dashboard.php:413
+msgid "Customize menu links and choose what to display in the available theme menu locations."
+msgstr "Customize menu links and choose what to display in the available theme menu locations."
+
+#: inc/admin/class-xolo-dashboard.php:411
+msgid "Go to Menus"
+msgstr "Go to Menus"
+
+#: inc/admin/class-xolo-dashboard.php:410
+msgid "Change Menus"
+msgstr "Change Menus"
+
+#: inc/admin/class-xolo-dashboard.php:392
+#: inc/admin/class-xolo-dashboard.php:393
+msgid "Customize Fonts"
+msgstr "Customize Fonts"
+
+#: inc/admin/class-xolo-dashboard.php:377
+msgid "Change the default theme colors and align your website color scheme with your brand colors."
+msgstr "Change the default theme colors and align your website color scheme with your brand colors."
+
+#: inc/admin/class-xolo-dashboard.php:374
+#: inc/admin/class-xolo-dashboard.php:375
+msgid "Change Colors"
+msgstr "Change Colors"
+
+#: inc/admin/class-xolo-dashboard.php:365
+#: inc/admin/class-xolo-dashboard.php:366
+msgid "Upload Logo"
+msgstr "Upload Logo"
+
+#: inc/admin/class-xolo-dashboard.php:350
+#: inc/admin/class-xolo-dashboard.php:513
+msgid "Want to save your time while building your website? Import Xolo Websites with single-click installation."
+msgstr "Want to save your time while building your website? Import Xolo Websites with single-click installation."
+
+#: inc/admin/helpers.php:104 inc/admin/class-xolo-dashboard.php:335
+msgid "Browse Demos"
+msgstr "Browse Demos"
+
+#: inc/admin/class-xolo-dashboard.php:330
+msgid "Install Xolo Websites"
+msgstr "Install Xolo Websites"
+
+#: inc/admin/class-xolo-dashboard.php:325
+msgid "Activate Xolo Websites"
+msgstr "Activate Xolo Websites"
+
+#: inc/admin/class-xolo-dashboard.php:320
+#: inc/admin/class-xolo-dashboard.php:508
+msgid "Import Xolo Websites"
+msgstr "Import Xolo Websites"
+
+#: inc/admin/class-xolo-dashboard.php:311
+#: inc/admin/class-xolo-dashboard.php:312
+msgid "Install Plugins"
+msgstr "Install Plugins"
+
+#: inc/admin/class-xolo-dashboard.php:301
+#: inc/admin/class-xolo-dashboard.php:735
+msgid "Getting Started"
+msgstr "Getting Started"
+
+#: inc/admin/class-xolo-dashboard.php:155
+#: inc/admin/class-xolo-dashboard.php:747
+msgid "Changelog"
+msgstr "Changelog"
+
+#: inc/admin/class-xolo-dashboard.php:141
+msgid "Plugins"
+msgstr "Plugins"
+
+#: inc/admin/class-xolo-dashboard.php:130
+#: inc/admin/class-xolo-dashboard.php:131
+#: inc/admin/class-xolo-dashboard.php:170
+msgid "Xolo Options"
+msgstr "Xolo Options"
+
+#: inc/admin/class-xolo-admin.php:288
+msgid "Install Now"
+msgstr "Install Now"
+
+#: inc/admin/class-xolo-admin.php:225 inc/admin/class-xolo-dashboard.php:446
+#: inc/admin/class-xolo-dashboard.php:447
+msgid "Leave a Review"
+msgstr "Leave a Review"
+
+#: inc/admin/class-xolo-admin.php:222
+msgid "Xolo Theme v"
+msgstr "Xolo Theme v"
+
+#: inc/admin/class-xolo-admin.php:196
+msgid "Customize"
+msgstr "Customize"
+
+#: inc/admin/class-xolo-admin.php:142
+msgid "Visit site."
+msgstr "Visit site."
+
+#: inc/admin/class-xolo-admin.php:142
+msgid "The demo has been imported."
+msgstr "The demo has been imported."
+
+#: inc/admin/class-xolo-admin.php:141
+msgid "Import Complete!"
+msgstr "Import Complete!"
+
+#: inc/admin/class-xolo-admin.php:140
+msgid "The demo importer is still working. Closing this window may result in failed import."
+msgstr "The demo importer is still working. Closing this window may result in failed import."
+
+#: inc/admin/class-xolo-admin.php:139
+msgid "Import Demo"
+msgstr "Import Demo"
+
+#: inc/admin/class-xolo-admin.php:138
+msgid "Import"
+msgstr "Import"
+
+#: inc/admin/class-xolo-admin.php:137
+msgid "Currently processing: "
+msgstr "Currently processing: "
+
+#: inc/admin/class-xolo-admin.php:136
+msgid "Importing... Please Wait..."
+msgstr "Importing... Please Wait..."
+
+#: inc/admin/class-xolo-admin.php:135
+msgid "Please Wait..."
+msgstr "Please Wait..."
+
+#: inc/admin/class-xolo-admin.php:134
+msgid "Retry"
+msgstr "Retry"
+
+#: inc/admin/class-xolo-admin.php:133
+msgid "Active"
+msgstr "Active"
+
+#: inc/admin/class-xolo-admin.php:132
+msgid "Deactivating..."
+msgstr "Deactivating..."
+
+#: inc/admin/class-xolo-admin.php:131
+msgid "Activating..."
+msgstr "Activating..."
+
+#: inc/admin/class-xolo-admin.php:130
+msgid "Installing..."
+msgstr "Installing..."
+
+#: inc/admin/class-xolo-admin.php:129
+msgid "Install"
+msgstr "Install"
+
+#: inc/admin/helpers.php:53
+msgid "Dismiss"
+msgstr "Dismiss"
+
+#. translators: %s is plugin name.
+#: inc/admin/class-xolo-plugin-utilities.php:167
+msgid "Plugin %s is not active."
+msgstr "Plugin %s is not active."
+
+#. translators: %s is plugin name.
+#: inc/admin/class-xolo-plugin-utilities.php:113
+msgid "Plugin %s is not installed."
+msgstr "Plugin %s is not installed."
+
+#: inc/admin/class-xolo-plugin-utilities.php:98
+#: inc/admin/class-xolo-plugin-utilities.php:152
+msgid "Missing plugin data."
+msgstr "Missing plugin data."
+
+#: inc/admin/class-xolo-plugin-utilities.php:90
+#: inc/admin/class-xolo-plugin-utilities.php:144
+msgid "Current user can't activate plugins"
+msgstr "Current user can't activate plugins"
+
+#: comments.php:89
+msgid "Log out?"
+msgstr "Log out?"
+
+#: comments.php:89
+msgid "Log out of this account"
+msgstr "Log out of this account"
+
+#: comments.php:89
+msgid "Logged in as"
+msgstr "Logged in as"
+
+#. translators: %1$s opening anchor tag, %2$s closing anchor tag
+#: comments.php:88
+msgid "You must be %1$slogged in%2$s to post a comment."
+msgstr "You must be %1$slogged in%2$s to post a comment."
+
+#: comments.php:81
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: comments.php:49 comments.php:69
+msgid "Newer Comments"
+msgstr "Newer Comments"
+
+#: comments.php:48 comments.php:68
+msgid "Older Comments"
+msgstr "Older Comments"
+
+#: comments.php:45 comments.php:66
+msgid "Comment navigation"
+msgstr "Comment navigation"
+
+#: template-parts/content/content-none.php:18
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+
+#: template-parts/content/content-none.php:16
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr "Sorry, but nothing matched your search terms. Please try again with different keywords."
+
+#: template-parts/content/content-none.php:14
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+
+#: template-parts/content/content-author-meta.php:40
+msgid "View All Post"
+msgstr "View All Post"
+
+#. Translators: %1$s: <a> tag. %2$s: </a>.
+#: template-parts/content/content-author-meta.php:32
+msgid "You haven&rsquo;t entered your Biographical Information yet. %1$sEdit your Profile%2$s now."
+msgstr "You haven&rsquo;t entered your Biographical Information yet. %1$sEdit your Profile%2$s now."
+
+#: template-parts/content/content-author-meta.php:14
+msgid "About the Author"
+msgstr "About the Author"
+
+#: template-parts/content/content-search.php:28
+msgid "By"
+msgstr "By"
+
+#: template-parts/content/content.php:38
+msgid "Pages:"
+msgstr "Pages:"
+
+#. translators: %s: Name of current post.
+#: template-parts/content/content.php:33
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/breadcrumb/xolo-breadcrumb.php:42
+msgid "Author: %s"
+msgstr "Author: %s"
+
+#: template-parts/breadcrumb/xolo-breadcrumb.php:38
+msgid "Error 404"
+msgstr "Error 404"
+
+#: template-parts/breadcrumb/xolo-breadcrumb.php:34
+msgid "Tag Archives: %s"
+msgstr "Tag Archives: %s"
+
+#: template-parts/breadcrumb/xolo-breadcrumb.php:30
+msgid "Category Archives: %s"
+msgstr "Category Archives: %s"
+
+#: template-parts/breadcrumb/xolo-breadcrumb.php:26
+msgid "Yearly Archives: %s"
+msgstr "Yearly Archives: %s"
+
+#: template-parts/breadcrumb/xolo-breadcrumb.php:22
+msgid "Monthly Archives: %s"
+msgstr "Monthly Archives: %s"
+
+#: template-parts/breadcrumb/xolo-breadcrumb.php:18
+msgid "Daily Archives: %s"
+msgstr "Daily Archives: %s"
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:70
+msgid "Edit %s"
+msgstr "Edit %s"
+
+#. translators: %s: post title
+#: inc/template-tags.php:63
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
+
+#: inc/template-tags.php:56
+msgid "Tagged %1$s"
+msgstr "Tagged %1$s"
+
+#: inc/template-tags.php:50
+msgid "Posted in %1$s"
+msgstr "Posted in %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:48 inc/template-tags.php:54
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:33
+msgctxt "post author"
+msgid "by %s"
+msgstr "by %s"
+
+#: inc/template-tags.php:28
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Posted on %s"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:1021
+msgid "Content Size"
+msgstr "Content Size"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:983
+msgid "Title Size"
+msgstr "Title Size"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:612
+msgid "Colors & Background"
+msgstr "Colors & Background"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:517
+msgid "Min Height"
+msgstr "Min Height"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:498
+msgid "Separator"
+msgstr "Separator"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:489
+msgid "/"
+msgstr "/"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:472
+msgid "Alignment"
+msgstr "Alignment"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:463
+msgid "left"
+msgstr "left"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:453
+msgid "Enable Page Path on Breadcrumb?"
+msgstr "Enable Page Path on Breadcrumb?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:433
+msgid "Enable Page Title on Breadcrumb?"
+msgstr "Enable Page Title on Breadcrumb?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:413
+msgid "Enable on 404 Page?"
+msgstr "Enable on 404 Page?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:393
+msgid "Enable on Archive Page?"
+msgstr "Enable on Archive Page?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:373
+msgid "Enable on Default Page?"
+msgstr "Enable on Default Page?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:353
+msgid "Enable on Single Page?"
+msgstr "Enable on Single Page?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:333
+msgid "Enable on Blog / Posts Page?"
+msgstr "Enable on Blog / Posts Page?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:313
+msgid "Enable on Search Page?"
+msgstr "Enable on Search Page?"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:293
+msgid "Enable on Home Page?"
+msgstr "Enable on Home Page?"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:150
+#: inc/customizer/customizer-options/xolo-global-settings.php:275
+msgid "Breadcrumb"
+msgstr "Breadcrumb"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:252
+msgid "Margin Bottom"
+msgstr "Margin Bottom"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:224
+msgid "Margin Top"
+msgstr "Margin Top"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:143
+#: inc/customizer/customizer-options/xolo-global-settings.php:176
+msgid "Boxed"
+msgstr "Boxed"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:142
+#: inc/customizer/customizer-options/xolo-global-settings.php:175
+msgid "Full Width: Stretched"
+msgstr "Full Width: Stretched"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:141
+#: inc/customizer/customizer-options/xolo-global-settings.php:174
+msgid "Full Width: Contained"
+msgstr "Full Width: Contained"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:136
+#: inc/admin/class-xolo-dashboard.php:401
+#: inc/admin/class-xolo-dashboard.php:402
+#: inc/customizer/customizer-options/xolo-global-settings.php:168
+msgid "Website Layout"
+msgstr "Website Layout"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:158
+msgid "contained"
+msgstr "contained"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:136
+msgid "Header Global Color"
+msgstr "Header Global Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:116
+#: inc/customizer/customizer-options/xolo-global-settings.php:676
+#: inc/customizer/customizer-options/xolo-header.php:418
+#: inc/customizer/customizer-options/xolo-header.php:1167
+#: inc/customizer/customizer-options/xolo-footer.php:978
+msgid "Link Hover Color"
+msgstr "Link Hover Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:96
+#: inc/customizer/customizer-options/xolo-global-settings.php:655
+#: inc/customizer/customizer-options/xolo-header.php:398
+#: inc/customizer/customizer-options/xolo-header.php:1147
+#: inc/customizer/customizer-options/xolo-footer.php:957
+msgid "Link Color"
+msgstr "Link Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:76
+msgid "Secondary Color"
+msgstr "Secondary Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:56
+msgid "Primary Color"
+msgstr "Primary Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:19
+#: inc/customizer/customizer-options/xolo-global-settings.php:36
+msgid "Colors"
+msgstr "Colours"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:8
+msgid "Global"
+msgstr "Global"
+
+#: inc/customizer/customizer-options/xolo-header.php:1079
+msgid "Sticky Logo Width"
+msgstr "Sticky Logo Width"
+
+#: inc/customizer/customizer-options/xolo-header.php:1059
+msgid "Sticky Logo"
+msgstr "Sticky Logo"
+
+#: inc/customizer/customizer-options/xolo-header.php:1023
+msgid "Sticky Header"
+msgstr "Sticky Header"
+
+#: inc/customizer/customizer-options/xolo-header.php:988
+msgid "Menu Hover Color"
+msgstr "Menu Hover Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:967
+msgid "Menu Color"
+msgstr "Menu Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:945
+msgid "Toggle Color"
+msgstr "Toggle Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:923
+msgid "Menu Label"
+msgstr "Menu Label"
+
+#: inc/customizer/customizer-options/xolo-header.php:894
+msgid "Menu Breakpoint"
+msgstr "Menu Breakpoint"
+
+#: inc/customizer/customizer-options/xolo-header.php:874
+msgid "Header Color"
+msgstr "Header Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:854
+msgid "Mobile Menu"
+msgstr "Mobile Menu"
+
+#: inc/customizer/customizer-options/xolo-header.php:707
+#: inc/customizer/customizer-options/xolo-header.php:1250
+msgid "Button Link"
+msgstr "Button Link"
+
+#: inc/customizer/customizer-options/xolo-header.php:685
+#: inc/customizer/customizer-options/xolo-header.php:1230
+msgid "Button Label"
+msgstr "Button Label"
+
+#: inc/customizer/customizer-options/xolo-header.php:664
+msgid "Enable Button"
+msgstr "Enable Button"
+
+#: inc/customizer/customizer-options/xolo-header.php:645
+msgid "Button"
+msgstr "Button"
+
+#: inc/customizer/customizer-options/xolo-header.php:617
+#: inc/customizer/customizer-options/xolo-header.php:789
+msgid "Border Radius"
+msgstr "Border Radius"
+
+#: inc/customizer/customizer-options/xolo-header.php:577
+msgid "Icon Color"
+msgstr "Icon Color"
+
+#: inc/customizer/customizer-options/xolo-header.php:557
+msgid "Enable Search"
+msgstr "Enable Search"
+
+#: inc/customizer/customizer-options/xolo-header.php:330
+msgid "Header Content"
+msgstr "Header Content"
+
+#: inc/customizer/customizer-options/xolo-header.php:295
+msgid "Navbar Height"
+msgstr "Navbar Height"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:196
+#: inc/customizer/customizer-options/xolo-header.php:265
+msgid "Container Width"
+msgstr "Container Width"
+
+#: inc/customizer/customizer-options/xolo-header.php:246
+msgid "Header Container"
+msgstr "Header Container"
+
+#: inc/admin/class-xolo-dashboard.php:383
+#: inc/admin/class-xolo-dashboard.php:384
+#: inc/customizer/customizer-options/xolo-header.php:208
+msgid "Header Layouts"
+msgstr "Header Layouts"
+
+#: inc/customizer/customizer-options/xolo-header.php:174
+msgid "Site Description Font Size"
+msgstr "Site Description Font Size"
+
+#: inc/customizer/customizer-options/xolo-header.php:135
+msgid "Site Title Font Size"
+msgstr "Site Title Font Size"
+
+#: inc/customizer/customizer-options/xolo-header.php:76
+msgid "Logo Width"
+msgstr "Logo Width"
+
+#: inc/customizer/customizer-options/xolo-header.php:40
+msgid "Different Logo For Mobile Devices ?"
+msgstr "Different Logo For Mobile Devices ?"
+
+#: inc/customizer/customizer-options/xolo-header.php:23
+msgid "Site Identity"
+msgstr "Site Identity"
+
+#: inc/customizer/customizer-options/xolo-header.php:12
+msgid "Header"
+msgstr "Header"
+
+#: inc/customizer/customizer-options/xolo-blog.php:605
+msgid "Color"
+msgstr "Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:586
+msgid "Post Pagination"
+msgstr "Post Pagination"
+
+#: inc/customizer/customizer-options/xolo-blog.php:570
+msgid "Post Background Color"
+msgstr "Post Background Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:548
+msgid "Post Image Overlay Color"
+msgstr "Post Image Overlay Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:527
+msgid "Post Meta Color"
+msgstr "Post Meta Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:506
+msgid "Post Meta Icon Color"
+msgstr "Post Meta Icon Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:484
+msgid "Post Title Hover Color"
+msgstr "Post Title Hover Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:463
+msgid "Post Title Color"
+msgstr "Post Title Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:441
+msgid "Post Content Color"
+msgstr "Post Content Color"
+
+#: inc/customizer/customizer-options/xolo-blog.php:421
+msgid "Post Styler"
+msgstr "Post Styler"
+
+#: inc/customizer/customizer-options/xolo-blog.php:319
+msgid "Excerpt Length"
+msgstr "Excerpt Length"
+
+#: inc/customizer/customizer-options/xolo-blog.php:299
+msgid "Enable Excerpt"
+msgstr "Enable Excerpt"
+
+#: inc/customizer/customizer-options/xolo-blog.php:280
+msgid "Enable Meta on Thumbnail"
+msgstr "Enable Meta on Thumbnail"
+
+#: inc/customizer/customizer-options/xolo-blog.php:186
+msgid "Blog Archive"
+msgstr "Blog Archive"
+
+#: inc/customizer/customizer-options/xolo-blog.php:151
+#: inc/customizer/customizer-options/xolo-blog.php:387
+msgid "Title Font Size"
+msgstr "Title Font Size"
+
+#: inc/customizer/customizer-options/xolo-blog.php:94
+#: inc/customizer/customizer-options/xolo-blog.php:262
+#: inc/compatibility/edd/helper.php:324
+#: inc/compatibility/edd/customizer/edd-settings.php:161
+msgid "Tags"
+msgstr "Tags"
+
+#: inc/customizer/customizer-options/xolo-blog.php:93
+#: inc/customizer/customizer-options/xolo-blog.php:261
+#: inc/compatibility/edd/customizer/edd-settings.php:160
+msgid "Date"
+msgstr "Date"
+
+#: inc/customizer/customizer-options/xolo-blog.php:92
+#: inc/customizer/customizer-options/xolo-blog.php:260
+#: inc/compatibility/edd/helper.php:278
+#: inc/compatibility/edd/customizer/edd-settings.php:159
+msgid "Author"
+msgstr "Author"
+
+#: template-parts/edd/content-single.php:40
+#: inc/customizer/customizer-options/xolo-blog.php:91
+#: inc/customizer/customizer-options/xolo-blog.php:259
+#: inc/compatibility/edd/customizer/edd-settings.php:158
+msgid "Category"
+msgstr "Category"
+
+#: inc/customizer/customizer-options/xolo-blog.php:66
+#: inc/customizer/customizer-options/xolo-blog.php:234
+#: inc/customizer/customizer-options/xolo-header.php:1210
+#: inc/compatibility/edd/customizer/edd-settings.php:130
+msgid "Description"
+msgstr "Description"
+
+#: inc/customizer/customizer-options/xolo-blog.php:65
+#: inc/customizer/customizer-options/xolo-blog.php:86
+#: inc/customizer/customizer-options/xolo-blog.php:233
+#: inc/customizer/customizer-options/xolo-blog.php:254
+#: inc/compatibility/edd/customizer/edd-settings.php:129
+#: inc/compatibility/edd/customizer/edd-settings.php:152
+msgid "Meta"
+msgstr "Meta"
+
+#: inc/customizer/customizer-options/xolo-blog.php:64
+#: inc/customizer/customizer-options/xolo-blog.php:232
+#: inc/customizer/customizer-options/xolo-header.php:1190
+#: inc/compatibility/edd/customizer/edd-settings.php:128
+msgid "Title"
+msgstr "Title"
+
+#: inc/customizer/customizer-options/xolo-blog.php:63
+#: inc/customizer/customizer-options/xolo-blog.php:231
+#: inc/compatibility/edd/customizer/edd-settings.php:127
+#: inc/compatibility/edd/customizer/edd-settings.php:352
+msgid "Feature Image"
+msgstr "Feature Image"
+
+#: inc/customizer/customizer-options/xolo-blog.php:59
+#: inc/customizer/customizer-options/xolo-blog.php:227
+#: inc/compatibility/edd/customizer/edd-settings.php:123
+#: inc/compatibility/edd/customizer/edd-settings.php:348
+msgid "Structure"
+msgstr "Structure"
+
+#: inc/customizer/customizer-options/xolo-blog.php:19
+msgid "Single Post"
+msgstr "Single Post"
+
+#: inc/customizer/customizer-options/xolo-blog.php:8
+msgid "Blog"
+msgstr "Blog"
+
+#: inc/customizer/customizer-options/xolo-header.php:1108
+#: inc/customizer/customizer-options/xolo-footer.php:913
+msgid "Design Options"
+msgstr "Design Options"
+
+#: inc/customizer/customizer-options/xolo-footer.php:866
+msgid "Section 2 Custom Text"
+msgstr "Section 2 Custom Text"
+
+#: inc/customizer/customizer-options/xolo-footer.php:839
+msgid "Section 2"
+msgstr "Section 2"
+
+#: inc/customizer/customizer-options/xolo-footer.php:830
+msgid "none"
+msgstr "none"
+
+#: inc/customizer/customizer-options/xolo-footer.php:819
+msgid "Section 1 Custom Text"
+msgstr "Section 1 Custom Text"
+
+#: inc/customizer/customizer-options/xolo-footer.php:806
+msgid "Copyright &copy; [current_year] [site_title] | Powered by [theme_author]"
+msgstr "Copyright &copy; [current_year] [site_title] | Powered by [theme_author]"
+
+#: inc/customizer/customizer-options/xolo-footer.php:798
+#: inc/customizer/customizer-options/xolo-footer.php:848
+msgid "Widget"
+msgstr "Widget"
+
+#: inc/customizer/customizer-options/xolo-footer.php:797
+#: inc/customizer/customizer-options/xolo-footer.php:847
+msgid "Text / Html"
+msgstr "Text / Html"
+
+#: inc/customizer/customizer-options/xolo-footer.php:789
+msgid "Section 1"
+msgstr "Section 1"
+
+#: inc/customizer/customizer-options/xolo-footer.php:780
+msgid "custom"
+msgstr "custom"
+
+#: inc/customizer/customizer-options/xolo-footer.php:740
+msgid "Below Footer"
+msgstr "Below Footer"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:833
+#: inc/customizer/customizer-options/xolo-header.php:1271
+#: inc/customizer/customizer-options/xolo-footer.php:668
+#: inc/customizer/customizer-options/xolo-footer.php:1202
+msgid "Overlay Color"
+msgstr "Overlay Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:946
+#: inc/customizer/customizer-options/xolo-footer.php:649
+#: inc/customizer/customizer-options/xolo-footer.php:1183
+msgid "Fixed"
+msgstr "Fixed"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:945
+#: inc/customizer/customizer-options/xolo-footer.php:648
+#: inc/customizer/customizer-options/xolo-footer.php:1182
+msgid "Scroll"
+msgstr "Scroll"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:938
+#: inc/customizer/customizer-options/xolo-footer.php:641
+#: inc/customizer/customizer-options/xolo-footer.php:1175
+msgid "Background Attachment"
+msgstr "Background Attachment"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:920
+#: inc/customizer/customizer-options/xolo-footer.php:623
+#: inc/customizer/customizer-options/xolo-footer.php:1157
+msgid "Auto"
+msgstr "Auto"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:919
+#: inc/customizer/customizer-options/xolo-footer.php:622
+#: inc/customizer/customizer-options/xolo-footer.php:1156
+msgid "Contain"
+msgstr "Contain"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:918
+#: inc/customizer/customizer-options/xolo-footer.php:621
+#: inc/customizer/customizer-options/xolo-footer.php:1155
+msgid "Cover"
+msgstr "Cover"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:912
+#: inc/customizer/customizer-options/xolo-footer.php:615
+#: inc/customizer/customizer-options/xolo-footer.php:1149
+msgid "Background Size"
+msgstr "Background Size"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:894
+#: inc/customizer/customizer-options/xolo-footer.php:597
+#: inc/customizer/customizer-options/xolo-footer.php:1131
+msgid "Initial"
+msgstr "Initial"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:892
+#: inc/customizer/customizer-options/xolo-footer.php:595
+#: inc/customizer/customizer-options/xolo-footer.php:1129
+msgid "Unset"
+msgstr "Unset"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:480
+#: inc/customizer/customizer-options/xolo-global-settings.php:891
+#: inc/customizer/customizer-options/xolo-footer.php:594
+#: inc/customizer/customizer-options/xolo-footer.php:1128
+msgid "Right"
+msgstr "Right"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:478
+#: inc/customizer/customizer-options/xolo-global-settings.php:890
+#: inc/customizer/customizer-options/xolo-footer.php:593
+#: inc/customizer/customizer-options/xolo-footer.php:1127
+msgid "Left"
+msgstr "Left"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:889
+#: inc/customizer/customizer-options/xolo-footer.php:592
+#: inc/customizer/customizer-options/xolo-footer.php:1126
+msgid "Bottom"
+msgstr "Bottom"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:479
+#: inc/customizer/customizer-options/xolo-global-settings.php:888
+#: inc/customizer/customizer-options/xolo-footer.php:591
+#: inc/customizer/customizer-options/xolo-footer.php:1125
+msgid "Center"
+msgstr "Centre"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:887
+#: inc/customizer/customizer-options/xolo-footer.php:590
+#: inc/customizer/customizer-options/xolo-footer.php:1124
+msgid "Top"
+msgstr "Top"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:881
+#: inc/customizer/customizer-options/xolo-footer.php:584
+#: inc/customizer/customizer-options/xolo-footer.php:1118
+msgid "Background Position"
+msgstr "Background Position"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:863
+#: inc/customizer/customizer-options/xolo-footer.php:566
+#: inc/customizer/customizer-options/xolo-footer.php:1100
+msgid "Repeat Vertically"
+msgstr "Repeat Vertically"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:862
+#: inc/customizer/customizer-options/xolo-footer.php:565
+#: inc/customizer/customizer-options/xolo-footer.php:1099
+msgid "Repeat Horizontally"
+msgstr "Repeat Horizontally"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:861
+#: inc/customizer/customizer-options/xolo-footer.php:564
+#: inc/customizer/customizer-options/xolo-footer.php:1098
+msgid "Repeat"
+msgstr "Repeat"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:860
+#: inc/customizer/customizer-options/xolo-footer.php:563
+#: inc/customizer/customizer-options/xolo-footer.php:1097
+msgid "No Repeat"
+msgstr "No Repeat"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:853
+#: inc/customizer/customizer-options/xolo-footer.php:556
+#: inc/customizer/customizer-options/xolo-footer.php:1090
+msgid "Background Repeat"
+msgstr "Background Repeat"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:803
+#: inc/customizer/customizer-options/xolo-header.php:1290
+#: inc/customizer/customizer-options/xolo-footer.php:526
+#: inc/customizer/customizer-options/xolo-footer.php:1060
+msgid "Opacity"
+msgstr "Opacity"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:747
+#: inc/customizer/customizer-options/xolo-global-settings.php:784
+#: inc/customizer/customizer-options/xolo-footer.php:470
+#: inc/customizer/customizer-options/xolo-footer.php:507
+#: inc/customizer/customizer-options/xolo-footer.php:1004
+#: inc/customizer/customizer-options/xolo-footer.php:1041
+msgid "Background Image"
+msgstr "Background Image"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:746
+#: inc/customizer/customizer-options/xolo-footer.php:469
+#: inc/customizer/customizer-options/xolo-footer.php:1003
+msgid "Bakground Color"
+msgstr "Bakground Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:740
+#: inc/customizer/customizer-options/xolo-footer.php:463
+#: inc/customizer/customizer-options/xolo-footer.php:997
+msgid "Background"
+msgstr "Background"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:633
+#: inc/customizer/customizer-options/xolo-header.php:728
+#: inc/customizer/customizer-options/xolo-footer.php:354
+#: inc/customizer/customizer-options/xolo-footer.php:934
+msgid "Text Color"
+msgstr "Text Colour"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:720
+#: inc/customizer/customizer-options/xolo-footer.php:332
+msgid "Bottom Border Color"
+msgstr "Bottom Border Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:698
+#: inc/customizer/customizer-options/xolo-footer.php:310
+msgid "Top Border Color"
+msgstr "Top Border Color"
+
+#: inc/customizer/customizer-options/xolo-footer.php:277
+msgid "Bottom Border Style"
+msgstr "Bottom Border Style"
+
+#: inc/customizer/customizer-options/xolo-footer.php:258
+#: inc/customizer/customizer-options/xolo-footer.php:290
+msgid "Ridge"
+msgstr "Ridge"
+
+#: inc/customizer/customizer-options/xolo-footer.php:257
+#: inc/customizer/customizer-options/xolo-footer.php:289
+msgid "Solid"
+msgstr "Solid"
+
+#: inc/customizer/customizer-options/xolo-footer.php:256
+#: inc/customizer/customizer-options/xolo-footer.php:288
+msgid "Outset"
+msgstr "Outset"
+
+#: inc/customizer/customizer-options/xolo-footer.php:255
+#: inc/customizer/customizer-options/xolo-footer.php:287
+msgid "Hidden"
+msgstr "Hidden"
+
+#: inc/customizer/customizer-options/xolo-footer.php:254
+#: inc/customizer/customizer-options/xolo-footer.php:286
+msgid "Groove"
+msgstr "Groove"
+
+#: inc/customizer/customizer-options/xolo-footer.php:253
+#: inc/customizer/customizer-options/xolo-footer.php:285
+msgid "Double"
+msgstr "Double"
+
+#: inc/customizer/customizer-options/xolo-footer.php:252
+#: inc/customizer/customizer-options/xolo-footer.php:284
+msgid "Dotted"
+msgstr "Dotted"
+
+#: inc/customizer/customizer-options/xolo-footer.php:251
+#: inc/customizer/customizer-options/xolo-footer.php:283
+msgid "Dashed"
+msgstr "Dashed"
+
+#: inc/customizer/customizer-options/xolo-footer.php:245
+msgid "Top Border Style"
+msgstr "Top Border Style"
+
+#: inc/customizer/customizer-options/xolo-footer.php:235
+#: inc/customizer/customizer-options/xolo-footer.php:267
+msgid "solid"
+msgstr "solid"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:585
+#: inc/customizer/customizer-options/xolo-footer.php:213
+msgid "Bottom Border Width"
+msgstr "Bottom Border Width"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:557
+#: inc/customizer/customizer-options/xolo-footer.php:185
+msgid "Top Border Width"
+msgstr "Top Border Width"
+
+#: inc/customizer/customizer-options/xolo-footer.php:147
+#: inc/customizer/customizer-options/xolo-footer.php:895
+msgid "Hide on Mobile and Tablet"
+msgstr "Hide on Mobile and Tablet"
+
+#: inc/customizer/customizer-options/xolo-footer.php:146
+#: inc/customizer/customizer-options/xolo-footer.php:894
+msgid "Hide on Tablet"
+msgstr "Hide on Tablet"
+
+#: inc/customizer/customizer-options/xolo-footer.php:145
+#: inc/customizer/customizer-options/xolo-footer.php:893
+msgid "Hide on Mobile"
+msgstr "Hide on Mobile"
+
+#: inc/customizer/customizer-options/xolo-footer.php:144
+#: inc/customizer/customizer-options/xolo-footer.php:892
+msgid "Show on All Devices"
+msgstr "Show on All Devices"
+
+#: inc/customizer/customizer-options/xolo-footer.php:138
+#: inc/customizer/customizer-options/xolo-footer.php:886
+msgid "Device Visibility"
+msgstr "Device Visibility"
+
+#: inc/customizer/customizer-options/xolo-footer.php:109
+msgid "Width"
+msgstr "Width"
+
+#: inc/customizer/customizer-options/xolo-footer.php:91
+msgid "Container Full"
+msgstr "Container Full"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:149
+#: inc/customizer/customizer-options/xolo-footer.php:90
+msgid "Container"
+msgstr "Container"
+
+#: inc/customizer/customizer-options/xolo-footer.php:84
+msgid "Container Style"
+msgstr "Container Style"
+
+#: inc/customizer/customizer-options/xolo-blog.php:37
+#: inc/customizer/customizer-options/xolo-blog.php:204
+#: inc/customizer/customizer-options/xolo-footer.php:54
+#: inc/customizer/customizer-options/xolo-footer.php:758
+#: inc/compatibility/edd/customizer/edd-settings.php:35
+#: inc/compatibility/edd/customizer/edd-settings.php:314
+msgid "Layout"
+msgstr "Layout"
+
+#: inc/customizer/customizer-options/xolo-footer.php:36
+msgid "Widget Layout"
+msgstr "Widget Layout"
+
+#: inc/customizer/customizer-options/xolo-footer.php:10
+msgid "Footer"
+msgstr "Footer"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:348
+#: inc/customizer/customizer-options/xolo-footer.php:708
+msgid "Widget Title Font Size"
+msgstr "Widget Title Font Size"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:309
+#: inc/customizer/customizer-options/xolo-footer.php:443
+msgid "Widget Link Hover Color"
+msgstr "Widget Link Hover Color"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:288
+#: inc/customizer/customizer-options/xolo-footer.php:422
+msgid "Widget Link Color"
+msgstr "Widget Link Color"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:266
+#: inc/customizer/customizer-options/xolo-footer.php:377
+msgid "Widget Title Color"
+msgstr "Widget Title Color"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:766
+#: inc/customizer/customizer-options/xolo-header.php:598
+#: inc/customizer/customizer-options/xolo-header.php:749
+#: inc/customizer/customizer-options/xolo-header.php:1009
+#: inc/customizer/customizer-options/xolo-header.php:1127
+#: inc/customizer/customizer-options/xolo-sidebar.php:244
+#: inc/customizer/customizer-options/xolo-footer.php:489
+#: inc/customizer/customizer-options/xolo-footer.php:1023
+msgid "Background Color"
+msgstr "Background Colour"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:223
+#: inc/customizer/customizer-options/xolo-footer.php:165
+msgid "Styles"
+msgstr "Styles"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:194
+msgid "Sidebar Width"
+msgstr "Sidebar Width"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:185
+msgid "35"
+msgstr "35"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:175
+msgid "Options"
+msgstr "Options"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:143
+msgid "Search Page Layout"
+msgstr "Search Page Layout"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:114
+msgid "Blog Page Layout"
+msgstr "Blog Page Layout"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:85
+msgid "Single Page Layout"
+msgstr "Single Page Layout"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:56
+msgid "Archive Page Layout"
+msgstr "Archive Page Layout"
+
+#: inc/customizer/customizer-options/xolo-sidebar.php:28
+msgid "Default Page Layout"
+msgstr "Default Page Layout"
+
+#: inc/admin/metabox/xolo-meta-boxes.php:122
+#: inc/customizer/customizer-options/xolo-sidebar.php:12
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: inc/customizer/customizer-options/xolo-typography.php:517
+msgid "Text Transform"
+msgstr "Text Transform"
+
+#: inc/customizer/customizer-options/xolo-typography.php:463
+msgid "Font Weight"
+msgstr "Font Weight"
+
+#: inc/customizer/customizer-options/xolo-typography.php:340
+msgid "Font Size"
+msgstr "Font Size"
+
+#: inc/customizer/customizer-options/xolo-typography.php:283
+msgid "Headings"
+msgstr "Headings"
+
+#: inc/customizer/customizer-options/xolo-typography.php:271
+#: inc/customizer/customizer-options/xolo-typography.php:549
+#: inc/customizer/customizer-options/xolo-footer.php:796
+#: inc/customizer/customizer-options/xolo-footer.php:846
+msgid "None"
+msgstr "None"
+
+#: inc/customizer/customizer-options/xolo-typography.php:270
+#: inc/customizer/customizer-options/xolo-typography.php:548
+msgid "Line Through"
+msgstr "Line Through"
+
+#: inc/customizer/customizer-options/xolo-typography.php:269
+#: inc/customizer/customizer-options/xolo-typography.php:547
+msgid "Overline"
+msgstr "Overline"
+
+#: inc/customizer/customizer-options/xolo-typography.php:268
+#: inc/customizer/customizer-options/xolo-typography.php:546
+msgid "Underline"
+msgstr "Underline"
+
+#: inc/customizer/customizer-options/xolo-typography.php:262
+#: inc/customizer/customizer-options/xolo-typography.php:541
+msgid "Text Decoration"
+msgstr "Text Decoration"
+
+#: inc/customizer/customizer-options/xolo-typography.php:245
+#: inc/customizer/customizer-options/xolo-typography.php:524
+msgid "Capitalize"
+msgstr "Capitalize"
+
+#: inc/customizer/customizer-options/xolo-typography.php:244
+#: inc/customizer/customizer-options/xolo-typography.php:523
+msgid "Lowercase"
+msgstr "Lowercase"
+
+#: inc/customizer/customizer-options/xolo-typography.php:243
+#: inc/customizer/customizer-options/xolo-typography.php:522
+msgid "Uppercase"
+msgstr "Uppercase"
+
+#: inc/customizer/customizer-options/xolo-typography.php:237
+msgid "Transform"
+msgstr "Transform"
+
+#: inc/customizer/customizer-options/xolo-typography.php:221
+#: inc/customizer/customizer-options/xolo-typography.php:500
+msgid "oblique"
+msgstr "oblique"
+
+#: inc/customizer/customizer-options/xolo-typography.php:220
+#: inc/customizer/customizer-options/xolo-typography.php:499
+msgid "Italic"
+msgstr "Italic"
+
+#: inc/customizer/customizer-options/xolo-typography.php:219
+#: inc/customizer/customizer-options/xolo-typography.php:498
+msgid "Normal"
+msgstr "Normal"
+
+#: inc/customizer/customizer-options/xolo-global-settings.php:893
+#: inc/customizer/customizer-options/xolo-global-settings.php:944
+#: inc/customizer/customizer-options/xolo-typography.php:218
+#: inc/customizer/customizer-options/xolo-typography.php:267
+#: inc/customizer/customizer-options/xolo-typography.php:467
+#: inc/customizer/customizer-options/xolo-typography.php:497
+#: inc/customizer/customizer-options/xolo-typography.php:545
+#: inc/customizer/customizer-options/xolo-footer.php:596
+#: inc/customizer/customizer-options/xolo-footer.php:647
+#: inc/customizer/customizer-options/xolo-footer.php:1130
+#: inc/customizer/customizer-options/xolo-footer.php:1181
+msgid "Inherit"
+msgstr "Inherit"
+
+#: inc/customizer/customizer-options/xolo-typography.php:213
+#: inc/customizer/customizer-options/xolo-typography.php:493
+msgid "Font Style"
+msgstr "Font Style"
+
+#: inc/customizer/customizer-options/xolo-typography.php:196
+#: inc/customizer/customizer-options/xolo-typography.php:476
+msgid "Black: 900"
+msgstr "Black: 900"
+
+#: inc/customizer/customizer-options/xolo-typography.php:195
+#: inc/customizer/customizer-options/xolo-typography.php:475
+msgid "Extra Bold: 800"
+msgstr "Extra Bold: 800"
+
+#: inc/customizer/customizer-options/xolo-typography.php:194
+#: inc/customizer/customizer-options/xolo-typography.php:474
+msgid "Bold: 700"
+msgstr "Bold: 700"
+
+#: inc/customizer/customizer-options/xolo-typography.php:193
+#: inc/customizer/customizer-options/xolo-typography.php:473
+msgid "Semibold: 600"
+msgstr "Semibold: 600"
+
+#: inc/customizer/customizer-options/xolo-typography.php:192
+#: inc/customizer/customizer-options/xolo-typography.php:472
+msgid "Medium: 500"
+msgstr "Medium: 500"
+
+#: inc/customizer/customizer-options/xolo-typography.php:191
+#: inc/customizer/customizer-options/xolo-typography.php:471
+msgid "Normal: 400"
+msgstr "Normal: 400"
+
+#: inc/customizer/customizer-options/xolo-typography.php:190
+#: inc/customizer/customizer-options/xolo-typography.php:470
+msgid "Book: 300"
+msgstr "Book: 300"
+
+#: inc/customizer/customizer-options/xolo-typography.php:189
+#: inc/customizer/customizer-options/xolo-typography.php:469
+msgid "Light: 200"
+msgstr "Light: 200"
+
+#: inc/customizer/customizer-options/xolo-typography.php:188
+#: inc/customizer/customizer-options/xolo-typography.php:468
+msgid "Thin: 100"
+msgstr "Thin: 100"
+
+#: inc/customizer/customizer-options/xolo-typography.php:182
+msgid "Weight"
+msgstr "Weight"
+
+#: inc/customizer/customizer-options/xolo-typography.php:143
+#: inc/customizer/customizer-options/xolo-typography.php:425
+msgid "Letter Spacing"
+msgstr "Letter Spacing"
+
+#: inc/customizer/customizer-options/xolo-typography.php:101
+#: inc/customizer/customizer-options/xolo-typography.php:380
+msgid "Line Height"
+msgstr "Line Height"
+
+#: inc/customizer/customizer-options/xolo-typography.php:60
+msgid "Size"
+msgstr "Size"
+
+#: inc/customizer/customizer-options/xolo-typography.php:39
+#: inc/customizer/customizer-options/xolo-typography.php:320
+msgid "Font Family"
+msgstr "Font Family"
+
+#: inc/customizer/customizer-options/xolo-typography.php:19
+msgid "Body Typography"
+msgstr "Body Typography"
+
+#: inc/customizer/customizer-options/xolo-blog.php:132
+#: inc/customizer/customizer-options/xolo-blog.php:368
+#: inc/customizer/customizer-options/xolo-global-settings.php:964
+#: inc/customizer/customizer-options/xolo-header.php:116
+#: inc/customizer/customizer-options/xolo-typography.php:8
+#: inc/customizer/customizer-options/xolo-sidebar.php:329
+#: inc/customizer/customizer-options/xolo-footer.php:688
+msgid "Typography"
+msgstr "Typography"
+
+#: inc/customizer/custom-controls/controls/font-selector/class/class-font-selector.php:58
+msgid "Google Fonts"
+msgstr "Google Fonts"
+
+#: inc/customizer/custom-controls/controls/font-selector/class/class-font-selector.php:43
+msgid "Standard Fonts"
+msgstr "Standard Fonts"
+
+#: inc/customizer/custom-controls/controls/font-selector/class/class-font-selector.php:37
+#: inc/customizer/custom-controls/controls/xolo-customize-base-control.php:26
+#: inc/customizer/customizer-options/xolo-typography.php:187
+#: inc/customizer/customizer-options/xolo-typography.php:242
+#: inc/customizer/customizer-options/xolo-typography.php:521
+msgid "Default"
+msgstr "Default"
+
+#: inc/sidebar/sidebar.php:73
+msgid "The Footer Layout Second"
+msgstr "The Footer Layout Second"
+
+#: inc/sidebar/sidebar.php:71
+msgid "Footer Layout Section 2"
+msgstr "Footer Layout Section 2"
+
+#: inc/sidebar/sidebar.php:60
+msgid "The Footer Layout Left"
+msgstr "The Footer Layout Left"
+
+#: inc/sidebar/sidebar.php:58
+msgid "Footer Layout Section 1"
+msgstr "Footer Layout Section 1"
+
+#: inc/sidebar/sidebar.php:48
+msgid "The Footer Widget Area"
+msgstr "The Footer Widget Area"
+
+#: inc/sidebar/sidebar.php:46
+#: inc/customizer/customizer-options/xolo-footer.php:17
+msgid "Footer Widget Area"
+msgstr "Footer Widget Area"
+
+#: inc/sidebar/sidebar.php:38 inc/compatibility/edd/class-xolo-edd.php:93
+msgid "The Primary Widget Area"
+msgstr "Primary widget area"
+
+#: inc/sidebar/sidebar.php:36
+msgid "Sidebar Widget Area"
+msgstr "Sidebar Widget Area"
+
+#: inc/sidebar/sidebar.php:27
+msgid "Header Widget Area 2"
+msgstr "Header Widget Area 2"
+
+#: inc/sidebar/sidebar.php:18
+msgid "Header Widget Area 1"
+msgstr "Header Widget Area 1"
+
+#: inc/breadcrumb/breadcrumb.php:160
+msgid "Page"
+msgstr "Page"
+
+#: inc/breadcrumb/breadcrumb.php:155
+msgid "Error 404 "
+msgstr "Error 404 "
+
+#: inc/breadcrumb/breadcrumb.php:151
+msgid "Articles posted by "
+msgstr "Article posted by "
+
+#: inc/breadcrumb/breadcrumb.php:145
+msgid "Posts tagged "
+msgstr "Posts tagged "
+
+#: inc/breadcrumb/breadcrumb.php:34
+msgid "Search results for "
+msgstr "Search results for "
+
+#: inc/breadcrumb/breadcrumb.php:26
+msgid "Archive by category"
+msgstr "Archive by category"
+
+#: inc/breadcrumb/breadcrumb.php:6
+msgid "Home"
+msgstr "Home"
+
+#: inc/breadcrumb/breadcrumb.php:4 inc/breadcrumb/breadcrumb.php:7
+msgid "1"
+msgstr "1"
+
+#: inc/extras.php:378 inc/extras.php:424
+msgid "<a href=\"#\">Xolo WordPress Theme</a>"
+msgstr "<a href=\"#\">Xolo WordPress Theme</a>"
+
+#: inc/extras.php:206
+msgid "Type To Search"
+msgstr "Type To Search"
+
+#: inc/extras.php:204
+msgid "Site Search"
+msgstr "Site Search"
+
+#. translators: %s Comment number
+#: inc/extras.php:160
+msgid "%s Comment"
+msgid_plural "%s Comments"
+msgstr[0] "%s Comment"
+msgstr[1] "%s Comments"
+
+#: inc/extras.php:157
+msgid "0 Comments"
+msgstr "0 Comments"
+
+#: inc/extras.php:143
+msgid "Add Widget"
+msgstr "Add Widget"
+
+#: inc/class-wp-bootstrap-navwalker.php:367
+msgid "Add a menu"
+msgstr "Add a menu"
+
+#: single.php:87 template-parts/content/content-page.php:115
+#: template-parts/content/content-search.php:34
+msgid "Read More"
+msgstr "Read More"
+
+#: single.php:71 template-parts/edd/content-main.php:102
+#: template-parts/edd/content-single.php:41
+#: template-parts/content/content-page.php:44
+#: template-parts/content/content-page.php:93
+#: inc/customizer/customizer-options/xolo-blog.php:90
+#: inc/customizer/customizer-options/xolo-blog.php:258
+msgid "Comments"
+msgstr "Comments"
+
+#: inc/customizer/customizer-options/xolo-header.php:538 searchform.php:13
+#: searchform.php:14
+msgid "Search"
+msgstr "Search"
+
+#: inc/extras.php:205 searchform.php:12
+msgid "Search for:"
+msgstr "Search for:"
+
+#: 404.php:25
+msgid "Back to Home"
+msgstr "Back to Home"
+
+#: 404.php:21
+msgid "404"
+msgstr "404"
+
+#: functions.php:44 inc/customizer/customizer-options/xolo-footer.php:799
+#: inc/customizer/customizer-options/xolo-footer.php:849
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#: functions.php:43
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#. Template Name of the theme
+msgid "Fullwidth Page"
+msgstr "Fullwidth Page"
+
+#. Template Name of the theme
+msgid "Homepage"
+msgstr "Homepage"
+
+#: inc/template-tags.php:214 inc/template-tags.php:242 footer.php:37
+#: sidebar.php:24
+msgid "Please assign a widget here."
+msgstr "Please assign a widget here."
+
+#: header.php:18
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#. Author URI of the theme
+msgid "https://wpxolo.com/"
+msgstr "https://wpxolo.com/"
+
+#. Theme URI of the theme
+msgid "https://wpxolo.com/xolo-free/"
+msgstr "https://wpxolo.com/xolo-free/"
+
+#. Author of the theme
+msgid "xolosoftware"
+msgstr "xolosoftware"

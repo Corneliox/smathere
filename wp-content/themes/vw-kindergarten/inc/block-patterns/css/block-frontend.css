@@ -1,0 +1,120 @@
+.slider-box{
+  width: auto !important;
+  height: auto !important;
+}
+.slider-box h1, .about-sec h2{
+  font-family: 'Fredoka One', cursive;
+}
+.slider-box p, .about-sec p{
+  font-family: 'Rubik', sans-serif;
+}
+/*Banner section*/
+.slider-box .wp-block-column.is-vertically-aligned-center {
+  position: relative;
+  top: 50%;
+  left: 10%;
+  right: 45%;
+}
+.slider-box .wp-block-button__link, .about-sec .wp-block-button__link{
+  border-radius: 30px;
+  padding: 12px 15px;
+  font-weight: 500;
+}
+.slider-box p, .about-sec p{
+  line-height: 2;
+}
+.slider-box h1{
+  letter-spacing: 1px;
+}
+.slider-box .wp-block-buttons .wp-block-button__link:hover,
+.about-sec .wp-block-buttons .wp-block-button__link:hover{
+  background-color: #404376 !important;
+}
+/*About section*/
+.about-sec a {
+  box-shadow: 0 4px 0px #fa2767;
+  padding: 12px 15px;
+}
+.about-sec h2{
+  position: relative;
+  letter-spacing: 1px;
+}
+.about-sec h2:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 10%;
+  height: 3px;
+  background: #fe598b;
+  border-radius: 30px;
+}
+.about-text{
+  background-image: url("../images/about.png");
+  background-repeat: no-repeat;
+  width: 175px;
+  height: 40px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: 600;
+}
+.abt-img{
+  position: relative;
+}
+.about-sec .trusted-by{
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+  display: inherit;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+}
+.about-sec .trusted-box{
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px
+  dashed #fff;
+  position: relative;
+}
+.about-sec .trusted-col {
+  background: #fe598b;
+  padding: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 25px;
+  bottom: 0px;
+  z-index: -1;
+}
+@media screen and (max-width:768px) and (min-width:720px){
+  .about-sec .trusted-col{
+    left: -50px;
+    bottom: -11px;
+  }
+  .about-sec .trusted-by{
+    font-size: 18px;
+  }
+}
+@media screen and (max-width:991px) and (min-width:320px){
+  .slider-box .wp-block-column.is-vertically-aligned-center{
+    left: 0 !important;
+  }
+}
+@media screen and (max-width:1024px) and (min-width:991px){
+  .about-sec .trusted-col{
+    left: -49px;
+  }
+}
+@media screen and (max-width:720px){
+  .about-sec .trusted-col{
+    left: 55px;
+    bottom: -118px;
+  }
+  .abt-img{
+    margin-bottom: 100px;
+  }
+}

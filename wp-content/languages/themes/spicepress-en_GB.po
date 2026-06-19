@@ -1,0 +1,479 @@
+# Translation of Themes - SpicePress in English (UK)
+# This file is distributed under the same license as the Themes - SpicePress package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-06-05 00:04:10+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: en_GB\n"
+"Project-Id-Version: Themes - SpicePress\n"
+
+#. Description of the theme
+#, gp-priority: high
+msgid "SpicePress is a responsive and fully customizable business template. It is a perfect solution for creative and corporate websites, restaurants, wedding planners, law firms, finance, consulting, travel, photography, recipes, design, sport/medical shops, startups, online agencies, portfolios, E-commerce (WooCommerce), and freelancers. The advanced admin panel will enable you to personalize SpicePress without any technical information. SpicePress is translation ready and supports popular plugins like WPML, Polylang, WooCommerce and Contact Form 7. This theme is fully GDPR-compliant and doesn’t use any external Google Fonts. All fonts are locally hosted. Check out also SpicePress PRO, the premium version, which has a lot more to offer."
+msgstr "SpicePress is a responsive and fully customisable business template. It is a perfect solution for creative and corporate websites, restaurants, wedding planners, law firms, finance, consulting, travel, photography, recipes, design, sport/medical shops, startups, online agencies, portfolios, eCommerce (WooCommerce), and freelancers. The advanced admin panel will enable you to personalize SpicePress without any technical information. SpicePress is translation ready and supports popular plugins like WPML, Polylang, WooCommerce and Contact Form 7. This theme is fully GDPR-compliant and doesn’t use any external Google Fonts. All fonts are locally hosted. Check out also SpicePress PRO, the premium version, which has a lot more to offer."
+
+#. Theme Name of the theme
+#: footer.php:23
+#, gp-priority: high
+msgid "SpicePress"
+msgstr "SpicePress"
+
+#: functions/customizer/customizer_recommended_plugin.php:12
+msgid "Install and activate %s plugin for taking full advantage of all the features this theme has to offer."
+msgstr "Install and activate %s plugin to take full advantage of all the features this theme has to offer."
+
+#: admin/tab-pages/useful_plugins.php:11 admin/tab-pages/useful_plugins.php:13
+msgid "Contact Support"
+msgstr "Contact support"
+
+#: class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr "All installations have been completed."
+
+#: class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr "All installations and activations have been completed."
+
+#: class-tgm-plugin-activation.php:3515
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "The installation process is starting. This process may take a while on some hosts so please be patient."
+
+#. translators: 1: plugin name.
+#: class-tgm-plugin-activation.php:3509 class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr "Hide details"
+
+#. translators: 1: plugin name.
+#: class-tgm-plugin-activation.php:3509 class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr "Show details"
+
+#: functions/customizer/customizer_general_settings.php:247
+msgid "Disable animation effect in desktop"
+msgstr "Disable animation effect in desktop"
+
+#. Template Name of the theme
+msgid "Contact page"
+msgstr "Contact page"
+
+#. Template Name of the theme
+msgid "About Us"
+msgstr "About Us"
+
+#: functions/widgets/sidebars.php:61 functions/widgets/sidebars.php:63
+msgid "Contact template sidebar"
+msgstr "Contact template sidebar"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:14
+#: functions/customizer/customizer_bredcrumbs_settings.php:20
+#: functions/template-tags.php:178
+msgid "Archive"
+msgstr "Archive"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:28
+#: functions/customizer/customizer_bredcrumbs_settings.php:34
+#: functions/template-tags.php:196
+msgid "Category"
+msgstr "Category"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:48
+msgid "Author"
+msgstr "Author"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:77 searchform.php:3
+msgid "Search"
+msgstr "Search"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:85
+#: functions/customizer/customizer_bredcrumbs_settings.php:91
+#: functions/template-tags.php:238
+msgid "404"
+msgstr "404"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:100
+#: functions/customizer/customizer_bredcrumbs_settings.php:106
+#: functions/template-tags.php:214
+msgid "Shop"
+msgstr "Shop"
+
+#: 404.php:15
+msgid "4"
+msgstr "4"
+
+#: 404.php:14
+msgid "Oops! Page not found"
+msgstr "Oops! Page not found"
+
+#: 404.php:16
+msgid "We are sorry, but the page you are looking for does not exist."
+msgstr "We are sorry, but the page you are looking for does not exist."
+
+#: 404.php:17
+msgid "Go Back"
+msgstr "Go Back"
+
+#: comments.php:6
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "This post is password protected. Enter the password to view any comments."
+
+#: comments.php:18
+msgid "Reply"
+msgstr "Reply"
+
+#: comments.php:27
+msgid "Posted on"
+msgstr "Posted on"
+
+#: comments.php:30
+msgid "Edit"
+msgstr "Edit"
+
+#: comments.php:33
+msgid "Your comment is awaiting moderation."
+msgstr "Your comment is awaiting moderation."
+
+#: comments.php:52
+msgid "No comments so far"
+msgstr "No comments so far"
+
+#: comments.php:52
+msgid "1 comment so far"
+msgstr "1 comment so far"
+
+#: comments.php:52
+msgid "% Comments"
+msgstr "% Comments"
+
+#: comments.php:60
+msgid "Comment navigation"
+msgstr "Comment navigation"
+
+#: comments.php:61
+msgid "&larr; Older Comments"
+msgstr "&larr; Older Comments"
+
+#: comments.php:62
+msgid "Newer Comments &rarr;"
+msgstr "Newer Comments &rarr;"
+
+#: comments.php:67 comments.php:113
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: comments.php:79
+msgid "Name"
+msgstr "Name"
+
+#: comments.php:80
+msgid "Email"
+msgstr "Email"
+
+#: comments.php:92
+msgid "Message"
+msgstr "Message"
+
+#: comments.php:93
+msgid "Logged in as"
+msgstr "Logged in as"
+
+#: comments.php:93
+msgid "Logout of this account"
+msgstr "Logout of this account "
+
+#: comments.php:93
+msgid "Log out"
+msgstr "Log out"
+
+#: comments.php:95
+msgid "Send Message"
+msgstr "Send Message"
+
+#: comments.php:99
+msgid "Leave a Reply"
+msgstr "Leave a Reply"
+
+#: content-page.php:24 content-single.php:34 content.php:41 content.php:45
+#: content.php:53 functions/template-tags.php:53
+#: functions/template-tags.php:263 index-news.php:60
+#: template/template-page-full-width.php:29
+msgid "Read More"
+msgstr "Read More"
+
+#: functions/breadcrumbs/breadcrumbs.php:52
+#: functions/breadcrumbs/breadcrumbs.php:57
+#: functions/breadcrumbs/breadcrumbs.php:125
+#: functions/breadcrumbs/breadcrumbs.php:128
+#: functions/menu/default_menu_walker.php:23 index.php:23 index.php:32
+msgid "Home"
+msgstr "Home"
+
+#: functions/breadcrumbs/breadcrumbs.php:60
+#: functions/breadcrumbs/breadcrumbs.php:131
+msgid "Archive by category"
+msgstr "Archive by category"
+
+#: functions/breadcrumbs/breadcrumbs.php:64
+#: functions/breadcrumbs/breadcrumbs.php:65
+#: functions/breadcrumbs/breadcrumbs.php:70
+#: functions/breadcrumbs/breadcrumbs.php:75
+#: functions/breadcrumbs/breadcrumbs.php:135
+#: functions/breadcrumbs/breadcrumbs.php:136
+#: functions/breadcrumbs/breadcrumbs.php:141
+#: functions/breadcrumbs/breadcrumbs.php:146
+msgid "Y"
+msgstr "Y"
+
+#: functions/breadcrumbs/breadcrumbs.php:65
+#: functions/breadcrumbs/breadcrumbs.php:136
+msgid "m"
+msgstr "m"
+
+#: functions/breadcrumbs/breadcrumbs.php:65
+#: functions/breadcrumbs/breadcrumbs.php:71
+#: functions/breadcrumbs/breadcrumbs.php:136
+#: functions/breadcrumbs/breadcrumbs.php:142
+msgid "F"
+msgstr "F"
+
+#: functions/breadcrumbs/breadcrumbs.php:66
+#: functions/breadcrumbs/breadcrumbs.php:137
+msgid "d"
+msgstr "d"
+
+#: functions/breadcrumbs/breadcrumbs.php:114
+#: functions/breadcrumbs/breadcrumbs.php:185
+msgid "Error 404"
+msgstr "Error 404"
+
+#: functions/customizer/customizer-pro.php:12
+msgid "UPGRADE TO PRO"
+msgstr "UPGRADE TO PRO"
+
+#: functions/customizer/customizer-pro.php:19
+msgid "Upgrade to Pro"
+msgstr "Upgrade to PRO"
+
+#: admin/inc/class-spicethemes-about-page.php:240
+#: functions/customizer/customizer_recommended_plugin.php:16
+msgid "Recommended Actions"
+msgstr "Recommended Actions"
+
+#: functions/customizer/customizer_recommended_plugin.php:17
+msgid "Recommended Plugin"
+msgstr "Recommended plugin"
+
+#: functions/customizer/customizer_recommended_plugin.php:18
+msgid "Install and Activate"
+msgstr "Install and Activate"
+
+#: admin/inc/class-spicethemes-about-page.php:351
+#: class-tgm-plugin-activation.php:2726
+#: functions/customizer/customizer_recommended_plugin.php:19
+msgid "Activate"
+msgstr "Activate"
+
+#: functions/customizer/customizer_recommended_plugin.php:20
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: functions/customizer/customizer_sections_settings.php:31
+msgid "Enable Home News section"
+msgstr "Enable Home News section"
+
+#: functions/customizer/customizer_sections_settings.php:35
+msgid "ON"
+msgstr "ON"
+
+#: functions/customizer/customizer_sections_settings.php:36
+msgid "OFF"
+msgstr "OFF"
+
+#: functions/customizer/customizer_sections_settings.php:48
+#: functions/customizer/customizer_typography.php:1073
+msgid "Title"
+msgstr "Title"
+
+#: functions/customizer/customizer_sections_settings.php:60
+msgid "Description"
+msgstr "Description"
+
+#: functions/customizer/customizer_sections_settings.php:78
+msgid "Enable post meta values, like author name, date, comments, etc."
+msgstr "Enable post meta values, like author name, date, comments, etc."
+
+#: admin/inc/class-spicethemes-about-page.php:72
+#: admin/inc/include-companion.php:42 admin/inc/plugin-include-control.php:41
+#: functions/customizer-notify/spicepress-customizer-notify.php:111
+msgid "Activating"
+msgstr "Activating"
+
+#: functions/customizer/customizer_typography.php:994
+msgid "Button Text"
+msgstr "Button Text"
+
+#: class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr "Status"
+
+#: admin/tab-pages/getting-started.php:10
+msgid "About the SpicePress theme"
+msgstr "About the SpicePress theme"
+
+#: admin/tab-pages/getting-started.php:16
+msgid "This theme is ideal for creating corporate and business websites. The PRO version has tons of features: a homepage with many sections where you can feature unlimited sliders, portfolios, user reviews, latest news, services, calls to action and much more. Each section in the HomePage template is carefully designed to fit to all business requirements."
+msgstr "This theme is ideal for creating corporate and business websites. The PRO version has tons of features: a homepage with many sections where you can feature unlimited sliders, portfolios, user reviews, latest news, services, calls to action and much more. Each section in the HomePage template is carefully designed to fit to all business requirements."
+
+#: admin/tab-pages/getting-started.php:18
+msgid "You can use this theme for any type of activity. SpicePress is compatible with popular plugins like WPML and Polylang. To help you create an effective and impactful web presence, SpicePress has predefined versions of many pages: Contact, Services, Portfolios, About Us and Blog."
+msgstr "You can use this theme for any type of activity. SpicePress is compatible with popular plugins like WPML and Polylang. To help you create an effective and impactful web presence, SpicePress has predefined versions of many pages: Contact, Services, Portfolios, About Us and Blog."
+
+#: admin/inc/class-spicethemes-about-page.php:235
+#: admin/tab-pages/getting-started.php:20
+msgid "Getting Started"
+msgstr "Getting Started"
+
+#: admin/tab-pages/getting-started.php:23
+msgid "To take full advantage of all the features this theme has to offer, install and activate the SpiceBox plugin. Go to Customize and install the SpiceBox plugin."
+msgstr "To take full advantage of all the features this theme has to offer, install and activate the SpiceBox plugin. Go to Customize and install the SpiceBox plugin."
+
+#: admin/tab-pages/getting-started.php:25
+msgid "Go to the Customizer"
+msgstr "Go to the Customizer"
+
+#: admin/tab-pages/getting-started.php:31
+msgid "SpicePress theme"
+msgstr "SpicePress theme"
+
+#: admin/tab-pages/getting-started.php:37
+msgid "Useful Links"
+msgstr "Useful Links"
+
+#: admin/tab-pages/getting-started.php:42
+msgid "Lite Demo"
+msgstr "Lite Demo"
+
+#: admin/tab-pages/getting-started.php:48
+msgid "PRO Demo"
+msgstr "PRO Demo"
+
+#: admin/tab-pages/getting-started.php:60
+msgid "Your feedback is valuable to us"
+msgstr "Your feedback is valuable to us"
+
+#: admin/tab-pages/getting-started.php:66
+msgid "Premium Theme Details"
+msgstr "Premium Theme Details"
+
+#: admin/inc/class-spicethemes-about-page.php:112
+msgid "View Theme Info"
+msgstr "View Theme Info"
+
+#: functions/template-tags.php:25 functions/template-tags.php:117
+msgid "By"
+msgstr "By"
+
+#: functions/template-tags.php:31 functions/template-tags.php:125
+msgid "in"
+msgstr "in"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:56
+#: functions/customizer/customizer_bredcrumbs_settings.php:62
+#: functions/template-tags.php:35 functions/template-tags.php:132
+#: functions/template-tags.php:208
+msgid "Tag"
+msgstr "Tag"
+
+#: functions/template-tags.php:184 functions/template-tags.php:188
+#: functions/template-tags.php:192 functions/template-tags.php:198
+#: functions/template-tags.php:204 functions/template-tags.php:210
+#: functions/template-tags.php:216 functions/template-tags.php:232
+#: functions/template-tags.php:242
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:42
+#: functions/template-tags.php:202
+msgid "All posts by"
+msgstr "All posts by"
+
+#: functions/customizer/customizer_bredcrumbs_settings.php:71
+#: functions/template-tags.php:228
+msgid "Search results for"
+msgstr "Search results for"
+
+#: functions/template-tags.php:272
+msgid "previous page"
+msgstr "previous page"
+
+#: functions/template-tags.php:272
+msgid "next page"
+msgstr "next page"
+
+#: functions/widgets/sidebars.php:8 functions/widgets/sidebars.php:10
+msgid "Sidebar widget area"
+msgstr "Sidebar widget area"
+
+#: functions/widgets/sidebars.php:18 functions/widgets/sidebars.php:20
+msgid "Footer widget left area"
+msgstr "Footer widget left area"
+
+#: functions/widgets/sidebars.php:28 functions/widgets/sidebars.php:30
+msgid "Footer widget central area"
+msgstr "Footer widget central area"
+
+#: functions/widgets/sidebars.php:38 functions/widgets/sidebars.php:40
+msgid "Footer widget right area"
+msgstr "Footer widget right area"
+
+#: functions/widgets/sidebars.php:50 functions/widgets/sidebars.php:52
+msgid "WooCommerce sidebar widget area"
+msgstr "WooCommerce sidebar widget area"
+
+#: functions.php:69
+msgid "Page"
+msgstr "Page"
+
+#: functions.php:115
+#: functions/customizer/customizer_color_back_settings.php:159
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: header/header-navbar.php:27 header/header-navbar.php:38
+#: header/header-navbar.php:69 header/header-navbar.php:116
+msgid "Toggle navigation"
+msgstr "Toggle navigation"
+
+#: search.php:29
+msgid "Nothing found"
+msgstr "Nothing found"
+
+#: search.php:30
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+
+#: searchform.php:2
+msgid "Search here"
+msgstr "Search here"
+
+#. Template Name of the theme
+msgid "Business Template"
+msgstr "Business Template"
+
+#. Template Name of the theme
+msgid "Full-width page"
+msgstr "Full-width page"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://spicethemes.com/spicepress-wordpress-theme/"
+msgstr "https://spicethemes.com/spicepress-wordpress-theme/"
+
+#. Author URI of the theme
+#: footer.php:23
+#, gp-priority: low
+msgid "https://spicethemes.com"
+msgstr "https://spicethemes.com"

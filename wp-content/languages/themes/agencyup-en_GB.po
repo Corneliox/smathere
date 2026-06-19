@@ -1,0 +1,313 @@
+# Translation of Themes - Agencyup in English (UK)
+# This file is distributed under the same license as the Themes - Agencyup package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-03-08 09:04:06+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.4\n"
+"Language: en_GB\n"
+"Project-Id-Version: Themes - Agencyup\n"
+
+#. Theme Name of the theme
+#, gp-priority: high
+msgid "Agencyup"
+msgstr "Agencyup"
+
+#. Description of the theme
+#, gp-priority: high
+msgid "Agencyup WordPress theme ideal for a business or perfect solutions for corporate, consulting, wedding planners, agency, law firms, finance, law travel, recipes, sport/medical shops, startups, online agencies, portfolios, freelancers, E-commerce.  The theme is responsive, WPML, Retina ready, SEO friendly(Live preview : https://demos.themeansar.com/agencyup/)"
+msgstr "Agencyup WordPress theme is ideal for a business, or a perfect solution for corporate, consulting, wedding planners, agency, law firms, finance, travel, recipes, sport/medical shops, startups, online agencies, portfolios, freelancers, and eCommerce. The theme is responsive, WPML and retina ready, and SEO friendly. (Live preview: https://demo.themeansar.com/agencyup/)"
+
+#: inc/ansar/customize/agencyup_customize_general.php:70
+msgid "Fixed"
+msgstr "Fixed"
+
+#: inc/ansar/customize/agencyup_customize_general.php:69
+msgid "Scroll"
+msgstr "Scroll"
+
+#: inc/ansar/customize/agencyup_customize_general.php:68
+msgid "Inherit"
+msgstr "Inherit"
+
+#: inc/ansar/customize/agencyup_customize_general.php:63
+msgid "Background Attachment"
+msgstr "Background Attachment"
+
+#: inc/ansar/customize/agencyup_customize_general.php:26
+msgid "Breadcrumb"
+msgstr "Breadcrumbs"
+
+#. translators: placeholder replaced with string
+#: footer.php:45
+msgid "https://themeansar.com/"
+msgstr "https://themeansar.com/"
+
+#. translators: placeholder replaced with string
+#: footer.php:39
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:36
+msgid "https://wordpress.org/"
+msgstr "https://en-gb.wordpress.org/"
+
+#: header.php:26
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#: inc/ansar/customize-pro/class-customize.php:65
+msgid "Go Pro"
+msgstr "Go Pro"
+
+#: inc/ansar/customize-pro/class-customize.php:64
+msgid "Agencyup Pro Available!"
+msgstr "Agencyup Pro Available!"
+
+#: inc/ansar/agencyup-admin-plugin-install.php:33
+msgid "Get started with Agencyup"
+msgstr "Get started with Agencyup"
+
+#: inc/ansar/agencyup-admin-plugin-install.php:26
+msgid "Welcome! Thanks for installing %1$s!"
+msgstr "Welcome! Thanks for installing %1$s!"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:209
+msgid "Footer social icon"
+msgstr "Footer social icon"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:203
+msgid "Select Column Layout"
+msgstr "Select Column Layout"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:187
+msgid "Widget column layout"
+msgstr "Widget column layout"
+
+#: inc/ansar/customize/agencyup_customize_header.php:60
+msgid "Button Text"
+msgstr "Button Text"
+
+#: inc/ansar/customize/agencyup_customize_header.php:43
+msgid "Hide/Show"
+msgstr "Hide/Show"
+
+#: inc/ansar/customize/agencyup_customize_header.php:25
+msgid "Menu Button"
+msgstr "Menu Button"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:143
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:110
+msgid "Linkedin URL"
+msgstr "LinkedIn URL"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:78
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:61
+#: inc/ansar/customize/agencyup_customize_copyright.php:94
+#: inc/ansar/customize/agencyup_customize_copyright.php:126
+#: inc/ansar/customize/agencyup_customize_copyright.php:159
+msgid "Open link in a new tab"
+msgstr "Open link in a new tab"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:45
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+#: inc/ansar/customize/agencyup_customize_header.php:15
+msgid "Site Identity"
+msgstr "Site Identity"
+
+#: inc/ansar/customize/agencyup_customize_header.php:8
+msgid "Header Settings"
+msgstr "Header Settings"
+
+#. translators: %s: search term
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr "Search Results for: %s"
+
+#. Template Name of the theme
+msgid "Homepage"
+msgstr "Homepage"
+
+#: functions.php:199
+msgid "Footer Widget Area"
+msgstr "Footer Widget Area"
+
+#: functions.php:189
+msgid "Sidebar Widget Area"
+msgstr "Sidebar Widget Area"
+
+#: functions.php:81
+msgid "Primary menu"
+msgstr "Primary menu"
+
+#. Template Name of the theme
+msgid "Full Width Page"
+msgstr "Full Width Page"
+
+#: content.php:48
+msgid "Pages:"
+msgstr "Pages:"
+
+#: content.php:47
+msgid "Read More"
+msgstr "Read more"
+
+#: content.php:39
+msgid "Comments"
+msgstr "Comments"
+
+#: content.php:34
+msgid "by"
+msgstr "by"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:180
+msgid "Background Image"
+msgstr "Background Image"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:166
+msgid "Background"
+msgstr "Background"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:10
+msgid "Social Icons"
+msgstr "Social Icons"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:6
+msgid "Footer Settings"
+msgstr "Footer Settings"
+
+#: inc/ansar/admin/class-getting-start-plugin-helper.php:112
+#: inc/ansar/customize/agencyup_plugin_recommend.php:17
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: inc/ansar/admin/class-getting-start-plugin-helper.php:97
+#: inc/ansar/customize/agencyup_plugin_recommend.php:16
+msgid "Activate"
+msgstr "Activate"
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:15
+msgid "Install and Activate"
+msgstr "Install and Activate"
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:14
+msgid "Recommended Plugin"
+msgstr "Recommended Plugin"
+
+#: inc/ansar/customize/agencyup_plugin_recommend.php:13
+msgid "Recommended Actions"
+msgstr "Recommended Actions"
+
+#: inc/ansar/customize/agencyup_customize_general.php:17
+msgid "Colors"
+msgstr "Colours"
+
+#: inc/ansar/customize/agencyup_customize_general.php:9
+msgid "General Settings"
+msgstr "General Settings"
+
+#: inc/ansar/customize/agencyup_customize_header.php:96
+msgid "Open link in new tab"
+msgstr "Open link in new tab"
+
+#: inc/ansar/customize/agencyup_customize_header.php:77
+msgid "Button Link"
+msgstr "Button Link"
+
+#: search.php:26
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+
+#: search.php:24
+msgid "Nothing Found"
+msgstr "Nothing Found"
+
+#: inc/ansar/customizer-notice/agencyup-customizer-notify.php:112
+msgid "Activating"
+msgstr "Activating"
+
+#: inc/ansar/agencyup-custom-navwalker.php:207
+msgid "Add a menu"
+msgstr "Add a menu"
+
+#: comments.php:91
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: comments.php:59 comments.php:80
+msgid "Newer Comments"
+msgstr "Newer Comments"
+
+#: comments.php:58 comments.php:79
+msgid "Older Comments"
+msgstr "Older Comments"
+
+#: comments.php:55 comments.php:76
+msgid "Comment navigation"
+msgstr "Comment navigation"
+
+#. translators: %s: post title
+#: comments.php:32
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "One thought on &ldquo;%s&rdquo;"
+
+#: 404.php:30
+msgid "Go Back"
+msgstr "Go Back"
+
+#: 404.php:29
+msgid "We are sorry, but the page you are looking for does not exist."
+msgstr "We are sorry, but the page you are looking for does not exist."
+
+#: 404.php:28
+msgid "Oops! Page not found"
+msgstr "Oops! Page not found"
+
+#: 404.php:27
+msgid "4"
+msgstr "4"
+
+#: 404.php:15 inc/ansar/customize/agencyup_customize_archive.php:87
+#: inc/ansar/customize/agencyup_customize_archive.php:93
+#: inc/ansar/enqueue.php:194
+msgid "404"
+msgstr "404"
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:37
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s thought on &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s thoughts on &ldquo;%2$s&rdquo;"
+
+#: inc/ansar/customize/agencyup_customize_copyright.php:28
+#: inc/ansar/customize/agencyup_customize_general.php:138
+msgid "Hide / Show"
+msgstr "Hide/Show"
+
+#. Author URI of the theme
+#, gp-priority: low
+msgid "https://themeansar.com"
+msgstr "https://themeansar.com"
+
+#. Author of the theme
+#, gp-priority: low
+msgid "themeansar"
+msgstr "themeansar"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://themeansar.com/free-themes/agencyup/"
+msgstr "https://themeansar.com/free-themes/agencyup/"

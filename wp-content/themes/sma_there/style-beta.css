@@ -1,0 +1,1168 @@
+/**
+ * SMA Theresiana - Staging Beta Stylesheet (style-beta.css)
+ *
+ * Merupakan stylesheet kustom untuk menampung seluruh visualisasi UI/UX baru
+ * dalam mode preview (/betaview). Didesain modern, responsif, dan premium.
+ */
+
+/* ==========================================================================
+   1. Skeleton Loading (Shimmer Animation)
+   ========================================================================== */
+@keyframes shimmer {
+	0% {
+		background-position: -200% 0;
+	}
+	100% {
+		background-position: 200% 0;
+	}
+}
+
+.skeleton-shimmer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+	z-index: 2;
+}
+
+.skeleton-line {
+	height: 14px;
+	background-color: #e2e8f0;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	position: relative;
+	overflow: hidden;
+}
+
+.skeleton-line::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+}
+
+/* ==========================================================================
+   2. Floating Exit Beta Widget & Mobile Overlay
+   ========================================================================== */
+.exit-beta-widget {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999999;
+	background: rgba(220, 53, 69, 0.95);
+	color: #ffffff !important;
+	padding: 12px 20px;
+	border-radius: 30px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+	font-family: "Raleway", sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	text-decoration: none !important;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transition: all 0.2s ease-in-out;
+}
+
+.exit-beta-widget i {
+	font-size: 15px;
+}
+
+.exit-beta-widget:hover {
+	background: #c82333;
+	transform: translateY(-3px);
+	box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+	color: #fff !important;
+}
+
+.mobile-menu-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.5);
+	backdrop-filter: blur(2px);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+	z-index: 999990;
+}
+
+body.onepress-menu-mobile-opening .mobile-menu-overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* ==========================================================================
+   3. Header Transparan & Mobile Off-Canvas Menu
+   ========================================================================== */
+@media (min-width: 992px) {
+	/* Letakkan header di atas Hero di Homepage */
+	body.home.section-about-beta #masthead {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: transparent;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+		z-index: 9999;
+		transition: all 0.3s ease;
+		padding: 10px 0;
+	}
+
+	body.home.section-about-beta #masthead.header-fixed {
+		position: fixed;
+		background: rgba(255, 255, 255, 0.98);
+		box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+		border-bottom: none;
+		padding: 5px 0;
+	}
+
+	/* Ubah warna menu ketika transparan di atas hero background */
+	body.home.section-about-beta #masthead:not(.header-fixed) .onepress-menu > li > a {
+		color: #ffffff;
+		text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+	body.home.section-about-beta #masthead:not(.header-fixed) .onepress-menu > li > a:hover {
+		color: #03c4eb;
+	}
+	body.home.section-about-beta #masthead:not(.header-fixed) .site-branding .site-title a {
+		color: #ffffff;
+		text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+	}
+}
+
+@media (max-width: 991px) {
+	/* Ubah dropdown menu mobile bawaan menjadi Off-Canvas Slide Out */
+	#site-navigation.onepress-menu-mobile {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 290px;
+		height: 100vh !important;
+		background: #ffffff;
+		box-shadow: -5px 0 30px rgba(0,0,0,0.18);
+		transform: translateX(100%);
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+		z-index: 999995;
+		padding: 70px 24px 30px;
+		overflow-y: auto;
+		display: block !important;
+	}
+
+	body.onepress-menu-mobile-opening #site-navigation.onepress-menu-mobile {
+		transform: translateX(0);
+	}
+
+	/* Hamburger Close State */
+	#nav-toggle.nav-is-visible span {
+		background: transparent !important;
+	}
+	#nav-toggle.nav-is-visible span::before {
+		transform: rotate(45deg);
+		top: 0;
+		background-color: #333;
+	}
+	#nav-toggle.nav-is-visible span::after {
+		transform: rotate(-45deg);
+		bottom: 0;
+		background-color: #333;
+	}
+}
+
+/* ==========================================================================
+   4. Slick Slider Hero & Hero Skeleton Loader
+   ========================================================================== */
+.hero-slick-slider-wrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.hero-slide-item {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 550px;
+}
+
+.hero-slideshow-fullscreen .hero-slide-item {
+	height: 100vh;
+	min-height: 100vh;
+}
+
+.hero-slide-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+	z-index: 1;
+}
+
+.hero-slide-container {
+	position: relative;
+	z-index: 2;
+	color: #ffffff;
+	text-align: center;
+}
+
+.hero-slide-container .hero-large-text {
+	font-size: 48px;
+	line-height: 1.2;
+	color: #ffffff;
+	margin-bottom: 20px;
+	font-weight: 700;
+	text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-slide-container .hero-small-text {
+	font-size: 18px;
+	color: #f3f4f6;
+	margin-bottom: 30px;
+	text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hero-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
+/* Slick Custom Arrows */
+.slick-slider-hero .slick-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 10;
+	font-size: 24px;
+	color: rgba(255, 255, 255, 0.7);
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.2s ease;
+}
+
+.slick-slider-hero .slick-arrow:hover {
+	color: #ffffff;
+	background: rgba(3, 196, 235, 0.8);
+}
+
+.slick-slider-hero .prev-arrow {
+	left: 20px;
+}
+
+.slick-slider-hero .next-arrow {
+	right: 20px;
+}
+
+/* Slick Dots */
+.slick-slider-hero .slick-dots {
+	bottom: 30px;
+	z-index: 10;
+}
+
+.slick-slider-hero .slick-dots li button:before {
+	color: #ffffff;
+	font-size: 12px;
+	opacity: 0.5;
+}
+
+.slick-slider-hero .slick-dots li.slick-active button:before {
+	color: #03c4eb;
+	opacity: 1;
+}
+
+/* Hero Skeleton Styles */
+.hero-skeleton-wrapper {
+	background-color: #f1f5f9;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 550px;
+	overflow: hidden;
+}
+
+.hero-skeleton-fullscreen {
+	height: 100vh;
+}
+
+.skeleton-content-box {
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 3;
+}
+
+.skeleton-title {
+	width: 80%;
+	height: 40px;
+	margin-bottom: 20px;
+}
+
+.skeleton-text-1 {
+	width: 60%;
+	height: 16px;
+}
+
+.skeleton-text-2 {
+	width: 45%;
+	height: 16px;
+	margin-bottom: 35px;
+}
+
+.skeleton-buttons {
+	display: flex;
+	gap: 15px;
+}
+
+.skeleton-btn {
+	width: 140px;
+	height: 45px;
+	background-color: #e2e8f0;
+	border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+}
+
+.skeleton-btn::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+}
+
+/* ==========================================================================
+   5. About Us Koran Layout & Visi-Misi Cards
+   ========================================================================== */
+/* Newspaper layout */
+.about-main-newspaper {
+	margin-bottom: 50px;
+	background: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	padding: 30px;
+	border: 1px solid #f1f5f9;
+}
+
+.about-newspaper-thumb {
+	float: left;
+	width: 35%;
+	max-width: 380px;
+	margin: 0 30px 20px 0;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-newspaper-thumb img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.about-newspaper-title {
+	font-size: 28px;
+	font-weight: 700;
+	color: #1e293b;
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-family: "Raleway", sans-serif;
+	border-bottom: 2px solid #03c4eb;
+	display: inline-block;
+	padding-bottom: 5px;
+}
+
+.about-newspaper-text {
+	font-size: 15px;
+	line-height: 1.8;
+	color: #475569;
+	text-align: justify;
+}
+
+@media (max-width: 767px) {
+	.about-newspaper-thumb {
+		float: none;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 0 20px 0;
+	}
+}
+
+/* Visi & Misi Cards */
+.visi-misi-cards-row {
+	margin-top: 20px;
+}
+
+.visi-misi-card {
+	background: #ffffff;
+	border-radius: 16px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+	border: 1px solid #f1f5f9;
+	padding: 35px;
+	height: 100%;
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.visi-misi-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background-color: #03c4eb;
+}
+
+.visi-misi-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 15px 35px rgba(3, 196, 235, 0.1);
+	border-color: rgba(3, 196, 235, 0.2);
+}
+
+.visi-misi-card-title {
+	font-size: 22px;
+	font-weight: 700;
+	color: #1e293b;
+	margin-bottom: 20px;
+	font-family: "Raleway", sans-serif;
+}
+
+.visi-misi-card-text {
+	font-size: 14.5px;
+	line-height: 1.75;
+	color: #475569;
+}
+
+.visi-misi-card-text ol, .visi-misi-card-text ul {
+	padding-left: 20px;
+	margin-bottom: 0;
+}
+
+.visi-misi-card-text li {
+	margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   6. Video Lightbox YouTube Inline Curved Frame
+   ========================================================================== */
+.section-videolightbox-beta {
+	text-align: center;
+	background-color: #0f172a;
+}
+
+.section-videolightbox-beta .videolightbox__heading {
+	color: #ffffff;
+	font-size: 26px;
+	margin-bottom: 30px;
+}
+
+.video-beta-container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.video-beta-frame {
+	position: relative;
+	padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+	height: 0;
+	overflow: hidden;
+	border-radius: 16px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+	border: 6px solid #ffffff;
+	background: #000000;
+}
+
+.video-beta-frame iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* ==========================================================================
+   7. Kurikulum Section (Separate Cards)
+   ========================================================================== */
+.section-kurikulum-beta {
+	background-color: #f8fafc;
+}
+
+.kurikulum-card-item {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 40px 30px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+	border: 1px solid #f1f5f9;
+	text-align: center;
+	height: 100%;
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.kurikulum-card-item:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+	border-color: rgba(3, 196, 235, 0.3);
+}
+
+.kurikulum-card-icon {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: rgba(3, 196, 235, 0.1);
+	color: #03c4eb;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 28px;
+	margin-bottom: 25px;
+	transition: all 0.3s ease;
+}
+
+.kurikulum-card-item:hover .kurikulum-card-icon {
+	background-color: #03c4eb;
+	color: #ffffff;
+	transform: scale(1.1);
+}
+
+.kurikulum-card-title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #1e293b;
+	margin-bottom: 15px;
+	font-family: "Raleway", sans-serif;
+}
+
+.kurikulum-card-desc {
+	font-size: 14px;
+	line-height: 1.7;
+	color: #64748b;
+	margin-bottom: 25px;
+	flex-grow: 1;
+}
+
+.kurikulum-card-link {
+	font-size: 13.5px;
+	font-weight: 700;
+	color: #03c4eb;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	text-decoration: none !important;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	transition: gap 0.2s ease;
+}
+
+.kurikulum-card-link:hover {
+	color: #0288d1;
+	gap: 10px;
+}
+
+/* Kurikulum Skeleton Loading Layout */
+.kurikulum-card-skeleton {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 40px 30px;
+	border: 1px solid #f1f5f9;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.kurikulum-card-skeleton .skeleton-circle {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: #e2e8f0;
+	margin-bottom: 25px;
+	position: relative;
+	overflow: hidden;
+}
+
+.kurikulum-card-skeleton .skeleton-circle::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+}
+
+.skeleton-card-title {
+	width: 70%;
+	height: 20px;
+	margin-bottom: 20px;
+}
+
+.skeleton-card-desc-1 {
+	width: 90%;
+	height: 14px;
+}
+
+.skeleton-card-desc-2 {
+	width: 80%;
+	height: 14px;
+	margin-bottom: 30px;
+}
+
+.skeleton-card-link {
+	width: 40%;
+	height: 16px;
+}
+
+/* ==========================================================================
+   8. News Horizontal Slider & News Skeleton
+   ========================================================================== */
+.section-news-beta {
+	background-color: #ffffff;
+}
+
+.news-slider-viewport {
+	position: relative;
+	margin-top: 30px;
+}
+
+.news-slider-track {
+	display: flex;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	gap: 24px;
+	padding: 15px 5px 30px;
+	scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar default for premium look */
+.news-slider-track::-webkit-scrollbar {
+	height: 6px;
+}
+.news-slider-track::-webkit-scrollbar-track {
+	background: #f1f5f9;
+	border-radius: 10px;
+}
+.news-slider-track::-webkit-scrollbar-thumb {
+	background: #cbd5e1;
+	border-radius: 10px;
+}
+.news-slider-track::-webkit-scrollbar-thumb:hover {
+	background: #94a3b8;
+}
+
+.news-card-slide {
+	flex: 0 0 320px;
+	scroll-snap-align: start;
+	border-radius: 16px;
+	overflow: hidden;
+	background: #ffffff;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+	border: 1px solid #f1f5f9;
+	transition: all 0.3s ease;
+}
+
+@media (max-width: 575px) {
+	.news-card-slide {
+		flex: 0 0 280px;
+	}
+}
+
+.news-card-slide:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+	border-color: rgba(3, 196, 235, 0.2);
+}
+
+.news-card-inner {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.news-card-thumb {
+	position: relative;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+}
+
+.news-card-thumb img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.news-card-slide:hover .news-card-thumb img {
+	transform: scale(1.08);
+}
+
+.news-card-content {
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.news-card-meta {
+	font-size: 12px;
+	margin-bottom: 12px;
+	display: flex;
+	justify-content: space-between;
+	color: #64748b;
+}
+
+.news-card-meta a {
+	color: #03c4eb;
+	font-weight: 600;
+}
+
+.news-card-title {
+	font-size: 17px;
+	line-height: 1.4;
+	font-weight: 700;
+	color: #1e293b;
+	margin-top: 0;
+	margin-bottom: 12px;
+	font-family: "Raleway", sans-serif;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	height: 48px;
+}
+
+.news-card-title a {
+	color: #1e293b;
+	text-decoration: none !important;
+}
+
+.news-card-title a:hover {
+	color: #03c4eb;
+}
+
+.news-card-excerpt {
+	font-size: 13.5px;
+	line-height: 1.6;
+	color: #64748b;
+	margin-bottom: 20px;
+	flex-grow: 1;
+}
+
+.news-card-readmore {
+	font-size: 13px;
+	font-weight: 700;
+	color: #03c4eb;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	text-decoration: none !important;
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.news-card-readmore:hover {
+	color: #0288d1;
+}
+
+/* News Slider Arrows overlay */
+.news-scroll-arrows {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 10px;
+}
+
+.news-scroll-arrows button {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid #cbd5e1;
+	background: #ffffff;
+	color: #475569;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	transition: all 0.2s ease;
+	outline: none !important;
+}
+
+.news-scroll-arrows button:hover {
+	background-color: #03c4eb;
+	color: #ffffff;
+	border-color: #03c4eb;
+}
+
+/* News Skeleton scroll */
+.news-skeleton-scroll {
+	display: flex;
+	gap: 24px;
+	overflow: hidden;
+	padding: 15px 5px 30px;
+}
+
+.news-card-skeleton {
+	flex: 0 0 320px;
+	background: #ffffff;
+	border-radius: 16px;
+	border: 1px solid #f1f5f9;
+	padding: 0;
+	height: 380px;
+	position: relative;
+	overflow: hidden;
+}
+
+.news-card-skeleton .skeleton-thumb {
+	height: 180px;
+	background-color: #e2e8f0;
+	position: relative;
+	overflow: hidden;
+}
+
+.news-card-skeleton .skeleton-thumb::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	background-size: 200% 100%;
+	animation: shimmer 1.5s infinite;
+}
+
+.news-card-skeleton .skeleton-meta {
+	width: 60%;
+	height: 12px;
+	margin: 20px 24px 15px;
+}
+
+.news-card-skeleton .skeleton-title-line {
+	width: 80%;
+	height: 18px;
+	margin: 0 24px 15px;
+}
+
+.news-card-skeleton .skeleton-desc-line-1 {
+	width: 85%;
+	height: 13px;
+	margin: 0 24px 8px;
+}
+
+.news-card-skeleton .skeleton-desc-line-2 {
+	width: 70%;
+	height: 13px;
+	margin: 0 24px;
+}
+
+/* ==========================================================================
+   9. Post Wallet Archive Page Layout
+   ========================================================================== */
+.wallet-posts-archive-page {
+	background-color: #f8fafc;
+	min-height: 700px;
+	padding-bottom: 60px;
+}
+
+.wallet-posts-archive-page .page-header {
+	background-color: #1e293b;
+	color: #ffffff;
+	padding: 60px 0;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.wallet-posts-archive-page .page-title {
+	color: #ffffff;
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.wallet-posts-archive-page .page-subtitle {
+	color: #94a3b8;
+	font-size: 16px;
+	margin: 0;
+}
+
+.wallet-container {
+	display: flex;
+	margin-top: 40px;
+	gap: 30px;
+	align-items: flex-start;
+}
+
+@media (max-width: 991px) {
+	.wallet-container {
+		flex-direction: column;
+	}
+}
+
+/* Left Sidebar Tabs (Slots) */
+.wallet-tabs-slots {
+	flex: 0 0 260px;
+	background: #1e293b;
+	padding: 20px;
+	border-radius: 18px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	position: sticky;
+	top: 100px;
+}
+
+@media (max-width: 991px) {
+	.wallet-tabs-slots {
+		flex: 1 1 100%;
+		width: 100%;
+		flex-direction: row;
+		overflow-x: auto;
+		position: static;
+		padding: 15px;
+	}
+}
+
+.wallet-slot-tab {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	padding: 14px 18px;
+	color: #cbd5e1;
+	cursor: pointer;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: "Raleway", sans-serif;
+	font-weight: 600;
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	outline: none !important;
+}
+
+@media (max-width: 991px) {
+	.wallet-slot-tab {
+		flex: 0 0 auto;
+		gap: 15px;
+	}
+}
+
+.wallet-slot-tab:hover {
+	background: rgba(255, 255, 255, 0.1);
+	color: #ffffff;
+	transform: translateX(4px);
+}
+
+@media (max-width: 991px) {
+	.wallet-slot-tab:hover {
+		transform: translateY(-2px);
+	}
+}
+
+/* Active Slot (Tab) style */
+.wallet-slot-tab.active-slot {
+	background: #03c4eb;
+	border-color: #03c4eb;
+	color: #ffffff;
+	box-shadow: 0 4px 15px rgba(3, 196, 235, 0.4);
+	transform: translateX(8px);
+}
+
+@media (max-width: 991px) {
+	.wallet-slot-tab.active-slot {
+		transform: translateY(-4px);
+	}
+}
+
+.slot-tab-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 15px;
+}
+
+.slot-tab-badge {
+	font-size: 11px;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 3px 8px;
+	border-radius: 10px;
+	color: #ffffff;
+}
+
+/* Right Sleeve Contents */
+.wallet-pocket-contents {
+	flex: 1;
+	background: #ffffff;
+	border-radius: 18px;
+	padding: 40px;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+	border: 1px solid #e2e8f0;
+	min-height: 400px;
+}
+
+@media (max-width: 575px) {
+	.wallet-pocket-contents {
+		padding: 24px 15px;
+	}
+}
+
+.pocket-year-title {
+	font-size: 26px;
+	font-weight: 700;
+	color: #1e293b;
+	margin-top: 0;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #e2e8f0;
+	padding-bottom: 12px;
+	font-family: "Raleway", sans-serif;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.pocket-year-title i {
+	color: #03c4eb;
+}
+
+.pocket-article-card {
+	background: #ffffff;
+	border-radius: 12px;
+	border: 1px solid #e2e8f0;
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: all 0.2s ease-in-out;
+}
+
+.pocket-article-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+	border-color: #cbd5e1;
+}
+
+.pocket-card-thumb {
+	position: relative;
+	padding-bottom: 56.25%;
+	overflow: hidden;
+}
+
+.pocket-card-thumb img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.pocket-card-body {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.pocket-card-meta {
+	font-size: 11px;
+	color: #64748b;
+	margin-bottom: 8px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.pocket-card-meta a {
+	color: #03c4eb;
+	font-weight: 600;
+}
+
+.pocket-card-title {
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1.4;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-family: "Raleway", sans-serif;
+	height: 42px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.pocket-card-title a {
+	color: #1e293b;
+	text-decoration: none !important;
+}
+
+.pocket-card-title a:hover {
+	color: #03c4eb;
+}
+
+.pocket-card-excerpt {
+	font-size: 13px;
+	line-height: 1.6;
+	color: #64748b;
+	margin-bottom: 15px;
+	flex-grow: 1;
+}
+
+.pocket-card-more {
+	font-size: 12px;
+	font-weight: 700;
+	color: #03c4eb;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.pocket-card-more:hover {
+	color: #0288d1;
+}
+
+.pocket-item-col {
+	margin-bottom: 30px;
+}

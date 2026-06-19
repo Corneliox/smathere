@@ -1,0 +1,286 @@
+# Translation of Themes - fKidd in English (UK)
+# This file is distributed under the same license as the Themes - fKidd package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-01-29 03:15:32+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: en_GB\n"
+"Project-Id-Version: Themes - fKidd\n"
+
+#. Theme Name of the theme
+#, gp-priority: high
+msgid "fKidd"
+msgstr "fKidd"
+
+#: functions.php:616
+msgid "The Footer Column #3 widget area"
+msgstr "The Footer Column #3 widget area"
+
+#: functions.php:614
+msgid "Footer Column #3"
+msgstr "Footer Column #3"
+
+#: functions.php:605
+msgid "The Footer Column #2 widget area"
+msgstr "The Footer Column #2 widget area"
+
+#: functions.php:603
+msgid "Footer Column #2"
+msgstr "Footer Column #2"
+
+#: functions.php:594
+msgid "The Footer Column #1 widget area"
+msgstr "The Footer Column #1 widget area"
+
+#: functions.php:592
+msgid "Footer Column #1"
+msgstr "Footer Column #1"
+
+#: customize-pro/class-customize.php:77
+msgid "Upgrade to Pro"
+msgstr "Upgrade to Pro"
+
+#: customize-pro/class-customize.php:76
+msgid "tKidd"
+msgstr "tKidd"
+
+#: functions.php:86 functions.php:223
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#: functions.php:388
+msgid "Header and Footer"
+msgstr "Header and Footer"
+
+#: functions.php:661
+msgid "Follow us on Vine"
+msgstr "Follow us on Vine"
+
+#: functions.php:659
+msgid "Follow us on Flickr"
+msgstr "Follow us on Flickr"
+
+#: functions.php:657
+msgid "Follow us on VK"
+msgstr "Follow us on VK"
+
+#: functions.php:655
+msgid "Follow us on Pinterest"
+msgstr "Follow us on Pinterest"
+
+#: functions.php:651
+msgid "Follow us on Tumblr"
+msgstr "Follow us on Tumblr"
+
+#: functions.php:647
+msgid "Follow us on Instagram"
+msgstr "Follow us on Instagram"
+
+#: functions.php:645
+msgid "Follow us on LinkedIn"
+msgstr "Follow us on LinkedIn"
+
+#: functions.php:643
+msgid "Follow us on Twitter"
+msgstr "Follow us on Twitter"
+
+#: functions.php:501
+msgid "Vine"
+msgstr "Vine"
+
+#: functions.php:497
+msgid "Flickr"
+msgstr "Flickr"
+
+#: functions.php:493
+msgid "VK"
+msgstr "VK"
+
+#: functions.php:489
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: functions.php:465
+msgid "Twitter URL"
+msgstr "Twitter URL"
+
+#: functions.php:485
+msgid "YouTube channel URL"
+msgstr "YouTube channel URL"
+
+#: functions.php:477
+msgid "RSS Feeds URL"
+msgstr "RSS Feeds URL"
+
+#: functions.php:461
+msgid "Facebook Page URL"
+msgstr "Facebook Page URL"
+
+#: functions.php:454
+msgid "Social Sites"
+msgstr "Social Sites"
+
+#: functions.php:374
+msgid "Slide #%s Image"
+msgstr "Slide #%s Image"
+
+#: single.php:24
+msgid "Pages:"
+msgstr "Pages:"
+
+#: searchform.php:3
+msgid "Search..."
+msgstr "Search..."
+
+#: search.php:8
+msgid "You searched for \"%s\". Here are the results:"
+msgstr "You searched for \"%s\". Here are the results:"
+
+#: functions.php:781
+msgid "Read More..."
+msgstr "Read more..."
+
+#: functions.php:768
+msgid "Read More"
+msgstr "Read More"
+
+#: functions.php:653
+msgid "Follow us on Youtube"
+msgstr "Follow us on Youtube"
+
+#: functions.php:649
+msgid "Follow our RSS Feeds"
+msgstr "Follow our RSS Feeds"
+
+#: functions.php:641
+msgid "Follow us on Facebook"
+msgstr "Follow us on Facebook"
+
+#: functions.php:356
+msgid "Slide #%s Content"
+msgstr "Slide #%s Content"
+
+#: functions.php:440
+msgid "Copyright Text"
+msgstr "Copyright Text"
+
+#: functions.php:481
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: functions.php:473
+msgid "Instagram"
+msgstr "Instagram"
+
+#: functions.php:469
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: functions.php:421
+msgid "Your e-mail to appear in the website header"
+msgstr "Your email to appear in the website header"
+
+#: functions.php:403
+msgid "Your phone to appear in the website header"
+msgstr "Your phone to appear in the website header"
+
+#: functions.php:316
+msgid "Slider"
+msgstr "Slider"
+
+#: functions.php:583
+msgid "The sidebar widget area"
+msgstr "The sidebar widget area"
+
+#: functions.php:581
+msgid "Sidebar Widget Area"
+msgstr "Sidebar Widget Area"
+
+#: functions.php:85 functions.php:212
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: footer.php:33
+msgid "WordPress"
+msgstr "WordPress"
+
+#: footer.php:33
+msgid "powered by"
+msgstr "powered by"
+
+#: footer.php:32
+msgid "fkidd Theme"
+msgstr "fKidd Theme"
+
+#: template-parts/content-page.php:22 template-parts/content.php:103
+msgid "Edit"
+msgstr "Edit"
+
+#: template-parts/content-page.php:18 template-parts/content.php:63
+msgid "% Comments"
+msgstr "% Comments"
+
+#: template-parts/content-page.php:18 template-parts/content.php:63
+msgid "1 Comment"
+msgstr "1 Comment"
+
+#: template-parts/content-none.php:23
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+
+#: template-parts/content-none.php:18
+msgid "No Results Found!"
+msgstr "No Results Found!"
+
+#: template-parts/content-none.php:14
+msgid "Oh no! Article not found! 404 error!"
+msgstr "Oh no! Article not found! 404 error!"
+
+#: comments.php:37 template-parts/content-page.php:18
+#: template-parts/content.php:63
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: comments.php:24
+msgid "to"
+msgstr "to"
+
+#: comments.php:24
+msgid "% Responses"
+msgstr "% Responses"
+
+#: comments.php:23
+msgid "One Response"
+msgstr "One Response"
+
+#: comments.php:22 template-parts/content-page.php:18
+#: template-parts/content.php:63
+msgid "No Comments"
+msgstr "No Comments"
+
+#: comments.php:16
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "This post is password protected. Enter the password to view comments."
+
+#: comments.php:13
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Please do not load this page directly. Thanks!"
+
+#. Author URI of the theme
+#, gp-priority: low
+msgid "https://tishonator.com"
+msgstr "https://tishonator.com"
+
+#. Author of the theme
+#, gp-priority: low
+msgid "tishonator"
+msgstr "tishonator"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://tishonator.com/product/fkidd"
+msgstr "https://tishonator.com/product/fkidd"

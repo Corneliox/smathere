@@ -1,0 +1,697 @@
+/*
+Theme Name: Classic Internet Services
+Theme URI: https://theclassictemplates.com/themes/free-internet-provider-wordpress-theme/
+Author: classictemplate
+Author URI: https://www.theclassictemplates.com/
+Description: The Classic Internet Services WordPress theme is designed specifically for businesses in the digital services industry. It can be used by internet service providers, web designers, businesses that deal with internet services, etc. The theme comes with a clean and modern design, advanced functionality, and customizable options which makes it an ideal solution for creating a professional and impactful online presence. It boasts a sleek and visually appealing layout and offers a range of stylish templates and layouts that are both professional and engaging. The Classical Internet Services WordPress Theme also offers advanced customization options, allowing you to personalize your website to align with your brand and business identity. With an intuitive interface, you can easily modify colors, fonts, layouts, and more, ensuring that your website stands out and represents your unique style. Furthermore, the Classic Internet Services WordPress Theme includes features specifically tailored to the digital services industry. You can highlight your service offerings, showcase case studies, and client testimonials, and provide an overview of your team members and their expertise. This allows you to effectively communicate your value proposition and establish trust with potential clients. The theme also offers seamless integration with popular plugins and tools, such as contact forms, appointment scheduling systems, and social media integration. These features enable you to streamline communication, manage appointments efficiently, and leverage social media platforms to expand your online presence and engage with your target audience.
+Version: 0.2
+Tested up to: 6.2
+Requires PHP: 5.6
+Requires at least: 5.0
+License: GNU General Public License
+License URI: http://www.gnu.org/licenses/gpl.html
+Text Domain: classic-internet-services
+Tags: blog, e-commerce, education, one-column, two-columns, left-sidebar, right-sidebar, custom-logo, full-width-template, footer-widgets, featured-images, custom-colors, editor-style, wide-blocks, block-styles, custom-header, custom-background, custom-menu, sticky-post, threaded-comments, theme-options, rtl-language-support
+
+Classic Internet Services WordPress Theme has been created by classictemplate (theclassictemplates.com), 2023.
+Classic Internet Services WordPress Theme is released under the terms of GNU GPL
+*/
+
+*{
+  margin:0;
+  padding:0;
+  outline:none;
+}
+body{
+  margin:0;
+  padding:0;
+  line-height:20px;
+  font-size:15px;
+  color:#6c6c6c;
+  font-family: 'Hind', sans-serif;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+img{
+  border:none;
+  margin:0;
+  padding:0;
+  height:auto;
+  max-width:100%;
+}
+p{
+  margin:0;
+  padding:0;
+}
+a{
+  text-decoration:none;
+  color: #99cc03;
+}
+a:hover{
+  color:#333;
+  text-decoration:none;
+}
+ol,ul{
+  margin:0;
+  padding:0;
+}
+.wp-caption, 
+.wp-caption-text, 
+.sticky, 
+.gallery-caption, 
+.aligncenter{
+  margin:0;
+  padding:0;
+  max-width:100% !important;
+}
+.sticky{
+  background: #ededed;
+}
+.entry-content ol li, 
+.entry-content ul li{
+  margin-left:15px;
+}
+ul li ul, 
+ul li ul li ul, 
+ol li ol, ol li ol li ol{
+  margin-left:10px;
+}
+h1,h2,h3,h4,h5,h6{
+  color: #000000;
+  margin: 0 0 20px;
+  padding: 0;
+  line-height: 1.1;
+  font-weight: bold;
+}
+h1{
+  font-size:32px;
+}
+h2{
+  font-size:30px;
+}
+h3{
+  font-size:24px;
+}
+h4{
+  font-size:20px;
+}
+h5{
+  font-size:18px;
+}
+h6{
+  font-size:14px;
+}
+.clear{
+  clear:both;
+}
+.alignnone{
+  width:100% !important;
+}
+img.alignleft, .alignleft{
+  float:left;
+  margin:0 15px 0 0;
+  padding:5px;
+  border:1px solid #cccccc;
+}
+img.alignright, .alignright{
+  float:right;
+  margin:0 0 0 15px;
+  padding:5px;
+  border:1px solid #cccccc;
+}
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+#comment-nav-above .nav-previous, 
+#comment-nav-below .nav-previous{
+  float:none !important;
+  margin:10px 0;
+}
+ol.comment-list li{
+  list-style:none;
+  margin-bottom:5px;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+a:focus,
+input[type='submit']:focus,
+input[type='search']:focus,
+textarea:focus,
+input[type='name']:focus,
+input[type='email']:focus,
+.toggle-nav button:focus,
+a.close-button:focus{
+	outline: -webkit-focus-ring-color auto 1px;
+}
+.boxlayout{
+	width: 1140px;
+	margin: 0 auto;
+	background-color: #fff;
+	position: relative;
+	box-shadow: 0 -8px 8px #8e8e8e;
+}
+.textwidget p a,.entry-content a,.entry-summary a,.comment-content a {
+  text-decoration: underline;
+}
+#footer a.rsswidget.rss-widget-title {
+  font-size: 12px;
+}
+/* = wide block css
+-------------------------------------- */
+.alignwide {
+  margin-left  : -80px;
+  margin-right : -80px;
+}
+.alignfull {
+  margin-left  : calc( -100vw / 2 + 100% / 2 );
+  margin-right : calc( -100vw / 2 + 100% / 2 );
+  max-width    : 100vw;
+}
+.alignfull img {
+  width: 100vw;
+}
+
+/* = pre loader css
+-------------------------------------- */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 999999;
+}
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-image: url(images/status.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+}
+
+/* = top header css
+-------------------------------------- */
+.header-top {
+  background: #000;
+  padding: 12px 0;
+}
+.header-top i{
+  color: #fff;
+  font-size: 15px;
+  margin-right: 15px;
+}
+h1.site-title{
+  font-size: 22px;
+  margin: 0;
+  text-transform: uppercase;
+}
+h1.site-title a:hover {
+  text-decoration: unset;
+}
+.listarticle h2 a:hover,
+#sidebar ul li a:hover,
+.ftr-4-box ul li a:hover, 
+.ftr-4-box ul li.current_page_item a{
+  color: #99cc03;
+}
+.header-top p,h1.site-title a{
+  color: #fff;
+}
+.header-top p{
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* = header css
+-------------------------------------- */
+.page-template-template-home-page .header.sticky-head,.sticky-head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%; 
+  z-index: 9999;
+}
+.page-template-template-home-page .header.sticky-head,.admin-bar .sticky-head{
+  top: 32px;
+}
+.page-template-template-home-page .header {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  border-bottom: none;
+}
+.header {
+  border-bottom: solid 1px #dddddd;
+}
+.bg-inner {
+  background: #99cc03;
+}
+.pagemore a,.woocommerce ul.products li.product .button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce a.button, .woocommerce button.button, .woocommerce #respond input#submit, #commentform input#submit {
+  background: #99cc03;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+}
+.pagemore a:hover,
+.woocommerce ul.products li.product .button:hover,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+#commentform input#submit:hover {
+  background: #000000;
+  color: #fff;
+}
+
+/* = menus css
+-------------------------------------- */
+#mySidenav {
+  display: inline;
+}
+#mySidenav nav#site-navigation{
+  margin: 11px 0;
+}
+.main-nav ul{
+  margin: 0;
+  padding: 0;
+}
+.main-nav li{
+  display: inline-block;
+  position: relative;
+}
+.main-nav li:hover {
+  background: #99cc03;
+}
+.main-nav a {
+  color: #fff;
+  padding: 12px;
+  font-size: 15px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.main-nav a:hover,.main-nav ul ul a:hover{
+  color: #fff;
+}
+.main-nav a:focus{
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.main-nav ul ul{
+  display: none;
+  position: absolute;
+  background: #99cc03;
+  min-width: 250px;
+  z-index: 9999;
+  top: 130%;
+  line-height: 30px;
+  opacity: 0.9;
+}
+.main-nav ul ul ul{
+  left: 100%;
+  top: 0%;
+}
+.main-nav ul ul a{
+  color: #fff ;
+  border: none;
+  padding: 10px ;
+  margin-top: 5px;
+}
+.main-nav ul ul a:focus{
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.main-nav ul ul li{
+  float: none;
+  display: block;
+  text-align: left;
+  border-left: none;
+  border-right: none !important;
+  padding: 0;
+}
+.main-nav ul li:hover > ul{
+  display: block;
+}
+.main-nav .menu > ul > li.highlight{
+  background-color: #006ccc;
+}
+.main-nav .menu > ul > li.highlight:hover,.main-nav ul ul li:hover{
+  background: transparent;
+}
+.sf-arrows ul .sf-with-ul:after{
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  border-left-color: #888;
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after{
+  border-left-color: #333;
+}
+.toggle-nav, a.close-button{
+  display: none;
+}
+
+/* = slider section css
+-------------------------------------- */
+
+/* = slider section css
+-------------------------------------- */
+
+.slider-box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  right: 50%;
+}
+.catwrapslider{
+  width:100%; 
+  position:relative; 
+  box-sizing:border-box;
+}
+.slidesection {
+  background: #1f133a;
+}
+.slidesection img {
+  opacity: 0.5;
+}
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+  height: fit-content;
+}
+.catwrapslider .owl-controls{ 
+  position: absolute; 
+  top: 50%;    
+  right:auto; 
+  left:auto; 
+  width:100%;
+}
+.catwrapslider .owl-prev, 
+.catwrapslider .owl-next { 
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  bottom:15px; 
+  width:22px; 
+  height:22px; 
+  font-size:40px; 
+  right:0;
+  background: transparent;
+}
+.catwrapslider .owl-prev:hover,
+.catwrapslider .owl-next:hover{
+  background: #99cc03;
+}
+.catwrapslider .owl-prev{
+  left:10px;
+}
+.catwrapslider .owl-next{ 
+  right:10px;
+}
+button.owl-prev span,
+button.owl-next span{
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  color: #fff;
+}
+.owl-prev,
+.owl-next {
+  border: solid 2px #fff;
+  padding: 18px;
+}
+.catwrapslider{ 
+  height:auto;
+}
+.slider-box h3 {
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px 0 30px 0;
+}
+.slider-box p {
+  color: #fff;
+  font-size: 16px;
+}
+.pagemore {
+  margin: 30px 0;
+}
+.slider-box span{
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #99cc03;
+}
+
+/* = Services css
+-------------------------------------- */
+
+#services_section {
+  padding: 5em 0;
+}
+.pagecontent {
+  background: #f6f6f6;
+  padding: 0 15px;
+}
+#services_section h3 {
+  font-size: 30px;
+  color: #99cc03;
+}
+
+/* = Page lay out css
+-------------------------------------- */
+.postsec-list input.search-field,
+.postsec-list input.search-submit {
+  padding: 15px 10px;
+}
+.contentsecwrap{
+  padding:25px 0;
+  clear: both;
+}
+.contentsecwrap p{
+  margin-bottom:20px;
+}
+.listarticle,aside.widget{
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  border: solid #99cc03;
+}
+.listarticle h2 a{
+  color:#000000;
+}
+.blog-meta{
+  font-style:italic;
+  margin-bottom:8px;
+}
+.post-date, 
+.post-comment{
+  display:inline;
+  color: #000000;
+} 
+.single_title{
+  margin-bottom: 15px;
+  font-size: 25px;
+}
+.post-thumb{
+  margin:0 0 15px 0;
+}
+.postmeta{
+  margin-bottom:10px;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+}
+.nav-links .page-numbers{
+  padding:5px 10px;
+  color:#111;
+}
+select{ border:1px solid #ccc; width:100%;}
+
+/* = sidebar
+---------------------------------------------- */
+label{
+  margin-bottom: 0;
+}
+aside.widget ul{ 
+  list-style:none; 
+}
+h3.widget-title{ 
+  padding:0 0 15px 0; 
+  color:#000000; 
+  border-bottom:1px solid #edecec; 
+  font-size: 22px;
+}
+#sidebar ul li{ 
+  border-bottom:1px dashed #d0cfcf; 
+  padding:8px 0;
+}
+#sidebar ul li a{ 
+  color:#6c6c6c;  
+  display:inline-block; 
+}
+#sidebar ul li:last-child{ 
+  border:none;
+}
+#sidebar.left{ 
+  float:left;
+}
+#sidebar table{
+  width:100%; 
+  text-align:center;
+}
+#calendar_wrap caption{
+  font-weight:700; 
+  padding-bottom:10px; 
+  text-transform:uppercase;
+}
+#sidebar select {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: solid 2px #000000;
+}
+#sidebar input[type="text"], 
+#sidebar input[type="search"],
+#footer input[type="search"]{
+  border: solid 2px #000000;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#sidebar input.search-submit,
+#footer input.search-submit,
+form.woocommerce-product-search button {
+  padding: 10px;
+  width: 100%;
+  border: solid 2px #000000;
+  background: #99cc03;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+#sidebar h1, h2, h3, h4, h5, h6{
+  margin: 0 0 10px;
+}
+#recentcomments li{
+  background-image:none !important;
+}
+#recentcomments li a{
+  padding-left:0px !important;
+}
+.textwidget select{ 
+  width:100%;
+}
+table{ 
+  width:100%
+}
+#sidebar .tagcloud a {
+  border: solid 2px #000000;
+  font-size: 12px !important;
+  margin: 2px 0;
+  display: inline-block;
+  color: #000000;
+  padding: 5px;
+}
+
+/* = Footer css
+------------------------------------------- */
+#footer{
+	background-color: #1d1d1d;
+	color: #828282;
+}
+#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
+  color: #fff;
+}
+.ftr-4-box{
+	width:21%;
+	float:left;
+	margin:0 4% 2% 0;
+	box-sizing:border-box;
+	padding:35px 0 15px;
+}
+.widget-column-4 {
+	margin-right:0px !important;
+}
+.ftr-4-box h5{
+	font-size:25px;
+	color:#fff;
+	margin-bottom:25px;
+	border-bottom:1px solid #303030;
+	padding-bottom:15px;
+}
+.ftr-4-box h5 span{
+	font-weight:300;
+	color:#99cc03;
+}
+.ftr-4-box ul{
+	margin:0;
+	padding:0;
+	list-style:inside disc;
+}
+.ftr-4-box ul li {
+	display:block;
+	padding:6px 0; 
+	border-bottom:1px solid #303030;
+}
+.ftr-4-box ul li a {
+	color:#828282;	
+}
+.ftr-4-box a.readmore span{
+	color:#fff;
+}
+.ftr-4-box p{
+	margin-bottom:15px;
+}
+.copywrap {
+	background-color: #000000;
+	color: #fff;
+	padding:15px 0;
+}
+#footer .copywrap a:hover{
+  color: #fff;
+}

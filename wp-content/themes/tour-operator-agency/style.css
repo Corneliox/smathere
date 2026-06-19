@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/*
+Theme Name: Tour Operator Agency
+Author: TheMagnifico52
+Theme URI: https://www.themagnifico.net/themes/free-tour-wordpress-theme/
+Author URI: https://www.themagnifico.net/
+Description: Tour Operator Agency is a versatile WordPress theme designed especially for travel and tour operators. This theme is an ideal solution for creating stunning and functional websites for travel agencies, tour operators, and travel bloggers as it comes with robust features and a user-friendly interface. The theme boasts a visually appealing design and offers a range of modern and professionally designed templates that can be customized to match the unique branding style of any tour operator agency. Whether you want a clean and minimalist look or a vibrant and adventurous design, this theme has options to suit every taste. Furthermore, this Tour Operator Agency is fully responsive and mobile-friendly, ensuring that your website looks great and functions flawlessly on all devices, including smartphones and tablets. In today's mobile-driven world, this is crucial for attracting and retaining customers who prefer to browse and book their travel plans on the go. Moreover, the Tour Operator Agency WordPress theme comes with integrated booking and reservation management systems, making it incredibly convenient for both the agency and its customers. The built-in booking system allows visitors to easily browse and book tours or travel packages directly from the website. This feature not only enhances the user experience but also streamlines the booking process for the agency, saving time and effort.
+Version: 0.2
+Tested up to: 6.2
+Requires PHP: 7.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: traveller-agency
+Text Domain: tour-operator-agency
+Tags: custom-logo, one-column, two-columns, wide-blocks, block-styles, editor-style, sticky-post, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, threaded-comments, theme-options, rtl-language-support, left-sidebar, right-sidebar, grid-layout, photography, food-and-drink, entertainment
+
+Tour Operator Agency WordPress Theme has been created by TheMagnifico52(themagnifico.net), 2023.
+Tour Operator Agency WordPress Theme is released under the terms of GNU GPL
+*/
+
+body{
+    font-family: "Outfit";
+}
+.main-navigation .sub-menu,.sidebar h5,#top-slider .owl-nav i,#colophon,#button,.pro-button a, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce .woocommerce-ordering select,.sidebar input[type="submit"], .sidebar button[type="submit"],.comment-respond input#submit,.post-navigation .nav-previous a:hover, .post-navigation .nav-next a:hover, .posts-navigation .nav-previous a:hover, .posts-navigation .nav-next a:hover,.btn-primary,.woocommerce-account .woocommerce-MyAccount-navigation ul li{
+    background: #63ab45;
+}
+.article-box {
+    background: #fcfffb;
+}
+.navbar-brand a,a,.main-navigation .menu > li > a:hover,p.price, .woocommerce ul.products li.product .price, .woocommerce div.product p.price, .woocommerce div.product span.price,.widget a:hover,.sidebar ul li a:hover,.article-box a{
+    color: #63ab45;
+}
+.site-info a,.footer-menu-left a:hover{
+    color: #ffffff;
+}
+.site-info a:hover{
+    color: #000;
+}
+.post-navigation .nav-previous a:hover, .post-navigation .nav-next a:hover, .posts-navigation .nav-previous a:hover, .posts-navigation .nav-next a:hover,.btn-primary{
+    border-color:#63ab45;
+}
+.wp-block-quote, .wp-block-quote:not(.is-large):not(.is-style-large), .wp-block-pullquote{
+    border-left-color: #63ab45;
+}
+.slider-inner-box{
+    right: 15%;
+    left: 45%;
+}
+.main-navigation .menu > li > a{
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 400;
+    text-align: center;
+}
+.phone-text{
+    font-size: 17px;
+    padding: 5px 20px;
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 400;
+    background-color: #63ab45;
+    text-align: center;
+}
+.slider-inner-box h2{
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #63ab45;
+    font-weight: 400;
+    text-align: right;
+}
+.slider-inner-box h1 a{
+    font-size: 45px;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: right;
+}
+.socialmedia {
+    border-bottom: 1px solid #968b83;
+}
+#top-slider img {
+     opacity: 1; 
+}
+.latest-destination .box-image img {
+    width: 100%;
+}
+.latest-destination .box-content {
+    background: transparent; 
+    padding: 15px 0px;
+    margin: 0 0px;
+    margin-top: 0px;
+    border-radius: 0px; 
+    box-shadow: none; 
+}
+.latest-destination p.tour-amount {
+    position: absolute;
+    top: -22px;
+    color: #fff;
+    right: 20px;
+    border-radius: 30px;
+    background: #63ab45;
+    padding: 9px 25px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+    font-weight: 400;
+}
+.tour-amount span{
+    font-size: 17px;
+    color: #ffffff;
+    margin-left: 5px;
+    font-weight: 600;
+}
+.latest-destination .box-content h4 a {
+    font-size: 17px;
+    color: #222222;
+    font-weight: 600;
+}
+.phone-text a{
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 400;
+}
+.latest-destination p{
+    font-size: 16px;
+    color: #757575;
+    font-weight: 400;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+   .sidenav #site-navigation {
+        padding: 40px 0;
+    }
+    .slider-inner-box {
+        right: 5%;
+        left: 5%;
+    }
+    .slider-inner-box h1 {
+        text-align: center !important;
+    }
+    .slider-inner-box h2{
+        text-align: center;
+    }
+    .slider-inner-box h1 a{
+        font-size: 22px;
+    }
+    #top-slider .owl-nav{
+        display: none;
+    }
+}

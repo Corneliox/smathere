@@ -1,0 +1,69 @@
+# Translation of Themes - Envira in English (UK)
+# This file is distributed under the same license as the Themes - Envira package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-07-06 20:31:58+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"Language: en_GB\n"
+"Project-Id-Version: Themes - Envira\n"
+
+#. Description of the theme
+#, gp-priority: high
+msgid "Envira is a unique, clean and professional-looking WordPress theme, perfect for all online digital business. A great variety of layouts and styles allows the creation of different structures and satisfies any specific requirement. The frontend and backend features are focused ease of use so that visitors can get the best user experience. View the demo of Envira Pro https://www.nayrathemes.com/demo/pro/?theme=envira"
+msgstr "Envira is a unique, clean and professional-looking WordPress theme, perfect for all online digital business. A great variety of layouts and styles allows the creation of different structures and satisfies any specific requirement. The front end and back end features are focused ease of use so that visitors can get the best user experience. View the demo of Envira Pro https://www.nayrathemes.com/demo/pro/?theme=envira"
+
+#. Theme Name of the theme
+#, gp-priority: high
+msgid "Envira"
+msgstr "Envira"
+
+#: inc/customize/envira-premium.php:31
+msgid "Show Some Love"
+msgstr "Show Some Love"
+
+#: inc/customize/envira-premium.php:27
+msgid "Free Vs Pro"
+msgstr "Free Vs Pro"
+
+#: inc/customize/envira-premium.php:25
+msgid "Get Support"
+msgstr "Get Support"
+
+#: inc/customize/envira-premium.php:23
+msgid "View Documentation"
+msgstr "View Documentation"
+
+#: inc/customize/envira-premium.php:7 inc/customize/envira-premium.php:29
+msgid "Upgrade to Pro"
+msgstr "Upgrade to Pro"
+
+#: footer.php:32
+msgid "<a href=\"#\" target=\"_blank\">Envira</a>"
+msgstr "<a href=\"#\" target=\"_blank\">Envira</a>"
+
+#: header.php:18
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#: sections/envira-header.php:87
+msgid "type here"
+msgstr "type here"
+
+#. Author URI of the theme
+#, gp-priority: low
+msgid "https://www.nayrathemes.com/"
+msgstr "https://www.nayrathemes.com/"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://www.nayrathemes.com/envira-free/"
+msgstr "https://www.nayrathemes.com/envira-free/"
+
+#. Author of the theme
+#, gp-priority: low
+msgid "Nayra Themes"
+msgstr "Nayra Themes"

@@ -1,0 +1,173 @@
+/*
+Theme Name: HardNews
+Theme URI: https://afthemes.com/products/hardnews/
+Author: AF themes
+Author URI: https://afthemes.com
+Requires at least: WordPress 4.0
+Requires PHP: 5.6
+Tested up to: 6
+Description:  HardNews is a child theme of CoverNews. The theme has different header design as well as some significant fonts and color configuration adjustments. In addition, the design also modified some of the default nature of the front page layout. You can implement layouts as a clean and minimal blogging site, a vintage and retro fashion blog, a photography blog, a wedding blog & magazine and more with the help of the available customizer options.. The theme is SEO friendly with optimized code and awesome support.
+See Demo: https://demo.afthemes.com/covernews/hardnews/
+Support: https://afthemes.com/supports/
+Template: covernews
+Version: 2.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: hardnews
+Tags: news, blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+HardNews WordPress Theme, Copyright 2018 AF themes
+HardNews is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .main-navigation a,
+body .font-family-1,
+body .site-description,
+body .trending-posts-line,
+body .widget-title,
+body .em-widget-subtitle,
+body .grid-item-metadata .item-metadata,
+body .af-navcontrols .slide-count,
+body .figure-categories .cat-links,
+body .nav-links a {
+font-family: 'Oswald';
+}
+
+body .figure-categories .cat-links a.covernews-categories {
+    background-color: #C23B0E;
+    color: #ffffff;
+    
+}
+
+.covernews_tabbed_posts_widget .figure-categories .cat-links a.covernews-categories, 
+.list .spotlight-post .figure-categories .cat-links a.covernews-categories, 
+.full-plus-list .spotlight-post .figure-categories .cat-links a.covernews-categories, 
+.trending-posts-vertical-carousel .figure-categories .cat-links a.covernews-categories, 
+.trending-story .figure-categories .cat-links a.covernews-categories{
+color: #C23B0E;
+}
+
+/*C23B0E*/
+
+body .figure-categories .cat-links a.category-color-2 { 
+	background-color: #1483dc;
+	color: #ffffff;
+    
+}
+
+
+.trending-story .figure-categories .cat-links a.covernews-categories.category-color-2, 
+.list .spotlight-post .figure-categories .cat-links a.covernews-categories.category-color-2, 
+.full-plus-list .spotlight-post .figure-categories .cat-links a.covernews-categories.category-color-2, 
+.covernews_tabbed_posts_widget .figure-categories .cat-links a.covernews-categories.category-color-2, 
+.trending-posts-vertical-carousel .figure-categories .cat-links a.covernews-categories.category-color-2{
+    color: #1483dc;
+}
+
+body .figure-categories .cat-links a.category-color-3 {
+
+
+    background-color: #ffffff;
+    color: #404040;
+}
+
+.trending-story .figure-categories .cat-links a.covernews-categories.category-color-3, 
+.list .spotlight-post .figure-categories .cat-links a.covernews-categories.category-color-3, 
+.full-plus-list .spotlight-post .figure-categories .cat-links a.covernews-categories.category-color-3, 
+.covernews_tabbed_posts_widget .figure-categories .cat-links a.covernews-categories.category-color-3, 
+.trending-posts-vertical-carousel .figure-categories .cat-links a.covernews-categories.category-color-3{
+    color: #404040;
+}
+
+
+body .top-masthead {
+    background: #353535;
+}
+
+/*6A5550*/
+
+body span.menu-description{
+        background: #f3ad29;
+}
+
+
+
+/*Header layout 3*/
+.header-layout-3 .masthead-banner .site-branding {
+    text-align: center;
+}
+
+.header-layout-3 .site-header .site-branding .site-title, .site-branding .site-title{
+    font-size: 100px;
+    text-transform: uppercase;
+}
+
+
+body .secondary-color,
+body button,
+body input[type="button"],
+body input[type="reset"],
+body input[type="submit"],
+body .site-content .search-form .search-submit,
+body .site-footer .search-form .search-submit,
+body .em-post-format i,
+body span.header-after:after,
+body #secondary .widget-title span:after,
+body .af-tabs.nav-tabs > li > a.active:after,
+body .af-tabs.nav-tabs > li > a:hover:after,
+body .exclusive-posts .exclusive-now,
+body span.trending-no,
+body .tagcloud a:hover{
+        background: #f3ad29;
+}
+
+
+
+body .main-navigation{
+    background: #353535;
+}
+
+body a:hover,
+body a:focus,
+body a:active,
+body .figure-categories-2 .cat-links a
+{
+        color: #f3ad29;
+}
+
+body #loader:after {
+  border-left-color: #f3ad29;
+}
+
+.site-footer {
+    background: #031c27;
+    color: #fff;
+}
+
+.site-footer a, 
+.site-footer a:hover, 
+.site-footer a:visited, 
+.site-footer a:active {
+    color: #fff;
+}
+
+
+.header-layout-3 .site-header .site-branding .site-title{
+    font-size: 100px;
+}
+
+@media only screen and (max-width: 320px){
+.main-navigation.aft-sticky-navigation span.af-mobile-site-title-wrap .site-title {
+    font-size: 26px;
+    line-height: 55px;
+    }
+}

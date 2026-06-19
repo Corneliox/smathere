@@ -36,3 +36,20 @@ desktop.ini
 *.tmp
 *.bak
 ~*
+
+# Private keys & certificates
+*.key
+*.pem
+*.pub
+*.ppk
+*.pfx
+*.p12
+
+# Database backups & Archive files
+*.sql
+*.sql.gz
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+

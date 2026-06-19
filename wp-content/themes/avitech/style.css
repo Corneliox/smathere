@@ -1,0 +1,492 @@
+/*
+Theme Name: Avitech
+Theme URI: https://www.nayrathemes.com/avitech-free/
+Author: Nayra Themes
+Author URI: https://www.nayrathemes.com/
+Description: Avitech is flexible, super fast, easily customizable, lightweight, modern multipurpose theme. Avitech comes with everything you could ever need to build an amazing website, and It's perfect for any type of business. View the demo of Avitech Pro https://www.nayrathemes.com/demo/pro/?theme=avitech
+Template: avril
+Version: 1.0.11
+Tested up to: 6.0
+Requires PHP: 5.6
+License: GPLv3 or later
+License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: avitech
+Slug: avitech
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+*/
+
+
+.avitech-theme .nav-wrapper {
+    background: var(--sp-secondary);
+    padding: 22px;
+    border-radius: 50px;
+	border-bottom: 9px solid var(--sp-primary);
+}
+
+
+
+.avitech-theme .navbar-area {
+    padding: 0;
+}
+
+.avitech-theme .header .header-search-toggle, .avitech-theme .cart-icon-wrap {
+    border: 1px solid #43435C;
+    border-radius: 50%;
+}
+
+
+.avitech-theme .heading-default h3 .av-heading {
+    border-radius: 50px;
+}
+
+.avitech-theme .sticky-menu,
+.avitech-theme .theme-mobile-nav {
+    background: var(--sp-secondary);
+}
+
+
+.avitech-theme .menu-right > ul > li:nth-child(2) {
+    border-left: none;
+}
+
+.avitech-theme .breadcrumb-area,
+.avitech-theme .breadcrumb-content .breadcrumb-list li a:not(:focus):not(:hover){
+	color: var(--sp-secondary);
+}
+
+.avitech-theme .breadcrumb-area:before {
+    opacity: 0.5;
+    background-color: #fff;
+}
+
+
+.avitech-theme button[type=submit], 
+.avitech-theme button, .avitech-theme input[type="button"],
+.avitech-theme input[type="reset"], 
+.avitech-theme input[type="submit"], 
+.avitech-theme .av-btn, 
+.avitech-theme .navigation.posts-navigation .nav-links a, 
+.avitech-theme .wp-block-loginout a {
+    border-radius: 20px;
+}
+
+.avitech-theme .main-slider .owl-item .item {
+    min-height: auto;
+}
+
+.avitech-theme .header-widget .widget:not(.widget_social_widget) a,
+.avitech-theme .theme-content h3,
+.avitech-theme .theme-content p {
+    color: var(--sp-secondary);
+}
+
+.avitech-theme .theme-content h1{
+	color: var(--sp-primary);
+}
+
+.avitech-theme .info-wrapper .widget {
+    border-radius: 50px;
+}
+
+/* ========= Avitech Slider ========= */
+
+.avitech-theme .owl-item .aera-img img {
+    max-height: 600px;
+}
+
+.avitech-theme .theme-slider div.theme-content {
+    max-width: 100%;
+}
+
+.avitech-theme .theme-slider .text-right [class*="av-column-"]:first-child {
+    order: 1;
+}
+
+.avitech-theme .theme-slider .text-center [class*="av-column-"]:first-child {
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+.avitech-theme .theme-slider .text-center [class*="av-column-"]:nth-child(2) img {
+    margin: auto;
+}
+
+.avitech-theme .theme-slider .text-center [class*="av-column-"]:nth-child(2) {
+    margin-top: 2rem;
+}
+
+.avitech-theme .owl-item .aera-img img {
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-width:767px) {
+    .main-slider .owl-item .item {  }
+}
+
+@media only screen and (max-width:991px) {
+    .avitech-theme .theme-slider div.theme-content {
+        margin-bottom: 15px;
+    }
+    .avitech-theme .theme-slider .text-right [class*="av-column-"]:first-child {
+        order: 0;
+    }
+    .avitech-theme .theme-slider [class*="av-column-"]:nth-child(2) {
+        margin-top: 2rem;
+    }
+}
+
+.navbar-area.sticky-nav.sticky-menu .menubar .menu-wrap > li > a, .navbar-area.sticky-nav.sticky-menu .header-search-toggle, .navbar-area.sticky-nav.sticky-menu .header-search-toggle .cart-icon-wrap {
+    color: #fff !important;
+}
+
+
+.avitech-theme .theme-mobile-nav .hamburger-menu div {
+    background-color: #FFFFFF;
+}
+
+.avitech-theme .theme-mobile-nav .header-search-toggle{
+    color: #FFFFFF;
+}
+
+
+.avitech-theme .breadcrumb-area:before {
+    opacity: 0.45;
+}
+
+.wp-block-search .wp-block-search__button {
+    background: #ff6600;
+    color: #fff;
+}
+
+
+.wp-block-tag-cloud a {
+    font-size: 15px !important;
+    line-height: 2.5;
+    padding: 5px 15px;
+    color: var(--sp-white);
+    background-color: var(--sp-primary);
+    text-decoration: none;
+}
+
+
+.post-content .wp-block-archives {
+    padding: 0;
+}
+
+.footer-main .wp-block-archives li {
+    background: none;
+}
+
+ul.wp-block-archives li {
+    background-color: #f2f2f2;
+    list-style: none;
+}
+
+ul.wp-block-archives li a {
+    display: block;
+    padding: 15px 15px 15px 45px;
+    cursor: pointer;
+    word-break: break-word;
+}
+
+ul.wp-block-archives li a:hover,
+ul.wp-block-archives li a:focus{
+    background-color: var(--sp-primary);
+    color: var(--sp-white);
+}
+
+.footer-main ul.wp-block-archives li a:hover,
+.footer-main ul.wp-block-archives li a:focus{
+    background: none;
+    color: var(--sp-primary);
+}
+
+.wp-block-calendar tbody td, .wp-block-calendar th {
+    text-align: center;
+}
+
+.wp-block-table figcaption {
+    text-align: center;
+}
+
+.post-content .wp-block-post-terms a {
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    word-break: break-word;
+    background-color: #f2f2f2;
+}
+
+.wp-block-image figcaption {
+    text-align: center;
+}
+
+.wp-block-file .wp-block-file__button {
+    background: var(--sp-primary);
+}
+
+ul.wp-block-social-links li a:before {
+    content: none !important;
+}
+
+ul.wp-block-social-links li a {
+    padding: 0.25rem !important;
+}
+
+.sidebar .wp-block-latest-comments {
+    padding: 0;
+}
+
+.wp-block-loginout a {
+    color: var(--sp-white);
+    background-color: var(--sp-primary);
+}   
+
+.footer .wp-block-calendar table caption {
+    color: #fff;
+}
+
+.footer-section .wp-block-table td {
+    color: #000;
+}
+
+.footer-main .calendar_wrap table th, 
+.footer-main .calendar_wrap table td {
+    line-height: 35px;
+}
+
+
+.sidebar .widget.woocommerce li:hover a, 
+.sidebar .widget.woocommerce li:focus-within a {
+    color: #ffffff;
+}
+
+.sidebar .widget:not(.widget_payment_methods):not(.widget_social_widget):not(.widget_product_categories):not(.widget.woocommerce) ul li:not(.menu-item-has-children):not(.wp-social-link) {
+    background-color: #f2f2f2;
+}
+
+.post-content ol.wp-block-latest-comments {
+    padding: 0;
+}
+
+.post-content .wp-block-calendar table {
+    margin-bottom: 0;
+}
+
+.wp-block-table {
+    word-break: break-word;
+}
+
+.wp-block-button a {
+    background-color: var(--sp-primary);
+    border-radius: 0;
+    padding: 5px 20px;
+}
+
+.footer-main .wp-block-latest-comments {
+    padding: 0;
+}
+
+.footer-main .wp-block-social-links li {
+    line-height: initial;
+}
+
+.footer-main .wp-block-social-links li a {
+    margin-bottom: 0 !important;
+}
+
+.sidebar .wp-block-social-links li:after{
+    content: none !important;
+}
+
+.post-content .wp-block-image figcaption {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+    line-height: 1;
+}
+
+.footer-main .wp-block-buttons {
+    margin-top: 1.5rem;
+}
+
+.post-section .wp-block-latest-comments {
+    padding: 0;
+}
+
+.wp-block-site-logo {
+    padding: 15px 0;
+}
+
+.wp-block-post-author {
+    align-items: center;
+}
+
+.wp-block-buttons {
+    margin: 15px 0;
+}
+
+
+.post-section .wp-block-table {
+    margin: 15px 0;
+}
+
+.wp-block-categories {
+    list-style: none;
+}
+
+.aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.team-member {
+    margin: 0px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.team-footer {
+    width: 100%;
+    height: 71px;
+    position: absolute;
+    bottom: 0;
+    padding: 16px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--sp-white);
+    background-color: var(--sp-primary);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.team-info {
+    display: block;
+    padding: 0 10px;
+}
+
+.team-info h6 a:hover,
+.team-info h6 a:focus {
+    color: var(--sp-white);
+}
+
+.team-member img {
+    width: 100%;
+}
+
+.team-footer span {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.team-footer p {
+    border-top: 1px solid #dddddd;
+    padding-top: 16px;
+}
+
+.team-footer .widget {
+    margin-top: 55px;
+    visibility: hidden;
+}
+
+.team-member:hover .widget {
+    visibility: visible;
+}
+
+.team-member .widget li:not(:last-child) {
+    margin-right: 6px;
+    margin-bottom: 5px;
+}
+
+.team-member:hover .team-footer {
+    justify-content: space-around;
+    height: 100%;
+    padding: 46px 10px 32px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.team-member:hover .team-footer h6 {
+    color: var(--sp-primary);
+}
+
+
+
+/*=====  Fun Fact =====*/
+
+.funfact-section {
+    position: relative;
+    background-image: url(../images/bg/fun-fact-bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    padding: 80px 0;
+    z-index: 0;
+}
+
+.funfact-item {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    color: var(--sp-white);
+}
+
+.funfact-item i, .funfact-item img {
+    font-size: 60px;
+    width: 60px;
+    margin-bottom: 8px;
+    display: inline-block;
+    color: var(--sp-primary);
+}
+
+.funfact-item h1 {
+    font-size: 48px;
+}
+
+.funfact-item p {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 10px 0 0;
+}
+
+/*===== // =====*/
+
+.wp-block-button.is-style-outline a.wp-block-button__link {
+    color: var(--sp-primary);
+}
+
+.wp-block-button.is-style-outline a:hover, .wp-block-button.is-style-outline a:focus {
+    color: var(--sp-white);
+    background: var(--sp-primary);
+}
+
+.wp-block-embed figcaption {
+    text-align: center;
+}
+
+.wp-block-code code img {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.wp-block-pullquote.has-background blockquote {
+    background: inherit;
+}
+
+#av-primary-content .wp-block-loginout {
+    padding: 10px 0;
+}
