@@ -1,6 +1,7 @@
 <?php
 /**
  * Beta Hero Section Template (Slick Slider + Skeleton Loading)
+ * Palet Hijau Theresiana — revisi 2026-06-20
  */
 $id         = get_theme_mod( 'onepress_hero_id', esc_html__( 'hero', 'onepress' ) );
 $fullscreen = sanitize_text_field( get_theme_mod( 'onepress_hero_fullscreen' ) );
@@ -16,7 +17,6 @@ $_images = get_theme_mod( 'onepress_hero_images' );
 if ( is_string( $_images ) ) {
 	$_images = json_decode( $_images, true );
 }
-
 if ( empty( $_images ) || ! is_array( $_images ) ) {
 	$_images = array();
 }
@@ -34,7 +34,6 @@ if ( empty( $images ) ) {
 	$images = array( get_template_directory_uri() . '/assets/images/hero5.jpg' );
 }
 
-// Get Hero Text settings
 $hcl1_largetext  = get_theme_mod( 'onepress_hcl1_largetext', wp_kses_post( 'We are <span class="js-rotating">OnePress | One Page | Responsive | Perfection</span>', 'onepress' ) );
 $hcl1_smalltext  = get_theme_mod( 'onepress_hcl1_smalltext', wp_kses_post( 'Morbi tempus porta nunc <strong>pharetra quisque</strong> ligula imperdiet posuere<br> vitae felis proin sagittis leo ac tellus blandit sollicitudin quisque vitae placerat.', 'onepress' ) );
 $hcl1_btn1_text  = get_theme_mod( 'onepress_hcl1_btn1_text', esc_html__( 'Our Services', 'onepress' ) );
@@ -42,17 +41,18 @@ $hcl1_btn1_link  = get_theme_mod( 'onepress_hcl1_btn1_link', esc_url( home_url( 
 $hcl1_btn2_text  = get_theme_mod( 'onepress_hcl1_btn2_text', esc_html__( 'Get Started', 'onepress' ) );
 $hcl1_btn2_link  = get_theme_mod( 'onepress_hcl1_btn2_link', esc_url( home_url( '/' ) ) . esc_html__( '#contact', 'onepress' ) );
 
-$btn_1_style = get_theme_mod( 'onepress_hcl1_btn1_style', 'btn-theme-primary' );
-$btn_2_style = get_theme_mod( 'onepress_hcl1_btn2_style', 'btn-secondary-outline' );
-
+$btn_1_style  = get_theme_mod( 'onepress_hcl1_btn1_style', 'btn-theme-primary' );
+$btn_2_style  = get_theme_mod( 'onepress_hcl1_btn2_style', 'btn-secondary-outline' );
 $btn_1_target = get_theme_mod( 'onepress_hcl1_btn1_target' );
 $btn_2_target = get_theme_mod( 'onepress_hcl1_btn2_target' );
-$target_1 = ( $btn_1_target == 1 ) ? 'target="_blank"' : '';
-$target_2 = ( $btn_2_target == 1 ) ? 'target="_blank"' : '';
+$target_1     = ( $btn_1_target == 1 ) ? 'target="_blank"' : '';
+$target_2     = ( $btn_2_target == 1 ) ? 'target="_blank"' : '';
 ?>
 
-<!-- Skeleton Loader (Shimmer Placeholder) -->
-<div id="hero-skeleton-loader" class="hero-skeleton-wrapper <?php echo ( $fullscreen == 1 ) ? 'hero-skeleton-fullscreen' : 'hero-skeleton-normal'; ?>">
+<!-- ═══ Skeleton Loader (Shimmer Placeholder) ═══ -->
+<div id="hero-skeleton-loader"
+	class="hero-skeleton-wrapper <?php echo ( $fullscreen == 1 ) ? 'hero-skeleton-fullscreen' : 'hero-skeleton-normal'; ?>"
+	role="presentation" aria-hidden="true">
 	<div class="skeleton-shimmer"></div>
 	<div class="container skeleton-content-box">
 		<div class="skeleton-line skeleton-title"></div>
@@ -65,10 +65,12 @@ $target_2 = ( $btn_2_target == 1 ) ? 'target="_blank"' : '';
 	</div>
 </div>
 
-<!-- Actual Slick Slider Carousel (Hidden initially, shown after load) -->
-<section id="<?php echo esc_attr( $id ); ?>" class="hero-slideshow-wrapper hero-slick-slider-wrapper <?php echo ( $fullscreen == 1 ) ? 'hero-slideshow-fullscreen' : 'hero-slideshow-normal'; ?>" style="opacity: 0; transition: opacity 0.5s ease;">
-	
-	<div id="featured-slider" class="slick-slider-hero" data-slick='{"slidesToShow":1, "fade":true, "dots":true, "autoplay":true, "autoplaySpeed":5000, "arrows":true}'>
+<!-- ═══ Actual Slick Slider Carousel ═══ -->
+<section id="<?php echo esc_attr( $id ); ?>"
+	class="hero-slideshow-wrapper hero-slick-slider-wrapper <?php echo ( $fullscreen == 1 ) ? 'hero-slideshow-fullscreen' : 'hero-slideshow-normal'; ?>"
+	style="opacity: 0; transition: opacity 0.6s ease;">
+
+	<div id="featured-slider" class="slick-slider-hero">
 		<?php foreach ( $images as $image_url ) : ?>
 			<div class="hero-slide-item" style="background-image: url('<?php echo esc_url( $image_url ); ?>');">
 				<div class="hero-slide-overlay"></div>
@@ -82,10 +84,14 @@ $target_2 = ( $btn_2_target == 1 ) ? 'target="_blank"' : '';
 						<?php endif; ?>
 						<div class="hero-buttons">
 							<?php if ( $hcl1_btn1_text != '' && $hcl1_btn1_link != '' ) : ?>
-								<a <?php echo $target_1; ?> href="<?php echo esc_url( $hcl1_btn1_link ); ?>" class="btn <?php echo esc_attr( $btn_1_style ); ?> btn-lg"><?php echo wp_kses_post( $hcl1_btn1_text ); ?></a>
+								<a <?php echo $target_1; ?> href="<?php echo esc_url( $hcl1_btn1_link ); ?>" id="hero-btn-primary" class="btn <?php echo esc_attr( $btn_1_style ); ?> btn-lg">
+									<?php echo wp_kses_post( $hcl1_btn1_text ); ?>
+								</a>
 							<?php endif; ?>
 							<?php if ( $hcl1_btn2_text != '' && $hcl1_btn2_link != '' ) : ?>
-								<a <?php echo $target_2; ?> href="<?php echo esc_url( $hcl1_btn2_link ); ?>" class="btn <?php echo esc_attr( $btn_2_style ); ?> btn-lg"><?php echo wp_kses_post( $hcl1_btn2_text ); ?></a>
+								<a <?php echo $target_2; ?> href="<?php echo esc_url( $hcl1_btn2_link ); ?>" id="hero-btn-secondary" class="btn <?php echo esc_attr( $btn_2_style ); ?> btn-lg">
+									<?php echo wp_kses_post( $hcl1_btn2_text ); ?>
+								</a>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -93,38 +99,52 @@ $target_2 = ( $btn_2_target == 1 ) ? 'target="_blank"' : '';
 			</div>
 		<?php endforeach; ?>
 	</div>
-	
+
 </section>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
-	// Initialize Slick Slider
+
+	/* ── Sticky Header: tambahkan class saat scroll ── */
+	var $masthead = $('#masthead');
+	$(window).on('scroll.betaHeader', function() {
+		if ($(this).scrollTop() > 60) {
+			$masthead.addClass('header-scrolled header-fixed');
+			$('body').addClass('beta-view-active');
+		} else {
+			$masthead.removeClass('header-scrolled header-fixed');
+		}
+	});
+	$('body').addClass('beta-view-active');
+
+	/* ── Slick Slider Init ── */
 	var $slider = $('#featured-slider');
-	
-	$slider.on('init', function(event, slick){
-		// Hide skeleton and fade in actual slider
-		$('#hero-skeleton-loader').fadeOut(300, function() {
+
+	$slider.on('init', function() {
+		$('#hero-skeleton-loader').fadeOut(400, function() {
 			$('.hero-slick-slider-wrapper').css('opacity', 1);
 		});
 	});
-	
-	// Fallback to show if slick doesn't load or takes too long
+
+	/* Fallback jika slick lambat */
 	setTimeout(function() {
-		if ($('.hero-slick-slider-wrapper').css('opacity') == 0) {
+		if ( parseFloat($('.hero-slick-slider-wrapper').css('opacity')) < 1 ) {
 			$('#hero-skeleton-loader').hide();
 			$('.hero-slick-slider-wrapper').css('opacity', 1);
 		}
-	}, 2000);
+	}, 2500);
 
 	$slider.slick({
-		slidesToShow: 1,
-		fade: true,
-		dots: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		arrows: true,
-		prevArrow: '<span class="prev-arrow icon-left-open-big slick-arrow" style="display: inline-block;"></span>',
-		nextArrow: '<span class="next-arrow icon-right-open-big slick-arrow" style="display: inline-block;"></span>'
+		slidesToShow : 1,
+		fade         : true,
+		dots         : true,
+		autoplay     : true,
+		autoplaySpeed: 5500,
+		speed        : 800,
+		arrows       : true,
+		prevArrow    : '<span class="prev-arrow icon-left-open-big slick-arrow" aria-label="Sebelumnya" style="display:inline-flex;"></span>',
+		nextArrow    : '<span class="next-arrow icon-right-open-big slick-arrow" aria-label="Berikutnya" style="display:inline-flex;"></span>'
 	});
+
 });
 </script>

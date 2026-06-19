@@ -1,28 +1,61 @@
 /**
  * SMA Theresiana - Staging Beta Stylesheet (style-beta.css)
  *
- * Merupakan stylesheet kustom untuk menampung seluruh visualisasi UI/UX baru
- * dalam mode preview (/betaview). Didesain modern, responsif, dan premium.
+ * Stylesheet kustom untuk visualisasi UI/UX baru dalam mode preview (/betaview).
+ * Palet warna: Gradasi Hijau Theresiana (#4b6043 → #ddead1)
+ * Didesain modern, responsif, dan premium.
+ *
+ * Revisi: 2026-06-20 — Full redesign dengan identitas visual hijau baru.
  */
+
+/* ==========================================================================
+   0. CSS Custom Properties (Design Tokens — Palet Hijau Theresiana)
+   ========================================================================== */
+:root {
+	/* Primary Green Scale */
+	--th-green-900: #2d3a29;   /* Sangat gelap — teks kontras di bg terang */
+	--th-green-800: #4b6043;   /* Utama: teks heading, aksen gelap */
+	--th-green-700: #577049;   /* Warna medium-gelap */
+	--th-green-600: #658354;   /* Warna medium, tombol default */
+	--th-green-500: #75975e;   /* Hover tombol, badge */
+	--th-green-400: #8cad74;   /* Aksen medium-terang */
+	--th-green-300: #a3c585;   /* Hover states, icon circle bg */
+	--th-green-200: #b3cf99;   /* Background bergantian section */
+	--th-green-150: #c7ddb5;   /* Background section ringan */
+	--th-green-100: #ddead1;   /* Background section paling terang */
+	--th-green-50:  #eef5e6;   /* Background hover kartu */
+	--th-green-10:  #f4f9ee;   /* Background page halus */
+
+	/* Neutral & UI */
+	--th-white:     #ffffff;
+	--th-dark:      #1e293b;
+	--th-gray-700:  #334155;
+	--th-gray-500:  #64748b;
+	--th-gray-300:  #cbd5e1;
+	--th-gray-100:  #f1f5f9;
+	--th-shadow-sm: 0 4px 15px rgba(75, 96, 67, 0.10);
+	--th-shadow-md: 0 8px 30px rgba(75, 96, 67, 0.14);
+	--th-shadow-lg: 0 20px 50px rgba(75, 96, 67, 0.18);
+
+	/* Accent (tetap untuk konten tombol btn aktif dsb.) */
+	--th-accent:    #03c4eb;  /* Biru aksen lama — dipakai di CTA sekunder */
+	--th-accent-dk: #0288d1;
+
+	/* Transition */
+	--th-transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
 /* ==========================================================================
    1. Skeleton Loading (Shimmer Animation)
    ========================================================================== */
 @keyframes shimmer {
-	0% {
-		background-position: -200% 0;
-	}
-	100% {
-		background-position: 200% 0;
-	}
+	0%   { background-position: -200% 0; }
+	100% { background-position:  200% 0; }
 }
 
 .skeleton-shimmer {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	inset: 0;
 	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s infinite;
@@ -31,7 +64,7 @@
 
 .skeleton-line {
 	height: 14px;
-	background-color: #e2e8f0;
+	background-color: #d8e8ca;
 	border-radius: 4px;
 	margin-bottom: 12px;
 	position: relative;
@@ -41,11 +74,8 @@
 .skeleton-line::after {
 	content: "";
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	inset: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s infinite;
 }
@@ -55,12 +85,12 @@
    ========================================================================== */
 .exit-beta-widget {
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
+	bottom: 24px;
+	right: 24px;
 	z-index: 999999;
-	background: rgba(220, 53, 69, 0.95);
+	background: rgba(220, 53, 69, 0.94);
 	color: #ffffff !important;
-	padding: 12px 20px;
+	padding: 12px 22px;
 	border-radius: 30px;
 	box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 	font-family: "Raleway", sans-serif;
@@ -75,25 +105,22 @@
 	transition: all 0.2s ease-in-out;
 }
 
-.exit-beta-widget i {
-	font-size: 15px;
-}
+.exit-beta-widget i { font-size: 15px; }
 
 .exit-beta-widget:hover {
 	background: #c82333;
 	transform: translateY(-3px);
-	box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+	box-shadow: 0 8px 28px rgba(0,0,0,0.3);
 	color: #fff !important;
 }
 
 .mobile-menu-overlay {
 	position: fixed;
-	top: 0;
-	left: 0;
+	inset: 0;
 	width: 100vw;
 	height: 100vh;
-	background: rgba(0,0,0,0.5);
-	backdrop-filter: blur(2px);
+	background: rgba(0,0,0,0.45);
+	backdrop-filter: blur(3px);
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.3s ease;
@@ -106,54 +133,88 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 /* ==========================================================================
-   3. Header Transparan & Mobile Off-Canvas Menu
+   3. Header — Sticky Transparan → Solid saat Scroll
    ========================================================================== */
+
+/* ---- Desktop Header ---- */
 @media (min-width: 992px) {
-	/* Letakkan header di atas Hero di Homepage */
+	body.beta-view-active #masthead,
 	body.home.section-about-beta #masthead {
-		position: absolute;
+		position: fixed;
 		width: 100%;
 		top: 0;
 		left: 0;
 		background: transparent;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+		border-bottom: 1px solid rgba(255,255,255,0.15);
 		z-index: 9999;
-		transition: all 0.3s ease;
-		padding: 10px 0;
+		transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+		padding: 12px 0;
 	}
 
+	body.beta-view-active #masthead.header-scrolled,
 	body.home.section-about-beta #masthead.header-fixed {
-		position: fixed;
-		background: rgba(255, 255, 255, 0.98);
-		box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+		background: rgba(255,255,255,0.98);
+		box-shadow: 0 4px 24px rgba(75, 96, 67, 0.12);
 		border-bottom: none;
-		padding: 5px 0;
+		padding: 6px 0;
 	}
 
-	/* Ubah warna menu ketika transparan di atas hero background */
+	/* Logo saat transparan → ukuran lebih kecil */
+	body.beta-view-active #masthead .site-logo img,
+	body.home.section-about-beta #masthead .site-logo img {
+		max-height: 52px;
+		width: auto;
+		transition: max-height 0.3s ease;
+	}
+
+	body.beta-view-active #masthead.header-scrolled .site-logo img,
+	body.home.section-about-beta #masthead.header-fixed .site-logo img {
+		max-height: 42px;
+	}
+
+	/* Warna menu saat transparan di atas hero */
+	body.beta-view-active #masthead:not(.header-scrolled) .onepress-menu > li > a,
 	body.home.section-about-beta #masthead:not(.header-fixed) .onepress-menu > li > a {
 		color: #ffffff;
-		text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		text-shadow: 0 1px 4px rgba(0,0,0,0.35);
 	}
+
+	body.beta-view-active #masthead:not(.header-scrolled) .onepress-menu > li > a:hover,
 	body.home.section-about-beta #masthead:not(.header-fixed) .onepress-menu > li > a:hover {
-		color: #03c4eb;
+		color: var(--th-green-200);
 	}
+
+	/* Warna menu saat scrolled — pakai hijau */
+	body.beta-view-active #masthead.header-scrolled .onepress-menu > li > a,
+	body.home.section-about-beta #masthead.header-fixed .onepress-menu > li > a {
+		color: var(--th-green-800);
+	}
+
+	body.beta-view-active #masthead.header-scrolled .onepress-menu > li > a:hover,
+	body.home.section-about-beta #masthead.header-fixed .onepress-menu > li > a:hover,
+	body.beta-view-active #masthead.header-scrolled .onepress-menu > li.current-menu-item > a,
+	body.home.section-about-beta #masthead.header-fixed .onepress-menu > li.current-menu-item > a {
+		color: var(--th-green-600);
+	}
+
+	/* Site Title transparan */
+	body.beta-view-active #masthead:not(.header-scrolled) .site-branding .site-title a,
 	body.home.section-about-beta #masthead:not(.header-fixed) .site-branding .site-title a {
 		color: #ffffff;
-		text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+		text-shadow: 0 1px 4px rgba(0,0,0,0.35);
 	}
 }
 
+/* ---- Mobile Off-Canvas ---- */
 @media (max-width: 991px) {
-	/* Ubah dropdown menu mobile bawaan menjadi Off-Canvas Slide Out */
 	#site-navigation.onepress-menu-mobile {
 		position: fixed;
 		top: 0;
 		right: 0;
 		width: 290px;
 		height: 100vh !important;
-		background: #ffffff;
-		box-shadow: -5px 0 30px rgba(0,0,0,0.18);
+		background: var(--th-white);
+		box-shadow: -6px 0 35px rgba(0,0,0,0.18);
 		transform: translateX(100%);
 		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 		z-index: 999995;
@@ -166,24 +227,36 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 		transform: translateX(0);
 	}
 
-	/* Hamburger Close State */
-	#nav-toggle.nav-is-visible span {
-		background: transparent !important;
+	/* Off-canvas menu links — hijau */
+	#site-navigation.onepress-menu-mobile .onepress-menu > li > a {
+		color: var(--th-green-800) !important;
+		padding: 12px 0;
+		border-bottom: 1px solid var(--th-green-100);
+		display: block;
+		font-weight: 600;
 	}
+
+	#site-navigation.onepress-menu-mobile .onepress-menu > li > a:hover {
+		color: var(--th-green-600) !important;
+		padding-left: 6px;
+	}
+
+	/* Hamburger X transform */
+	#nav-toggle.nav-is-visible span { background: transparent !important; }
 	#nav-toggle.nav-is-visible span::before {
 		transform: rotate(45deg);
 		top: 0;
-		background-color: #333;
+		background-color: var(--th-green-800);
 	}
 	#nav-toggle.nav-is-visible span::after {
 		transform: rotate(-45deg);
 		bottom: 0;
-		background-color: #333;
+		background-color: var(--th-green-800);
 	}
 }
 
 /* ==========================================================================
-   4. Slick Slider Hero & Hero Skeleton Loader
+   4. Hero Slick Slider & Skeleton Loader
    ========================================================================== */
 .hero-slick-slider-wrapper {
 	position: relative;
@@ -197,7 +270,7 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 	position: relative;
 	display: flex;
 	align-items: center;
-	min-height: 550px;
+	min-height: 560px;
 }
 
 .hero-slideshow-fullscreen .hero-slide-item {
@@ -205,13 +278,14 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 	min-height: 100vh;
 }
 
+/* Gradien overlay yang sedikit mengarah ke hijau gelap */
 .hero-slide-overlay {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+	inset: 0;
+	background: linear-gradient(135deg,
+		rgba(45, 58, 41, 0.70) 0%,
+		rgba(75, 96, 67, 0.35) 60%,
+		rgba(0,0,0,0.15) 100%);
 	z-index: 1;
 }
 
@@ -223,39 +297,71 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 .hero-slide-container .hero-large-text {
-	font-size: 48px;
+	font-size: clamp(32px, 5vw, 56px);
 	line-height: 1.2;
 	color: #ffffff;
-	margin-bottom: 20px;
-	font-weight: 700;
-	text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+	margin-bottom: 18px;
+	font-weight: 800;
+	text-shadow: 0 2px 14px rgba(0,0,0,0.5);
+	letter-spacing: -0.5px;
 }
 
 .hero-slide-container .hero-small-text {
-	font-size: 18px;
-	color: #f3f4f6;
-	margin-bottom: 30px;
-	text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+	font-size: clamp(15px, 2vw, 19px);
+	color: rgba(255,255,255,0.92);
+	margin-bottom: 34px;
+	text-shadow: 0 1px 8px rgba(0,0,0,0.35);
+	line-height: 1.6;
 }
 
 .hero-buttons {
 	display: flex;
 	justify-content: center;
-	gap: 15px;
+	gap: 16px;
+	flex-wrap: wrap;
 }
 
-/* Slick Custom Arrows */
+/* Tombol Hero — Primer hijau */
+.hero-buttons .btn-theme-primary,
+.hero-buttons .btn.btn-theme-primary {
+	background: var(--th-green-600);
+	border-color: var(--th-green-600);
+	color: #fff !important;
+	transition: all 0.25s ease;
+}
+
+.hero-buttons .btn-theme-primary:hover {
+	background: var(--th-green-500);
+	border-color: var(--th-green-500);
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(101, 131, 84, 0.45);
+}
+
+.hero-buttons .btn-secondary-outline,
+.hero-buttons .btn.btn-secondary-outline {
+	border: 2px solid rgba(255,255,255,0.85);
+	color: #fff !important;
+	background: transparent;
+	transition: all 0.25s ease;
+}
+
+.hero-buttons .btn-secondary-outline:hover {
+	background: rgba(255,255,255,0.15);
+	border-color: #fff;
+}
+
+/* Slick Arrows */
 .slick-slider-hero .slick-arrow {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 10;
-	font-size: 24px;
-	color: rgba(255, 255, 255, 0.7);
+	font-size: 22px;
+	color: rgba(255,255,255,0.8);
 	cursor: pointer;
-	width: 50px;
-	height: 50px;
-	background: rgba(0, 0, 0, 0.3);
+	width: 48px;
+	height: 48px;
+	background: rgba(75, 96, 67, 0.45);
 	border-radius: 50%;
 	display: flex !important;
 	align-items: center;
@@ -264,49 +370,39 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 .slick-slider-hero .slick-arrow:hover {
-	color: #ffffff;
-	background: rgba(3, 196, 235, 0.8);
+	color: #fff;
+	background: var(--th-green-600);
 }
 
-.slick-slider-hero .prev-arrow {
-	left: 20px;
-}
-
-.slick-slider-hero .next-arrow {
-	right: 20px;
-}
+.slick-slider-hero .prev-arrow { left: 22px; }
+.slick-slider-hero .next-arrow { right: 22px; }
 
 /* Slick Dots */
-.slick-slider-hero .slick-dots {
-	bottom: 30px;
-	z-index: 10;
-}
+.slick-slider-hero .slick-dots { bottom: 28px; z-index: 10; }
 
 .slick-slider-hero .slick-dots li button:before {
-	color: #ffffff;
-	font-size: 12px;
-	opacity: 0.5;
-}
-
-.slick-slider-hero .slick-dots li.slick-active button:before {
-	color: #03c4eb;
+	color: rgba(255,255,255,0.6);
+	font-size: 11px;
 	opacity: 1;
 }
 
-/* Hero Skeleton Styles */
+.slick-slider-hero .slick-dots li.slick-active button:before {
+	color: var(--th-green-200);
+	opacity: 1;
+}
+
+/* Hero Skeleton */
 .hero-skeleton-wrapper {
-	background-color: #f1f5f9;
+	background: linear-gradient(135deg, var(--th-green-800) 0%, var(--th-green-600) 100%);
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 550px;
+	min-height: 560px;
 	overflow: hidden;
 }
 
-.hero-skeleton-fullscreen {
-	height: 100vh;
-}
+.hero-skeleton-fullscreen { height: 100vh; }
 
 .skeleton-content-box {
 	max-width: 600px;
@@ -316,33 +412,17 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 	z-index: 3;
 }
 
-.skeleton-title {
-	width: 80%;
-	height: 40px;
-	margin-bottom: 20px;
-}
+.skeleton-title  { width: 75%; height: 42px; margin-bottom: 22px; }
+.skeleton-text-1 { width: 58%; height: 16px; }
+.skeleton-text-2 { width: 43%; height: 16px; margin-bottom: 36px; }
 
-.skeleton-text-1 {
-	width: 60%;
-	height: 16px;
-}
-
-.skeleton-text-2 {
-	width: 45%;
-	height: 16px;
-	margin-bottom: 35px;
-}
-
-.skeleton-buttons {
-	display: flex;
-	gap: 15px;
-}
+.skeleton-buttons { display: flex; gap: 15px; }
 
 .skeleton-btn {
 	width: 140px;
-	height: 45px;
-	background-color: #e2e8f0;
-	border-radius: 4px;
+	height: 48px;
+	background-color: rgba(255,255,255,0.2);
+	border-radius: 6px;
 	position: relative;
 	overflow: hidden;
 }
@@ -350,60 +430,158 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 .skeleton-btn::after {
 	content: "";
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	inset: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s infinite;
 }
 
 /* ==========================================================================
-   5. About Us Koran Layout & Visi-Misi Cards
+   5. Global Section Styling — Pergantian Background Antar Section
    ========================================================================== */
-/* Newspaper layout */
-.about-main-newspaper {
+
+/* Section Title Area — seragamkan untuk semua section beta */
+.section-about-beta .section-title-area,
+.section-kurikulum-beta .section-title-area,
+.section-news-beta .section-title-area,
+.section-videolightbox-beta .section-title-area {
+	text-align: center;
 	margin-bottom: 50px;
-	background: #ffffff;
-	border-radius: 12px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-	padding: 30px;
-	border: 1px solid #f1f5f9;
+}
+
+.section-about-beta .section-subtitle,
+.section-kurikulum-beta .section-subtitle,
+.section-news-beta .section-subtitle {
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	color: var(--th-green-600);
+	display: inline-block;
+	margin-bottom: 12px;
+	position: relative;
+	padding-bottom: 0;
+}
+
+.section-about-beta .section-subtitle::before,
+.section-kurikulum-beta .section-subtitle::before,
+.section-news-beta .section-subtitle::before {
+	content: "—— ";
+}
+
+.section-about-beta .section-subtitle::after,
+.section-kurikulum-beta .section-subtitle::after,
+.section-news-beta .section-subtitle::after {
+	content: " ——";
+}
+
+.section-about-beta .section-title,
+.section-kurikulum-beta .section-title,
+.section-news-beta .section-title {
+	font-size: clamp(26px, 4vw, 38px);
+	font-weight: 800;
+	color: var(--th-green-800);
+	margin-top: 0;
+	margin-bottom: 16px;
+	font-family: "Raleway", sans-serif;
+	letter-spacing: -0.5px;
+}
+
+.section-about-beta .section-desc,
+.section-kurikulum-beta .section-desc,
+.section-news-beta .section-desc {
+	font-size: 16px;
+	color: var(--th-gray-500);
+	max-width: 680px;
+	margin: 0 auto;
+	line-height: 1.7;
+}
+
+/* CTA Tombol Global (Primer Hijau) */
+.btn-theme-primary {
+	background: var(--th-green-600) !important;
+	border-color: var(--th-green-600) !important;
+	color: #ffffff !important;
+	border-radius: 6px;
+	font-weight: 700;
+	transition: all 0.25s ease;
+}
+
+.btn-theme-primary:hover {
+	background: var(--th-green-500) !important;
+	border-color: var(--th-green-500) !important;
+	transform: translateY(-2px);
+	box-shadow: var(--th-shadow-sm);
+	color: #fff !important;
+}
+
+/* ==========================================================================
+   6. Section About Us — Background #ddead1, Koran + Visi Misi Cards
+   ========================================================================== */
+.section-about-beta {
+	background: linear-gradient(180deg, var(--th-green-100) 0%, var(--th-white) 100%);
+	padding-top: 90px;
+	padding-bottom: 80px;
+}
+
+/* Newspaper / Koran Layout */
+.about-main-newspaper {
+	margin-bottom: 55px;
+	background: var(--th-white);
+	border-radius: 16px;
+	box-shadow: var(--th-shadow-sm);
+	padding: 36px 40px;
+	border: 1px solid var(--th-green-100);
+	position: relative;
+	overflow: hidden;
+}
+
+.about-main-newspaper::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 6px;
+	height: 100%;
+	background: linear-gradient(180deg, var(--th-green-600), var(--th-green-300));
+	border-radius: 16px 0 0 16px;
 }
 
 .about-newspaper-thumb {
 	float: left;
-	width: 35%;
-	max-width: 380px;
-	margin: 0 30px 20px 0;
-	border-radius: 8px;
+	width: 34%;
+	max-width: 370px;
+	margin: 0 36px 20px 0;
+	border-radius: 12px;
 	overflow: hidden;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	box-shadow: var(--th-shadow-md);
 }
 
 .about-newspaper-thumb img {
 	width: 100%;
 	height: auto;
 	display: block;
+	transition: transform 0.5s ease;
 }
+
+.about-newspaper-thumb:hover img { transform: scale(1.04); }
 
 .about-newspaper-title {
 	font-size: 28px;
-	font-weight: 700;
-	color: #1e293b;
-	margin-top: 0;
-	margin-bottom: 15px;
+	font-weight: 800;
+	color: var(--th-green-800);
+	margin: 0 0 18px 0;
 	font-family: "Raleway", sans-serif;
-	border-bottom: 2px solid #03c4eb;
+	border-bottom: 2px solid var(--th-green-300);
 	display: inline-block;
-	padding-bottom: 5px;
+	padding-bottom: 6px;
+	letter-spacing: -0.3px;
 }
 
 .about-newspaper-text {
-	font-size: 15px;
-	line-height: 1.8;
-	color: #475569;
+	font-size: 15.5px;
+	line-height: 1.85;
+	color: var(--th-gray-700);
 	text-align: justify;
 }
 
@@ -412,23 +590,25 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 		float: none;
 		width: 100%;
 		max-width: 100%;
-		margin: 0 0 20px 0;
+		margin: 0 0 24px 0;
+	}
+
+	.about-main-newspaper {
+		padding: 24px 20px;
 	}
 }
 
 /* Visi & Misi Cards */
-.visi-misi-cards-row {
-	margin-top: 20px;
-}
+.visi-misi-cards-row { margin-top: 0; }
 
 .visi-misi-card {
-	background: #ffffff;
-	border-radius: 16px;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-	border: 1px solid #f1f5f9;
-	padding: 35px;
+	background: var(--th-white);
+	border-radius: 20px;
+	box-shadow: var(--th-shadow-sm);
+	border: 1px solid var(--th-green-100);
+	padding: 38px 32px;
 	height: 100%;
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: all var(--th-transition);
 	position: relative;
 	overflow: hidden;
 }
@@ -440,164 +620,204 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 	left: 0;
 	width: 5px;
 	height: 100%;
-	background-color: #03c4eb;
+	background: linear-gradient(180deg, var(--th-green-600), var(--th-green-300));
 }
 
 .visi-misi-card:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 15px 35px rgba(3, 196, 235, 0.1);
-	border-color: rgba(3, 196, 235, 0.2);
+	transform: translateY(-6px);
+	box-shadow: var(--th-shadow-md);
+	border-color: var(--th-green-200);
+	background: var(--th-green-10);
 }
 
 .visi-misi-card-title {
 	font-size: 22px;
-	font-weight: 700;
-	color: #1e293b;
-	margin-bottom: 20px;
+	font-weight: 800;
+	color: var(--th-green-800);
+	margin-bottom: 18px;
 	font-family: "Raleway", sans-serif;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.visi-misi-card-title::before {
+	content: "";
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	background: var(--th-green-100);
+	border-radius: 50%;
+	flex-shrink: 0;
 }
 
 .visi-misi-card-text {
 	font-size: 14.5px;
-	line-height: 1.75;
-	color: #475569;
+	line-height: 1.8;
+	color: var(--th-gray-700);
 }
 
-.visi-misi-card-text ol, .visi-misi-card-text ul {
-	padding-left: 20px;
-	margin-bottom: 0;
-}
+.visi-misi-card-text ol,
+.visi-misi-card-text ul { padding-left: 22px; margin-bottom: 0; }
 
-.visi-misi-card-text li {
-	margin-bottom: 8px;
-}
+.visi-misi-card-text li { margin-bottom: 8px; }
 
 /* ==========================================================================
-   6. Video Lightbox YouTube Inline Curved Frame
+   7. Video Lightbox — YouTube Inline Curved Frame (Dark BG)
    ========================================================================== */
 .section-videolightbox-beta {
 	text-align: center;
-	background-color: #0f172a;
+	background: linear-gradient(135deg, var(--th-green-900) 0%, var(--th-green-800) 100%);
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
 
 .section-videolightbox-beta .videolightbox__heading {
 	color: #ffffff;
-	font-size: 26px;
-	margin-bottom: 30px;
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 36px;
+	font-family: "Raleway", sans-serif;
 }
 
 .video-beta-container {
-	max-width: 800px;
+	max-width: 820px;
 	margin: 0 auto;
 }
 
 .video-beta-frame {
 	position: relative;
-	padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
-	border-radius: 16px;
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-	border: 6px solid #ffffff;
-	background: #000000;
+	border-radius: 20px;
+	box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+	border: 5px solid rgba(255,255,255,0.12);
+	background: #000;
 }
 
 .video-beta-frame iframe {
 	position: absolute;
-	top: 0;
-	left: 0;
+	inset: 0;
 	width: 100%;
 	height: 100%;
 }
 
 /* ==========================================================================
-   7. Kurikulum Section (Separate Cards)
+   8. Kurikulum Section — Background #c7ddb5, Kartu Selaras dengan About
    ========================================================================== */
 .section-kurikulum-beta {
-	background-color: #f8fafc;
+	background: linear-gradient(180deg, var(--th-white) 0%, var(--th-green-150) 100%);
+	padding-top: 90px;
+	padding-bottom: 90px;
 }
 
 .kurikulum-card-item {
-	background: #ffffff;
-	border-radius: 16px;
-	padding: 40px 30px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-	border: 1px solid #f1f5f9;
+	background: var(--th-white);
+	border-radius: 20px;
+	padding: 42px 30px 36px;
+	box-shadow: var(--th-shadow-sm);
+	border: 1px solid var(--th-green-100);
 	text-align: center;
 	height: 100%;
-	transition: all 0.3s ease;
+	transition: all var(--th-transition);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.kurikulum-card-item::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4px;
+	background: linear-gradient(90deg, var(--th-green-600), var(--th-green-300));
+	transform: scaleX(0);
+	transition: transform var(--th-transition);
 }
 
 .kurikulum-card-item:hover {
 	transform: translateY(-8px);
-	box-shadow: 0 15px 30px rgba(0,0,0,0.06);
-	border-color: rgba(3, 196, 235, 0.3);
+	box-shadow: var(--th-shadow-md);
+	border-color: var(--th-green-200);
 }
 
+.kurikulum-card-item:hover::after { transform: scaleX(1); }
+
 .kurikulum-card-icon {
-	width: 70px;
-	height: 70px;
+	width: 72px;
+	height: 72px;
 	border-radius: 50%;
-	background-color: rgba(3, 196, 235, 0.1);
-	color: #03c4eb;
+	background: linear-gradient(135deg, var(--th-green-100), var(--th-green-50));
+	color: var(--th-green-600);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 28px;
-	margin-bottom: 25px;
+	margin-bottom: 26px;
 	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(101, 131, 84, 0.15);
 }
 
 .kurikulum-card-item:hover .kurikulum-card-icon {
-	background-color: #03c4eb;
+	background: linear-gradient(135deg, var(--th-green-600), var(--th-green-400));
 	color: #ffffff;
-	transform: scale(1.1);
+	transform: scale(1.12) rotate(5deg);
+	box-shadow: 0 8px 22px rgba(101, 131, 84, 0.35);
 }
 
 .kurikulum-card-title {
 	font-size: 20px;
-	font-weight: 700;
-	color: #1e293b;
-	margin-bottom: 15px;
+	font-weight: 800;
+	color: var(--th-green-800);
+	margin-bottom: 14px;
 	font-family: "Raleway", sans-serif;
+	letter-spacing: -0.2px;
 }
 
 .kurikulum-card-desc {
 	font-size: 14px;
-	line-height: 1.7;
-	color: #64748b;
-	margin-bottom: 25px;
+	line-height: 1.75;
+	color: var(--th-gray-500);
+	margin-bottom: 28px;
 	flex-grow: 1;
 }
 
 .kurikulum-card-link {
-	font-size: 13.5px;
+	font-size: 13px;
 	font-weight: 700;
-	color: #03c4eb;
+	color: var(--th-green-600);
 	text-transform: uppercase;
-	letter-spacing: 0.5px;
+	letter-spacing: 0.8px;
 	text-decoration: none !important;
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
-	transition: gap 0.2s ease;
+	padding: 8px 18px;
+	border: 2px solid var(--th-green-200);
+	border-radius: 30px;
+	transition: all 0.25s ease;
 }
 
 .kurikulum-card-link:hover {
-	color: #0288d1;
+	background: var(--th-green-600);
+	border-color: var(--th-green-600);
+	color: #fff !important;
 	gap: 10px;
 }
 
-/* Kurikulum Skeleton Loading Layout */
+/* Kurikulum Skeleton */
 .kurikulum-card-skeleton {
-	background: #ffffff;
-	border-radius: 16px;
-	padding: 40px 30px;
-	border: 1px solid #f1f5f9;
+	background: var(--th-white);
+	border-radius: 20px;
+	padding: 42px 30px;
+	border: 1px solid var(--th-green-100);
 	height: 100%;
+	min-height: 300px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -606,11 +826,11 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 .kurikulum-card-skeleton .skeleton-circle {
-	width: 70px;
-	height: 70px;
+	width: 72px;
+	height: 72px;
 	border-radius: 50%;
-	background-color: #e2e8f0;
-	margin-bottom: 25px;
+	background-color: var(--th-green-100);
+	margin-bottom: 26px;
 	position: relative;
 	overflow: hidden;
 }
@@ -618,96 +838,63 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 .kurikulum-card-skeleton .skeleton-circle::after {
 	content: "";
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	inset: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s infinite;
 }
 
-.skeleton-card-title {
-	width: 70%;
-	height: 20px;
-	margin-bottom: 20px;
-}
-
-.skeleton-card-desc-1 {
-	width: 90%;
-	height: 14px;
-}
-
-.skeleton-card-desc-2 {
-	width: 80%;
-	height: 14px;
-	margin-bottom: 30px;
-}
-
-.skeleton-card-link {
-	width: 40%;
-	height: 16px;
-}
+.skeleton-card-title   { width: 68%; height: 20px; margin-bottom: 20px; }
+.skeleton-card-desc-1  { width: 90%; height: 13px; }
+.skeleton-card-desc-2  { width: 78%; height: 13px; margin-bottom: 28px; }
+.skeleton-card-link    { width: 42%; height: 16px; }
 
 /* ==========================================================================
-   8. News Horizontal Slider & News Skeleton
+   9. News Section — Background #b3cf99 → putih, Grid Seragam
    ========================================================================== */
 .section-news-beta {
-	background-color: #ffffff;
+	background: linear-gradient(180deg, var(--th-green-150) 0%, var(--th-green-10) 100%);
+	padding-top: 90px;
+	padding-bottom: 90px;
 }
 
-.news-slider-viewport {
-	position: relative;
-	margin-top: 30px;
-}
+/* ---- Horizontal Slider Track ---- */
+.news-slider-viewport { position: relative; margin-top: 30px; }
 
 .news-slider-track {
 	display: flex;
 	overflow-x: auto;
 	scroll-behavior: smooth;
 	-webkit-overflow-scrolling: touch;
-	gap: 24px;
-	padding: 15px 5px 30px;
+	gap: 26px;
+	padding: 12px 4px 32px;
 	scroll-snap-type: x mandatory;
 }
 
-/* Hide scrollbar default for premium look */
-.news-slider-track::-webkit-scrollbar {
-	height: 6px;
-}
-.news-slider-track::-webkit-scrollbar-track {
-	background: #f1f5f9;
-	border-radius: 10px;
-}
-.news-slider-track::-webkit-scrollbar-thumb {
-	background: #cbd5e1;
-	border-radius: 10px;
-}
-.news-slider-track::-webkit-scrollbar-thumb:hover {
-	background: #94a3b8;
-}
+/* Custom scrollbar */
+.news-slider-track::-webkit-scrollbar        { height: 5px; }
+.news-slider-track::-webkit-scrollbar-track  { background: var(--th-green-100); border-radius: 10px; }
+.news-slider-track::-webkit-scrollbar-thumb  { background: var(--th-green-300); border-radius: 10px; }
+.news-slider-track::-webkit-scrollbar-thumb:hover { background: var(--th-green-500); }
 
+/* News Card */
 .news-card-slide {
-	flex: 0 0 320px;
+	flex: 0 0 310px;
 	scroll-snap-align: start;
-	border-radius: 16px;
+	border-radius: 18px;
 	overflow: hidden;
-	background: #ffffff;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-	border: 1px solid #f1f5f9;
+	background: var(--th-white);
+	box-shadow: var(--th-shadow-sm);
+	border: 1px solid var(--th-green-100);
 	transition: all 0.3s ease;
 }
 
-@media (max-width: 575px) {
-	.news-card-slide {
-		flex: 0 0 280px;
-	}
-}
+@media (max-width: 575px) { .news-card-slide { flex: 0 0 275px; } }
 
 .news-card-slide:hover {
-	transform: translateY(-6px);
-	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-	border-color: rgba(3, 196, 235, 0.2);
+	transform: translateY(-7px);
+	box-shadow: var(--th-shadow-md);
+	border-color: var(--th-green-200);
 }
 
 .news-card-inner {
@@ -718,51 +905,44 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 
 .news-card-thumb {
 	position: relative;
-	padding-bottom: 56.25%;
+	padding-bottom: 58%;
 	overflow: hidden;
 }
 
 .news-card-thumb img {
 	position: absolute;
-	top: 0;
-	left: 0;
+	inset: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	transition: transform 0.5s ease;
+	transition: transform 0.55s ease;
 }
 
-.news-card-slide:hover .news-card-thumb img {
-	transform: scale(1.08);
-}
+.news-card-slide:hover .news-card-thumb img { transform: scale(1.09); }
 
 .news-card-content {
-	padding: 24px;
+	padding: 22px 24px;
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 }
 
 .news-card-meta {
-	font-size: 12px;
-	margin-bottom: 12px;
+	font-size: 11.5px;
+	margin-bottom: 10px;
 	display: flex;
 	justify-content: space-between;
-	color: #64748b;
+	color: var(--th-gray-500);
 }
 
-.news-card-meta a {
-	color: #03c4eb;
-	font-weight: 600;
-}
+.news-card-meta a { color: var(--th-green-600); font-weight: 700; }
 
 .news-card-title {
-	font-size: 17px;
-	line-height: 1.4;
+	font-size: 16.5px;
+	line-height: 1.45;
 	font-weight: 700;
-	color: #1e293b;
-	margin-top: 0;
-	margin-bottom: 12px;
+	color: var(--th-dark);
+	margin: 0 0 10px;
 	font-family: "Raleway", sans-serif;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
@@ -771,54 +951,47 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 	height: 48px;
 }
 
-.news-card-title a {
-	color: #1e293b;
-	text-decoration: none !important;
-}
-
-.news-card-title a:hover {
-	color: #03c4eb;
-}
+.news-card-title a { color: var(--th-dark); text-decoration: none !important; }
+.news-card-title a:hover { color: var(--th-green-600); }
 
 .news-card-excerpt {
 	font-size: 13.5px;
-	line-height: 1.6;
-	color: #64748b;
-	margin-bottom: 20px;
+	line-height: 1.65;
+	color: var(--th-gray-500);
+	margin-bottom: 18px;
 	flex-grow: 1;
 }
 
 .news-card-readmore {
-	font-size: 13px;
+	font-size: 12.5px;
 	font-weight: 700;
-	color: #03c4eb;
+	color: var(--th-green-600);
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	text-decoration: none !important;
 	display: inline-flex;
 	align-items: center;
-	gap: 4px;
+	gap: 5px;
+	transition: gap 0.2s ease, color 0.2s ease;
 }
 
-.news-card-readmore:hover {
-	color: #0288d1;
-}
+.news-card-readmore:hover { color: var(--th-green-800); gap: 9px; }
 
-/* News Slider Arrows overlay */
+/* News Scroll Arrows */
 .news-scroll-arrows {
 	display: flex;
 	justify-content: center;
-	gap: 15px;
-	margin-top: 10px;
+	gap: 14px;
+	margin-top: 12px;
 }
 
 .news-scroll-arrows button {
-	width: 40px;
-	height: 40px;
+	width: 42px;
+	height: 42px;
 	border-radius: 50%;
-	border: 1px solid #cbd5e1;
-	background: #ffffff;
-	color: #475569;
+	border: 2px solid var(--th-green-200);
+	background: var(--th-white);
+	color: var(--th-green-700);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -829,33 +1002,32 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 .news-scroll-arrows button:hover {
-	background-color: #03c4eb;
-	color: #ffffff;
-	border-color: #03c4eb;
+	background: var(--th-green-600);
+	color: #fff;
+	border-color: var(--th-green-600);
 }
 
-/* News Skeleton scroll */
+/* News Skeleton */
 .news-skeleton-scroll {
 	display: flex;
-	gap: 24px;
+	gap: 26px;
 	overflow: hidden;
-	padding: 15px 5px 30px;
+	padding: 12px 4px 32px;
 }
 
 .news-card-skeleton {
-	flex: 0 0 320px;
-	background: #ffffff;
-	border-radius: 16px;
-	border: 1px solid #f1f5f9;
-	padding: 0;
-	height: 380px;
+	flex: 0 0 310px;
+	background: var(--th-white);
+	border-radius: 18px;
+	border: 1px solid var(--th-green-100);
+	height: 360px;
 	position: relative;
 	overflow: hidden;
 }
 
 .news-card-skeleton .skeleton-thumb {
-	height: 180px;
-	background-color: #e2e8f0;
+	height: 175px;
+	background-color: var(--th-green-100);
 	position: relative;
 	overflow: hidden;
 }
@@ -863,52 +1035,136 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 .news-card-skeleton .skeleton-thumb::after {
 	content: "";
 	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+	inset: 0;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
 	background-size: 200% 100%;
 	animation: shimmer 1.5s infinite;
 }
 
-.news-card-skeleton .skeleton-meta {
-	width: 60%;
-	height: 12px;
-	margin: 20px 24px 15px;
-}
+.news-card-skeleton .skeleton-meta       { width: 58%; height: 11px; margin: 18px 22px 14px; }
+.news-card-skeleton .skeleton-title-line { width: 80%; height: 17px; margin: 0 22px 14px; }
+.news-card-skeleton .skeleton-desc-line-1 { width: 84%; height: 12px; margin: 0 22px 8px; }
+.news-card-skeleton .skeleton-desc-line-2 { width: 68%; height: 12px; margin: 0 22px; }
 
-.news-card-skeleton .skeleton-title-line {
-	width: 80%;
-	height: 18px;
-	margin: 0 24px 15px;
-}
-
-.news-card-skeleton .skeleton-desc-line-1 {
-	width: 85%;
-	height: 13px;
-	margin: 0 24px 8px;
-}
-
-.news-card-skeleton .skeleton-desc-line-2 {
-	width: 70%;
-	height: 13px;
-	margin: 0 24px;
+/* No news found */
+.no-news-found {
+	color: var(--th-gray-500);
+	font-style: italic;
+	padding: 30px 0;
 }
 
 /* ==========================================================================
-   9. Post Wallet Archive Page Layout
+   10. Footer — Hijau Tua #4b6043 dengan teks putih bersih
+   ========================================================================== */
+body.beta-view-active .site-footer,
+body.home.section-about-beta .site-footer,
+.site-footer {
+	/* hanya berlaku di betaview — ditarget melalui class di body */
+}
+
+/* Targeting footer khusus betaview */
+body.beta-view-active footer#colophon,
+body.home.section-about-beta footer#colophon {
+	background: linear-gradient(135deg, var(--th-green-800) 0%, var(--th-green-900) 100%);
+	color: rgba(255,255,255,0.88);
+}
+
+body.beta-view-active .footer-widgets-wrapper,
+body.home.section-about-beta .footer-widgets-wrapper {
+	background: transparent;
+	padding: 60px 0 40px;
+}
+
+body.beta-view-active .footer-widget h3,
+body.beta-view-active .footer-widget .widget-title,
+body.home.section-about-beta .footer-widget h3,
+body.home.section-about-beta .footer-widget .widget-title {
+	color: var(--th-white);
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	padding-bottom: 12px;
+	border-bottom: 2px solid var(--th-green-500);
+}
+
+body.beta-view-active .footer-widget a,
+body.home.section-about-beta .footer-widget a {
+	color: var(--th-green-200) !important;
+	transition: color 0.2s ease;
+}
+
+body.beta-view-active .footer-widget a:hover,
+body.home.section-about-beta .footer-widget a:hover {
+	color: var(--th-white) !important;
+}
+
+body.beta-view-active .footer-widget p,
+body.beta-view-active .footer-widget li,
+body.home.section-about-beta .footer-widget p,
+body.home.section-about-beta .footer-widget li {
+	color: rgba(255,255,255,0.75);
+}
+
+body.beta-view-active .site-info,
+body.home.section-about-beta .site-info {
+	background: var(--th-green-900);
+	border-top: 1px solid rgba(255,255,255,0.10);
+	padding: 18px 0;
+}
+
+body.beta-view-active .site-info *,
+body.home.section-about-beta .site-info * {
+	color: rgba(255,255,255,0.65) !important;
+	font-size: 13px;
+}
+
+body.beta-view-active .site-info a,
+body.home.section-about-beta .site-info a {
+	color: var(--th-green-200) !important;
+}
+
+body.beta-view-active .back-to-top,
+body.home.section-about-beta .back-to-top {
+	color: var(--th-green-300) !important;
+	transition: color 0.2s ease;
+}
+
+body.beta-view-active .back-to-top:hover,
+body.home.section-about-beta .back-to-top:hover {
+	color: var(--th-white) !important;
+}
+
+/* Social icons footer */
+body.beta-view-active .footer-connect a,
+body.home.section-about-beta .footer-connect a {
+	background: rgba(255,255,255,0.1) !important;
+	color: var(--th-green-200) !important;
+	border: 1px solid rgba(255,255,255,0.15) !important;
+	transition: all 0.2s ease;
+}
+
+body.beta-view-active .footer-connect a:hover,
+body.home.section-about-beta .footer-connect a:hover {
+	background: var(--th-green-600) !important;
+	color: #fff !important;
+	border-color: var(--th-green-600) !important;
+}
+
+/* ==========================================================================
+   11. Post Wallet Archive Page Layout (tidak berubah, fitur tetap ada)
    ========================================================================== */
 .wallet-posts-archive-page {
-	background-color: #f8fafc;
+	background-color: var(--th-green-10);
 	min-height: 700px;
-	padding-bottom: 60px;
+	padding-bottom: 70px;
 }
 
 .wallet-posts-archive-page .page-header {
-	background-color: #1e293b;
+	background: linear-gradient(135deg, var(--th-green-800) 0%, var(--th-green-700) 100%);
 	color: #ffffff;
-	padding: 60px 0;
+	padding: 65px 0;
 	text-align: center;
 	margin-bottom: 0;
 }
@@ -916,12 +1172,13 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 .wallet-posts-archive-page .page-title {
 	color: #ffffff;
 	font-size: 36px;
-	font-weight: 700;
+	font-weight: 800;
 	margin-bottom: 10px;
+	font-family: "Raleway", sans-serif;
 }
 
 .wallet-posts-archive-page .page-subtitle {
-	color: #94a3b8;
+	color: var(--th-green-200);
 	font-size: 16px;
 	margin: 0;
 }
@@ -933,19 +1190,15 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 	align-items: flex-start;
 }
 
-@media (max-width: 991px) {
-	.wallet-container {
-		flex-direction: column;
-	}
-}
+@media (max-width: 991px) { .wallet-container { flex-direction: column; } }
 
-/* Left Sidebar Tabs (Slots) */
+/* Left Sidebar Tabs */
 .wallet-tabs-slots {
 	flex: 0 0 260px;
-	background: #1e293b;
+	background: linear-gradient(180deg, var(--th-green-800) 0%, var(--th-green-900) 100%);
 	padding: 20px;
 	border-radius: 18px;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+	box-shadow: var(--th-shadow-md);
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
@@ -965,11 +1218,11 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 .wallet-slot-tab {
-	background: rgba(255, 255, 255, 0.05);
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: rgba(255,255,255,0.06);
+	border: 1px solid rgba(255,255,255,0.12);
 	border-radius: 12px;
 	padding: 14px 18px;
-	color: #cbd5e1;
+	color: var(--th-green-200);
 	cursor: pointer;
 	text-align: left;
 	display: flex;
@@ -977,54 +1230,35 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 	align-items: center;
 	font-family: "Raleway", sans-serif;
 	font-weight: 600;
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	transition: all var(--th-transition);
 	outline: none !important;
 }
 
-@media (max-width: 991px) {
-	.wallet-slot-tab {
-		flex: 0 0 auto;
-		gap: 15px;
-	}
-}
+@media (max-width: 991px) { .wallet-slot-tab { flex: 0 0 auto; gap: 15px; } }
 
 .wallet-slot-tab:hover {
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255,255,255,0.12);
 	color: #ffffff;
 	transform: translateX(4px);
 }
 
-@media (max-width: 991px) {
-	.wallet-slot-tab:hover {
-		transform: translateY(-2px);
-	}
-}
+@media (max-width: 991px) { .wallet-slot-tab:hover { transform: translateY(-2px); } }
 
-/* Active Slot (Tab) style */
 .wallet-slot-tab.active-slot {
-	background: #03c4eb;
-	border-color: #03c4eb;
+	background: var(--th-green-600);
+	border-color: var(--th-green-600);
 	color: #ffffff;
-	box-shadow: 0 4px 15px rgba(3, 196, 235, 0.4);
+	box-shadow: 0 4px 16px rgba(101, 131, 84, 0.45);
 	transform: translateX(8px);
 }
 
-@media (max-width: 991px) {
-	.wallet-slot-tab.active-slot {
-		transform: translateY(-4px);
-	}
-}
+@media (max-width: 991px) { .wallet-slot-tab.active-slot { transform: translateY(-4px); } }
 
-.slot-tab-header {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	font-size: 15px;
-}
+.slot-tab-header { display: flex; align-items: center; gap: 8px; font-size: 15px; }
 
 .slot-tab-badge {
 	font-size: 11px;
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0,0,0,0.25);
 	padding: 3px 8px;
 	border-radius: 10px;
 	color: #ffffff;
@@ -1033,42 +1267,35 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 /* Right Sleeve Contents */
 .wallet-pocket-contents {
 	flex: 1;
-	background: #ffffff;
+	background: var(--th-white);
 	border-radius: 18px;
 	padding: 40px;
-	box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-	border: 1px solid #e2e8f0;
+	box-shadow: var(--th-shadow-sm);
+	border: 1px solid var(--th-green-100);
 	min-height: 400px;
 }
 
-@media (max-width: 575px) {
-	.wallet-pocket-contents {
-		padding: 24px 15px;
-	}
-}
+@media (max-width: 575px) { .wallet-pocket-contents { padding: 24px 15px; } }
 
 .pocket-year-title {
 	font-size: 26px;
-	font-weight: 700;
-	color: #1e293b;
-	margin-top: 0;
-	margin-bottom: 30px;
-	border-bottom: 1px solid #e2e8f0;
-	padding-bottom: 12px;
+	font-weight: 800;
+	color: var(--th-green-800);
+	margin: 0 0 30px;
+	border-bottom: 2px solid var(--th-green-100);
+	padding-bottom: 14px;
 	font-family: "Raleway", sans-serif;
 	display: flex;
 	align-items: center;
 	gap: 10px;
 }
 
-.pocket-year-title i {
-	color: #03c4eb;
-}
+.pocket-year-title i { color: var(--th-green-600); }
 
 .pocket-article-card {
-	background: #ffffff;
-	border-radius: 12px;
-	border: 1px solid #e2e8f0;
+	background: var(--th-white);
+	border-radius: 14px;
+	border: 1px solid var(--th-green-100);
 	overflow: hidden;
 	height: 100%;
 	display: flex;
@@ -1077,9 +1304,9 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 .pocket-article-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-	border-color: #cbd5e1;
+	transform: translateY(-5px);
+	box-shadow: var(--th-shadow-sm);
+	border-color: var(--th-green-200);
 }
 
 .pocket-card-thumb {
@@ -1090,12 +1317,14 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 
 .pocket-card-thumb img {
 	position: absolute;
-	top: 0;
-	left: 0;
+	inset: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	transition: transform 0.4s ease;
 }
+
+.pocket-article-card:hover .pocket-card-thumb img { transform: scale(1.06); }
 
 .pocket-card-body {
 	padding: 20px;
@@ -1106,44 +1335,35 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 
 .pocket-card-meta {
 	font-size: 11px;
-	color: #64748b;
+	color: var(--th-gray-500);
 	margin-bottom: 8px;
 	display: flex;
 	justify-content: space-between;
 }
 
-.pocket-card-meta a {
-	color: #03c4eb;
-	font-weight: 600;
-}
+.pocket-card-meta a { color: var(--th-green-600); font-weight: 600; }
 
 .pocket-card-title {
 	font-size: 15px;
 	font-weight: 700;
 	line-height: 1.4;
-	margin-top: 0;
-	margin-bottom: 10px;
+	margin: 0 0 10px;
 	font-family: "Raleway", sans-serif;
 	height: 42px;
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
+	color: var(--th-dark);
 }
 
-.pocket-card-title a {
-	color: #1e293b;
-	text-decoration: none !important;
-}
-
-.pocket-card-title a:hover {
-	color: #03c4eb;
-}
+.pocket-card-title a { color: var(--th-dark); text-decoration: none !important; }
+.pocket-card-title a:hover { color: var(--th-green-600); }
 
 .pocket-card-excerpt {
 	font-size: 13px;
 	line-height: 1.6;
-	color: #64748b;
+	color: var(--th-gray-500);
 	margin-bottom: 15px;
 	flex-grow: 1;
 }
@@ -1151,18 +1371,57 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 .pocket-card-more {
 	font-size: 12px;
 	font-weight: 700;
-	color: #03c4eb;
+	color: var(--th-green-600);
 	text-decoration: none !important;
 	text-transform: uppercase;
 	display: inline-flex;
 	align-items: center;
-	gap: 2px;
+	gap: 4px;
+	transition: gap 0.2s ease, color 0.2s ease;
 }
 
-.pocket-card-more:hover {
-	color: #0288d1;
+.pocket-card-more:hover { color: var(--th-green-800); gap: 8px; }
+
+.pocket-item-col { margin-bottom: 30px; }
+
+/* ==========================================================================
+   12. Contact Section — Warna diselaraskan dengan palet hijau
+   ========================================================================== */
+body.beta-view-active .section-contact .address-box h3,
+body.home.section-about-beta .section-contact .address-box h3 {
+	color: var(--th-green-800);
 }
 
-.pocket-item-col {
-	margin-bottom: 30px;
+body.beta-view-active .section-contact .fa-circle,
+body.home.section-about-beta .section-contact .fa-circle {
+	color: var(--th-green-600) !important;
 }
+
+/* ==========================================================================
+   13. Responsive — Padding section & logo mobile
+   ========================================================================== */
+@media (max-width: 767px) {
+	.section-about-beta,
+	.section-kurikulum-beta,
+	.section-news-beta {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	.section-videolightbox-beta {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	.about-main-newspaper {
+		padding: 22px 16px;
+	}
+
+	.visi-misi-card { padding: 28px 22px; }
+	.kurikulum-card-item { padding: 30px 20px; }
+}
+
+/* ==========================================================================
+   14. WOW Animations — Overrides untuk timing yang lebih smooth
+   ========================================================================== */
+.wow.slideInUp { animation-duration: 0.6s; animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); }

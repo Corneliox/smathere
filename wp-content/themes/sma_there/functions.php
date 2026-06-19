@@ -550,7 +550,7 @@ function smathere_beta_enqueue_scripts() {
 		wp_enqueue_script( 'smathere-slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array( 'jquery' ), '1.8.1', true );
 
 		// Enqueue Staging Beta Stylesheet
-		wp_enqueue_style( 'smathere-beta-style', get_template_directory_uri() . '/style-beta.css', array(), '1.0.0' );
+		wp_enqueue_style( 'smathere-beta-style', get_template_directory_uri() . '/style-beta.css', array(), '2.0.0' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'smathere_beta_enqueue_scripts', 99 );
