@@ -617,12 +617,12 @@ function smathere_beta_init_check() {
 	if ( isset( $_GET['beta'] ) ) {
 		if ( $_GET['beta'] === '0' ) {
 			setcookie( 'smathere_beta_preview', '', time() - 3600, '/' );
-			wp_safe_redirect( remove_query_arg( 'beta' ) );
-			exit;
+			// wp_safe_redirect( remove_query_arg( 'beta' ) );
+			// exit;
 		} elseif ( $_GET['beta'] === '1' ) {
 			setcookie( 'smathere_beta_preview', '1', time() + ( 86400 * 7 ), '/' );
-			wp_safe_redirect( remove_query_arg( 'beta' ) );
-			exit;
+			// wp_safe_redirect( remove_query_arg( 'beta' ) );
+			// exit;
 		}
 	}
 }
