@@ -556,21 +556,45 @@ function smathere_beta_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'smathere_beta_enqueue_scripts', 99 );
 
 /**
- * Dynamically insert 'kurikulum' section when in Beta mode
+ * Dynamically replace sections when in Beta mode
  */
-function smathere_add_kurikulum_section( $sections ) {
+function smathere_beta_modify_sections( $sections ) {
 	if ( smathere_is_beta_mode() ) {
 		// We insert 'kurikulum' right after 'services'
 		$pos = array_search( 'services', $sections );
 		if ( $pos !== false ) {
-			array_splice( $sections, $pos + 1, 0, 'kurikulum' );
+			array_splice( $sections, $pos + 1, 0, 'kurikulum-beta' );
 		} else {
-			$sections[] = 'kurikulum';
+			$sections[] = 'kurikulum-beta';
 		}
+        
+        // Map other sections to their beta versions
+        foreach ( $sections as $k => $section ) {
+            if ( in_array( $section, array( 'about', 'videolightbox', 'news' ) ) ) {
+                $sections[$k] = $section . '-beta';
+            }
+        }
 	}
 	return $sections;
 }
-add_filter( 'onepress_frontpage_sections_order', 'smathere_add_kurikulum_section' );
+add_filter( 'onepress_frontpage_sections_order', 'smathere_beta_modify_sections' );
+
+/**
+ * Replace Hero section with Hero Beta
+ */
+function smathere_replace_hero_section() {
+    if ( smathere_is_beta_mode() ) {
+        remove_action( 'onepress_header_end', 'onepress_load_hero_section' );
+        add_action( 'onepress_header_end', 'smathere_load_hero_beta_section' );
+    }
+}
+add_action( 'wp', 'smathere_replace_hero_section' );
+
+function smathere_load_hero_beta_section() {
+    if ( is_page_template( 'template-frontpage.php' ) ) {
+        onepress_load_section( 'hero-beta' );
+    }
+}
 
 /**
  * Intercept template requests for ?view=wallet to load the custom template-posts-wallet.php
