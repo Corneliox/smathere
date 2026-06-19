@@ -550,31 +550,50 @@ function smathere_beta_enqueue_scripts() {
 		wp_enqueue_script( 'smathere-slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array( 'jquery' ), '1.8.1', true );
 
 		// Enqueue Staging Beta Stylesheet
-		wp_enqueue_style( 'smathere-beta-style', get_template_directory_uri() . '/style-beta.css', array(), '2.0.0' );
+		wp_enqueue_style( 'smathere-beta-style', get_template_directory_uri() . '/style-beta.css', array(), '3.0.0' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'smathere_beta_enqueue_scripts', 99 );
 
 /**
- * Dynamically replace sections when in Beta mode
+ * Dynamically replace & reorder sections when in Beta mode.
+ * About Beta menjadi section PERTAMA setelah Hero.
  */
 function smathere_beta_modify_sections( $sections ) {
-	if ( smathere_is_beta_mode() ) {
-		// We insert 'kurikulum' right after 'services'
-		$pos = array_search( 'services', $sections );
-		if ( $pos !== false ) {
-			array_splice( $sections, $pos + 1, 0, 'kurikulum-beta' );
-		} else {
-			$sections[] = 'kurikulum-beta';
-		}
-        
-        // Map other sections to their beta versions
-        foreach ( $sections as $k => $section ) {
-            if ( in_array( $section, array( 'about', 'videolightbox', 'news' ) ) ) {
-                $sections[$k] = $section . '-beta';
-            }
-        }
+	if ( ! smathere_is_beta_mode() ) {
+		return $sections;
 	}
+
+	// Step 1: Petakan section standar ke versi beta-nya
+	$beta_map = array(
+		'about'         => 'about-beta',
+		'videolightbox' => 'videolightbox-beta',
+		'news'          => 'news-beta',
+	);
+	foreach ( $sections as $k => $section ) {
+		if ( isset( $beta_map[ $section ] ) ) {
+			$sections[ $k ] = $beta_map[ $section ];
+		}
+	}
+
+	// Step 2: Hapus 'kurikulum-beta' jika sudah ada (cegah duplikat)
+	$sections = array_values( array_diff( $sections, array( 'kurikulum-beta' ) ) );
+
+	// Step 3: Pindahkan 'about-beta' ke posisi PERTAMA
+	$about_idx = array_search( 'about-beta', $sections );
+	if ( $about_idx !== false ) {
+		array_splice( $sections, $about_idx, 1 );
+		array_unshift( $sections, 'about-beta' );
+	}
+
+	// Step 4: Sisipkan 'kurikulum-beta' tepat setelah 'about-beta'
+	$after = array_search( 'about-beta', $sections );
+	if ( $after !== false ) {
+		array_splice( $sections, $after + 1, 0, 'kurikulum-beta' );
+	} else {
+		$sections[] = 'kurikulum-beta';
+	}
+
 	return $sections;
 }
 add_filter( 'onepress_frontpage_sections_order', 'smathere_beta_modify_sections' );
@@ -629,6 +648,184 @@ function smathere_beta_init_check() {
 add_action( 'init', 'smathere_beta_init_check', 1 );
 
 /**
+ * PHP-based body class untuk beta mode.
+ * Tanpa ini, CSS `.body.beta-view-active` hanya aktif setelah JS jalan.
+ */
+function smathere_beta_body_class( $classes ) {
+	if ( smathere_is_beta_mode() ) {
+		$classes[] = 'beta-view-active';
+		$classes[] = 'section-about-beta'; // trigger transparent-header CSS
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'smathere_beta_body_class' );
+
+/**
+ * Inject 4-column footer kustom untuk Beta View.
+ * Dipasang di hook 'onepress_before_site_info' (di dalam <footer>).
+ */
+function smathere_beta_footer_columns() {
+	if ( ! smathere_is_beta_mode() ) return;
+
+	/* ── Logo ── */
+	$logo_html = '';
+	if ( has_custom_logo() ) {
+		$logo_html = get_custom_logo();
+	}
+
+	/* ── Info kontak dari Customizer ── */
+	$contact_address = get_theme_mod( 'onepress_contact_address', 'Jl. Sriwijaya No.44, Semarang 50249, Jawa Tengah' );
+	$contact_phone   = get_theme_mod( 'onepress_contact_phone',   '(024) 8316624' );
+	$contact_email   = get_theme_mod( 'onepress_contact_email',   'info@smatheresiana.sch.id' );
+
+	/* ── QR Codes (generate via public API) ── */
+	$qr_ppdb      = 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&color=ddead1&bgcolor=4b6043&margin=8&data=' . urlencode( home_url( '/ppdb/' ) );
+	$qr_pengaduan = 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&color=ddead1&bgcolor=4b6043&margin=8&data=' . urlencode( home_url( '/pengaduan/' ) );
+
+	/* ── Footer navigation links ── */
+	$footer_links = array(
+		array( 'label' => 'About Us',                         'url' => home_url( '/#about' ) ),
+		array( 'label' => 'Guru dan Karyawan',                'url' => home_url( '/guru-dan-karyawan/' ) ),
+		array( 'label' => 'Immersion is Smarter',             'url' => home_url( '/immersion-is-smarter/' ) ),
+		array( 'label' => 'Open House 2026',                  'url' => home_url( '/open-house-2026/' ) ),
+		array( 'label' => 'Reguler Plus: Young and Creative', 'url' => home_url( '/reguler-plus-young-and-creative/' ) ),
+	);
+	?>
+	<div class="beta-footer-widgets" role="contentinfo">
+		<div class="container">
+			<div class="row beta-footer-row">
+
+				<!-- ═══ Col 1: Logo + Unika Affiliations ═══ -->
+				<div class="col-lg-3 col-md-6 col-sm-6 beta-footer-col beta-footer-col-brand">
+					<div class="beta-footer-logo-wrap">
+						<?php if ( $logo_html ) : ?>
+							<?php echo $logo_html; ?>
+						<?php else : ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="beta-footer-brand-text">
+								<?php bloginfo( 'name' ); ?>
+							</a>
+						<?php endif; ?>
+					</div>
+					<p class="beta-footer-tagline"><?php bloginfo( 'description' ); ?></p>
+
+					<div class="beta-unika-section">
+						<p class="beta-unika-label">Terafiliasi dengan:</p>
+						<div class="beta-unika-row">
+							<div class="beta-unika-item">
+								<div class="beta-unika-badge" aria-hidden="true">
+									<i class="fa fa-university"></i>
+								</div>
+								<div class="beta-unika-info">
+									<span>UNIKA</span>
+									<strong>2018</strong>
+								</div>
+							</div>
+							<div class="beta-unika-item">
+								<div class="beta-unika-badge" aria-hidden="true">
+									<i class="fa fa-university"></i>
+								</div>
+								<div class="beta-unika-info">
+									<span>UNIKA</span>
+									<strong>2026</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- ═══ Col 2: Navigation Links ═══ -->
+				<div class="col-lg-3 col-md-6 col-sm-6 beta-footer-col beta-footer-col-nav">
+					<h4 class="beta-footer-heading">Navigasi</h4>
+					<ul class="beta-footer-links" role="list">
+						<?php foreach ( $footer_links as $link ) : ?>
+							<li>
+								<a href="<?php echo esc_url( $link['url'] ); ?>">
+									<i class="fa fa-angle-right" aria-hidden="true"></i>
+									<?php echo esc_html( $link['label'] ); ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+
+				<!-- ═══ Col 3: Google Maps Embed + Contact ═══ -->
+				<div class="col-lg-3 col-md-6 col-sm-6 beta-footer-col beta-footer-col-map">
+					<h4 class="beta-footer-heading">Lokasi &amp; Kontak</h4>
+					<div class="beta-footer-map-wrap">
+						<iframe
+							title="Lokasi SMA Theresiana 1 Semarang"
+							src="https://maps.google.com/maps?q=SMA+Theresiana+1+Semarang&t=&z=15&ie=UTF8&iwloc=&output=embed"
+							width="100%" height="160"
+							frameborder="0" style="border:0;"
+							allowfullscreen loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade">
+						</iframe>
+					</div>
+					<ul class="beta-footer-contact-list" role="list">
+						<?php if ( $contact_address ) : ?>
+							<li>
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+								<span><?php echo wp_kses_post( $contact_address ); ?></span>
+							</li>
+						<?php endif; ?>
+						<?php if ( $contact_phone ) : ?>
+							<li>
+								<i class="fa fa-phone" aria-hidden="true"></i>
+								<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $contact_phone ) ); ?>">
+									<?php echo esc_html( $contact_phone ); ?>
+								</a>
+							</li>
+						<?php endif; ?>
+						<?php if ( $contact_email ) : ?>
+							<li>
+								<i class="fa fa-envelope-o" aria-hidden="true"></i>
+								<a href="mailto:<?php echo antispambot( $contact_email ); ?>">
+									<?php echo antispambot( $contact_email ); ?>
+								</a>
+							</li>
+						<?php endif; ?>
+					</ul>
+				</div>
+
+				<!-- ═══ Col 4: QR Codes PPDB & Pengaduan ═══ -->
+				<div class="col-lg-3 col-md-6 col-sm-6 beta-footer-col beta-footer-col-qr">
+					<h4 class="beta-footer-heading">QR Code</h4>
+					<div class="beta-footer-qr-grid">
+						<div class="beta-footer-qr-item">
+							<div class="beta-footer-qr-frame">
+								<img
+									src="<?php echo esc_url( $qr_ppdb ); ?>"
+									alt="QR Code PPDB 2026"
+									width="130" height="130"
+									loading="lazy" />
+							</div>
+							<span class="beta-footer-qr-label">
+								<i class="fa fa-graduation-cap" aria-hidden="true"></i> PPDB 2026
+							</span>
+						</div>
+						<div class="beta-footer-qr-item">
+							<div class="beta-footer-qr-frame">
+								<img
+									src="<?php echo esc_url( $qr_pengaduan ); ?>"
+									alt="QR Code Pengaduan"
+									width="130" height="130"
+									loading="lazy" />
+							</div>
+							<span class="beta-footer-qr-label">
+								<i class="fa fa-commenting-o" aria-hidden="true"></i> Pengaduan
+							</span>
+						</div>
+					</div>
+				</div>
+
+			</div><!-- .row.beta-footer-row -->
+		</div><!-- .container -->
+	</div><!-- .beta-footer-widgets -->
+	<?php
+}
+add_action( 'onepress_before_site_info', 'smathere_beta_footer_columns', 5 );
+
+/**
  * Append Exit Beta Button and Mobile Menu Overlay in Footer
  */
 function smathere_beta_footer_widget() {
@@ -644,10 +841,7 @@ function smathere_beta_footer_widget() {
 		?>
 		<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			// Append mobile overlay inside body
 			$('body').append($('.mobile-menu-overlay'));
-			
-			// Click overlay to close mobile menu
 			$(document).on('click', '.mobile-menu-overlay', function() {
 				$('#nav-toggle').trigger('click');
 			});
@@ -657,6 +851,3 @@ function smathere_beta_footer_widget() {
 	}
 }
 add_action( 'wp_footer', 'smathere_beta_footer_widget', 999 );
-
-
-

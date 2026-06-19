@@ -136,6 +136,36 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
    3. Header — Sticky Transparan → Solid saat Scroll
    ========================================================================== */
 
+/* ──────────────────────────────────────────────────────────────────────────
+   LOGO FIX — body.beta-view-active di-inject via PHP body_class filter,
+   sehingga CSS ini aktif sejak render pertama tanpa menunggu JS.
+   ────────────────────────────────────────────────────────────────────────── */
+body.beta-view-active #masthead img,
+body.beta-view-active .site-header img,
+body.beta-view-active .site-branding img,
+body.beta-view-active .custom-logo-link img,
+body.beta-view-active .custom-logo,
+body.beta-view-active .site-logo img,
+body.beta-view-active header .logo img {
+	max-height : 56px  !important;
+	max-width  : 190px !important;
+	width      : auto  !important;
+	height     : auto  !important;
+	object-fit : contain !important;
+	display    : block !important;
+}
+
+/* Juga pastikan wrapper logo tidak melebar */
+body.beta-view-active .site-logo,
+body.beta-view-active .site-branding,
+body.beta-view-active .custom-logo-link {
+	display    : inline-flex;
+	align-items: center;
+	max-height : 70px !important;
+	overflow   : hidden;
+}
+
+
 /* ---- Desktop Header ---- */
 @media (min-width: 992px) {
 	body.beta-view-active #masthead,
@@ -148,7 +178,7 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 		border-bottom: 1px solid rgba(255,255,255,0.15);
 		z-index: 9999;
 		transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
-		padding: 12px 0;
+		padding: 8px 0;
 	}
 
 	body.beta-view-active #masthead.header-scrolled,
@@ -156,23 +186,27 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 		background: rgba(255,255,255,0.98);
 		box-shadow: 0 4px 24px rgba(75, 96, 67, 0.12);
 		border-bottom: none;
-		padding: 6px 0;
+		padding: 4px 0;
 	}
 
-	/* Logo saat transparan → ukuran lebih kecil */
+	/* Logo saat transparan */
+	body.beta-view-active #masthead .custom-logo,
 	body.beta-view-active #masthead .site-logo img,
+	body.beta-view-active #masthead .custom-logo-link img,
 	body.home.section-about-beta #masthead .site-logo img {
-		max-height: 52px;
-		width: auto;
+		max-height: 50px !important;
 		transition: max-height 0.3s ease;
 	}
 
+	/* Logo saat scrolled — sedikit lebih kecil */
+	body.beta-view-active #masthead.header-scrolled .custom-logo,
 	body.beta-view-active #masthead.header-scrolled .site-logo img,
+	body.beta-view-active #masthead.header-scrolled .custom-logo-link img,
 	body.home.section-about-beta #masthead.header-fixed .site-logo img {
-		max-height: 42px;
+		max-height: 40px !important;
 	}
 
-	/* Warna menu saat transparan di atas hero */
+	/* Warna menu transparan */
 	body.beta-view-active #masthead:not(.header-scrolled) .onepress-menu > li > a,
 	body.home.section-about-beta #masthead:not(.header-fixed) .onepress-menu > li > a {
 		color: #ffffff;
@@ -184,7 +218,7 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 		color: var(--th-green-200);
 	}
 
-	/* Warna menu saat scrolled — pakai hijau */
+	/* Warna menu scrolled */
 	body.beta-view-active #masthead.header-scrolled .onepress-menu > li > a,
 	body.home.section-about-beta #masthead.header-fixed .onepress-menu > li > a {
 		color: var(--th-green-800);
@@ -192,12 +226,11 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 
 	body.beta-view-active #masthead.header-scrolled .onepress-menu > li > a:hover,
 	body.home.section-about-beta #masthead.header-fixed .onepress-menu > li > a:hover,
-	body.beta-view-active #masthead.header-scrolled .onepress-menu > li.current-menu-item > a,
-	body.home.section-about-beta #masthead.header-fixed .onepress-menu > li.current-menu-item > a {
+	body.beta-view-active #masthead.header-scrolled .onepress-menu > li.current-menu-item > a {
 		color: var(--th-green-600);
 	}
 
-	/* Site Title transparan */
+	/* Site Title saat transparan */
 	body.beta-view-active #masthead:not(.header-scrolled) .site-branding .site-title a,
 	body.home.section-about-beta #masthead:not(.header-fixed) .site-branding .site-title a {
 		color: #ffffff;
@@ -1054,70 +1087,36 @@ body.onepress-menu-mobile-opening .mobile-menu-overlay {
 }
 
 /* ==========================================================================
-   10. Footer — Hijau Tua #4b6043 dengan teks putih bersih
+   10. Footer — Hijau Tua #4b6043, 4-Column Layout + QR Code
    ========================================================================== */
-body.beta-view-active .site-footer,
-body.home.section-about-beta .site-footer,
-.site-footer {
-	/* hanya berlaku di betaview — ditarget melalui class di body */
+
+/* Sembunyikan default footer widget area di beta mode */
+body.beta-view-active .footer-widgets-wrapper,
+body.home.section-about-beta .footer-widgets-wrapper,
+body.beta-view-active .widget-area,
+body.home.section-about-beta .widget-area {
+	display: none !important;
 }
 
-/* Targeting footer khusus betaview */
+/* ── Base Footer ── */
 body.beta-view-active footer#colophon,
 body.home.section-about-beta footer#colophon {
-	background: linear-gradient(135deg, var(--th-green-800) 0%, var(--th-green-900) 100%);
+	background: linear-gradient(160deg, var(--th-green-800) 0%, var(--th-green-900) 100%);
 	color: rgba(255,255,255,0.88);
-}
-
-body.beta-view-active .footer-widgets-wrapper,
-body.home.section-about-beta .footer-widgets-wrapper {
-	background: transparent;
-	padding: 60px 0 40px;
-}
-
-body.beta-view-active .footer-widget h3,
-body.beta-view-active .footer-widget .widget-title,
-body.home.section-about-beta .footer-widget h3,
-body.home.section-about-beta .footer-widget .widget-title {
-	color: var(--th-white);
-	font-size: 16px;
-	font-weight: 700;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
-	margin-bottom: 20px;
-	padding-bottom: 12px;
-	border-bottom: 2px solid var(--th-green-500);
-}
-
-body.beta-view-active .footer-widget a,
-body.home.section-about-beta .footer-widget a {
-	color: var(--th-green-200) !important;
-	transition: color 0.2s ease;
-}
-
-body.beta-view-active .footer-widget a:hover,
-body.home.section-about-beta .footer-widget a:hover {
-	color: var(--th-white) !important;
-}
-
-body.beta-view-active .footer-widget p,
-body.beta-view-active .footer-widget li,
-body.home.section-about-beta .footer-widget p,
-body.home.section-about-beta .footer-widget li {
-	color: rgba(255,255,255,0.75);
+	padding-top: 0;
 }
 
 body.beta-view-active .site-info,
 body.home.section-about-beta .site-info {
 	background: var(--th-green-900);
 	border-top: 1px solid rgba(255,255,255,0.10);
-	padding: 18px 0;
+	padding: 16px 0;
 }
 
 body.beta-view-active .site-info *,
 body.home.section-about-beta .site-info * {
-	color: rgba(255,255,255,0.65) !important;
-	font-size: 13px;
+	color: rgba(255,255,255,0.55) !important;
+	font-size: 12.5px;
 }
 
 body.beta-view-active .site-info a,
@@ -1136,16 +1135,6 @@ body.home.section-about-beta .back-to-top:hover {
 	color: var(--th-white) !important;
 }
 
-/* Social icons footer */
-body.beta-view-active .footer-connect a,
-body.home.section-about-beta .footer-connect a {
-	background: rgba(255,255,255,0.1) !important;
-	color: var(--th-green-200) !important;
-	border: 1px solid rgba(255,255,255,0.15) !important;
-	transition: all 0.2s ease;
-}
-
-body.beta-view-active .footer-connect a:hover,
 body.home.section-about-beta .footer-connect a:hover {
 	background: var(--th-green-600) !important;
 	color: #fff !important;
@@ -1425,3 +1414,271 @@ body.home.section-about-beta .section-contact .fa-circle {
    14. WOW Animations — Overrides untuk timing yang lebih smooth
    ========================================================================== */
 .wow.slideInUp { animation-duration: 0.6s; animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+/* ==========================================================================
+   15. Beta Footer — 4 Kolom (Brand, Nav, Map, QR)
+   ========================================================================== */
+
+/* ── Kontainer utama beta footer ── */
+.beta-footer-widgets {
+	padding: 60px 0 48px;
+}
+
+.beta-footer-row { row-gap: 36px; }
+
+.beta-footer-col {
+	padding-left : 20px;
+	padding-right: 20px;
+}
+
+/* ── Col 1: Brand Logo + Unika ── */
+.beta-footer-logo-wrap { margin-bottom: 14px; }
+
+/* Logo di footer: putihkan karena bg gelap */
+.beta-footer-logo-wrap img,
+.beta-footer-logo-wrap .custom-logo {
+	max-height: 62px  !important;
+	max-width : 175px !important;
+	width     : auto  !important;
+	height    : auto  !important;
+	object-fit: contain !important;
+	display   : block  !important;
+	filter    : brightness(0) invert(1) !important;
+}
+
+.beta-footer-brand-text {
+	font-size  : 22px;
+	font-weight: 800;
+	color      : var(--th-white) !important;
+	font-family: "Raleway", sans-serif;
+	text-decoration: none;
+	line-height: 1.2;
+	display    : block;
+	margin-bottom: 8px;
+}
+
+.beta-footer-tagline {
+	font-size  : 13px;
+	color      : rgba(255,255,255,0.58);
+	line-height: 1.65;
+	margin-bottom: 22px;
+}
+
+/* Unika Section */
+.beta-unika-section  { margin-top: 6px; }
+
+.beta-unika-label {
+	font-size     : 10.5px;
+	text-transform: uppercase;
+	letter-spacing: 1.8px;
+	color         : rgba(255,255,255,0.42);
+	margin-bottom : 12px;
+	margin-top    : 0;
+}
+
+.beta-unika-row {
+	display  : flex;
+	gap      : 10px;
+	flex-wrap: wrap;
+}
+
+.beta-unika-item {
+	display    : flex;
+	align-items: center;
+	gap        : 10px;
+	background : rgba(255,255,255,0.07);
+	border     : 1px solid rgba(255,255,255,0.12);
+	border-radius: 10px;
+	padding    : 10px 14px;
+	transition : all 0.2s ease;
+	cursor     : default;
+}
+
+.beta-unika-item:hover {
+	background  : rgba(255,255,255,0.13);
+	border-color: var(--th-green-300);
+}
+
+.beta-unika-badge {
+	width          : 36px;
+	height         : 36px;
+	border-radius  : 50%;
+	background     : var(--th-green-600);
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	color          : #fff;
+	font-size      : 14px;
+	flex-shrink    : 0;
+}
+
+.beta-unika-info {
+	display       : flex;
+	flex-direction: column;
+	line-height   : 1.25;
+}
+
+.beta-unika-info span {
+	font-size    : 9px;
+	color        : rgba(255,255,255,0.50);
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+}
+
+.beta-unika-info strong {
+	font-size  : 16px;
+	color      : var(--th-green-200);
+	font-family: "Raleway", sans-serif;
+	font-weight: 800;
+}
+
+/* ── Col 2: Navigation Links ── */
+.beta-footer-heading {
+	font-size     : 12.5px;
+	font-weight   : 700;
+	text-transform: uppercase;
+	letter-spacing: 1.8px;
+	color         : var(--th-white);
+	margin-bottom : 20px;
+	margin-top    : 0;
+	padding-bottom: 10px;
+	border-bottom : 2px solid var(--th-green-600);
+}
+
+.beta-footer-links {
+	list-style: none;
+	padding   : 0;
+	margin    : 0;
+}
+
+.beta-footer-links li { margin-bottom: 10px; }
+
+.beta-footer-links li a {
+	color          : rgba(255,255,255,0.70) !important;
+	font-size      : 13.5px;
+	text-decoration: none !important;
+	display        : flex;
+	align-items    : center;
+	gap            : 8px;
+	transition     : all 0.2s ease;
+	padding        : 3px 0;
+}
+
+.beta-footer-links li a i {
+	color    : var(--th-green-400);
+	font-size: 11px;
+	transition: transform 0.2s ease;
+}
+
+.beta-footer-links li a:hover {
+	color      : var(--th-white) !important;
+	padding-left: 4px;
+}
+
+.beta-footer-links li a:hover i { transform: translateX(3px); }
+
+/* ── Col 3: Google Maps + Contact ── */
+.beta-footer-map-wrap {
+	border-radius: 12px;
+	overflow     : hidden;
+	margin-bottom: 16px;
+	border       : 2px solid rgba(255,255,255,0.10);
+	line-height  : 0;
+}
+
+.beta-footer-map-wrap iframe { display: block; width: 100%; }
+
+.beta-footer-contact-list {
+	list-style: none;
+	padding   : 0;
+	margin    : 0;
+}
+
+.beta-footer-contact-list li {
+	display    : flex;
+	align-items: flex-start;
+	gap        : 10px;
+	color      : rgba(255,255,255,0.68);
+	font-size  : 13px;
+	margin-bottom: 10px;
+	line-height: 1.55;
+}
+
+.beta-footer-contact-list li i {
+	color      : var(--th-green-400);
+	font-size  : 14px;
+	margin-top : 2px;
+	flex-shrink: 0;
+}
+
+.beta-footer-contact-list li a {
+	color          : rgba(255,255,255,0.68) !important;
+	text-decoration: none !important;
+	transition     : color 0.2s ease;
+}
+
+.beta-footer-contact-list li a:hover { color: var(--th-white) !important; }
+
+/* ── Col 4: QR Codes ── */
+.beta-footer-qr-grid {
+	display              : grid;
+	grid-template-columns: 1fr 1fr;
+	gap                  : 16px;
+}
+
+.beta-footer-qr-item {
+	display       : flex;
+	flex-direction: column;
+	align-items   : center;
+	gap           : 10px;
+}
+
+.beta-footer-qr-frame {
+	padding      : 10px;
+	background   : rgba(255,255,255,0.08);
+	border       : 1px solid rgba(255,255,255,0.14);
+	border-radius: 14px;
+	transition   : all 0.25s ease;
+	line-height  : 0;
+}
+
+.beta-footer-qr-frame:hover {
+	background   : rgba(255,255,255,0.15);
+	border-color : var(--th-green-300);
+	transform    : scale(1.05);
+}
+
+.beta-footer-qr-frame img {
+	display      : block;
+	border-radius: 8px;
+}
+
+.beta-footer-qr-label {
+	font-size  : 11.5px;
+	color      : rgba(255,255,255,0.68);
+	text-align : center;
+	display    : flex;
+	align-items: center;
+	gap        : 5px;
+	font-weight: 600;
+}
+
+.beta-footer-qr-label i { color: var(--th-green-300); font-size: 12px; }
+
+/* ── Footer Responsive ── */
+@media (max-width: 991px) {
+	.beta-footer-widgets { padding: 50px 0 40px; }
+}
+
+@media (max-width: 767px) {
+	.beta-footer-widgets   { padding: 40px 0 32px; }
+	.beta-footer-col       { padding-left: 15px; padding-right: 15px; }
+	.beta-footer-qr-grid   { gap: 14px; }
+	.beta-footer-qr-frame  { padding: 8px; }
+	.beta-footer-qr-frame img { width: 100px; height: 100px; }
+}
+
+@media (max-width: 575px) {
+	.beta-footer-qr-grid { justify-items: center; }
+}
+
