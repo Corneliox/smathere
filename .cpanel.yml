@@ -1,4 +1,7 @@
 ---
 deployment:
   tasks:
-    - /bin/cp -R * /home/smathere/public_html/smathere/
+    - export DEPLOYPATH=/home/smathere/public_html/
+    - /bin/cp -R . $DEPLOYPATH
+    - /bin/chmod 644 $DEPLOYPATH/wp-content/themes/sma_there/style-beta.css
+    - /bin/chmod 644 $DEPLOYPATH/wp-content/themes/sma_there/functions.php
