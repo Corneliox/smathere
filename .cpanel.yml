@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/smathere/public_html/smathere
+    - /bin/rsync -avz --exclude '.git*' --exclude 'wp-config.php' --exclude 'wp-content/uploads' * $DEPLOYPATH
