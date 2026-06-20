@@ -7,12 +7,12 @@
 
 // Attach th-menu__link class to every anchor inside wp_nav_menu
 add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
-    if (isset($args->menu_class) && str_contains($args->menu_class, 'th-menu')) {
+    if (isset($args->menu_class) && false !== strpos($args->menu_class, 'th-menu')) {
         $atts['class'] = isset($atts['class'])
             ? trim($atts['class'] . ' th-menu__link')
             : 'th-menu__link';
     }
-    if (isset($args->menu_class) && str_contains($args->menu_class, 'th-mobile-menu')) {
+    if (isset($args->menu_class) && false !== strpos($args->menu_class, 'th-mobile-menu')) {
         $atts['class'] = isset($atts['class'])
             ? trim($atts['class'] . ' th-mobile-menu__link')
             : 'th-mobile-menu__link';
@@ -185,7 +185,4 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
      aria-hidden="true"></div>
 
 
-<!-- ============================================================
-     MAIN CONTENT BEGINS
-     ============================================================ -->
-<main id="main-content">
+<!-- main content starts in each template (front-page.php, page.php, etc.) -->
