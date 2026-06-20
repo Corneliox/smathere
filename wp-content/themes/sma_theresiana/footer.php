@@ -59,26 +59,14 @@ $footer_links = [
                     <?php endif; ?>
 
                     <!-- Unika Badges -->
-                    <div class="th-footer__badges">
-                        <div class="th-footer__badge">
-                            <div class="th-footer__badge-icon">
-                                <i class="fa fa-university" aria-hidden="true"></i>
-                            </div>
-                            <div class="th-footer__badge-info">
-                                <span class="th-footer__badge-label">Terakreditasi</span>
-                                <span class="th-footer__badge-value">UNIKA 2018</span>
-                            </div>
+                    <div class="th-footer__custom-badges">
+                        <a href="<?php echo esc_url(home_url('/?beta=0')); ?>" class="th-footer__badge-link" title="Kembali ke versi 2018 (Ashe Theme)">
+                            <img src="https://smatheresiana1.sch.id/smathere/wp-content/uploads/2023/12/Logo-Soegijapranata-Catholic-University-SCU-1024x276-300x81.png" alt="Logo Unika 2018" class="th-footer__badge-img">
+                        </a>
+                        <div class="th-footer__badge-link" style="margin-top: 4px;">
+                            <img src="https://smatheresiana1.sch.id/smathere/wp-content/uploads/2022/04/Simple-Badge-Agriculture-Farm-Circle-Logo-300x300.png" alt="Akreditasi Unika 2026" class="th-footer__badge-img" style="max-height: 80px;">
                         </div>
-                        <div class="th-footer__badge">
-                            <div class="th-footer__badge-icon">
-                                <i class="fa fa-university" aria-hidden="true"></i>
-                            </div>
-                            <div class="th-footer__badge-info">
-                                <span class="th-footer__badge-label">Terakreditasi</span>
-                                <span class="th-footer__badge-value">UNIKA 2026</span>
-                            </div>
-                        </div>
-                    </div><!-- .th-footer__badges -->
+                    </div><!-- .th-footer__custom-badges -->
 
                 </div><!-- COL 1 -->
 

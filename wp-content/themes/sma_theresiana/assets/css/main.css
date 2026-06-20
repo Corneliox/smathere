@@ -1173,7 +1173,6 @@ ul, ol { list-style: none; }
 	max-height: 58px !important;
 	width: auto !important;
 	height: auto !important;
-	filter: brightness(0) invert(1) !important;
 	display: block !important;
 }
 
@@ -1193,46 +1192,26 @@ ul, ol { list-style: none; }
 	margin-bottom: 28px;
 }
 
-/* Unika Badges */
-.th-footer__unika-label {
-	font-size: 10px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	color: rgba(255,255,255,0.38);
-	margin-bottom: 12px;
+/* Unika Custom Badges */
+.th-footer__custom-badges {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 24px;
+}
+.th-footer__badge-link {
 	display: block;
+	transition: transform var(--th-transition-fast), opacity var(--th-transition-fast);
 }
-
-.th-footer__unika-row {
-	display: flex;
-	gap: 10px;
-	flex-wrap: wrap;
+.th-footer__badge-link:hover {
+	transform: translateY(-2px);
+	opacity: 0.9;
 }
-
-.th-footer__unika-item {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	background: rgba(255,255,255,0.07);
-	border: 1px solid rgba(255,255,255,0.11);
-	border-radius: 10px;
-	padding: 10px 14px;
-	transition: all var(--th-transition-fast);
-	cursor: default;
-}
-.th-footer__unika-item:hover {
-	background: rgba(255,255,255,0.12);
-	border-color: var(--th-green-300);
-}
-
-.th-footer__unika-badge {
-	width: 34px; height: 34px;
-	border-radius: 50%;
-	background: var(--th-green-600);
-	display: flex; align-items: center; justify-content: center;
-	color: var(--th-white);
-	font-size: 13px;
-	flex-shrink: 0;
+.th-footer__badge-img {
+	max-width: 100%;
+	height: auto;
+	max-height: 60px;
+	display: block;
 }
 
 .th-footer__unika-info {
