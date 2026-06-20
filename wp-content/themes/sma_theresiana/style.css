@@ -1,0 +1,13 @@
+/*
+Theme Name: SMA Theresiana
+Theme URI: https://smatheresiana1.sch.id
+Author: SMA Theresiana 1 Semarang
+Description: Custom modern theme for SMA Theresiana 1 Semarang. Built from scratch — no framework dependencies.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: Private
+Text Domain: sma-theresiana
+*/
+
+/* Styles are loaded from assets/css/main.css via wp_enqueue_style() in functions.php */
