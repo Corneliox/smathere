@@ -43,14 +43,20 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
              aria-label="<?php esc_attr_e('Navigasi Utama', 'sma-theresiana'); ?>">
 
             <!-- Logo -->
+            <?php
+            $custom_logo_id = get_theme_mod( 'custom_logo' );
+            $logo_url = '';
+            if ( $custom_logo_id ) {
+                $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                $logo_url = $image ? $image[0] : '';
+            }
+            ?>
             <a href="<?php echo esc_url(home_url('/')); ?>" class="th-logo" rel="home" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
-                <?php
-                if (has_custom_logo()) {
-                    the_custom_logo();
-                } else {
-                    echo '<span class="th-logo__text">' . esc_html(get_bloginfo('name')) . '</span>';
-                }
-                ?>
+                <?php if ( $logo_url ) : ?>
+                    <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                <?php else : ?>
+                    <span class="th-logo__text"><?php echo esc_html(get_bloginfo('name')); ?></span>
+                <?php endif; ?>
             </a>
 
             <!-- Desktop Primary Menu -->
@@ -122,17 +128,23 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
 
         <!-- Drawer header: logo + close button -->
         <div class="th-mobile-nav__header">
+            <?php
+            $custom_logo_id = get_theme_mod( 'custom_logo' );
+            $logo_url = '';
+            if ( $custom_logo_id ) {
+                $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                $logo_url = $image ? $image[0] : '';
+            }
+            ?>
             <a href="<?php echo esc_url(home_url('/')); ?>"
                class="th-logo"
                rel="home"
                aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
-                <?php
-                if (has_custom_logo()) {
-                    the_custom_logo();
-                } else {
-                    echo '<span class="th-logo__text">' . esc_html(get_bloginfo('name')) . '</span>';
-                }
-                ?>
+                <?php if ( $logo_url ) : ?>
+                    <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                <?php else : ?>
+                    <span class="th-logo__text"><?php echo esc_html(get_bloginfo('name')); ?></span>
+                <?php endif; ?>
             </a>
             <button class="th-mobile-nav__close"
                     id="th-mobile-close"

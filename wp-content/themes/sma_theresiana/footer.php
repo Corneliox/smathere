@@ -43,7 +43,7 @@ $footer_links = [
                 <div class="th-footer__col th-footer__col--brand">
 
                     <!-- Logo -->
-                    <div class="th-footer__logo">
+                    <div class="th-footer__logo-wrap">
                         <?php if (has_custom_logo()) : ?>
                             <?php echo get_custom_logo(); ?>
                         <?php else : ?>
