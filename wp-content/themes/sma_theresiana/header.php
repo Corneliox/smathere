@@ -28,7 +28,7 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php if ( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
 
 <!-- Skip to content -->
 <a class="screen-reader-text" href="#main-content"><?php esc_html_e('Lewati ke konten', 'sma-theresiana'); ?></a>
