@@ -294,4 +294,34 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionMap.forEach((_, section) => sectionObserver.observe(section));
     })();
 
+
+    /* ============================================================
+     * 8. BETA MODE — Persist ?beta=1 on all internal links
+     * ============================================================ */
+    (() => {
+        const origin = window.location.origin;
+        function addBetaParam(link) {
+            try {
+                const url = new URL(link.href, origin);
+                if (url.origin !== origin) return;
+                if (url.searchParams.get('beta') === '1') return;
+                if (link.classList.contains('exit-beta-widget')) return;
+                url.searchParams.set('beta', '1');
+                link.href = url.toString();
+            } catch (_) {}
+        }
+        document.querySelectorAll('a[href]').forEach(addBetaParam);
+        if (typeof MutationObserver !== 'undefined') {
+            new MutationObserver((mutations) => {
+                mutations.forEach((m) => {
+                    m.addedNodes.forEach((node) => {
+                        if (node.nodeType !== 1) return;
+                        if (node.tagName === 'A') addBetaParam(node);
+                        node.querySelectorAll && node.querySelectorAll('a[href]').forEach(addBetaParam);
+                    });
+                });
+            }).observe(document.body, { childList: true, subtree: true });
+        }
+    })();
+
 }); // end DOMContentLoaded
