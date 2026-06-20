@@ -1163,7 +1163,17 @@ ul, ol { list-style: none; }
 .th-footer__grid {
 	display: grid;
 	grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
-	gap: 48px;
+	gap: 24px;
+}
+
+.th-footer__col {
+	background: rgba(75, 96, 67, 0.4); /* #4b6043 with some transparency to blend nicely */
+	border-radius: 20px;
+	padding: 36px 32px;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+	border: 1px solid rgba(255,255,255,0.08);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
 }
 
 /* Col 1 - Brand */
