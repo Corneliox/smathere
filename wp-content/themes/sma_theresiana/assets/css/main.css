@@ -1224,6 +1224,12 @@ ul, ol { list-style: none; }
 	-webkit-filter: none !important;
 }
 
+.th-footer__logo-card--half img,
+.th-footer__logo-card--half .custom-logo {
+	max-width: 120px !important;
+	margin: 0 auto;
+}
+
 .th-footer__brand-name {
 	font-family: var(--th-font-head);
 	font-size: 18px;
