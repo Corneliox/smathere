@@ -358,6 +358,8 @@ ul, ol { list-style: none; }
 	max-height: 52px !important;
 	width: auto !important;
 	height: auto !important;
+	filter: none !important;
+	-webkit-filter: none !important;
 	object-fit: contain !important;
 	display: block !important;
 	transition: max-height var(--th-transition);
@@ -1184,6 +1186,8 @@ ul, ol { list-style: none; }
 	width: auto !important;
 	height: auto !important;
 	display: block !important;
+	filter: none !important;
+	-webkit-filter: none !important;
 }
 
 .th-footer__brand-name {
