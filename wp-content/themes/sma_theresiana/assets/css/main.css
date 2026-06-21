@@ -1161,6 +1161,7 @@ ul, ol { list-style: none; }
 }
 
 .th-footer__main { padding: 72px 0 48px; }
+.th-footer__main .th-container { max-width: fit-content; }
 
 .th-footer__grid {
 	display: grid;
@@ -1188,7 +1189,9 @@ ul, ol { list-style: none; }
 }
 
 .th-footer__logo-card {
-	background-color: #f1f1f1;
+	background-color: rgba(241, 241, 241, 0.6);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
 	padding: 10px;
 	border-radius: 8px;
 	display: flex;
@@ -1369,6 +1372,13 @@ ul, ol { list-style: none; }
 	align-items: center;
 	gap: 10px;
 	flex: 1;
+}
+.th-footer__qr-item img {
+	width: 65px !important;
+	height: auto !important;
+}
+.th-footer__qr-item--full img {
+	width: 120px !important; /* Slightly larger for the top IG one */
 }
 
 .th-footer__qr-frame {
