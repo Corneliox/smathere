@@ -97,7 +97,7 @@ if ( ! function_exists( 'sma_theresiana_enqueue' ) ) :
             'th-main-style',
             get_template_directory_uri() . '/assets/css/main.css',
             [ 'th-google-fonts', 'th-font-awesome' ],
-            '1.0.0'
+            filemtime( get_template_directory() . '/assets/css/main.css' )
         );
 
         // Main JavaScript — loaded in footer.

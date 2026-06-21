@@ -56,7 +56,7 @@ $footer_links = [
                         </div>
                         <!-- Akreditasi -->
                         <div class="th-footer__akreditasi-top">
-                            <img src="https://smatheresiana1.sch.id/smathere/wp-content/uploads/2022/04/Simple-Badge-Agriculture-Farm-Circle-Logo-300x300.png" alt="Akreditasi Theresiana" style="max-height: 52px; width: auto; display: block;">
+                            <img src="<?php echo esc_url(home_url('/wp-content/uploads/2022/04/Simple-Badge-Agriculture-Farm-Circle-Logo-500x400.png')); ?>" alt="Akreditasi Theresiana" style="max-height: 52px; width: auto; display: block;">
                         </div>
                     </div>
 
@@ -68,11 +68,8 @@ $footer_links = [
                     <!-- Unika Badges -->
                     <div class="th-footer__custom-badges">
                         <a href="<?php echo esc_url(home_url('/?beta=0')); ?>" class="th-footer__badge-link" title="Kembali ke versi 2018 (Ashe Theme)">
-                            <img src="https://smatheresiana1.sch.id/smathere/wp-content/uploads/2023/12/Logo-Soegijapranata-Catholic-University-SCU-1024x276-300x81.png" alt="Logo Unika 2018" class="th-footer__badge-img">
+                            <img src="<?php echo esc_url(home_url('/wp-content/uploads/2023/12/Logo-Soegijapranata-Catholic-University-SCU-1024x276-300x81.png')); ?>" alt="Logo Soegijapranata Catholic University" class="th-footer__badge-img">
                         </a>
-                        <div class="th-footer__badge-link" style="margin-top: 4px;">
-                            <img src="https://smatheresiana1.sch.id/smathere/wp-content/uploads/2023/12/Logo-Soegijapranata-Catholic-University-SCU-1024x276-300x81.png" alt="Logo Unika 2026" class="th-footer__badge-img">
-                        </div>
                     </div><!-- .th-footer__custom-badges -->
 
                 </div><!-- COL 1 -->
