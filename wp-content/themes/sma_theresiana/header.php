@@ -81,6 +81,7 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
                 <?php
                 wp_nav_menu([
                     'theme_location' => 'main',
+                    'menu'           => 'Main Menu', // Try to find by name "Main Menu" if location is unset
                     'menu_class'     => 'th-menu',
                     'container'      => 'nav',
                     'container_class'=> 'main-menu-container',
@@ -89,9 +90,11 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
                     'items_wrap'     => '<ul id="main-menu" class="th-menu" role="menubar">%3$s</ul>',
                     'walker'         => false,
                     'fallback_cb'    => function () {
-                        echo '<ul class="th-menu" role="menubar">';
-                        echo '<li class="th-menu__item"><a href="' . esc_url(admin_url('nav-menus.php')) . '" class="th-menu__link">Setup Menu</a></li>';
-                        echo '</ul>';
+                        // Fallback ke daftar halaman (sama seperti Ashe)
+                        wp_page_menu([
+                            'show_home'  => true,
+                            'menu_class' => 'main-menu-container'
+                        ]);
                     },
                 ]);
                 ?>

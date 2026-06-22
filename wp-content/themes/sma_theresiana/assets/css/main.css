@@ -354,10 +354,13 @@ ul, ol { list-style: none; }
 
 .th-header.scrolled {
 	background: rgba(255,255,255,0.97);
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
-	box-shadow: 0 2px 20px rgba(45,58,41,0.08);
+	backdrop-filter: blur(12px);
+	box-shadow: var(--th-shadow-sm);
 	height: 68px;
+}
+body.dark-mode .th-header.scrolled {
+	background: rgba(26, 26, 26, 0.97);
+	box-shadow: 0 2px 20px rgba(0,0,0,0.8);
 }
 
 .th-nav {
