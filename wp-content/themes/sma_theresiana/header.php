@@ -28,6 +28,14 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<!-- Anti-Flicker Dark Mode Script -->
+<script>
+    (function() {
+        if (localStorage.getItem('th-theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    })();
+</script>
 <?php if ( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
 
 <!-- Skip to content -->
@@ -68,16 +76,17 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
                 </form>
             </div>
 
-            <!-- TENGAH (Center): Primary Menu -->
+            <!-- TENGAH (Center): Main Menu -->
             <div class="th-nav__center">
                 <?php
                 wp_nav_menu([
-                    'theme_location' => 'primary',
+                    'theme_location' => 'main',
                     'menu_class'     => 'th-menu',
-                    'container'      => false,
+                    'container'      => 'nav',
+                    'container_class'=> 'main-menu-container',
                     'link_before'    => '',
                     'link_after'     => '',
-                    'items_wrap'     => '<ul id="primary-menu" class="th-menu" role="menubar">%3$s</ul>',
+                    'items_wrap'     => '<ul id="main-menu" class="th-menu" role="menubar">%3$s</ul>',
                     'walker'         => false,
                     'fallback_cb'    => function () {
                         echo '<ul class="th-menu" role="menubar">';

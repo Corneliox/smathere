@@ -6,16 +6,18 @@
  */
 
 // ── Customizer values ──────────────────────────────────────────────────────────
-$contact_address = get_theme_mod('onepress_contact_address', 'Jl. Sriwijaya No.44, Semarang 50249');
-$contact_phone   = get_theme_mod('onepress_contact_phone',   '(024) 8316624');
-$contact_email   = get_theme_mod('onepress_contact_email',   'info@smatheresiana.sch.id');
+$contact_address = get_theme_mod('th_footer_address', 'Jl. Mayjend. Sutoyo No.69 Semarang, Jawa Tengah, Indonesia 50244');
+$contact_phone   = get_theme_mod('th_footer_phone',   '(024) 8313374');
+$contact_email   = get_theme_mod('th_footer_email',   'admin@smatheresiana1.sch.id');
 $phone_clean     = preg_replace('/[^0-9+]/', '', $contact_phone);
 
-// ── QR codes (via QR Server API) ──────────────────────────────────────────────
-$qr_ppdb = 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&color=ddead1&bgcolor=4b6043&margin=8&data='
-         . urlencode(home_url('/ppdb/'));
-$qr_pengaduan = 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&color=ddead1&bgcolor=4b6043&margin=8&data='
-             . urlencode(home_url('/pengaduan/'));
+$akreditasi_logo = get_theme_mod('th_footer_akreditasi_logo', home_url('/wp-content/uploads/2022/04/Akreditasi_Full.png'));
+$unika_logo      = get_theme_mod('th_footer_unika_logo', home_url('/wp-content/uploads/2023/12/Logo-Soegijapranata-Catholic-University-SCU-1024x276-300x81.png'));
+
+// ── QR codes ──────────────────────────────────────────────
+$qr_ig        = get_theme_mod('th_footer_qr_instagram', home_url('/wp-content/uploads/2026/06/smatheresiana1_qr_Pass.png'));
+$qr_ppdb      = get_theme_mod('th_footer_qr_ppdb', 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&color=ddead1&bgcolor=4b6043&margin=8&data=' . urlencode(home_url('/ppdb/')));
+$qr_pengaduan = get_theme_mod('th_footer_qr_pengaduan', 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&color=ddead1&bgcolor=4b6043&margin=8&data=' . urlencode(home_url('/pengaduan/')));
 
 // ── Footer navigation links ───────────────────────────────────────────────────
 $footer_links = [
@@ -56,7 +58,7 @@ $footer_links = [
                         </div>
                         <!-- Akreditasi -->
                         <div class="th-footer__logo-card th-footer__logo-card--half">
-                            <img src="<?php echo esc_url(home_url('/wp-content/uploads/2022/04/Akreditasi_Full.png')); ?>" alt="Akreditasi Theresiana" class="th-footer__akreditasi-img">
+                            <img src="<?php echo esc_url($akreditasi_logo); ?>" alt="Akreditasi Theresiana" class="th-footer__akreditasi-img">
                         </div>
                     </div>
 
@@ -69,7 +71,7 @@ $footer_links = [
                     <div class="th-footer__custom-badges">
                         <div class="th-footer__logo-card th-footer__logo-card--full">
                             <a href="<?php echo esc_url(home_url('/?beta=0')); ?>" class="th-footer__badge-link" title="Kembali ke versi 2018 (Ashe Theme)" style="width: 100%;">
-                                <img src="<?php echo esc_url(home_url('/wp-content/uploads/2023/12/Logo-Soegijapranata-Catholic-University-SCU-1024x276-300x81.png')); ?>" alt="Logo Soegijapranata Catholic University" class="th-footer__badge-img">
+                                <img src="<?php echo esc_url($unika_logo); ?>" alt="Logo Soegijapranata Catholic University" class="th-footer__badge-img">
                             </a>
                         </div>
                     </div><!-- .th-footer__custom-badges -->
@@ -147,11 +149,13 @@ $footer_links = [
 
                         <!-- IG QR -->
                         <div class="th-footer__qr-item th-footer__qr-item--full">
-                            <img src="<?php echo esc_url(home_url('/wp-content/uploads/2026/06/smatheresiana1_qr_Pass.png')); ?>"
+                            <a href="https://instagram.com/smatheresiana1" target="_blank" rel="noopener">
+                                <img src="<?php echo esc_url($qr_ig); ?>"
                                  alt="QR Code Instagram"
                                  width="140"
                                  height="140"
                                  loading="lazy">
+                            </a>
                             <span class="th-footer__qr-label">
                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                                 Instagram
@@ -161,11 +165,13 @@ $footer_links = [
                         <div class="th-footer__qr-row">
                             <!-- PPDB QR -->
                             <div class="th-footer__qr-item">
-                                <img src="<?php echo esc_url($qr_ppdb); ?>"
-                                     alt="QR Code PPDB"
-                                     width="140"
-                                     height="140"
-                                     loading="lazy">
+                                <a href="https://smatheresiana1.sch.id/smathere/ppdb/" target="_blank" rel="noopener">
+                                    <img src="<?php echo esc_url($qr_ppdb); ?>"
+                                        alt="QR Code PPDB"
+                                        width="140"
+                                        height="140"
+                                        loading="lazy">
+                                </a>
                                 <span class="th-footer__qr-label">
                                     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                     PPDB
@@ -174,11 +180,13 @@ $footer_links = [
 
                             <!-- Pengaduan QR -->
                             <div class="th-footer__qr-item">
-                                <img src="<?php echo esc_url($qr_pengaduan); ?>"
-                                     alt="QR Code Pengaduan"
-                                     width="140"
-                                     height="140"
-                                     loading="lazy">
+                                <a href="https://smatheresiana1.sch.id/smathere/pengaduan/" target="_blank" rel="noopener">
+                                    <img src="<?php echo esc_url($qr_pengaduan); ?>"
+                                        alt="QR Code Pengaduan"
+                                        width="140"
+                                        height="140"
+                                        loading="lazy">
+                                </a>
                                 <span class="th-footer__qr-label">
                                     <i class="fa fa-commenting-o" aria-hidden="true"></i>
                                     Pengaduan

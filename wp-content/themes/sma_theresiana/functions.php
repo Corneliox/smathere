@@ -47,7 +47,8 @@ if ( ! function_exists( 'sma_theresiana_setup' ) ) :
 
         // Register navigation menus.
         register_nav_menus( [
-            'primary' => __( 'Menu Utama', 'sma-theresiana' ),
+            'main'    => __( 'Main Menu', 'sma-theresiana' ),
+            'primary' => __( 'Primary Menu', 'sma-theresiana' ), // Keeping primary just in case
             'footer'  => __( 'Menu Footer', 'sma-theresiana' ),
         ] );
 
@@ -225,3 +226,7 @@ if ( ! function_exists( 'th_format_date' ) ) :
         return get_the_date( 'd M Y', $post_id );
     }
 endif;
+// ──────────────────────────────────────────────────────────────────────────────
+// 10. CUSTOMIZER INTEGRATION
+// ──────────────────────────────────────────────────────────────────────────────
+require get_template_directory() . '/inc/customizer.php';
