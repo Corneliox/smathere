@@ -61,6 +61,30 @@
 	--th-header-h:   80px;
 }
 
+body.dark-mode {
+	/* Inverted Neutrals for Dark Mode */
+	--th-white:     #121212;
+	--th-gray-50:   #1a1a1a;
+	--th-gray-100:  #242424;
+	--th-gray-200:  #2d2d2d;
+	--th-gray-300:  #383838;
+	--th-gray-400:  #4a4a4a;
+	--th-gray-500:  #6b7280;
+	--th-gray-600:  #9ca3af;
+	--th-gray-700:  #d1d5db;
+	--th-gray-800:  #e5e7eb;
+	--th-gray-900:  #f3f4f6;
+
+	/* Subtle Green background tints for dark mode */
+	--th-green-50:  #182414;
+	--th-green-100: #1e2b1a;
+
+	/* Stronger Shadows */
+	--th-shadow-sm: 0 1px 6px rgba(0,0,0,0.5);
+	--th-shadow-md: 0 4px 16px rgba(0,0,0,0.6);
+	--th-shadow-lg: 0 12px 40px rgba(0,0,0,0.8);
+}
+
 /* ==========================================================================
    02. Reset + Base
    ========================================================================== */
@@ -341,7 +365,30 @@ ul, ol { list-style: none; }
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 24px;
+}
+
+.th-nav__left,
+.th-nav__center,
+.th-nav__right {
+	display: flex;
+	align-items: center;
+}
+
+.th-nav__left {
+	flex: 1;
+	justify-content: flex-start;
+	gap: 20px;
+}
+
+.th-nav__center {
+	flex: 2;
+	justify-content: center;
+}
+
+.th-nav__right {
+	flex: 1;
+	justify-content: flex-end;
+	gap: 20px;
 }
 
 /* Logo */
@@ -428,44 +475,89 @@ ul, ol { list-style: none; }
 	color: var(--th-green-700);
 }
 
-/* Nav Actions */
-.th-nav__actions {
+/* Header Actions & Search */
+.th-header-search {
 	display: flex;
 	align-items: center;
-	gap: 8px;
-	flex-shrink: 0;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	padding: 4px 12px;
+	transition: background 0.3s ease;
 }
+.th-header.scrolled .th-header-search {
+	background: rgba(0, 0, 0, 0.05);
+}
+body.dark-mode .th-header-search {
+	background: rgba(255, 255, 255, 0.1);
+}
+.th-header-search__field {
+	border: none;
+	background: transparent;
+	padding: 6px;
+	font-size: 14px;
+	outline: none;
+	width: 120px;
+	color: var(--th-white);
+	transition: width 0.3s ease;
+}
+.th-header-search__field::placeholder { color: rgba(255,255,255,0.7); }
 
-.th-nav__icon {
+.th-header.scrolled .th-header-search__field { color: var(--th-gray-800); }
+.th-header.scrolled .th-header-search__field::placeholder { color: var(--th-gray-500); }
+
+body.dark-mode .th-header.scrolled .th-header-search__field { color: var(--th-white); }
+body.dark-mode .th-header.scrolled .th-header-search__field::placeholder { color: rgba(255,255,255,0.7); }
+
+.th-header-search__field:focus {
+	width: 160px;
+}
+.th-header-search__submit {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: rgba(255,255,255,0.85);
+	padding: 6px;
+	transition: color 0.3s ease;
+}
+.th-header.scrolled .th-header-search__submit { color: var(--th-gray-600); }
+body.dark-mode .th-header.scrolled .th-header-search__submit { color: rgba(255,255,255,0.85); }
+.th-header-search__submit:hover { color: var(--th-green-400); }
+
+/* Theme Toggle & Admin Link */
+.th-theme-toggle {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 50%;
 	width: 38px;
 	height: 38px;
-	border-radius: 50%;
+	font-size: 16px;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.85);
+	transition: all var(--th-transition-fast);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: rgba(255,255,255,0.85);
-	font-size: 14px;
-	background: rgba(255,255,255,0.1);
-	border: 1px solid rgba(255,255,255,0.15);
-	transition: all var(--th-transition-fast);
-	text-decoration: none;
 }
-
-.th-nav__icon:hover {
-	background: rgba(255,255,255,0.25);
-	color: var(--th-white);
-}
-
-.th-header.scrolled .th-nav__icon {
+.th-header.scrolled .th-theme-toggle {
+	background: rgba(0, 0, 0, 0.05);
+	border-color: transparent;
 	color: var(--th-gray-600);
-	background: var(--th-gray-100);
-	border-color: var(--th-gray-200);
+}
+body.dark-mode .th-header.scrolled .th-theme-toggle {
+	background: rgba(255, 255, 255, 0.1);
+	color: rgba(255, 255, 255, 0.85);
+}
+.th-theme-toggle:hover {
+	color: var(--th-green-500);
+	background: rgba(255, 255, 255, 0.2);
 }
 
-.th-header.scrolled .th-nav__icon:hover {
-	background: var(--th-green-600);
-	color: var(--th-white);
-	border-color: var(--th-green-600);
+.th-admin-hidden-link {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	opacity: 0;
+	cursor: default;
 }
 
 /* Hamburger */

@@ -42,72 +42,74 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
              role="navigation"
              aria-label="<?php esc_attr_e('Navigasi Utama', 'sma-theresiana'); ?>">
 
-            <!-- Logo -->
-            <?php
-            $custom_logo_id = get_theme_mod( 'custom_logo' );
-            $logo_url = '';
-            if ( $custom_logo_id ) {
-                $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                $logo_url = $image ? $image[0] : '';
-            }
-            ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="th-logo" rel="home" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
-                <?php if ( $logo_url ) : ?>
-                    <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
-                <?php else : ?>
-                    <span class="th-logo__text"><?php echo esc_html(get_bloginfo('name')); ?></span>
-                <?php endif; ?>
-            </a>
-
-            <!-- Desktop Primary Menu -->
-            <?php
-            wp_nav_menu([
-                'theme_location' => 'primary',
-                'menu_class'     => 'th-menu',
-                'container'      => false,
-                'link_before'    => '',
-                'link_after'     => '',
-                'items_wrap'     => '<ul id="primary-menu" class="th-menu" role="menubar">%3$s</ul>',
-                'walker'         => false,
-                'fallback_cb'    => function () {
-                    echo '<ul class="th-menu" role="menubar">';
-                    echo '<li class="th-menu__item"><a href="' . esc_url(admin_url('nav-menus.php')) . '" class="th-menu__link">Setup Menu</a></li>';
-                    echo '</ul>';
-                },
-            ]);
-            ?>
-
-            <!-- Header Actions (search + optional phone) -->
-            <div class="th-nav__actions">
-                <a href="<?php echo esc_url(get_search_link()); ?>"
-                   class="th-nav__icon"
-                   aria-label="<?php esc_attr_e('Cari', 'sma-theresiana'); ?>">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </a>
+            <!-- KIRI (Left): Logo & Search -->
+            <div class="th-nav__left">
+                <!-- Logo -->
                 <?php
-                $phone = get_theme_mod('onepress_contact_phone', '');
-                if ($phone) :
-                    $phone_clean = preg_replace('/[^0-9+]/', '', $phone);
+                $custom_logo_id = get_theme_mod( 'custom_logo' );
+                $logo_url = '';
+                if ( $custom_logo_id ) {
+                    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    $logo_url = $image ? $image[0] : '';
+                }
                 ?>
-                <a href="tel:<?php echo esc_attr($phone_clean); ?>"
-                   class="th-nav__icon th-nav__phone"
-                   aria-label="<?php esc_attr_e('Telepon', 'sma-theresiana'); ?>">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
+                <a href="<?php echo esc_url(home_url('/')); ?>" class="th-logo" rel="home" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
+                    <?php if ( $logo_url ) : ?>
+                        <img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+                    <?php else : ?>
+                        <span class="th-logo__text"><?php echo esc_html(get_bloginfo('name')); ?></span>
+                    <?php endif; ?>
                 </a>
-                <?php endif; ?>
+
+                <!-- Search Form -->
+                <form role="search" method="get" class="th-header-search" action="<?php echo esc_url(home_url('/')); ?>">
+                    <input type="search" class="th-header-search__field" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search">
+                    <button type="submit" class="th-header-search__submit" aria-label="Submit Search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
             </div>
 
-            <!-- Hamburger Button (mobile) -->
-            <button class="th-hamburger"
-                    id="th-hamburger"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="th-mobile-nav"
-                    aria-label="<?php esc_attr_e('Toggle menu', 'sma-theresiana'); ?>">
-                <span class="th-hamburger__bar"></span>
-                <span class="th-hamburger__bar"></span>
-                <span class="th-hamburger__bar"></span>
-            </button>
+            <!-- TENGAH (Center): Primary Menu -->
+            <div class="th-nav__center">
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'primary',
+                    'menu_class'     => 'th-menu',
+                    'container'      => false,
+                    'link_before'    => '',
+                    'link_after'     => '',
+                    'items_wrap'     => '<ul id="primary-menu" class="th-menu" role="menubar">%3$s</ul>',
+                    'walker'         => false,
+                    'fallback_cb'    => function () {
+                        echo '<ul class="th-menu" role="menubar">';
+                        echo '<li class="th-menu__item"><a href="' . esc_url(admin_url('nav-menus.php')) . '" class="th-menu__link">Setup Menu</a></li>';
+                        echo '</ul>';
+                    },
+                ]);
+                ?>
+            </div>
+
+            <!-- KANAN (Right): Dark Mode Toggle & Hamburger -->
+            <div class="th-nav__right">
+                <!-- Dark Mode Toggle -->
+                <button id="th-theme-toggle" class="th-theme-toggle" aria-label="Toggle Dark Mode" title="Light / Dark Mode">
+                    <i class="fa fa-sun-o" aria-hidden="true"></i>
+                </button>
+
+                <!-- Hidden Admin Link (3 clicks) -->
+                <a href="<?php echo esc_url(admin_url()); ?>" class="th-admin-hidden-link" aria-label="Admin Panel" title="Setup Menu"></a>
+
+                <!-- Hamburger Button (mobile) -->
+                <button class="th-hamburger"
+                        id="th-hamburger"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="th-mobile-nav"
+                        aria-label="<?php esc_attr_e('Toggle menu', 'sma-theresiana'); ?>">
+                    <span class="th-hamburger__bar"></span>
+                    <span class="th-hamburger__bar"></span>
+                    <span class="th-hamburger__bar"></span>
+                </button>
+            </div>
 
         </nav><!-- .th-nav -->
     </div><!-- .th-container -->

@@ -324,4 +324,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })();
 
+    /* ============================================================
+     * 9. DARK MODE TOGGLE
+     * ============================================================ */
+    (function initDarkMode() {
+        const toggleBtn = document.getElementById('th-theme-toggle');
+        if (!toggleBtn) return;
+        
+        // Check local storage for preference
+        const savedTheme = localStorage.getItem('th-theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            toggleBtn.innerHTML = '<i class="fa fa-moon-o" aria-hidden="true"></i>';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            
+            // Toggle Icon
+            toggleBtn.innerHTML = isDark 
+                ? '<i class="fa fa-moon-o" aria-hidden="true"></i>' 
+                : '<i class="fa fa-sun-o" aria-hidden="true"></i>';
+                
+            // Save preference
+            localStorage.setItem('th-theme', isDark ? 'dark' : 'light');
+        });
+    })();
+
+    /* ============================================================
+     * 10. HIDDEN ADMIN LINK (3 CLICKS)
+     * ============================================================ */
+    (function initHiddenAdminLink() {
+        const adminLink = document.querySelector('.th-admin-hidden-link');
+        if (!adminLink) return;
+        
+        let clickCount = 0;
+        let clickTimeout;
+        
+        adminLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            clickCount++;
+            clearTimeout(clickTimeout);
+            
+            if (clickCount >= 3) {
+                window.location.href = adminLink.href;
+            } else {
+                clickTimeout = setTimeout(() => {
+                    clickCount = 0; // Reset after 1 second if not enough clicks
+                }, 1000);
+            }
+        });
+    })();
+
 }); // end DOMContentLoaded
