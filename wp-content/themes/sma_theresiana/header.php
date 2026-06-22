@@ -168,13 +168,25 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
             </button>
         </div><!-- .th-mobile-nav__header -->
 
+        <!-- Mobile Search Form -->
+        <form role="search" method="get" class="th-mobile-search" action="<?php echo esc_url(home_url('/')); ?>">
+            <input type="search" class="th-mobile-search__field" placeholder="Search..." value="<?php echo get_search_query(); ?>" name="s" aria-label="Search">
+            <button type="submit" class="th-mobile-search__submit" aria-label="Submit Search"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+
         <!-- Mobile menu items -->
         <?php
         wp_nav_menu([
-            'theme_location' => 'primary',
+            'theme_location' => 'main',
+            'menu'           => 'Main Menu', // Tambahkan parameter pencarian presisi
             'menu_class'     => 'th-mobile-menu',
             'container'      => false,
-            'fallback_cb'    => false,
+            'fallback_cb'    => function() {
+                wp_page_menu([
+                    'show_home'  => true,
+                    'menu_class' => 'th-mobile-menu'
+                ]);
+            },
         ]);
         ?>
 
