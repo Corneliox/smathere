@@ -47,12 +47,11 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
 <header id="site-header" class="th-header" role="banner">
     <div class="th-container">
         <nav class="th-nav"
-             style="padding: 10px 20px 10px 20px;"
              role="navigation"
              aria-label="<?php esc_attr_e('Navigasi Utama', 'sma-theresiana'); ?>">
 
             <!-- KIRI (Left): Logo & Search -->
-            <div class="th-nav__left">
+            <div class="th-nav__left" style="padding-right: 50px;">
                 <!-- Logo -->
                 <?php
                 $custom_logo_id = get_theme_mod( 'custom_logo' );

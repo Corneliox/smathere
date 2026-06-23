@@ -74,20 +74,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Autoplay
-        let autoplayTimer = setInterval(() => {
-            const maxScroll = track.scrollWidth - track.clientWidth;
-            if (track.scrollLeft >= maxScroll - 10) {
-                // Rewind
-                track.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-            }
-        }, 5000);
+        // ---------- Drag to Scroll Support ----------
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
 
-        // Pause autoplay on hover
-        slider.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-        slider.addEventListener('mouseleave', () => {
+        const startDrag = (e) => {
+            isDragging = true;
+            track.style.scrollSnapType = 'none'; // Disable snap during drag
+            startX = (e.pageX || e.touches?.[0]?.clientX) - track.offsetLeft;
+            scrollLeft = track.scrollLeft;
+            track.style.cursor = 'grabbing';
+            track.style.userSelect = 'none';
+            clearInterval(autoplayTimer); // Pause autoplay
+        };
+
+        const onDrag = (e) => {
+            if (!isDragging) return;
+            const x = (e.pageX || e.touches?.[0]?.clientX) - track.offsetLeft;
+            const walk = (x - startX) * 1.5; // Scroll speed multiplier
+            track.scrollLeft = scrollLeft - walk;
+        };
+
+        const stopDrag = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            track.style.cursor = '';
+            track.style.userSelect = '';
+            track.style.scrollSnapType = ''; // Restore snap
+            
+            // Snap to nearest slide
+            const amount = getScrollAmount();
+            const snapped = Math.round(track.scrollLeft / amount) * amount;
+            track.scrollTo({ left: snapped, behavior: 'smooth' });
+            
+            // Resume autoplay
+            startAutoplay();
+        };
+
+        track.addEventListener('mousedown', startDrag);
+        track.addEventListener('touchstart', startDrag, { passive: true });
+        
+        window.addEventListener('mousemove', onDrag);
+        window.addEventListener('touchmove', onDrag, { passive: true });
+        
+        window.addEventListener('mouseup', stopDrag);
+        window.addEventListener('touchend', stopDrag);
+
+        // Autoplay
+        let autoplayTimer;
+        function startAutoplay() {
             clearInterval(autoplayTimer);
             autoplayTimer = setInterval(() => {
                 const maxScroll = track.scrollWidth - track.clientWidth;
@@ -97,7 +133,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                 }
             }, 5000);
-        });
+        }
+        
+        startAutoplay();
+
+        slider.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+        slider.addEventListener('mouseleave', startAutoplay);
     })();
 
 
@@ -174,55 +215,47 @@ document.addEventListener('DOMContentLoaded', () => {
             track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
         });
 
-        // ---------- Touch support ----------
-        let touchStartX = 0;
-        let touchStartScrollLeft = 0;
-
-        track.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchStartScrollLeft = track.scrollLeft;
-        }, { passive: true });
-
-        track.addEventListener('touchmove', (e) => {
-            const dx = touchStartX - e.touches[0].clientX;
-            track.scrollLeft = touchStartScrollLeft + dx;
-        }, { passive: true });
-
-        track.addEventListener('touchend', () => {
-            const amount = getScrollAmount();
-            const snapped = Math.round(track.scrollLeft / amount) * amount;
-            track.scrollTo({ left: snapped, behavior: 'smooth' });
-        }, { passive: true });
-
-        // ---------- Mouse drag support ----------
+        // ---------- Drag to Scroll Support ----------
         let isDragging = false;
         let dragStartX = 0;
         let dragScrollLeft = 0;
 
-        track.addEventListener('mousedown', (e) => {
-            isDragging      = true;
-            dragStartX      = e.pageX - track.offsetLeft;
-            dragScrollLeft  = track.scrollLeft;
+        const startDrag = (e) => {
+            isDragging = true;
+            track.style.scrollSnapType = 'none'; // Disable snap
+            dragStartX = (e.pageX || e.touches?.[0]?.clientX) - track.offsetLeft;
+            dragScrollLeft = track.scrollLeft;
             track.style.cursor = 'grabbing';
             track.style.userSelect = 'none';
-        });
+        };
 
-        document.addEventListener('mousemove', (e) => {
+        const onDrag = (e) => {
             if (!isDragging) return;
-            const x   = e.pageX - track.offsetLeft;
-            const walk = (x - dragStartX) * 1.2;
+            const x = (e.pageX || e.touches?.[0]?.clientX) - track.offsetLeft;
+            const walk = (x - dragStartX) * 1.5;
             track.scrollLeft = dragScrollLeft - walk;
-        });
+        };
 
-        document.addEventListener('mouseup', () => {
+        const stopDrag = () => {
             if (!isDragging) return;
             isDragging = false;
             track.style.cursor = '';
             track.style.userSelect = '';
-            const amount  = getScrollAmount();
+            track.style.scrollSnapType = ''; // Restore snap
+            
+            const amount = getScrollAmount();
             const snapped = Math.round(track.scrollLeft / amount) * amount;
             track.scrollTo({ left: snapped, behavior: 'smooth' });
-        });
+        };
+
+        track.addEventListener('mousedown', startDrag);
+        track.addEventListener('touchstart', startDrag, { passive: true });
+
+        window.addEventListener('mousemove', onDrag);
+        window.addEventListener('touchmove', onDrag, { passive: true });
+
+        window.addEventListener('mouseup', stopDrag);
+        window.addEventListener('touchend', stopDrag);
 
         // Show/hide arrow buttons based on scroll position
         function updateArrows() {
