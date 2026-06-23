@@ -62,12 +62,21 @@ $description   = get_theme_mod( 'onepress_hero_description', $default_desc );
 
                 if ( $featured_query->have_posts() ) :
                     while ( $featured_query->have_posts() ) : $featured_query->the_post();
+                        // Get thumbnail or fallback to first image in content
+                        $img_url = '';
+                        if ( has_post_thumbnail() ) {
+                            $img_url = get_the_post_thumbnail_url( null, 'th-thumb' );
+                        } else {
+                            $content = get_the_content();
+                            preg_match( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches );
+                            $img_url = ! empty( $matches[1] ) ? $matches[1] : $hero_bg;
+                        }
                         ?>
                         <div class="th-featured-slider__slide">
                             <div class="th-fs-card">
-                                <?php if ( has_post_thumbnail() ) : ?>
+                                <?php if ( $img_url ) : ?>
                                     <div class="th-fs-card__thumb">
-                                        <?php the_post_thumbnail( 'th-thumb' ); ?>
+                                        <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
                                     </div>
                                 <?php endif; ?>
                                 <div class="th-fs-card__body">

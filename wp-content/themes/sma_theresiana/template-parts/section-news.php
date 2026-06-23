@@ -94,22 +94,24 @@ $archive_url    = $page_for_posts
 					itemscope
 					itemtype="https://schema.org/NewsArticle">
 
+					<?php
+					$img_url = '';
+					if ( has_post_thumbnail() ) {
+						$img_url = get_the_post_thumbnail_url( null, 'th-card' );
+					} else {
+						$content = get_the_content();
+						preg_match( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches );
+						// Use the hero background as a global fallback if no image is found
+						$img_url = ! empty( $matches[1] ) ? $matches[1] : get_theme_mod( 'Hero_Background_Image', home_url('/wp-content/uploads/2025/07/24132023_1229465257154162_6232500862772732835_o-960x540.jpg') );
+					}
+					?>
 					<!-- Thumbnail -->
-					<?php if ( has_post_thumbnail() ) : ?>
+					<?php if ( $img_url ) : ?>
 					<a href="<?php the_permalink(); ?>"
 						class="th-news__card-thumb"
-						tabindex="-1"
-						aria-hidden="true">
-						<?php
-						the_post_thumbnail(
-							'th-card',
-							[
-								'itemprop' => 'image',
-								'loading'  => 'lazy',
-								'decoding' => 'async',
-							]
-						);
-						?>
+						aria-hidden="true"
+						tabindex="-1">
+						<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
 					</a>
 					<?php endif; ?>
 
