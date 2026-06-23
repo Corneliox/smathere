@@ -8,7 +8,27 @@
 function sma_theresiana_customize_register( $wp_customize ) {
 
 	// =========================================================
-	// 1. FOOTER SECTION
+	// 1. HERO SECTION
+	// =========================================================
+	$wp_customize->add_section( 'th_hero_section', [
+		'title'       => __( 'Hero Banner', 'sma-theresiana' ),
+		'priority'    => 120,
+		'description' => __( 'Customize the hero section background image.', 'sma-theresiana' ),
+	] );
+
+	// -- Hero Background Image --
+	$wp_customize->add_setting( 'Hero_Background_Image', [
+		'default'           => home_url('/wp-content/uploads/2025/07/24132023_1229465257154162_6232500862772732835_o-960x540.jpg'),
+		'sanitize_callback' => 'esc_url_raw',
+	] );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'Hero_Background_Image', [
+		'label'    => __( 'Hero Background Image', 'sma-theresiana' ),
+		'section'  => 'th_hero_section',
+		'settings' => 'Hero_Background_Image',
+	] ) );
+
+	// =========================================================
+	// 2. FOOTER SECTION
 	// =========================================================
 	$wp_customize->add_section( 'th_footer_section', [
 		'title'       => __( 'Footer Settings', 'sma-theresiana' ),

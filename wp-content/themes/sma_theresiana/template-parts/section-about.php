@@ -13,7 +13,7 @@ $section_id = get_theme_mod( 'onepress_about_id', 'about' );
 $heading    = get_theme_mod( 'onepress_about_title', 'Tentang Kami' );
 $subheading = get_theme_mod( 'onepress_about_subtitle', '' );
 $about_img  = get_theme_mod( 'onepress_about_image', '' );
-$btn_text   = get_theme_mod( 'onepress_about_btn_text', 'Pelajari Lebih Lanjut' );
+$btn_text   = get_theme_mod( 'onepress_about_btn_text', 'Selengkapnya' );
 $btn_link   = get_theme_mod( 'onepress_about_btn_link', home_url( '/about/' ) );
 
 /*

@@ -2,200 +2,112 @@
 /**
  * Template Part: Hero Section
  *
- * Reads from OnePress Customizer settings.
- * Renders a full-screen slider (or single hero) with background image,
- * overlay, content, dot navigation, arrow navigation, and a scroll indicator.
+ * Renders a hero section with custom background image, overlay, 
+ * and a featured slider for recent news.
  *
  * @package sma_theresiana
  */
 
-$slides_raw    = get_theme_mod( 'onepress_hero_slides', '' );
-$slides        = $slides_raw ? maybe_unserialize( $slides_raw ) : [];
-$hero_bg       = get_theme_mod( 'onepress_hero_bg', '' );
+$hero_bg       = get_theme_mod( 'Hero_Background_Image', home_url('/wp-content/uploads/2025/07/24132023_1229465257154162_6232500862772732835_o-960x540.jpg') );
 $default_title = get_bloginfo( 'name' );
 $default_desc  = get_bloginfo( 'description' );
-
-// Build slides array — fall back to single slide from scalar customizer keys.
-if ( empty( $slides ) || ! is_array( $slides ) ) {
-	$slides = [
-		[
-			'title'       => get_theme_mod( 'onepress_hero_title', $default_title ),
-			'description' => get_theme_mod( 'onepress_hero_description', $default_desc ),
-			'btn_text'    => get_theme_mod( 'onepress_hero_btn_text', 'Selengkapnya' ),
-			'btn_link'    => get_theme_mod( 'onepress_hero_btn_link', home_url( '/#about' ) ),
-			'btn2_text'   => get_theme_mod( 'onepress_hero_btn2_text', '' ),
-			'btn2_link'   => get_theme_mod( 'onepress_hero_btn2_link', '' ),
-			'bg'          => $hero_bg,
-		],
-	];
-}
-
-$slide_count = count( $slides );
+$title         = get_theme_mod( 'onepress_hero_title', $default_title );
+$description   = get_theme_mod( 'onepress_hero_description', $default_desc );
 ?>
 
-<section class="th-hero" id="hero" aria-label="Hero Banner">
-	<div class="th-hero__slider"
-		data-autoplay="5500"
-		role="region"
-		aria-roledescription="carousel"
-		aria-label="Hero Slideshow">
+<section class="th-hero th-hero--static" id="hero" aria-label="Hero Banner">
+    <?php if ( $hero_bg ) : ?>
+        <img
+            src="<?php echo esc_url( $hero_bg ); ?>"
+            alt=""
+            class="th-hero__bg"
+            fetchpriority="high"
+            loading="eager"
+            decoding="sync"
+        >
+    <?php endif; ?>
 
-		<?php foreach ( $slides as $i => $slide ) :
-			// Support both 'bg' and 'background' keys used by different OnePress versions.
-			$bg     = ! empty( $slide['bg'] ) ? $slide['bg']
-					: ( ! empty( $slide['background'] ) ? $slide['background'] : $hero_bg );
-			$active = ( 0 === $i ) ? 'th-hero__slide--active' : '';
-		?>
-		<div class="th-hero__slide <?php echo esc_attr( $active ); ?>"
-			role="group"
-			aria-roledescription="slide"
-			aria-label="Slide <?php echo absint( $i + 1 ); ?> dari <?php echo absint( $slide_count ); ?>"
-			<?php echo ( 0 === $i ) ? '' : 'aria-hidden="true"'; ?>>
+    <!-- White Transparency 20% Overlay -->
+    <div class="th-hero__overlay th-hero__overlay--light" aria-hidden="true"></div>
 
-			<?php if ( $bg ) : ?>
-			<img
-				src="<?php echo esc_url( $bg ); ?>"
-				alt=""
-				class="th-hero__bg"
-				fetchpriority="<?php echo 0 === $i ? 'high' : 'low'; ?>"
-				loading="<?php echo 0 === $i ? 'eager' : 'lazy'; ?>"
-				decoding="<?php echo 0 === $i ? 'sync' : 'async'; ?>"
-			>
-			<?php endif; ?>
+    <div class="th-hero__content th-container">
+        
+        <div class="th-hero__text-content th-reveal">
+            <span class="th-hero__eyebrow th-eyebrow">SMA Theresiana 1 Semarang</span>
+            
+            <?php if ( ! empty( $title ) ) : ?>
+                <h1 class="th-hero__title">
+                    <?php echo wp_kses_post( $title ); ?>
+                </h1>
+            <?php endif; ?>
+            
+            <?php if ( ! empty( $description ) ) : ?>
+                <p class="th-hero__subtitle">
+                    <?php echo wp_kses_post( $description ); ?>
+                </p>
+            <?php endif; ?>
+        </div>
 
-			<div class="th-hero__overlay" aria-hidden="true"></div>
+        <!-- Featured Slider -->
+        <div id="featured-slider" class="th-featured-slider th-reveal th-reveal--delay-2">
+            <div class="th-featured-slider__track" id="th-fs-track">
+                <?php
+                $featured_args = [
+                    'post_type'      => 'post',
+                    'posts_per_page' => 5,
+                    'post_status'    => 'publish',
+                    'ignore_sticky_posts' => false,
+                ];
+                $featured_query = new WP_Query( $featured_args );
 
-			<div class="th-hero__content th-container">
+                if ( $featured_query->have_posts() ) :
+                    while ( $featured_query->have_posts() ) : $featured_query->the_post();
+                        ?>
+                        <div class="th-featured-slider__slide">
+                            <div class="th-fs-card">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <div class="th-fs-card__thumb">
+                                        <?php the_post_thumbnail( 'th-thumb' ); ?>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="th-fs-card__body">
+                                    <div class="th-fs-card__meta"><?php echo get_the_date('d M Y'); ?></div>
+                                    <h3 class="th-fs-card__title">
+                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    </h3>
+                                    <p class="th-fs-card__excerpt"><?php echo wp_trim_words( get_the_excerpt(), 15, '...' ); ?></p>
+                                    <a href="<?php the_permalink(); ?>" class="th-btn th-btn--text">
+                                        Baca Artikel <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>Tidak ada berita unggulan saat ini.</p>';
+                endif;
+                ?>
+            </div>
 
-				<?php if ( ! empty( $slide['eyebrow'] ) ) : ?>
-				<span class="th-hero__eyebrow th-eyebrow">
-					<?php echo esc_html( $slide['eyebrow'] ); ?>
-				</span>
-				<?php else : ?>
-				<span class="th-hero__eyebrow th-eyebrow">SMA Theresiana 1 Semarang</span>
-				<?php endif; ?>
+            <!-- Slider Controls -->
+            <div class="th-featured-slider__controls">
+                <button class="th-fs-arrow th-fs-arrow--prev" id="th-fs-prev" aria-label="Previous Slide">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div class="th-fs-dots" id="th-fs-dots"></div>
+                <button class="th-fs-arrow th-fs-arrow--next" id="th-fs-next" aria-label="Next Slide">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div><!-- #featured-slider -->
 
-				<?php if ( ! empty( $slide['title'] ) ) : ?>
-				<h1 class="th-hero__title">
-					<?php echo wp_kses_post( $slide['title'] ); ?>
-				</h1>
-				<?php endif; ?>
+    </div><!-- .th-hero__content -->
 
-				<?php if ( ! empty( $slide['description'] ) ) : ?>
-				<p class="th-hero__subtitle">
-					<?php echo wp_kses_post( $slide['description'] ); ?>
-				</p>
-				<?php endif; ?>
-
-				<div class="th-hero__actions">
-					<?php if ( ! empty( $slide['btn_text'] ) ) : ?>
-					<a href="<?php echo esc_url( $slide['btn_link'] ?? home_url( '/' ) ); ?>"
-						class="th-btn th-btn--primary">
-						<?php echo esc_html( $slide['btn_text'] ); ?>
-						<i class="fa fa-arrow-right" aria-hidden="true"></i>
-					</a>
-					<?php endif; ?>
-
-					<?php if ( ! empty( $slide['btn2_text'] ) ) : ?>
-					<a href="<?php echo esc_url( $slide['btn2_link'] ?? '#' ); ?>"
-						class="th-btn th-btn--outline">
-						<?php echo esc_html( $slide['btn2_text'] ); ?>
-					</a>
-					<?php endif; ?>
-				</div><!-- .th-hero__actions -->
-
-			</div><!-- .th-hero__content -->
-		</div><!-- .th-hero__slide -->
-		<?php endforeach; ?>
-
-		<?php if ( $slide_count > 1 ) : ?>
-		<!-- ── Dot navigation ── -->
-		<div class="th-hero__dots" role="tablist" aria-label="Navigasi slide hero">
-			<?php foreach ( $slides as $i => $slide ) : ?>
-			<button
-				class="th-hero__dot <?php echo 0 === $i ? 'th-hero__dot--active' : ''; ?>"
-				role="tab"
-				aria-selected="<?php echo 0 === $i ? 'true' : 'false'; ?>"
-				aria-label="Pergi ke slide <?php echo absint( $i + 1 ); ?>"
-				data-slide="<?php echo absint( $i ); ?>"
-				tabindex="<?php echo 0 === $i ? '0' : '-1'; ?>">
-			</button>
-			<?php endforeach; ?>
-		</div><!-- .th-hero__dots -->
-
-		<!-- ── Arrow navigation ── -->
-		<button class="th-hero__arrow th-hero__arrow--prev" aria-label="Slide sebelumnya">
-			<i class="fa fa-chevron-left" aria-hidden="true"></i>
-		</button>
-		<button class="th-hero__arrow th-hero__arrow--next" aria-label="Slide berikutnya">
-			<i class="fa fa-chevron-right" aria-hidden="true"></i>
-		</button>
-		<?php endif; ?>
-
-		<!-- ── Scroll indicator ── -->
-		<div class="th-hero__scroll" aria-hidden="true" title="Scroll ke bawah">
-			<span class="th-hero__scroll-line"></span>
-		</div>
-
-	</div><!-- .th-hero__slider -->
+    <a href="#about" class="th-hero__scroll" aria-label="Scroll kebawah">
+        <span class="th-hero__scroll-mouse">
+            <span class="th-hero__scroll-wheel"></span>
+        </span>
+    </a>
 </section><!-- .th-hero -->
-
-<?php
-/*
- * ─────────────────────────────────────────────────────────────────────────────
- * INLINE CSS  (hero-specific only; global design tokens live in style.css)
- * ─────────────────────────────────────────────────────────────────────────────
- *
- * .th-hero__scroll  — animated scroll indicator, pinned to the bottom-centre
- *                     of the hero, consists of a thin white line that pulses
- *                     downwards via a CSS keyframe animation.
- *
- * All other hero styles (layout, slide, overlay, buttons, dots, arrows)
- * are in assets/css/sections/_hero.scss / style.css.
- * ─────────────────────────────────────────────────────────────────────────────
- */
-?>
-<style id="th-hero-scroll-css">
-/* ── Scroll indicator ── */
-.th-hero__scroll {
-	position: absolute;
-	bottom: 2.25rem;
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	z-index: 10;
-	pointer-events: none;
-}
-
-.th-hero__scroll-line {
-	display: block;
-	width: 2px;
-	height: 48px;
-	background: linear-gradient(
-		to bottom,
-		rgba(255, 255, 255, 0) 0%,
-		rgba(255, 255, 255, 0.85) 50%,
-		rgba(255, 255, 255, 0) 100%
-	);
-	border-radius: 1px;
-	animation: th-scroll-pulse 1.8s ease-in-out infinite;
-	transform-origin: top center;
-}
-
-@keyframes th-scroll-pulse {
-	0%   { transform: scaleY(0);   opacity: 0;   transform-origin: top center; }
-	30%  { opacity: 1; }
-	60%  { transform: scaleY(1);   opacity: 1;   transform-origin: top center; }
-	100% { transform: scaleY(0);   opacity: 0;   transform-origin: bottom center; }
-}
-
-/* Reduce motion preference */
-@media (prefers-reduced-motion: reduce) {
-	.th-hero__scroll-line {
-		animation: none;
-		opacity: 0.55;
-	}
-}
-</style>

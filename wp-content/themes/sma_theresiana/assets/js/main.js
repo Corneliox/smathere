@@ -16,67 +16,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ============================================================
-     * 2. HERO SLIDER
+     * 2. FEATURED HERO SLIDER (Vanilla CSS Scroll Snap)
      * ============================================================ */
-    (function initHeroSlider() {
-        const hero   = document.querySelector('.th-hero');
-        if (!hero) return;
+    (function initFeaturedSlider() {
+        const slider = document.getElementById('featured-slider');
+        if (!slider) return;
 
-        const slides = Array.from(hero.querySelectorAll('.th-hero__slide'));
-        const dots   = Array.from(hero.querySelectorAll('.th-hero__dot'));
-        const arrows = {
-            prev: hero.querySelector('.th-hero__arrow--prev'),
-            next: hero.querySelector('.th-hero__arrow--next'),
-        };
+        const track = document.getElementById('th-fs-track');
+        const prevBtn = document.getElementById('th-fs-prev');
+        const nextBtn = document.getElementById('th-fs-next');
+        const dotsContainer = document.getElementById('th-fs-dots');
+        
+        if (!track) return;
+        
+        const slides = Array.from(track.querySelectorAll('.th-featured-slider__slide'));
+        if (slides.length === 0) return;
 
-        if (!slides.length) return;
+        // Create dots dynamically
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'th-fs-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.dataset.index = i;
+            dotsContainer.appendChild(dot);
+        });
 
-        let current  = 0;
-        let timer    = null;
-        const DELAY  = 5500;
+        const dots = Array.from(dotsContainer.querySelectorAll('.th-fs-dot'));
 
-        function goTo(index) {
-            slides[current].classList.remove('active');
-            dots[current]?.classList.remove('active');
-            dots[current]?.removeAttribute('aria-current');
-
-            current = (index + slides.length) % slides.length;
-
-            slides[current].classList.add('active');
-            if (dots[current]) {
-                dots[current].classList.add('active');
-                dots[current].setAttribute('aria-current', 'true');
-            }
+        function getScrollAmount() {
+            return track.offsetWidth; // snap full width
         }
 
-        function startTimer() {
-            clearInterval(timer);
-            timer = setInterval(() => goTo(current + 1), DELAY);
+        function updateDots() {
+            const index = Math.round(track.scrollLeft / getScrollAmount());
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
         }
 
-        function stopTimer() {
-            clearInterval(timer);
-        }
+        track.addEventListener('scroll', () => {
+            // Use requestAnimationFrame to throttle dot updates
+            requestAnimationFrame(updateDots);
+        }, { passive: true });
 
-        // Initialise first slide
-        goTo(0);
-        startTimer();
+        prevBtn?.addEventListener('click', () => {
+            track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
 
-        // Pause on hover
-        hero.addEventListener('mouseenter', stopTimer);
-        hero.addEventListener('mouseleave', startTimer);
+        nextBtn?.addEventListener('click', () => {
+            track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
 
-        // Dots
-        dots.forEach((dot, i) => {
+        dots.forEach(dot => {
             dot.addEventListener('click', () => {
-                goTo(i);
-                startTimer();
+                const index = parseInt(dot.dataset.index, 10);
+                track.scrollTo({ left: index * getScrollAmount(), behavior: 'smooth' });
             });
         });
 
-        // Arrow buttons
-        arrows.prev?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
-        arrows.next?.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+        // Autoplay
+        let autoplayTimer = setInterval(() => {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (track.scrollLeft >= maxScroll - 10) {
+                // Rewind
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            }
+        }, 5000);
+
+        // Pause autoplay on hover
+        slider.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+        slider.addEventListener('mouseleave', () => {
+            clearInterval(autoplayTimer);
+            autoplayTimer = setInterval(() => {
+                const maxScroll = track.scrollWidth - track.clientWidth;
+                if (track.scrollLeft >= maxScroll - 10) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                }
+            }, 5000);
+        });
     })();
 
 

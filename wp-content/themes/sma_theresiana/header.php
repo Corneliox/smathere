@@ -47,6 +47,7 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
 <header id="site-header" class="th-header" role="banner">
     <div class="th-container">
         <nav class="th-nav"
+             style="padding: 10px 20px 10px 20px;"
              role="navigation"
              aria-label="<?php esc_attr_e('Navigasi Utama', 'sma-theresiana'); ?>">
 
@@ -102,13 +103,14 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
 
             <!-- KANAN (Right): Dark Mode Toggle & Hamburger -->
             <div class="th-nav__right">
+                
+                <!-- Hidden Admin Link (3 clicks) -->
+                <a href="<?php echo esc_url(admin_url()); ?>" class="th-admin-hidden-link" aria-label="Admin Panel" title="Setup Menu"></a>
+
                 <!-- Dark Mode Toggle -->
                 <button id="th-theme-toggle" class="th-theme-toggle" aria-label="Toggle Dark Mode" title="Light / Dark Mode">
                     <i class="fa fa-sun-o" aria-hidden="true"></i>
                 </button>
-
-                <!-- Hidden Admin Link (3 clicks) -->
-                <a href="<?php echo esc_url(admin_url()); ?>" class="th-admin-hidden-link" aria-label="Admin Panel" title="Setup Menu"></a>
 
                 <!-- Hamburger Button (mobile) -->
                 <button class="th-hamburger"
