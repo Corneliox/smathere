@@ -43,34 +43,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const dots = Array.from(dotsContainer.querySelectorAll('.th-fs-dot'));
 
+        let currentIndex = 0;
+        const maxIndex = slides.length - 1;
+
         function getScrollAmount() {
             return track.offsetWidth; // snap full width
         }
 
         function updateDots() {
-            const index = Math.round(track.scrollLeft / getScrollAmount());
             dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
+                dot.classList.toggle('active', i === currentIndex);
             });
         }
 
+        function goTo(index) {
+            if (index < 0) index = maxIndex;
+            if (index > maxIndex) index = 0;
+            currentIndex = index;
+            track.scrollTo({ left: currentIndex * getScrollAmount(), behavior: 'smooth' });
+            updateDots();
+        }
+
         track.addEventListener('scroll', () => {
-            // Use requestAnimationFrame to throttle dot updates
-            requestAnimationFrame(updateDots);
+            // Only update index on passive scroll (like dragging)
+            if (!isDragging) {
+                const calculatedIndex = Math.round(track.scrollLeft / getScrollAmount());
+                if (calculatedIndex !== currentIndex && calculatedIndex >= 0 && calculatedIndex <= maxIndex) {
+                    currentIndex = calculatedIndex;
+                    requestAnimationFrame(updateDots);
+                }
+            }
         }, { passive: true });
 
-        prevBtn?.addEventListener('click', () => {
-            track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-        });
-
-        nextBtn?.addEventListener('click', () => {
-            track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-        });
+        prevBtn?.addEventListener('click', () => goTo(currentIndex - 1));
+        nextBtn?.addEventListener('click', () => goTo(currentIndex + 1));
 
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
-                const index = parseInt(dot.dataset.index, 10);
-                track.scrollTo({ left: index * getScrollAmount(), behavior: 'smooth' });
+                goTo(parseInt(dot.dataset.index, 10));
             });
         });
 
@@ -105,8 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Snap to nearest slide
             const amount = getScrollAmount();
-            const snapped = Math.round(track.scrollLeft / amount) * amount;
-            track.scrollTo({ left: snapped, behavior: 'smooth' });
+            currentIndex = Math.round(track.scrollLeft / amount);
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            goTo(currentIndex);
             
             // Resume autoplay
             startAutoplay();
@@ -126,12 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function startAutoplay() {
             clearInterval(autoplayTimer);
             autoplayTimer = setInterval(() => {
-                const maxScroll = track.scrollWidth - track.clientWidth;
-                if (track.scrollLeft >= maxScroll - 10) {
-                    track.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-                }
+                goTo(currentIndex + 1);
             }, 5000);
         }
         
@@ -206,14 +213,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const gap   = parseFloat(style.columnGap || style.gap) || 24;
             return card.offsetWidth + gap;
         }
+        
+        let currentLeft = 0;
+        
+        function scrollTrackBy(direction) {
+            const amount = getScrollAmount();
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            currentLeft = track.scrollLeft + (direction * amount);
+            if (currentLeft < 0) currentLeft = 0;
+            if (currentLeft > maxScroll) currentLeft = maxScroll;
+            track.scrollTo({ left: currentLeft, behavior: 'smooth' });
+        }
 
-        prev?.addEventListener('click', () => {
-            track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-        });
-
-        next?.addEventListener('click', () => {
-            track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-        });
+        prev?.addEventListener('click', () => scrollTrackBy(-1));
+        next?.addEventListener('click', () => scrollTrackBy(1));
 
         // ---------- Drag to Scroll Support ----------
         let isDragging = false;
@@ -246,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const amount = getScrollAmount();
             const snapped = Math.round(track.scrollLeft / amount) * amount;
             track.scrollTo({ left: snapped, behavior: 'smooth' });
+            currentLeft = snapped;
         };
 
         track.addEventListener('mousedown', startDrag);

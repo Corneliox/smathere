@@ -46,6 +46,10 @@ $description   = get_theme_mod( 'onepress_hero_description', $default_desc );
                     <?php echo wp_kses_post( $description ); ?>
                 </p>
             <?php endif; ?>
+            
+            <a href="#about" class="th-btn th-btn--primary th-hero__btn">
+                Selengkapnya <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
         </div>
 
         <!-- Featured Slider -->
