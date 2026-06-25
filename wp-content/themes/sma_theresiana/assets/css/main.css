@@ -873,7 +873,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 	position: absolute;
 	top: 210px; /* 100px is the middle of the 200px image box */
 	transform: translateY(-50%);
-	z-index: 10;
+	z-index: 999; /* Bumped to prevent being blocked by other layers */
 	background: rgba(0, 0, 0, 0.4);
 	border: 1px solid rgba(255,255,255,0.3);
 	color: var(--th-white);
