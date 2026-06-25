@@ -806,7 +806,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 
 .th-featured-slider__slide {
 	flex: 0 0 100%;
-	scroll-snap-align: center;
+	scroll-snap-align: start;
 }
 
 .th-fs-card-wrapper {

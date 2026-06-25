@@ -56,42 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        let isAnimating = false;
-        let animTimeout;
-
         function goTo(index) {
             if (index < 0) index = maxIndex;
             if (index > maxIndex) index = 0;
             currentIndex = index;
-            
+
             if (slides[currentIndex]) {
-                isAnimating = true;
-                
-                // Safari scroll-snap bug workaround: Temporarily disable snap while smooth scrolling
-                track.style.scrollSnapType = 'none';
-                
-                const slideWidth = slides[0].offsetWidth;
-                const gap = 20;
-                track.scrollTo({ left: currentIndex * (slideWidth + gap), behavior: 'smooth' });
-                
-                clearTimeout(animTimeout);
-                animTimeout = setTimeout(() => {
-                    isAnimating = false;
-                    track.style.scrollSnapType = ''; // Restore snap
-                }, 600); // Wait for smooth scroll to finish
+                slides[currentIndex].scrollIntoView({
+                    behavior: 'smooth',
+                    inline: 'start'
+                });
             }
+
             updateDots();
-            startAutoplay(); // Reset autoplay timer on interaction
+            startAutoplay();
         }
 
         track.addEventListener('scroll', () => {
-            if (!isDragging && !isAnimating) {
-                const amount = slides[0] ? slides[0].offsetWidth + 20 : getScrollAmount();
-                const calculatedIndex = Math.round(track.scrollLeft / amount);
-                if (calculatedIndex !== currentIndex && calculatedIndex >= 0 && calculatedIndex <= maxIndex) {
-                    currentIndex = calculatedIndex;
-                    requestAnimationFrame(updateDots);
+            const nearest = slides.reduce((closest, slide, index) => {
+                const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
+                if (distance < Math.abs(slides[closest].offsetLeft - track.scrollLeft)) {
+                    return index;
                 }
+                return closest;
+            }, 0);
+
+            if (nearest !== currentIndex) {
+                currentIndex = nearest;
+                requestAnimationFrame(updateDots);
             }
         }, { passive: true });
 
@@ -141,11 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
             track.style.userSelect = '';
             track.style.scrollSnapType = ''; // Restore snap
             
-            // Snap to nearest slide (width + gap)
-            const amount = slides[0] ? slides[0].offsetWidth + 20 : getScrollAmount();
-            currentIndex = Math.round(track.scrollLeft / amount);
-            if (currentIndex < 0) currentIndex = 0;
-            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            // Snap to nearest slide based on offset
+            currentIndex = slides.reduce((closest, slide, index) => {
+                const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
+                if (distance < Math.abs(slides[closest].offsetLeft - track.scrollLeft)) {
+                    return index;
+                }
+                return closest;
+            }, 0);
+            
             goTo(currentIndex);
             
             // Resume autoplay
