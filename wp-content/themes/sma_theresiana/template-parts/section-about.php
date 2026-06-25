@@ -41,7 +41,7 @@ $stats = [
 		'label' => get_theme_mod( 'onepress_about_stat1_label', 'Tahun Berdiri' ),
 	],
 	[
-		'num'   => get_theme_mod( 'onepress_about_stat2_num',   '100+' ),
+		'num'   => get_theme_mod( 'onepress_about_stat2_num',   '±20' ),
 		'label' => get_theme_mod( 'onepress_about_stat2_label', 'Tenaga Pengajar' ),
 	],
 	[
@@ -139,9 +139,11 @@ $visimisi = [
 					decoding="async"
 				>
 				<?php else : ?>
-				<div class="th-about__image-placeholder" aria-hidden="true">
-					<i class="fa fa-image" aria-hidden="true"></i>
-				</div>
+				<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio th-about__image" style="margin: 0; overflow: hidden; border-radius: var(--th-radius-xl); box-shadow: var(--th-shadow-xl);">
+					<div class="wp-block-embed__wrapper" style="position: relative; padding-bottom: 56.25%; height: 0;">
+						<iframe title="Profil SMA Theresiana 1 Semarang 2026" width="960" height="540" src="https://www.youtube.com/embed/rEfp5Cywj9k?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+					</div>
+				</figure>
 				<?php endif; ?>
 
 				<!-- Decorative accent blobs (CSS-only, aria-hidden) -->
