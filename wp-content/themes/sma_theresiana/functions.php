@@ -106,7 +106,7 @@ if ( ! function_exists( 'sma_theresiana_enqueue' ) ) :
             'th-main-js',
             get_template_directory_uri() . '/assets/js/main.js',
             [],
-            '1.0.0',
+            filemtime( get_template_directory() . '/assets/js/main.js' ),
             true // Load in footer.
         );
 
