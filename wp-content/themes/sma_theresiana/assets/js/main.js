@@ -91,21 +91,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
 
         prevBtn?.addEventListener('click', (e) => {
+            console.log('PREV CLICKED, current index:', currentIndex);
             e.preventDefault();
             goTo(currentIndex - 1);
         });
         
         nextBtn?.addEventListener('click', (e) => {
+            console.log('NEXT CLICKED, current index:', currentIndex);
             e.preventDefault();
             goTo(currentIndex + 1);
         });
 
         dots.forEach(dot => {
             dot.addEventListener('click', (e) => {
+                console.log('DOT CLICKED:', dot.dataset.index);
                 e.preventDefault();
                 goTo(parseInt(dot.dataset.index, 10));
             });
         });
+
+        // Debug initialization
+        console.log('--- SLIDER INIT ---');
+        console.log('slides:', slides.length);
+        console.log('maxIndex:', maxIndex);
+        console.log('offsets:', slides.map(s => ({ left: s.offsetLeft, width: s.offsetWidth })));
 
         // ---------- Drag to Scroll Support ----------
         let isDragging = false;
