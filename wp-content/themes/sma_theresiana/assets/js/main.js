@@ -56,15 +56,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        function getNearestSlide() {
+            return slides.reduce((closest, slide, index) => {
+                const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
+                const closestDistance = Math.abs(slides[closest].offsetLeft - track.scrollLeft);
+                return distance < closestDistance ? index : closest;
+            }, 0);
+        }
+
         function goTo(index) {
             if (index < 0) index = maxIndex;
             if (index > maxIndex) index = 0;
             currentIndex = index;
 
             if (slides[currentIndex]) {
-                slides[currentIndex].scrollIntoView({
-                    behavior: 'smooth',
-                    inline: 'start'
+                track.scrollTo({
+                    left: slides[currentIndex].offsetLeft,
+                    behavior: 'smooth'
                 });
             }
 
@@ -73,13 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         track.addEventListener('scroll', () => {
-            const nearest = slides.reduce((closest, slide, index) => {
-                const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
-                if (distance < Math.abs(slides[closest].offsetLeft - track.scrollLeft)) {
-                    return index;
-                }
-                return closest;
-            }, 0);
+            if (isDragging) return;
+
+            const nearest = getNearestSlide();
 
             if (nearest !== currentIndex) {
                 currentIndex = nearest;
@@ -131,16 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
             isDragging = false;
             track.style.cursor = '';
             track.style.userSelect = '';
-            track.style.scrollSnapType = ''; // Restore snap
+            track.style.scrollSnapType = 'x mandatory'; // Restore snap
             
             // Snap to nearest slide based on offset
-            currentIndex = slides.reduce((closest, slide, index) => {
-                const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
-                if (distance < Math.abs(slides[closest].offsetLeft - track.scrollLeft)) {
-                    return index;
-                }
-                return closest;
-            }, 0);
+            currentIndex = getNearestSlide();
             
             goTo(currentIndex);
             
