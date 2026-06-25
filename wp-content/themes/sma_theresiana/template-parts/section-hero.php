@@ -32,8 +32,9 @@ $description   = get_theme_mod( 'onepress_hero_description', $default_desc );
 
     <div class="th-hero__content th-container">
         
+        <!-- DIV 1: Text Content -->
         <div class="th-hero__text-content th-reveal">
-            <span class="th-hero__eyebrow th-eyebrow">SMA Theresiana 1 Semarang</span>
+            <span class="th-hero__eyebrow th-eyebrow th-hero-eyebrow-large">SMA Theresiana 1 Semarang</span>
             
             <?php if ( ! empty( $title ) ) : ?>
                 <h1 class="th-hero__title">
@@ -46,13 +47,9 @@ $description   = get_theme_mod( 'onepress_hero_description', $default_desc );
                     <?php echo wp_kses_post( $description ); ?>
                 </p>
             <?php endif; ?>
-            
-            <a href="#about" class="th-btn th-btn--primary th-hero__btn">
-                Selengkapnya <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </a>
         </div>
 
-        <!-- Featured Slider -->
+        <!-- DIV 2: Featured Slider -->
         <div id="featured-slider" class="th-featured-slider th-reveal th-reveal--delay-2">
             <div class="th-featured-slider__track" id="th-fs-track">
                 <?php
@@ -77,13 +74,16 @@ $description   = get_theme_mod( 'onepress_hero_description', $default_desc );
                         }
                         ?>
                         <div class="th-featured-slider__slide">
-                            <div class="th-fs-card">
+                            <div class="th-fs-card-wrapper">
+                                <!-- Bagian Gambar (Independen) -->
                                 <?php if ( $img_url ) : ?>
-                                    <div class="th-fs-card__thumb">
+                                    <div class="th-fs-card-image-box">
                                         <img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
                                     </div>
                                 <?php endif; ?>
-                                <div class="th-fs-card__body">
+                                
+                                <!-- Bagian Body (Independen) -->
+                                <div class="th-fs-card-content-box">
                                     <div class="th-fs-card__meta"><?php echo get_the_date('d M Y'); ?></div>
                                     <h3 class="th-fs-card__title">
                                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -115,6 +115,13 @@ $description   = get_theme_mod( 'onepress_hero_description', $default_desc );
                 </button>
             </div>
         </div><!-- #featured-slider -->
+
+        <!-- DIV 3: Action Button -->
+        <div class="th-hero__action-wrapper th-reveal th-reveal--delay-3" style="margin-left: 20%; padding-top: 2rem;">
+            <a href="#about" class="th-btn th-btn--primary th-hero__btn">
+                Selengkapnya <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+        </div>
 
     </div><!-- .th-hero__content -->
 

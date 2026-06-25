@@ -60,14 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
             if (index < 0) index = maxIndex;
             if (index > maxIndex) index = 0;
             currentIndex = index;
-            track.scrollTo({ left: currentIndex * getScrollAmount(), behavior: 'smooth' });
+            
+            // Menggunakan scrollIntoView agar sinkron dengan gap flexbox
+            if (slides[currentIndex]) {
+                slides[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            }
             updateDots();
         }
 
         track.addEventListener('scroll', () => {
             // Only update index on passive scroll (like dragging)
             if (!isDragging) {
-                const calculatedIndex = Math.round(track.scrollLeft / getScrollAmount());
+                // width + gap
+                const amount = slides[0] ? slides[0].offsetWidth + 20 : getScrollAmount();
+                const calculatedIndex = Math.round(track.scrollLeft / amount);
                 if (calculatedIndex !== currentIndex && calculatedIndex >= 0 && calculatedIndex <= maxIndex) {
                     currentIndex = calculatedIndex;
                     requestAnimationFrame(updateDots);
@@ -113,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
             track.style.userSelect = '';
             track.style.scrollSnapType = ''; // Restore snap
             
-            // Snap to nearest slide
-            const amount = getScrollAmount();
+            // Snap to nearest slide (width + gap)
+            const amount = slides[0] ? slides[0].offsetWidth + 20 : getScrollAmount();
             currentIndex = Math.round(track.scrollLeft / amount);
             if (currentIndex < 0) currentIndex = 0;
             if (currentIndex > maxIndex) currentIndex = maxIndex;

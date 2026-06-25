@@ -809,32 +809,34 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 	scroll-snap-align: center;
 }
 
-.th-fs-card {
+.th-fs-card-wrapper {
 	display: flex;
 	flex-direction: column;
+	gap: 15px;
+	height: auto;
+}
+
+.th-fs-card-image-box {
 	background: rgba(255,255,255,0.95);
 	border-radius: var(--th-radius-md);
 	overflow: hidden;
 	box-shadow: var(--th-shadow-lg);
-	backdrop-filter: blur(10px);
-	height: 430px;
+	height: 200px;
 }
-
-.th-fs-card__thumb {
-	flex: 0 0 200px;
-	width: 100%;
-}
-.th-fs-card__thumb img {
+.th-fs-card-image-box img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.th-fs-card__body {
+.th-fs-card-content-box {
+	background: rgba(255,255,255,0.95);
+	border-radius: var(--th-radius-md);
+	box-shadow: var(--th-shadow-lg);
+	backdrop-filter: blur(10px);
 	padding: 24px;
-	flex: 1;
 	text-align: left;
-	overflow: hidden;
+	overflow: visible;
 }
 .th-fs-card__meta {
 	font-size: 12px;
@@ -2078,4 +2080,18 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 	.th-posts-grid { grid-template-columns: 1fr; }
 	.th-404__actions { flex-direction: column; align-items: center; }
 	.th-footer__col--nav, .th-footer__col--contact { grid-column: 1 / -1; }
+}
+
+/* Typography adjustment for SMA Theresiana 1 Semarang */
+.th-hero-eyebrow-large {
+	font-size: 72px !important;
+	display: block;
+	margin-bottom: 20px;
+	line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+	.th-hero-eyebrow-large {
+		font-size: 32px !important;
+	}
 }
