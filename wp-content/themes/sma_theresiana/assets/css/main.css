@@ -787,9 +787,8 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 .th-featured-slider {
 	position: relative;
 	width: 100%;
-	max-width: 100vw;
+	max-width: 600px;
 	margin: 0 auto;
-	--img-box-height: 400px;
 }
 
 .th-featured-slider__track {
@@ -806,22 +805,8 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 }
 
 .th-featured-slider__slide {
-	flex: 0 0 70vw;
-	max-width: 600px;
+	flex: 0 0 100%;
 	scroll-snap-align: center;
-	transition: all 0.5s ease;
-	opacity: 0.4;
-	filter: blur(5px);
-	transform: scale(0.9);
-}
-.th-featured-slider__slide.active {
-	opacity: 1;
-	filter: blur(0);
-	transform: scale(1);
-}
-
-@media (max-width: 768px) {
-	.th-featured-slider__slide { flex: 0 0 85vw; }
 }
 
 .th-fs-card-wrapper {
@@ -886,7 +871,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 
 .th-fs-arrow {
 	position: absolute;
-	top: calc(var(--img-box-height) / 2); /* Dinamis berada di tengah image box */
+	top: 210px; /* 100px is the middle of the 200px image box */
 	transform: translateY(-50%);
 	z-index: 10;
 	background: rgba(0, 0, 0, 0.4);

@@ -54,13 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === currentIndex);
             });
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === currentIndex);
-            });
         }
-
-        // Inisialisasi status active pertama kali
-        updateDots();
 
         function goTo(index) {
             if (index < 0) index = maxIndex;
