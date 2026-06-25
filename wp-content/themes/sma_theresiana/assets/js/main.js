@@ -235,28 +235,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const next  = document.querySelector('.th-news__next');
         if (!track) return;
 
-        // Card width = first child width + gap
-        function getScrollAmount() {
-            const card = track.querySelector('.th-news__card');
-            if (!card) return 320;
-            const style = window.getComputedStyle(track);
-            const gap   = parseFloat(style.columnGap || style.gap) || 24;
-            return card.offsetWidth + gap;
+        const cards = Array.from(track.querySelectorAll('.th-news__card'));
+        if (cards.length === 0) return;
+
+        function getNearestCard() {
+            return cards.reduce((closest, card, index) => {
+                const distance = Math.abs(card.offsetLeft - track.scrollLeft);
+                const closestDistance = Math.abs(cards[closest].offsetLeft - track.scrollLeft);
+                return distance < closestDistance ? index : closest;
+            }, 0);
         }
-        
-        let currentLeft = 0;
         
         function scrollTrackBy(direction) {
-            const amount = getScrollAmount();
-            const maxScroll = track.scrollWidth - track.clientWidth;
-            currentLeft = track.scrollLeft + (direction * amount);
-            if (currentLeft < 0) currentLeft = 0;
-            if (currentLeft > maxScroll) currentLeft = maxScroll;
-            track.scrollTo({ left: currentLeft, behavior: 'smooth' });
+            let currentIndex = getNearestCard();
+            let targetIndex = currentIndex + direction;
+            
+            if (targetIndex < 0) targetIndex = 0;
+            if (targetIndex >= cards.length) targetIndex = cards.length - 1;
+            
+            track.scrollTo({ left: cards[targetIndex].offsetLeft });
         }
 
-        prev?.addEventListener('click', () => scrollTrackBy(-1));
-        next?.addEventListener('click', () => scrollTrackBy(1));
+        prev?.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollTrackBy(-1);
+        });
+        
+        next?.addEventListener('click', (e) => {
+            e.preventDefault();
+            scrollTrackBy(1);
+        });
 
         // ---------- Drag to Scroll Support ----------
         let isDragging = false;
@@ -284,12 +292,10 @@ document.addEventListener('DOMContentLoaded', () => {
             isDragging = false;
             track.style.cursor = '';
             track.style.userSelect = '';
-            track.style.scrollSnapType = ''; // Restore snap
+            track.style.scrollSnapType = 'x mandatory'; // Restore snap
             
-            const amount = getScrollAmount();
-            const snapped = Math.round(track.scrollLeft / amount) * amount;
-            track.scrollTo({ left: snapped, behavior: 'smooth' });
-            currentLeft = snapped;
+            let targetIndex = getNearestCard();
+            track.scrollTo({ left: cards[targetIndex].offsetLeft });
         };
 
         track.addEventListener('mousedown', startDrag);

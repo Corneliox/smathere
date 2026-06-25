@@ -1230,9 +1230,15 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 .th-news__track {
 	display: flex;
 	gap: 24px;
-	transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
-	will-change: transform;
 	cursor: grab;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE/Edge */
+}
+.th-news__track::-webkit-scrollbar {
+	display: none; /* Chrome/Safari */
 }
 .th-news__track:active { cursor: grabbing; }
 
@@ -1245,6 +1251,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 	border: 1px solid var(--th-green-50);
 	transition: all var(--th-transition);
 	user-select: none;
+	scroll-snap-align: start;
 }
 .th-news__card:hover {
 	box-shadow: var(--th-shadow-md);
