@@ -2065,10 +2065,16 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 	.th-container { padding: 0 20px; }
 
 	/* Hero */
-	.th-hero { height: 100svh; }
+	.th-hero { 
+		height: auto; 
+		min-height: 100svh; 
+		align-items: flex-start; /* Prevent flex centering from cutting off top */
+		padding-top: 15%; /* Jarak persentase dari atas layar */
+		padding-bottom: 50px;
+	}
 	.th-hero__arrow { display: none; }
 	.th-hero__scroll { display: none; }
-	.th-hero__content { bottom: 14%; }
+	.th-hero__content { bottom: auto; } /* Hapus bottom offset lama */
 
 	/* News slider card width on mobile */
 	.th-news__card { flex: 0 0 85vw; }
