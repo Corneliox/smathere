@@ -2107,7 +2107,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 /* Typography adjustment for SMA Theresiana 1 Semarang */
 .th-hero-eyebrow-large {
 	/* Fluid typography: min 32px on small screens, max 72px on large screens */
-	font-size: clamp(32px, 6vw, 72px) !important;
+	font-size: clamp(20px, 6vw, 32px) !important;
 	display: block;
 	margin-bottom: 20px;
 	line-height: 1.1;
