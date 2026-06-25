@@ -71,8 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (slides[currentIndex]) {
                 track.scrollTo({
-                    left: slides[currentIndex].offsetLeft,
-                    behavior: 'smooth'
+                    left: slides[currentIndex].offsetLeft
                 });
             }
 
