@@ -56,24 +56,36 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        let isAnimating = false;
+        let animTimeout;
+
         function goTo(index) {
             if (index < 0) index = maxIndex;
             if (index > maxIndex) index = 0;
             currentIndex = index;
             
-            // Kalkulasi posisi scroll akurat berdasarkan lebar slide + gap (20px)
             if (slides[currentIndex]) {
+                isAnimating = true;
+                
+                // Safari scroll-snap bug workaround: Temporarily disable snap while smooth scrolling
+                track.style.scrollSnapType = 'none';
+                
                 const slideWidth = slides[0].offsetWidth;
                 const gap = 20;
                 track.scrollTo({ left: currentIndex * (slideWidth + gap), behavior: 'smooth' });
+                
+                clearTimeout(animTimeout);
+                animTimeout = setTimeout(() => {
+                    isAnimating = false;
+                    track.style.scrollSnapType = ''; // Restore snap
+                }, 600); // Wait for smooth scroll to finish
             }
             updateDots();
+            startAutoplay(); // Reset autoplay timer on interaction
         }
 
         track.addEventListener('scroll', () => {
-            // Only update index on passive scroll (like dragging)
-            if (!isDragging) {
-                // width + gap
+            if (!isDragging && !isAnimating) {
                 const amount = slides[0] ? slides[0].offsetWidth + 20 : getScrollAmount();
                 const calculatedIndex = Math.round(track.scrollLeft / amount);
                 if (calculatedIndex !== currentIndex && calculatedIndex >= 0 && calculatedIndex <= maxIndex) {
@@ -83,11 +95,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, { passive: true });
 
-        prevBtn?.addEventListener('click', () => goTo(currentIndex - 1));
-        nextBtn?.addEventListener('click', () => goTo(currentIndex + 1));
+        prevBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            goTo(currentIndex - 1);
+        });
+        
+        nextBtn?.addEventListener('click', (e) => {
+            e.preventDefault();
+            goTo(currentIndex + 1);
+        });
 
         dots.forEach(dot => {
-            dot.addEventListener('click', () => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
                 goTo(parseInt(dot.dataset.index, 10));
             });
         });
