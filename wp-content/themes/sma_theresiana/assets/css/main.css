@@ -821,7 +821,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 	border-radius: var(--th-radius-md);
 	overflow: hidden;
 	box-shadow: var(--th-shadow-lg);
-	height: 200px;
+	height: 400px;
 }
 .th-fs-card-image-box img {
 	width: 100%;
@@ -870,17 +870,33 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 }
 
 .th-fs-arrow {
-	background: rgba(255,255,255,0.2);
+	position: absolute;
+	top: 100px; /* 100px is the middle of the 200px image box */
+	transform: translateY(-50%);
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.4);
 	border: 1px solid rgba(255,255,255,0.3);
 	color: var(--th-white);
-	width: 36px; height: 36px;
+	width: 40px; height: 40px;
 	border-radius: 50%;
 	display: flex; align-items: center; justify-content: center;
 	cursor: pointer;
 	transition: all var(--th-transition-fast);
 	backdrop-filter: blur(4px);
 }
-.th-fs-arrow:hover { background: rgba(255,255,255,0.4); }
+.th-fs-arrow:hover { background: rgba(0, 0, 0, 0.7); }
+
+.th-fs-arrow--prev {
+	left: -20px;
+}
+.th-fs-arrow--next {
+	right: -20px;
+}
+
+@media (max-width: 640px) {
+	.th-fs-arrow--prev { left: 10px; }
+	.th-fs-arrow--next { right: 10px; }
+}
 
 .th-fs-dots {
 	display: flex;
@@ -2084,7 +2100,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 
 /* Typography adjustment for SMA Theresiana 1 Semarang */
 .th-hero-eyebrow-large {
-	font-size: 72px !important;
+	font-size: 28px !important;
 	display: block;
 	margin-bottom: 20px;
 	line-height: 1.1;

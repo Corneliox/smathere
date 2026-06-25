@@ -116,13 +116,6 @@ $description   = get_theme_mod( 'onepress_hero_description', $default_desc );
             </div>
         </div><!-- #featured-slider -->
 
-        <!-- DIV 3: Action Button -->
-        <div class="th-hero__action-wrapper th-reveal th-reveal--delay-3" style="margin-left: 20%; padding-top: 2rem;">
-            <a href="#about" class="th-btn th-btn--primary th-hero__btn">
-                Selengkapnya <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </a>
-        </div>
-
     </div><!-- .th-hero__content -->
 
     <a href="#about" class="th-hero__scroll" aria-label="Scroll kebawah">
