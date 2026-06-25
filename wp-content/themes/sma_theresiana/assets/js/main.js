@@ -61,9 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (index > maxIndex) index = 0;
             currentIndex = index;
             
-            // Menggunakan scrollIntoView agar sinkron dengan gap flexbox
+            // Kalkulasi posisi scroll akurat berdasarkan lebar slide + gap (20px)
             if (slides[currentIndex]) {
-                slides[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                const slideWidth = slides[0].offsetWidth;
+                const gap = 20;
+                track.scrollTo({ left: currentIndex * (slideWidth + gap), behavior: 'smooth' });
             }
             updateDots();
         }
