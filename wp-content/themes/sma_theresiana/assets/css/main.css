@@ -826,7 +826,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 .th-fs-card-image-box img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	/* object-fit: cover; */
 }
 
 .th-fs-card-content-box {
@@ -871,7 +871,7 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 
 .th-fs-arrow {
 	position: absolute;
-	top: 100px; /* 100px is the middle of the 200px image box */
+	top: 210px; /* 100px is the middle of the 200px image box */
 	transform: translateY(-50%);
 	z-index: 10;
 	background: rgba(0, 0, 0, 0.4);
@@ -2100,14 +2100,15 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 
 /* Typography adjustment for SMA Theresiana 1 Semarang */
 .th-hero-eyebrow-large {
-	font-size: 28px !important;
+	/* Fluid typography: min 32px on small screens, max 72px on large screens */
+	font-size: clamp(32px, 6vw, 72px) !important;
 	display: block;
 	margin-bottom: 20px;
 	line-height: 1.1;
 }
 
 @media (max-width: 768px) {
-	.th-hero-eyebrow-large {
-		font-size: 32px !important;
+	.th-hero__text-content {
+		margin-top: 10vh; /* Adjust spacing to push text down on mobile */
 	}
 }
