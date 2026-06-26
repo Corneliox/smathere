@@ -287,6 +287,7 @@ function th_auto_create_pages() {
         'blog'      => [ 'title' => 'Semua Berita', 'template' => 'page-blog.php' ],
         'ppdb'      => [ 'title' => 'PPDB', 'template' => 'page-ppdb.php' ],
         'pengaduan' => [ 'title' => 'Layanan Pengaduan', 'template' => 'page-pengaduan.php' ],
+        'about'     => [ 'title' => 'Tentang Kami', 'template' => 'page-about.php' ],
     ];
 
     $flushed = false;

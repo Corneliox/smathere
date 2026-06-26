@@ -216,6 +216,9 @@ $footer_links = [
                     <?php esc_html_e('All rights reserved.', 'sma-theresiana'); ?>
                 </p>
                 <p class="th-footer__copy">
+                    <?php esc_html_e('Akreditasi: A | NPSN: 20331915', 'sma-theresiana'); ?>
+                </p>
+                <p class="th-footer__copy">
                     <?php esc_html_e('Developed & Designed by', 'sma-theresiana'); ?>
                     <a href="https://github.com/Corneliox" target="_blank" rel="noopener noreferrer">Corneliox</a>
                 </p>
