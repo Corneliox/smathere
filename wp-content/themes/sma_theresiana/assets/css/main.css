@@ -366,30 +366,35 @@ body.dark-mode .th-header.scrolled {
 
 .th-nav {
 	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr auto 1fr;
+	display: flex;
 	align-items: center;
-	gap: 20px;
+	justify-content: space-between;
+	position: relative;
 }
 
 .th-nav__left,
-.th-nav__center,
 .th-nav__right {
 	display: flex;
 	align-items: center;
+	position: relative;
+	z-index: 2;
 }
 
 .th-nav__left {
-	justify-content: flex-start;
 	gap: 20px;
 }
 
 .th-nav__center {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
 	justify-content: center;
+	white-space: nowrap;
+	z-index: 1;
 }
 
 .th-nav__right {
-	justify-content: flex-end;
 	gap: 16px;
 }
 

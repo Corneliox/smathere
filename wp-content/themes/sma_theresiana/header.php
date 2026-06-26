@@ -51,7 +51,7 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
              aria-label="<?php esc_attr_e('Navigasi Utama', 'sma-theresiana'); ?>">
 
             <!-- KIRI (Left): Logo & Search -->
-            <div class="th-nav__left" style="padding-right: 50px;">
+            <div class="th-nav__left">
                 <!-- Logo -->
                 <?php
                 $custom_logo_id = get_theme_mod( 'custom_logo' );
