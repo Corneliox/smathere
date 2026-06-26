@@ -216,7 +216,8 @@ $footer_links = [
                     <?php esc_html_e('All rights reserved.', 'sma-theresiana'); ?>
                 </p>
                 <p class="th-footer__copy">
-                    <?php esc_html_e('Akreditasi: A | NPSN: 20331915', 'sma-theresiana'); ?>
+                    <?php esc_html_e('School Identity: ', 'sma-theresiana'); ?>
+                    <a href="https://sekolah.data.kemendikdasmen.go.id/profil-sekolah/20110B78-1D97-49FD-B906-6DB91BD9BF6E" target="_blank" rel="noopener noreferrer">Akreditasi: A | NPSN: 20331915</a>
                 </p>
                 <p class="th-footer__copy">
                     <?php esc_html_e('Developed & Designed by', 'sma-theresiana'); ?>
