@@ -163,15 +163,19 @@ $footer_links = [
                         </div>
 
                         <div class="th-footer__qr-row">
-                            <!-- PPDB QR -->
+                            <!-- PPDB QR / Widget -->
                             <div class="th-footer__qr-item">
-                                <a href="https://smatheresiana1.sch.id/smathere/ppdb/" target="_blank" rel="noopener">
-                                    <img src="<?php echo esc_url($qr_ppdb); ?>"
-                                        alt="QR Code PPDB"
-                                        width="140"
-                                        height="140"
-                                        loading="lazy">
-                                </a>
+                                <?php if ( is_active_sidebar( 'th-footer-ppdb' ) ) : ?>
+                                    <?php dynamic_sidebar( 'th-footer-ppdb' ); ?>
+                                <?php else : ?>
+                                    <a href="https://smatheresiana1.sch.id/smathere/ppdb/" target="_blank" rel="noopener">
+                                        <img src="<?php echo esc_url($qr_ppdb); ?>"
+                                            alt="QR Code PPDB"
+                                            width="140"
+                                            height="140"
+                                            loading="lazy">
+                                    </a>
+                                <?php endif; ?>
                                 <span class="th-footer__qr-label">
                                     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                                     PPDB
@@ -212,7 +216,11 @@ $footer_links = [
                     <?php esc_html_e('All rights reserved.', 'sma-theresiana'); ?>
                 </p>
                 <p class="th-footer__copy">
-                    <?php esc_html_e('Powered by', 'sma-theresiana'); ?>
+                    <?php esc_html_e('Developed by', 'sma-theresiana'); ?>
+                    <a href="https://wordpress.org" target="_blank" rel="noopener noreferrer">WordPress</a>
+                </p>
+                <p class="th-footer__copy">
+                    <?php esc_html_e('Designed by', 'sma-theresiana'); ?>
                     <a href="https://wordpress.org" target="_blank" rel="noopener noreferrer">WordPress</a>
                 </p>
             </div><!-- .th-footer__bottom-inner -->

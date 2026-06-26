@@ -93,7 +93,7 @@ if ( empty( $items ) ) {
 	<div class="th-container">
 
 		<!-- ── Section header ──────────────────────────────────────────────── -->
-		<div class="th-section__header">
+		<div class="th-section__header" style="text-align: center;">
 			<span class="th-eyebrow th-reveal">Program Kami</span>
 			<h2 id="th-kurikulum-heading" class="th-heading-lg th-reveal th-reveal--delay-1">
 				<?php echo wp_kses_post( $heading ); ?>

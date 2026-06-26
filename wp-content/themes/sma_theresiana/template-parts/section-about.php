@@ -168,9 +168,22 @@ $visimisi = [
 					<h3 class="th-visimisi__heading">
 						<?php echo esc_html( $item['title'] ); ?>
 					</h3>
-					<p class="th-visimisi__body">
-						<?php echo wp_kses_post( $item['body'] ); ?>
-					</p>
+					<div class="th-visimisi__body">
+						<?php 
+						// Convert <br> into bullet points specifically for Misi (or if there are breaks)
+						if ( preg_match('/<br\s*\/?>/i', $item['body']) ) {
+							$points = preg_split('/<br\s*\/?>/i', $item['body']);
+							echo '<ul style="padding-left: 20px; margin: 0; text-align: left; list-style-type: disc;">';
+							foreach($points as $pt) {
+								$pt = trim($pt);
+								if ($pt) echo '<li style="margin-bottom: 8px;">' . wp_kses_post($pt) . '</li>';
+							}
+							echo '</ul>';
+						} else {
+							echo '<p style="margin: 0;">' . wp_kses_post( $item['body'] ) . '</p>';
+						}
+						?>
+					</div>
 				</div><!-- .th-visimisi__card -->
 				<?php endforeach; ?>
 			</div><!-- .th-visimisi__cards -->

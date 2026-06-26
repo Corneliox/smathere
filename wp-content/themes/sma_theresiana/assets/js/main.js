@@ -371,9 +371,13 @@ document.addEventListener('DOMContentLoaded', () => {
         menuLinks.forEach(link => {
             const href = link.getAttribute('href');
             const hash = href.includes('#') ? '#' + href.split('#').pop() : null;
-            if (!hash) return;
-            const section = document.querySelector(hash);
-            if (section) sectionMap.set(section, link);
+            if (!hash || hash === '#') return;
+            try {
+                const section = document.querySelector(hash);
+                if (section) sectionMap.set(section, link);
+            } catch (e) {
+                // Ignore invalid selectors like #! or empty ones that sneaked through
+            }
         });
 
         if (!sectionMap.size) return;
