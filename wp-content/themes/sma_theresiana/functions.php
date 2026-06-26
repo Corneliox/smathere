@@ -283,6 +283,12 @@ add_action( 'init', 'th_register_cpt_pengaduan' );
 
 // Auto-create required pages
 function th_auto_create_pages() {
+    
+    // Force clean permalinks without /index.php/
+    if ( get_option( 'permalink_structure' ) !== '/%postname%/' ) {
+        update_option( 'permalink_structure', '/%postname%/' );
+        flush_rewrite_rules();
+    }
     $pages_to_create = [
         'blog'      => [ 'title' => 'Semua Berita', 'template' => 'page-blog.php' ],
         'ppdb'      => [ 'title' => 'PPDB', 'template' => 'page-ppdb.php' ],
