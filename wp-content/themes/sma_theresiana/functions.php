@@ -315,6 +315,31 @@ function th_auto_create_pages() {
     }
 }
 add_action( 'after_setup_theme', 'th_auto_create_pages' );
+add_action('after_switch_theme', 'th_force_flush_rules');
+
+
+// ──────────────────────────────────────────────────────────────────────────────
+// 8. DYNAMIC MENU FILTER
+// ──────────────────────────────────────────────────────────────────────────────
+
+/**
+ * Automatically hide auto-generated pages from Custom Menus.
+ * This prevents them from showing up if the user has "Auto add pages" enabled in WP Menus.
+ */
+add_filter( 'wp_nav_menu_objects', 'th_exclude_pages_from_menu', 10, 2 );
+function th_exclude_pages_from_menu( $items, $args ) {
+    // Only exclude these exact titles
+    $exclude_titles = [ 'PPDB', 'Layanan Pengaduan', 'Tentang Kami', 'Semua Berita' ];
+    
+    foreach ( $items as $key => $item ) {
+        // Jika title dari menu item ada di dalam array exclude_titles
+        if ( in_array( $item->title, $exclude_titles, true ) ) {
+            unset( $items[$key] );
+        }
+    }
+    
+    return $items;
+}
 
 // ──────────────────────────────────────────────────────────────────────────────
 // 7. HELPER FUNCTIONS
