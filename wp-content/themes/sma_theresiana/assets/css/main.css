@@ -607,6 +607,30 @@ body.dark-mode .th-header.scrolled .th-header-search__field::placeholder { color
 body.dark-mode .th-header.scrolled .th-header-search__submit { color: rgba(255,255,255,0.85); }
 .th-header-search__submit:hover { color: var(--th-green-400); }
 
+/* ----------------------------------------------------
+   Home Page Specific Header Overrides
+   (White text when unscrolled on Home Page)
+   ---------------------------------------------------- */
+.home .th-logo__text { color: var(--th-white); }
+.home .th-menu__link, .home .th-menu li > a { color: rgba(255, 255, 255, 0.92); }
+.home .th-menu__link:hover, .home .th-menu li > a:hover {
+	background: rgba(255, 255, 255, 0.15);
+	color: var(--th-white);
+}
+.home .th-header-search__field { color: var(--th-white); }
+.home .th-header-search__field::placeholder { color: rgba(255, 255, 255, 0.7); }
+.home .th-header-search__submit { color: var(--th-white); }
+.home .th-theme-toggle { color: var(--th-white); background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); }
+
+/* Ensure scrolled header on Home page uses standard dark/green text */
+.home .th-header.scrolled .th-logo__text { color: var(--th-green-800); }
+.home .th-header.scrolled .th-menu__link, 
+.home .th-header.scrolled .th-menu li > a { color: var(--th-gray-700); }
+.home .th-header.scrolled .th-header-search__field { color: var(--th-gray-800); }
+.home .th-header.scrolled .th-header-search__field::placeholder { color: var(--th-gray-500); }
+.home .th-header.scrolled .th-header-search__submit { color: var(--th-gray-600); }
+.home .th-header.scrolled .th-theme-toggle { background: rgba(0, 0, 0, 0.05); border-color: transparent; color: var(--th-gray-600); }
+
 /* Theme Toggle & Admin Link */
 .th-theme-toggle {
 	background: rgba(0, 0, 0, 0.05);
