@@ -257,7 +257,28 @@ add_filter( 'excerpt_length', function() { return 20; }, 999 );
 add_filter( 'excerpt_more', function() { return '...'; } );
 
 // ──────────────────────────────────────────────────────────────────────────────
-// 6. HELPER FUNCTIONS
+// 6. AUTO-CREATE REQUIRED PAGES
+// ──────────────────────────────────────────────────────────────────────────────
+function th_auto_create_pages() {
+    $page_slug = 'blog';
+    $page = get_page_by_path( $page_slug );
+    if ( ! $page ) {
+        $page_id = wp_insert_post( [
+            'post_title'   => 'Semua Berita',
+            'post_name'    => $page_slug,
+            'post_status'  => 'publish',
+            'post_type'    => 'page',
+            'page_template'=> 'page-blog.php'
+        ] );
+        
+        // Flush rewrite rules after creating the page to prevent 404
+        flush_rewrite_rules();
+    }
+}
+add_action( 'after_setup_theme', 'th_auto_create_pages' );
+
+// ──────────────────────────────────────────────────────────────────────────────
+// 7. HELPER FUNCTIONS
 // ──────────────────────────────────────────────────────────────────────────────
 
 if ( ! function_exists( 'th_get_excerpt' ) ) :
