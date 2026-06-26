@@ -90,10 +90,18 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
                     'items_wrap'     => '<ul id="main-menu" class="th-menu" role="menubar">%3$s</ul>',
                     'walker'         => false,
                     'fallback_cb'    => function () {
-                        // Fallback ke daftar halaman (sama seperti Ashe)
+                        // Fallback ke daftar halaman, kecualikan halaman sistem
+                        $exclude_ids = array();
+                        foreach (['blog', 'ppdb', 'pengaduan', 'about'] as $slug) {
+                            $page = get_page_by_path($slug);
+                            if ($page) {
+                                $exclude_ids[] = $page->ID;
+                            }
+                        }
                         wp_page_menu([
                             'show_home'  => true,
-                            'menu_class' => 'main-menu-container'
+                            'menu_class' => 'main-menu-container',
+                            'exclude'    => implode(',', $exclude_ids)
                         ]);
                     },
                 ]);
@@ -183,9 +191,17 @@ add_filter('nav_menu_link_attributes', function ($atts, $item, $args, $depth) {
             'menu_class'     => 'th-mobile-menu',
             'container'      => false,
             'fallback_cb'    => function() {
+                $exclude_ids = array();
+                foreach (['blog', 'ppdb', 'pengaduan', 'about'] as $slug) {
+                    $page = get_page_by_path($slug);
+                    if ($page) {
+                        $exclude_ids[] = $page->ID;
+                    }
+                }
                 wp_page_menu([
                     'show_home'  => true,
-                    'menu_class' => 'th-mobile-menu'
+                    'menu_class' => 'th-mobile-menu',
+                    'exclude'    => implode(',', $exclude_ids)
                 ]);
             },
         ]);
