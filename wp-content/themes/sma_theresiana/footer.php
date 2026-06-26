@@ -216,11 +216,15 @@ $footer_links = [
                     <?php esc_html_e('All rights reserved.', 'sma-theresiana'); ?>
                 </p>
                 <p class="th-footer__copy">
-                    <?php esc_html_e('Developed by', 'sma-theresiana'); ?>
-                    <a href="https://wordpress.org" target="_blank" rel="noopener noreferrer">WordPress</a>
+                    <?php esc_html_e('Developed & Designed by', 'sma-theresiana'); ?>
+                    <a href="https://github.com/Corneliox" target="_blank" rel="noopener noreferrer">Corneliox</a>
                 </p>
                 <p class="th-footer__copy">
-                    <?php esc_html_e('Designed by', 'sma-theresiana'); ?>
+                    <?php esc_html_e('Supported by', 'sma-theresiana'); ?>
+                    <a href="https://unika.ac.id/" target="_blank" rel="noopener noreferrer">KKN Tematik UNIKA 2026</a>
+                </p>
+                <p class="th-footer__copy">
+                    <?php esc_html_e('Powered by', 'sma-theresiana'); ?>
                     <a href="https://wordpress.org" target="_blank" rel="noopener noreferrer">WordPress</a>
                 </p>
             </div><!-- .th-footer__bottom-inner -->
