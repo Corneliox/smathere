@@ -440,10 +440,11 @@ body.dark-mode .th-header.scrolled {
 	justify-content: center;
 }
 
-.th-menu__item { position: relative; }
+.th-menu__item,
+.th-menu .menu-item { position: relative; }
 
 .th-menu__link,
-.th-menu li a {
+.th-menu li > a {
 	display: block;
 	padding: 8px 14px;
 	font-family: var(--th-font-body);
@@ -458,12 +459,12 @@ body.dark-mode .th-header.scrolled {
 }
 
 .th-header.scrolled .th-menu__link,
-.th-header.scrolled .th-menu li a {
+.th-header.scrolled .th-menu li > a {
 	color: var(--th-gray-700);
 }
 
 .th-menu__link:hover,
-.th-menu li a:hover,
+.th-menu li > a:hover,
 .th-menu .current-menu-item > a,
 .th-menu .th-menu__link.active {
 	background: rgba(255,255,255,0.15);
@@ -471,10 +472,81 @@ body.dark-mode .th-header.scrolled {
 }
 
 .th-header.scrolled .th-menu__link:hover,
-.th-header.scrolled .th-menu li a:hover,
+.th-header.scrolled .th-menu li > a:hover,
 .th-header.scrolled .th-menu .current-menu-item > a {
 	background: var(--th-green-50);
 	color: var(--th-green-700);
+}
+
+/* Dropdown Menus (.sub-menu) */
+.th-menu .menu-item-has-children {
+	position: relative;
+}
+
+.th-menu .menu-item-has-children > a::after {
+	content: '\f107'; /* FontAwesome angle-down */
+	font-family: 'FontAwesome';
+	margin-left: 6px;
+	font-weight: normal;
+}
+
+.th-menu .sub-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: var(--th-white);
+	min-width: 280px;
+	list-style: none;
+	padding: 10px 0;
+	margin: 0;
+	border-radius: var(--th-radius-sm);
+	box-shadow: var(--th-shadow-md);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: all var(--th-transition-fast);
+	z-index: 100;
+	border: 1px solid var(--th-gray-200);
+}
+
+.th-menu .menu-item-has-children:hover > .sub-menu {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.th-menu .sub-menu li {
+	display: block;
+	width: 100%;
+}
+
+.th-menu .sub-menu li > a {
+	padding: 10px 20px;
+	color: var(--th-gray-700);
+	border-radius: 0;
+	white-space: normal;
+	line-height: 1.5;
+}
+
+.th-menu .sub-menu li > a:hover {
+	background: var(--th-green-50);
+	color: var(--th-green-700);
+}
+
+/* Mobile Adjustments for Sub-menu */
+.th-mobile-menu .sub-menu {
+	list-style: none;
+	padding-left: 15px;
+	margin-top: 5px;
+}
+.th-mobile-menu .sub-menu li > a {
+	font-size: 14px;
+	padding: 8px 0;
+	color: rgba(255,255,255,0.7);
+}
+.th-mobile-menu .sub-menu li > a:hover {
+	color: var(--th-white);
+	background: transparent;
 }
 
 /* Header Actions & Search */

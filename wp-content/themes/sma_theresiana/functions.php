@@ -172,6 +172,40 @@ endif;
 
 add_action( 'widgets_init', 'sma_theresiana_widgets_init' );
 
+
+// ──────────────────────────────────────────────────────────────────────────────
+// 5. DYNAMIC MENU ITEMS (Recent Posts & Categories)
+// ──────────────────────────────────────────────────────────────────────────────
+add_filter('wp_nav_menu_items', 'th_add_dynamic_dropdowns', 10, 2);
+function th_add_dynamic_dropdowns($items, $args) {
+    if ($args->theme_location == 'main' || $args->menu == 'Main Menu') {
+        
+        // 1. Recent Posts Dropdown
+        $recent_posts = wp_get_recent_posts([
+            'numberposts' => 5,
+            'post_status' => 'publish'
+        ]);
+        
+        $recent_html = '<li class="menu-item menu-item-has-children"><a href="#" class="th-menu__link">Recent Posts</a><ul class="sub-menu">';
+        foreach($recent_posts as $post) {
+            $recent_html .= '<li><a href="' . get_permalink($post['ID']) . '">' . esc_html($post['post_title']) . '<br><span class="post-date" style="font-size:11px; opacity:0.7; font-weight:normal;">' . get_the_date('jS F Y', $post['ID']) . '</span></a></li>';
+        }
+        $recent_html .= '</ul></li>';
+
+        // 2. Categories Dropdown (Our High School)
+        $categories = get_categories(['hide_empty' => false]);
+        $cat_html = '<li class="menu-item menu-item-has-children"><a href="#" class="th-menu__link">Our High School</a><ul class="sub-menu">';
+        foreach($categories as $cat) {
+            $cat_html .= '<li><a href="' . get_category_link($cat->term_id) . '">' . esc_html($cat->name) . '</a></li>';
+        }
+        $cat_html .= '</ul></li>';
+
+        // Append to existing items
+        $items .= $recent_html . $cat_html;
+    }
+    return $items;
+}
+
 // ──────────────────────────────────────────────────────────────────────────────
 // 5. EXCERPT CUSTOMISATION
 // ──────────────────────────────────────────────────────────────────────────────

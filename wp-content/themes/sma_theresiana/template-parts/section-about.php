@@ -57,7 +57,7 @@ $visimisi = [
 		'title' => 'Visi',
 		'body'  => get_theme_mod(
 			'onepress_about_vision',
-			'Menjadi sekolah unggulan yang mencetak generasi cerdas, berkarakter, dan beriman.'
+			'Mewujudkan generasi penerus bangsa yang cerdas dan berkarakter sesuai dengan nilai-nilai Santa Theresia.'
 		),
 	],
 	[
@@ -65,7 +65,11 @@ $visimisi = [
 		'title' => 'Misi',
 		'body'  => get_theme_mod(
 			'onepress_about_mission',
-			'Menyelenggarakan pendidikan berkualitas dengan pendekatan holistik yang mengintegrasikan ilmu pengetahuan, teknologi, seni, dan nilai-nilai Kristiani.'
+			'Menyelenggarakan pelayanan pendidikan melalui pembelajaran yang inovatif, bernalar kritis, kreatif, bermakna, dan kompetitif.<br>
+			Menanamkan nilai-nilai Santa Theresia yaitu sukacita, disiplin, jujur, dan peduli dalam pembelajaran.<br>
+			Meningkatkan kualitas SDM agar mampu memberikan pembelajaran yang berbasis teknologi dan berkebhinekaan global.<br>
+			Mendampingi peserta didik dalam mengembangkan potensi sehingga mampu berprestasi.<br>
+			Menyediakan sarana dan prasarana yang memadai dan modern.'
 		),
 	],
 ];
