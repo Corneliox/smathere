@@ -62,13 +62,13 @@
 }
 
 body.dark-mode {
-	/* Inverted Neutrals for Dark Mode */
-	--th-white:     #121212;
-	--th-gray-50:   #1a1a1a;
-	--th-gray-100:  #242424;
-	--th-gray-200:  #2d2d2d;
-	--th-gray-300:  #383838;
-	--th-gray-400:  #4a4a4a;
+	/* Inverted Neutrals for Dark Mode - Made more grayish instead of pure black */
+	--th-white:     #1e1e1e;
+	--th-gray-50:   #242424;
+	--th-gray-100:  #2a2a2a;
+	--th-gray-200:  #333333;
+	--th-gray-300:  #404040;
+	--th-gray-400:  #525252;
 	--th-gray-500:  #6b7280;
 	--th-gray-600:  #9ca3af;
 	--th-gray-700:  #d1d5db;
@@ -76,8 +76,8 @@ body.dark-mode {
 	--th-gray-900:  #f3f4f6;
 
 	/* Subtle Green background tints for dark mode */
-	--th-green-50:  #182414;
-	--th-green-100: #1e2b1a;
+	--th-green-50:  #232e1f;
+	--th-green-100: #2d3a29;
 
 	/* Stronger Shadows */
 	--th-shadow-sm: 0 1px 6px rgba(0,0,0,0.5);
@@ -349,7 +349,9 @@ ul, ol { list-style: none; }
 	min-height: var(--th-header-h);
 	padding: 12px 0;
 	z-index: 9999;
-	background: transparent;
+	background: rgba(30, 43, 26, 0.65);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
 	transition: background var(--th-transition), box-shadow var(--th-transition), padding var(--th-transition);
 }
 

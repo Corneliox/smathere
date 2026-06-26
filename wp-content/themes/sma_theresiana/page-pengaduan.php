@@ -49,7 +49,7 @@ get_header();
             <span class="th-eyebrow th-reveal">Layanan Anonim</span>
             <h1 class="th-heading-lg th-reveal th-reveal--delay-1">Kotak Pengaduan</h1>
             <p class="th-text-lead th-reveal th-reveal--delay-2" style="margin-top: 16px;">
-                Identitas Anda **100% dirahasiakan**. Sampaikan kritik, saran, atau laporan Anda dengan aman.
+                Identitas Anda <strong>100% dirahasiakan**. Sampaikan kritik, saran, atau laporan Anda dengan aman.
             </p>
         </header>
 
