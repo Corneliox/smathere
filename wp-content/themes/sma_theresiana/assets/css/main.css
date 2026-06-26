@@ -1663,6 +1663,52 @@ body.dark-mode .th-header.scrolled .th-theme-toggle {
 }
 
 /* ==========================================================================
+   11d. Custom Form (.th-form)
+   ========================================================================== */
+.th-form-wrapper {
+	background: var(--th-white);
+	border: 1px solid var(--th-gray-200);
+	border-radius: var(--th-radius-lg);
+	padding: 40px;
+	box-shadow: var(--th-shadow-sm);
+}
+
+.th-form__group {
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+}
+
+.th-form__label {
+	font-family: var(--th-font-body);
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--th-gray-800);
+	margin-bottom: 8px;
+}
+
+.th-form__input,
+.th-form__textarea {
+	width: 100%;
+	padding: 14px 16px;
+	font-family: var(--th-font-body);
+	font-size: 15px;
+	color: var(--th-gray-900);
+	border: 1px solid var(--th-gray-300);
+	border-radius: var(--th-radius-md);
+	background: var(--th-gray-50);
+	transition: all var(--th-transition-fast);
+}
+
+.th-form__input:focus,
+.th-form__textarea:focus {
+	outline: none;
+	border-color: var(--th-green-500);
+	background: var(--th-white);
+	box-shadow: 0 0 0 3px rgba(75, 96, 67, 0.1);
+}
+
+/* ==========================================================================
    12. Footer
    ========================================================================== */
 .th-footer {

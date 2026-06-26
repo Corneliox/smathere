@@ -257,21 +257,53 @@ add_filter( 'excerpt_length', function() { return 20; }, 999 );
 add_filter( 'excerpt_more', function() { return '...'; } );
 
 // ──────────────────────────────────────────────────────────────────────────────
-// 6. AUTO-CREATE REQUIRED PAGES
+// 6. CUSTOM POST TYPES & AUTO-CREATE PAGES
 // ──────────────────────────────────────────────────────────────────────────────
+
+// Register Pengaduan CPT
+function th_register_cpt_pengaduan() {
+    register_post_type( 'pengaduan', [
+        'labels' => [
+            'name'          => 'Pengaduan',
+            'singular_name' => 'Pengaduan',
+            'menu_name'     => 'Pengaduan',
+            'all_items'     => 'Semua Pengaduan',
+        ],
+        'public'             => false, // Do not expose on frontend
+        'show_ui'            => true,  // Show in WP admin
+        'show_in_menu'       => true,
+        'capability_type'    => 'post',
+        'map_meta_cap'       => true,
+        'hierarchical'       => false,
+        'supports'           => [ 'title', 'editor', 'author' ], // Author acts as IP/user reference if needed
+        'menu_icon'          => 'dashicons-warning',
+    ] );
+}
+add_action( 'init', 'th_register_cpt_pengaduan' );
+
+// Auto-create required pages
 function th_auto_create_pages() {
-    $page_slug = 'blog';
-    $page = get_page_by_path( $page_slug );
-    if ( ! $page ) {
-        $page_id = wp_insert_post( [
-            'post_title'   => 'Semua Berita',
-            'post_name'    => $page_slug,
-            'post_status'  => 'publish',
-            'post_type'    => 'page',
-            'page_template'=> 'page-blog.php'
-        ] );
-        
-        // Flush rewrite rules after creating the page to prevent 404
+    $pages_to_create = [
+        'blog'      => [ 'title' => 'Semua Berita', 'template' => 'page-blog.php' ],
+        'ppdb'      => [ 'title' => 'PPDB', 'template' => 'page-ppdb.php' ],
+        'pengaduan' => [ 'title' => 'Layanan Pengaduan', 'template' => 'page-pengaduan.php' ],
+    ];
+
+    $flushed = false;
+    foreach ( $pages_to_create as $slug => $data ) {
+        if ( ! get_page_by_path( $slug ) ) {
+            wp_insert_post( [
+                'post_title'   => $data['title'],
+                'post_name'    => $slug,
+                'post_status'  => 'publish',
+                'post_type'    => 'page',
+                'page_template'=> $data['template']
+            ] );
+            $flushed = true;
+        }
+    }
+
+    if ( $flushed ) {
         flush_rewrite_rules();
     }
 }

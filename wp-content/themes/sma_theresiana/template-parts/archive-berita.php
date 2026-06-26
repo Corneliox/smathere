@@ -3,12 +3,18 @@
  * Template Part: Archive Berita (Year > Month > Cards)
  */
 
-$args = [
+$query_args = [
     'post_type'      => 'post',
     'posts_per_page' => -1, // Get all to group them
     'post_status'    => 'publish',
 ];
-$query = new WP_Query($args);
+
+// If args were passed via get_template_part (WP 5.5+), merge them
+if ( isset( $args ) && is_array( $args ) && ! empty( $args ) ) {
+    $query_args = wp_parse_args( $args, $query_args );
+}
+
+$query = new WP_Query($query_args);
 
 $grouped = [];
 if ( $query->have_posts() ) {
