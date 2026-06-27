@@ -388,9 +388,10 @@ if ( ! function_exists( 'th_format_date' ) ) :
     }
 endif;
 // ──────────────────────────────────────────────────────────────────────────────
-// 10. CUSTOMIZER INTEGRATION
+// 10. CUSTOMIZER & SEO INTEGRATION
 // ──────────────────────────────────────────────────────────────────────────────
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/seo.php';
 
 /**
  * Add custom classes to the array of body classes.
