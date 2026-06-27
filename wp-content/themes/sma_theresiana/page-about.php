@@ -33,10 +33,8 @@ if ( have_posts() ) {
                     <?php echo apply_filters( 'the_content', $page_content ); ?>
                 </div>
             <?php else : ?>
-                <!-- Fallback to showing the Homepage About section if the page is empty -->
-                <div style="background: var(--th-gray-50); padding: 40px; border-radius: var(--th-radius-lg);">
-                    <?php get_template_part( 'template-parts/section', 'about' ); ?>
-                </div>
+                <!-- Fallback to showing the literal HTML content if the WP editor is empty -->
+                <?php get_template_part( 'template-parts/content', 'about-fallback' ); ?>
             <?php endif; ?>
         </div>
 
