@@ -38,11 +38,12 @@ if ( ! function_exists( 'sma_theresiana_setup' ) ) :
         // Automatic feed links in <head>.
         add_theme_support( 'automatic-feed-links' );
 
-        // Custom logo support.
+        // Custom logo support (Flexible, no forced cropping).
         add_theme_support( 'custom-logo', [
-            'width'      => 200,
-            'height'     => 80,
-            'flex-width' => true,
+            'width'       => 800,
+            'height'      => 400,
+            'flex-width'  => true,
+            'flex-height' => true,
         ] );
 
         // Register navigation menus.
