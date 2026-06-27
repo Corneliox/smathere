@@ -36,6 +36,17 @@ function sma_theresiana_customize_register( $wp_customize ) {
 		'description' => __( 'Customize the logos, QR codes, and contact info in the footer.', 'sma-theresiana' ),
 	] );
 
+	// -- Footer Main Logo --
+	$wp_customize->add_setting( 'th_footer_logo', [
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	] );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'th_footer_logo', [
+		'label'    => __( 'Footer Main Logo (White/Transparent)', 'sma-theresiana' ),
+		'section'  => 'th_footer_section',
+		'settings' => 'th_footer_logo',
+	] ) );
+
 	// -- Akreditasi Logo --
 	$wp_customize->add_setting( 'th_footer_akreditasi_logo', [
 		'default'           => '',

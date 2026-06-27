@@ -13,6 +13,7 @@ $phone_clean     = preg_replace('/[^0-9+]/', '', $contact_phone);
 
 $akreditasi_logo = get_theme_mod('th_footer_akreditasi_logo', home_url('/wp-content/uploads/2022/04/Akreditasi_Full.png'));
 $unika_logo      = get_theme_mod('th_footer_unika_logo', home_url('/wp-content/uploads/2023/12/Logo-Soegijapranata-Catholic-University-SCU-1024x276-300x81.png'));
+$footer_logo     = get_theme_mod('th_footer_logo', '');
 
 // ── QR codes ──────────────────────────────────────────────
 $qr_ig        = get_theme_mod('th_footer_qr_instagram', home_url('/wp-content/uploads/2026/06/smatheresiana1_qr_Pass.png'));
@@ -48,7 +49,9 @@ $footer_links = [
                     <div class="th-footer__brand-top">
                         <!-- Logo -->
                         <div class="th-footer__logo-card th-footer__logo-card--half">
-                            <?php if (has_custom_logo()) : ?>
+                            <?php if ( ! empty( $footer_logo ) ) : ?>
+                                <img src="<?php echo esc_url($footer_logo); ?>" alt="<?php bloginfo('name'); ?> Logo">
+                            <?php elseif (has_custom_logo()) : ?>
                                 <?php echo get_custom_logo(); ?>
                             <?php else : ?>
                                 <a href="<?php echo esc_url(home_url('/')); ?>" class="th-footer__logo-text" rel="home">
