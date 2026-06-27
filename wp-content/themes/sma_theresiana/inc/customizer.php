@@ -124,5 +124,31 @@ function sma_theresiana_customize_register( $wp_customize ) {
 		'type'     => 'email',
 	] );
 
+	// =========================================================
+	// 3. COLOR PALETTE SECTION
+	// =========================================================
+	$wp_customize->add_section( 'th_colors_section', [
+		'title'       => __( 'Theme Colors', 'sma-theresiana' ),
+		'priority'    => 140,
+		'description' => __( 'Choose the color palette for the theme.', 'sma-theresiana' ),
+	] );
+
+	// -- Theme Palette --
+	$wp_customize->add_setting( 'th_color_palette', [
+		'default'           => 'default',
+		'sanitize_callback' => 'sanitize_text_field',
+	] );
+	
+	$wp_customize->add_control( 'th_color_palette', [
+		'label'    => __( 'Choose Theme Color Palette', 'sma-theresiana' ),
+		'section'  => 'th_colors_section',
+		'type'     => 'radio',
+		'choices'  => [
+			'default' => 'Default (Olive Green)',
+			'teal'    => 'Teal (Blue-Green)',
+			'emerald' => 'Emerald (Forest Green)',
+		],
+	] );
+
 }
 add_action( 'customize_register', 'sma_theresiana_customize_register' );

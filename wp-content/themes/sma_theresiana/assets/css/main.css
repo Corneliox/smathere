@@ -86,6 +86,48 @@ body.dark-mode {
 }
 
 /* ==========================================================================
+   01b. Custom Color Palettes
+   ========================================================================== */
+
+/* Color Palette: Teal (Blue-Green) */
+body.palette-teal {
+	--th-green-900: #154e44;
+	--th-green-800: #1e6e60;
+	--th-green-700: #289381;
+	--th-green-600: #4da494;
+	--th-green-500: #72b6a8;
+	--th-green-400: #97c8bc;
+	--th-green-300: #bcdbd1;
+	--th-green-200: #d0e6df;
+	--th-green-150: #e1f0eb;
+	--th-green-100: #ebf5f2;
+	--th-green-50:  #f4fafa;
+}
+body.palette-teal.dark-mode {
+	--th-green-50:  #0d2924;
+	--th-green-100: #154e44;
+}
+
+/* Color Palette: Emerald (Forest Green) */
+body.palette-emerald {
+	--th-green-900: #1a4524;
+	--th-green-800: #2a6939;
+	--th-green-700: #398b4e;
+	--th-green-600: #48ac64;
+	--th-green-500: #62be7b;
+	--th-green-400: #81cf95;
+	--th-green-300: #a0e0b0;
+	--th-green-200: #c1f0cb;
+	--th-green-150: #d1f4d9;
+	--th-green-100: #e2f9e7;
+	--th-green-50:  #f0fcf3;
+}
+body.palette-emerald.dark-mode {
+	--th-green-50:  #0e2413;
+	--th-green-100: #1a4524;
+}
+
+/* ==========================================================================
    02. Reset + Base
    ========================================================================== */
 *, *::before, *::after {

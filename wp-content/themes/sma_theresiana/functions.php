@@ -391,3 +391,15 @@ endif;
 // 10. CUSTOMIZER INTEGRATION
 // ──────────────────────────────────────────────────────────────────────────────
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Add custom classes to the array of body classes.
+ */
+add_filter( 'body_class', 'th_add_palette_body_class' );
+function th_add_palette_body_class( $classes ) {
+    $palette = get_theme_mod( 'th_color_palette', 'default' );
+    if ( $palette !== 'default' ) {
+        $classes[] = 'palette-' . sanitize_html_class( $palette );
+    }
+    return $classes;
+}
