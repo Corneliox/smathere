@@ -32,12 +32,23 @@ function th_inject_seo_meta_tags() {
 
     // Default values
     $site_name = get_bloginfo( 'name' );
+    if ( empty( trim( $site_name ) ) ) {
+        $site_name = 'SMA Theresiana 1 Semarang';
+    }
+
     $description = get_bloginfo( 'description' );
+    if ( empty( trim( $description ) ) ) {
+        $description = 'Pendidikan cerdas dan berkarakter sesuai dengan nilai-nilai Santa Theresia.';
+    }
+
     $url = home_url( '/' );
     $type = 'website';
     
-    // We don't overwrite <title> tag because WordPress core handles it perfectly via add_theme_support('title-tag')
-    $og_title = $site_name . ' | ' . $description;
+    // Construct the OG Title cleanly
+    $og_title = $site_name;
+    if ( ! empty( trim( get_bloginfo( 'description' ) ) ) ) {
+        $og_title .= ' | ' . get_bloginfo( 'description' );
+    }
     
     $fallback_image = get_theme_mod( 'th_seo_default_image', '' );
     if ( empty( $fallback_image ) && function_exists('get_custom_logo') && has_custom_logo() ) {
