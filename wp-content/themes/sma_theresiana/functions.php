@@ -8,6 +8,13 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+if ( ! defined( 'SMA_THERESIANA_VERSION' ) ) {
+    define( 'SMA_THERESIANA_VERSION', '1.0.0' );
+}
+
+// Force WordPress to recognize mod_rewrite so it doesn't force /index.php/ into Permalinks
+add_filter( 'got_mod_rewrite', '__return_true' );
+
 // ──────────────────────────────────────────────────────────────────────────────
 // 1. THEME SETUP
 // ──────────────────────────────────────────────────────────────────────────────
@@ -41,7 +48,7 @@ if ( ! function_exists( 'sma_theresiana_setup' ) ) :
         // Custom logo support (Flexible, no forced cropping).
         add_theme_support( 'custom-logo', [
             'width'       => 800,
-            'height'      => 400,
+            'height'      => 800,
             'flex-width'  => true,
             'flex-height' => true,
         ] );
