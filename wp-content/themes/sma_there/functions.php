@@ -1,4 +1,7 @@
 <?php
+// Force WordPress to bypass mod_rewrite check to remove index.php from permalinks
+add_filter( 'got_rewrite', '__return_true' );
+
 /**
  * OnePress functions and definitions.
  *

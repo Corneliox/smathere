@@ -14,6 +14,8 @@ if ( ! defined( 'SMA_THERESIANA_VERSION' ) ) {
 
 // Force WordPress to recognize mod_rewrite so it doesn't force /index.php/ into Permalinks
 add_filter( 'got_mod_rewrite', '__return_true' );
+add_filter( 'got_rewrite', '__return_true' );
+add_filter( 'got_url_rewrite', '__return_true' );
 
 // ──────────────────────────────────────────────────────────────────────────────
 // 1. THEME SETUP
