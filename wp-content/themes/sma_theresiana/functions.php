@@ -294,11 +294,7 @@ add_action( 'init', 'th_register_cpt_pengaduan' );
 // Auto-create required pages
 function th_auto_create_pages() {
     
-    // Force permalinks to use /index.php/ since the server ignores .htaccess
-    if ( get_option( 'permalink_structure' ) !== '/index.php/%postname%/' ) {
-        update_option( 'permalink_structure', '/index.php/%postname%/' );
-        flush_rewrite_rules();
-    }
+    // Code removed: no longer forcing index.php permalinks as .htaccess is now fixed.
     $pages_to_create = [
         'blog'      => [ 'title' => 'Semua Berita', 'template' => 'page-blog.php' ],
         'ppdb'      => [ 'title' => 'PPDB', 'template' => 'page-ppdb.php' ],
