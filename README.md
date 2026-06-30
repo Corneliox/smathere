@@ -11,8 +11,6 @@ Perkembangan teknologi informasi menuntut institusi pendidikan untuk tidak sekad
 
 Pada awalnya, sistem menggunakan kerangka dasar yang lebih berorientasi pada penyajian teks linear layaknya jurnal pribadi. Namun, sebuah institusi sekelas SMA Theresiana membutuhkan etalase digital yang mampu memancarkan wibawa, keterbukaan, sekaligus inovasi. Oleh karena itu, perombakan besar-besaran diimplementasikan.
 
-*[REKOMENDASI FIGURE 1: Masukkan tangkapan layar (screenshot) perbandingan *Before-After*. Sebelah kiri menampilkan desain lama yang kaku, sebelah kanan menampilkan desain baru yang modern dengan Hero Section yang membentang penuh.]*
-
 Kita tidak sekadar mengganti warna atau menempelkan logo baru. Setiap elemen yang kini Anda lihat di layar telah melalui proses pemikiran mengenai bagaimana calon siswa, orang tua, dan alumni akan berinteraksi dengan halaman tersebut.
 
 ---
@@ -38,8 +36,6 @@ Jika kredensial yang Anda masukkan valid, Anda akan langsung dibawa ke *Dashboar
 ### 2. Akses Dapur Pacu Server (cPanel)
 Berbeda dengan WordPress yang mengurus "tampilan depan", cPanel adalah ruang mesin sesungguhnya. Di sini Anda mengatur hal-hal teknis seperti kapasitas penyimpanan, *database*, pengaturan domain, hingga pembuatan akun email institusi resmi (seperti *info@smatheresiana.sch.id*).
 
-*[REKOMENDASI FIGURE 3: Masukkan gambar halaman login cPanel dengan warna khas oranye/biru gelap, menampilkan kolom kredensial server.]*
-
 Langkah masuknya:
 - Kunjungi tautan cPanel yang biasanya dikirimkan oleh penyedia layanan hosting Anda (seringkali berupa alamat IP atau domain dengan port khusus seperti `:2083`).
 - Masukkan **Username cPanel** yang unik (bukan email).
@@ -57,16 +53,12 @@ Pernahkah Anda menyadari mengapa saat pertama kali website dibuka, bilah menu di
 
 Pendekatan *transparent navbar* ini bukan tanpa alasan. Dalam desain antarmuka modern, transparansi digunakan untuk mendobrak batasan visual. Jika kita menggunakan warna solid (misalnya blok warna hitam atau biru tebal) di bagian paling atas, hal itu akan menciptakan "tembok" yang memotong garis pandang pengunjung. Dengan membuatnya transparan, gambar *Hero Section* (yang mungkin berisi foto megah gedung sekolah atau wajah ceria siswa-siswi) dapat membentang secara paripurna hingga ke ujung layar atas.
 
-*[REKOMENDASI FIGURE 4: Tampilkan screenshot bagian Header website di mana logo dan teks menu terlihat jelas melayang (floating) di atas gambar latar belakang yang indah, menyoroti ketiadaan garis batas bawah navbar.]*
-
 Hal ini menciptakan kesan imersif. Pengunjung langsung "terserap" ke dalam dunia SMA Theresiana begitu halaman selesai dimuat. Begitu pengunjung mulai menggulir (scroll) layar ke bawah, barulah *navbar* tersebut akan memunculkan warna latar yang solid agar teks menu tetap terbaca saat melewati konten dengan warna yang bervariasi. Transisi ini mencerminkan dinamisme dan teknologi yang kekinian.
 
 ### Psikologi Geometri: Mengapa Bentuknya "Membulat" (Rounded Corners)?
 Jika Anda teliti, elemen-elemen seperti tombol (*buttons*), kotak artikel, kartu profil, hingga kolom pencarian tidak lagi memiliki ujung yang bersudut tajam 90 derajat. Kita menerapkan radius sudut (*border-radius*) sehingga ujungnya membulat. Mengapa demikian?
 
 Sudut tajam secara psikologis sering diasosiasikan dengan sesuatu yang kaku, formalitas birokrasi yang dingin, atau bahkan bahaya (seperti ujung mata pisau). Sebaliknya, bentuk dengan sudut membulat (*rounded*) memancarkan kesan ramah, inklusif, modern, dan aman. 
-
-*[REKOMENDASI FIGURE 5: Tampilkan perbandingan *close-up* (di-zoom) antara tombol konvensional yang bersudut tajam dan tombol baru website yang memiliki lengkungan lembut di sudut-sudutnya.]*
 
 SMA Theresiana adalah institusi pendidikan yang merangkul generasi muda. Calon siswa (Generasi Z dan Alpha) tumbuh dengan perangkat seluler dan aplikasi modern (seperti iOS dan Android) yang menjadikan desain *rounded* sebagai standar industri antarmuka. Dengan mengadopsi bentuk ini, website sekolah secara tidak sadar berkomunikasi dengan bahasa visual yang sudah sangat familiar dan nyaman bagi target audiens utamanya. Website tidak lagi terasa seperti papan pengumuman instansi pemerintah yang kaku, melainkan ruang interaksi digital yang *welcoming*.
 
@@ -82,8 +74,6 @@ Warna utama digunakan untuk elemen struktural guna menjaga teks agar sangat muda
 Meskipun kita telah menetapkan desain dasar yang kuat, kita menyadari bahwa institusi itu hidup dan dinamis. Akan ada masanya sekolah merayakan hari jadi dengan tema warna tertentu, atau mungkin menyelaraskan warna web dengan kampanye sosial tertentu.
 
 Untuk itulah arsitektur tema ini dirancang secara modular pada sektor pewarnaan. Anda tidak terkunci pada satu palet warna mati!
-
-*[REKOMENDASI FIGURE 6: Masukkan gambar panel "Customizer" WordPress di sisi kiri layar yang sedang menampilkan opsi "Colors", menunjukkan berbagai kotak pemilih warna (color picker) yang bebas digeser-geser.]*
 
  Melalui panel admin, sistem menyediakan opsi untuk mengganti *Color Palette* sesuka hati. 
 1. Cukup arahkan kursor ke menu **Tampilan > Sesuaikan (Customize)**.
@@ -109,8 +99,6 @@ Kadang kala kebersihan antarmuka lebih baik daripada terlalu banyak informasi. J
 - Sebuah panel akan terbuka ke bawah. Di bagian kiri bawah panel itu, terdapat tulisan berwarna merah berbunyi **Singkirkan (Remove)**.
 - Klik tulisan tersebut, dan *voila*, item tersebut akan menghilang dari daftar. Jangan lupa klik **Simpan Menu**.
 
-*[REKOMENDASI FIGURE 7: Tangkapan layar yang menyoroti tanda panah *dropdown* pada item menu aktif di Dashboard, dengan lingkaran merah pada tombol "Singkirkan" atau "Remove".]*
-
 ### Cara Menambahkan Rute Navigasi Baru (Menambah Menu)
 Sebaliknya, jika sekolah meluncurkan portal alumni baru, Anda pasti ingin menambahkannya ke menu.
 - Masih di halaman yang sama (**Tampilan > Menu**).
@@ -120,8 +108,6 @@ Sebaliknya, jika sekolah meluncurkan portal alumni baru, Anda pasti ingin menamb
 - Bagian terbaiknya adalah: Anda bisa *mengklik, menahan, lalu menggeser* (drag and drop) blok tersebut ke atas atau ke bawah untuk menentukan urutannya. 
 - Ingin membuat menu *dropdown* (menu bercabang)? Geser saja blok tersebut sedikit ke arah kanan di bawah menu utamanya. Sistem akan otomatis mengenalinya sebagai sub-item.
 
-*[REKOMENDASI FIGURE 8: Gambar animasi atau urutan foto yang menunjukkan sebuah blok menu ditarik (drag) dan diletakkan sedikit menjorok ke dalam (indent) untuk membentuk sub-menu.]*
-
 ---
 
 ## Bagian VI: Anatomi Komponen Lainnya
@@ -130,8 +116,6 @@ Selain Hero Section dan Menu yang telah kita bahas panjang lebar, komponen pendu
 
 **Sektor Artikel dan Jurnalistik (Post Area):**
 Kita mengadopsi format *grid* bergaya kartu (*card-based UI*) untuk daftar berita. Kembali lagi, elemen *rounded* diaplikasikan di sini. Desain kartu mengotakkan informasi menjadi potongan-potongan yang mudah dicerna secara kognitif. Setiap kartu berita memiliki bayangan tipis (*drop shadow*) yang memberikan efek elevasi 3D. Ini bukan sekadar gaya-gayaan; bayangan tersebut memberi tahu otak pengguna bahwa elemen tersebut bisa di-klik dan merupakan objek terpisah dari latar belakang.
-
-*[REKOMENDASI FIGURE 9: Potongan gambar yang menampilkan deretan artikel berita sekolah dalam format kartu (card layout), memperlihatkan foto thumbnail, judul tebal, dan bayangan halus di sekeliling kartu.]*
 
 **Ruang Pelengkap (Sidebar):**
 Bilah sisi ini dijaga kebersihannya. Terlalu banyak *widget* di bilah sisi seringkali memicu *banner blindness* (kondisi di mana mata secara tidak sadar mengabaikan elemen karena dianggap sebagai iklan/sampah). Kita hanya menempatkan elemen fundamental seperti kalender, pencarian cepat, dan daftar pos terbaru yang paling krusial.
@@ -165,14 +149,16 @@ Bagian penutup ini difungsikan sebagai lembar rahasia yang wajib Anda lengkapi. 
 - **Tautan Masuk** : `........................................................`
 - **Email Pengelola** : `........................................................`
 - **Kata Sandi Rahasia**: `........................................................`
+- Rahasia yakkk
 
 ### Kredensial Kontrol Server Hosting (cPanel)
 - **Tautan Masuk** : `........................................................`
 - **Username Sistem** : `........................................................`
 - **Kata Sandi Sistem**: `........................................................`
+- Rahasia dongg
 
 > [!WARNING]
-> Kehilangan akses cPanel dapat berakibat fatal pada kepemilikan domain dan file inti website. Selalu lakukan pencadangan (*backup*) secara periodik.
+> Kehilangan akses cPanel dapat berakibat fatal pada kepemilikan domain dan file inti website. Selalu lakukan pencadangan (*backup*) secara berkala.
 
 ### Saluran Komunikasi Bantuan Teknis Terpadu
 Transformasi digital tidak berhenti pada hari peluncuran. Jika suatu hari nanti sistem mengalami malfungsi, konfigurasi *plugin* yang bentrok, halaman *blank* (layar putih), atau sekadar butuh panduan restrukturisasi desain lebih lanjut untuk tema SMA-Theresiana ini, jalur komunikasi prioritas selalu terbuka untuk Anda:
